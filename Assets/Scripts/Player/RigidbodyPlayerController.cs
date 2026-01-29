@@ -183,7 +183,7 @@ namespace ChildOfEclipse
             _rb.linearDamping = 0f;
             _rb.angularDamping = 0.05f;
             _rb.freezeRotation = true;
-            _rb.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
+            _rb.constraints = RigidbodyConstraints.FreezeRotation;
         }
 
         private void Start()
