@@ -3632,7 +3632,10 @@ GameObject:
   - component: {fileID: 1760657382}
   - component: {fileID: 1760657387}
   - component: {fileID: 1760657381}
+  - component: {fileID: 1760657390}
   - component: {fileID: 1760657380}
+  - component: {fileID: 1760657389}
+  - component: {fileID: 1760657388}
   m_Layer: 0
   m_Name: NavAgent
   m_TagString: Untagged
@@ -3798,6 +3801,81 @@ MonoBehaviour:
   interactSoundVolume: 1
   playerTag: Player
   showDebugMessages: 0
+--- !u!114 &1760657388
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1760657379}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c195d7b69598d346acc2a5de4467fc0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::World.NavMeshAgentAttack
+  _target: {fileID: 0}
+  _targetTag: Player
+  _triggerMode: 1
+  _attackRange: 2
+  _damage: 10
+  _attackCooldown: 1
+  _lookAtTarget: 1
+  _rotationSpeed: 10
+  _attackVisual: {fileID: 0}
+  _attackVisualDuration: 0.3
+  _showDebugGizmos: 1
+  _attackRangeColor: {r: 1, g: 0, b: 0, a: 0.3}
+--- !u!114 &1760657389
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1760657379}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3c2908d6e57ce74f9963323505cbfc0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::World.NavMeshAgentChase
+  _target: {fileID: 0}
+  _targetTag: Player
+  _detectionRange: 15
+  _fieldOfView: 60
+  _obstacleLayers:
+    serializedVersion: 2
+    m_Bits: 8
+  _requireLineOfSight: 1
+  _chaseSpeedMultiplier: 1.5
+  _chaseAngularSpeedMultiplier: 2
+  _stopDistance: 2
+  _stopWhenOutOfRange: 1
+  _loseTargetDelay: 2
+  _showDebugGizmos: 1
+  _detectionRangeColor: {r: 1, g: 0, b: 0, a: 0.2}
+  _fieldOfViewColor: {r: 1, g: 1, b: 0, a: 0.3}
+  _lineOfSightColor: {r: 0, g: 1, b: 0, a: 1}
+--- !u!114 &1760657390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1760657379}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21486e6da65f9f34eb53d404e9f02852, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::World.EnemyAI
+  _patrolComponent: {fileID: 1760657380}
+  _chaseComponent: {fileID: 1760657389}
+  _attackComponent: {fileID: 1760657388}
+  _initialState: 0
+  _enableOnStart: 1
+  _statePriority: 000000000100000002000000
+  _returnToPatrolOnLoseTarget: 1
+  _returnToPatrolDelay: 3
+  _logStateChanges: 1
+  _showStateInGizmos: 1
 --- !u!1 &1823688464
 GameObject:
   m_ObjectHideFlags: 0
