@@ -36,6 +36,13 @@ namespace ChildOfEclipse
         [Tooltip("Whether to require the object to be in view to interact.")]
         [SerializeField] private bool requireLineOfSight = true;
 
+        [Header("Distance Settings")]
+        [Tooltip("Maximum distance from this InteractPointer object (e.g., player) to interactable objects.")]
+        [SerializeField] private float maxInteractionDistance = 5f;
+
+        [Tooltip("Whether to clamp the hit point to the maximum interaction distance instead of invalidating it.")]
+        [SerializeField] private bool clampToMaxDistance = false;
+
         [Header("World UI Settings")]
         [Tooltip("Prefab to spawn at pointer position (e.g., cursor, interaction prompt).")]
         [SerializeField] private GameObject worldUIPrefab;
@@ -62,6 +69,7 @@ namespace ChildOfEclipse
         private Vector3 _currentHitPoint;
         private Vector3 _currentHitNormal;
         private bool _hasValidHit;
+        private Collider _currentHitCollider;
 
         #endregion
 
@@ -170,32 +178,61 @@ namespace ChildOfEclipse
             // Perform raycast
             if (Physics.Raycast(ray, out RaycastHit hit, maxRayDistance, interactableLayerMask))
             {
-                _hasValidHit = true;
                 _currentHitPoint = hit.point;
                 _currentHitNormal = hit.normal;
+                _currentHitCollider = hit.collider;
 
-                // Check if the hit object has an IInteractable component
-                _currentHoveredInteractable = hit.collider.GetComponent<IInteractable>();
+                // Check distance from InteractPointer to the hit point
+                float distanceFromPlayer = Vector3.Distance(transform.position, hit.point);
+                bool isWithinRange = distanceFromPlayer <= maxInteractionDistance;
 
-                // Check line of sight if required
-                if (_currentHoveredInteractable != null && requireLineOfSight)
+                if (isWithinRange)
                 {
-                    Vector3 directionToCamera = (raycastCamera.transform.position - hit.point).normalized;
-                    if (Physics.Raycast(hit.point, directionToCamera, out RaycastHit sightHit,
-                        Vector3.Distance(hit.point, raycastCamera.transform.position), interactableLayerMask))
+                    // Within range - valid hit
+                    _hasValidHit = true;
+                    
+                    // Check if the hit object has an IInteractable component
+                    _currentHoveredInteractable = hit.collider.GetComponent<IInteractable>();
+
+                    // Check line of sight if required
+                    if (_currentHoveredInteractable != null && requireLineOfSight)
                     {
-                        // Something is blocking the line of sight
-                        if (sightHit.collider != hit.collider)
+                        Vector3 directionToCamera = (raycastCamera.transform.position - hit.point).normalized;
+                        if (Physics.Raycast(hit.point, directionToCamera, out RaycastHit sightHit,
+                            Vector3.Distance(hit.point, raycastCamera.transform.position), interactableLayerMask))
                         {
-                            _currentHoveredInteractable = null;
+                            // Something is blocking the line of sight
+                            if (sightHit.collider != hit.collider)
+                            {
+                                _currentHoveredInteractable = null;
+                            }
                         }
                     }
-                }
 
-                // Check if the interactable can be interacted with
-                if (_currentHoveredInteractable != null && !_currentHoveredInteractable.CanInteract)
+                    // Check if the interactable can be interacted with
+                    if (_currentHoveredInteractable != null && !_currentHoveredInteractable.CanInteract)
+                    {
+                        _currentHoveredInteractable = null;
+                    }
+                }
+                else
                 {
+                    // Out of range - always invalidate the interactable
                     _currentHoveredInteractable = null;
+                    
+                    if (clampToMaxDistance)
+                    {
+                        // Clamp the hit point to the maximum allowed distance from the player for visual purposes
+                        _hasValidHit = true;
+                        Vector3 directionFromPlayer = (hit.point - transform.position).normalized;
+                        _currentHitPoint = transform.position + directionFromPlayer * maxInteractionDistance;
+                    }
+                    else
+                    {
+                        // No clamping - invalidate the hit entirely
+                        _hasValidHit = false;
+                        _currentHitCollider = null;
+                    }
                 }
 
                 // Draw debug ray if enabled
@@ -333,6 +370,21 @@ namespace ChildOfEclipse
                 Ray ray = raycastCamera.ScreenPointToRay(_pointerPosition);
                 Gizmos.color = _currentHoveredInteractable != null ? Color.green : Color.red;
                 Gizmos.DrawLine(ray.origin, ray.origin + ray.direction * maxRayDistance);
+            }
+
+            // Draw max interaction distance sphere around the InteractPointer (player)
+            Gizmos.color = new Color(1f, 1f, 0f, 0.2f);
+            Gizmos.DrawWireSphere(transform.position, maxInteractionDistance);
+            
+            // Draw the hit point
+            if (_hasValidHit)
+            {
+                Gizmos.color = Color.magenta;
+                Gizmos.DrawWireSphere(_currentHitPoint, 0.1f);
+                
+                // Draw line from player to hit point
+                Gizmos.color = Color.white;
+                Gizmos.DrawLine(transform.position, _currentHitPoint);
             }
         }
 
