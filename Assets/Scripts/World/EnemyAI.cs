@@ -83,6 +83,8 @@ namespace World
         private bool _isEnabled = false;
         private float _loseTargetTimer = 0f;
         private bool _wasChasing = false;
+        private bool _isStoppedOverride = false;
+        private NavMeshAgent _navAgent;
 
         #endregion
 
@@ -132,12 +134,42 @@ namespace World
         /// </summary>
         public NavMeshAgentAttack AttackComponent => _attackComponent;
 
+        /// <summary>
+        /// Gets or sets whether the AI should be stopped due to external override (e.g., solar state).
+        /// When true, the AI will not control the NavMeshAgent's isStopped property.
+        /// </summary>
+        public bool IsStoppedOverride
+        {
+            get => _isStoppedOverride;
+            set
+            {
+                if (_isStoppedOverride != value)
+                {
+                    _isStoppedOverride = value;
+
+                    if (_isStoppedOverride)
+                    {
+                        // Stop all behaviors when override is enabled
+                        StopAllBehaviors();
+                        // Also directly stop the NavMeshAgent to prevent behavior components from overriding
+                        if (_navAgent != null)
+                        {
+                            _navAgent.isStopped = true;
+                        }
+                    }
+                }
+            }
+        }
+
         #endregion
 
         #region Unity Lifecycle
 
         private void Awake()
         {
+            // Get NavMeshAgent
+            _navAgent = GetComponent<NavMeshAgent>();
+
             // Get components if not assigned
             if (_patrolComponent == null)
             {
@@ -181,6 +213,16 @@ namespace World
         {
             if (!_isEnabled)
             {
+                return;
+            }
+
+            // Enforce override state - keep NavMeshAgent stopped when override is active
+            if (_isStoppedOverride)
+            {
+                if (_navAgent != null)
+                {
+                    _navAgent.isStopped = true;
+                }
                 return;
             }
 

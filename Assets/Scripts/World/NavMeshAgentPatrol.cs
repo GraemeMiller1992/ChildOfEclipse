@@ -91,6 +91,7 @@ namespace World
         private float _waitTimer = 0f;
         private bool _isPatrolling = false;
         private bool _isReversing = false; // For PingPong mode
+        private EnemyAI _enemyAI;
 
         #endregion
 
@@ -139,6 +140,9 @@ namespace World
         {
             _navAgent = GetComponent<NavMeshAgent>();
 
+            // Get EnemyAI if present
+            _enemyAI = GetComponent<EnemyAI>();
+
             if (_waypoints == null || _waypoints.Length == 0)
             {
                 Debug.LogWarning($"NavMeshAgentPatrol: No waypoints assigned to {gameObject.name}. Agent will not patrol.", this);
@@ -159,6 +163,12 @@ namespace World
 
         private void Update()
         {
+            // Skip patrol updates if EnemyAI has override active
+            if (_enemyAI != null && _enemyAI.IsStoppedOverride)
+            {
+                return;
+            }
+
             if (!_isPatrolling || _navAgent == null || _waypoints == null || _waypoints.Length == 0)
             {
                 return;

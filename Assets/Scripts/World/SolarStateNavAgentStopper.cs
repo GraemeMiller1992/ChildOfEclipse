@@ -5,6 +5,7 @@ namespace World
 {
     /// <summary>
     /// Component that controls a NavMeshAgent's isStopped property based on the solar state.
+    /// If an EnemyAI component is present, it will use the IsStoppedOverride property instead.
     /// Requires a SolarState component on the same GameObject.
     /// </summary>
     [RequireComponent(typeof(SolarState))]
@@ -14,6 +15,10 @@ namespace World
         [SerializeField]
         [Tooltip("The NavMeshAgent whose isStopped property will be controlled. If null, uses the first NavMeshAgent on this GameObject.")]
         private NavMeshAgent _navAgent;
+
+        [SerializeField]
+        [Tooltip("The EnemyAI component. If present, will use IsStoppedOverride instead of directly controlling NavMeshAgent.")]
+        private EnemyAI _enemyAI;
 
         [Header("Sun State Settings")]
         [SerializeField]
@@ -40,16 +45,22 @@ namespace World
         private void Awake()
         {
             _solarState = GetComponent<SolarState>();
-            
+
             // Get NavMeshAgent if not explicitly assigned
             if (_navAgent == null)
             {
                 _navAgent = GetComponent<NavMeshAgent>();
             }
 
-            if (_navAgent == null)
+            // Get EnemyAI if not explicitly assigned
+            if (_enemyAI == null)
             {
-                Debug.LogError($"SolarStateNavAgentStopper: No NavMeshAgent found on {gameObject.name}. Component will not function.", this);
+                _enemyAI = GetComponent<EnemyAI>();
+            }
+
+            if (_navAgent == null && _enemyAI == null)
+            {
+                Debug.LogError($"SolarStateNavAgentStopper: No NavMeshAgent or EnemyAI found on {gameObject.name}. Component will not function.", this);
                 return;
             }
 
@@ -60,7 +71,7 @@ namespace World
         private void Start()
         {
             // Apply initial state if enabled
-            if (_applyInitialState && _navAgent != null)
+            if (_applyInitialState)
             {
                 ApplyNavAgentStateForState(_solarState.CurrentState);
             }
@@ -87,11 +98,6 @@ namespace World
         /// </summary>
         private void ApplyNavAgentStateForState(SolarStateValue state)
         {
-            if (_navAgent == null)
-            {
-                return;
-            }
-
             bool shouldStop = state switch
             {
                 SolarStateValue.Sun => _stopOnSun,
@@ -100,7 +106,15 @@ namespace World
                 _ => false
             };
 
-            _navAgent.isStopped = shouldStop;
+            // Use EnemyAI override if available, otherwise control NavMeshAgent directly
+            if (_enemyAI != null)
+            {
+                _enemyAI.IsStoppedOverride = shouldStop;
+            }
+            else if (_navAgent != null)
+            {
+                _navAgent.isStopped = shouldStop;
+            }
         }
 
         /// <summary>
@@ -136,9 +150,9 @@ namespace World
             }
 
             // If this is the current state, apply the new setting immediately
-            if (_solarState != null && _solarState.CurrentState == state && _navAgent != null)
+            if (_solarState != null && _solarState.CurrentState == state)
             {
-                _navAgent.isStopped = shouldStop;
+                ApplyNavAgentStateForState(state);
             }
         }
     }

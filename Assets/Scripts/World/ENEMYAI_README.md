@@ -144,6 +144,12 @@ State machine controller that coordinates Patrol, Chase, and Attack behaviors.
 - `OnAIEnabled`: Fired when AI is enabled
 - `OnAIDisabled`: Fired when AI is disabled
 
+**IsStoppedOverride:**
+- When set to true, the AI will not control the NavMeshAgent
+- Used by external systems like `SolarStateNavAgentStopper` to pause AI
+- Automatically stops all behaviors when override is enabled
+- AI state transitions are paused while override is active
+
 **Usage:**
 ```csharp
 // Enable AI
@@ -204,7 +210,18 @@ enemyAI.SetTarget(playerTransform);
 
 **Integration with SolarState:**
 - Use `SolarStateNavAgentStopper` to pause AI during certain solar states
+- The stopper will automatically detect `EnemyAI` and use the `IsStoppedOverride` property
+- When `IsStoppedOverride` is true, the AI will not control the NavMeshAgent
 - Combine with other solar state behaviors
+
+**Manual Override:**
+```csharp
+// Manually stop the AI (e.g., from cutscenes, dialogues, etc.)
+enemyAI.IsStoppedOverride = true;
+
+// Resume AI
+enemyAI.IsStoppedOverride = false;
+```
 
 **Custom Events:**
 ```csharp
@@ -268,6 +285,56 @@ Patrol
    - Enable state change logging during development
    - Use Scene view gizmos to visualize detection ranges
    - Monitor AI state in real-time
+
+---
+
+## SolarState Integration
+
+The EnemyAI system integrates seamlessly with the SolarState system through the `SolarStateNavAgentStopper` component.
+
+### How It Works
+
+1. **Automatic Detection**: When you add a `SolarStateNavAgentStopper` to a GameObject with an `EnemyAI`, it automatically detects the AI component.
+
+2. **Override Priority**: Instead of directly controlling the NavMeshAgent's `isStopped` property, the stopper uses the `EnemyAI.IsStoppedOverride` property.
+
+3. **AI Behavior**: When `IsStoppedOverride` is true:
+   - The AI stops all active behaviors (Patrol, Chase, Attack)
+   - State transitions are paused
+   - The AI remains in its current state but doesn't act
+
+4. **Resumption**: When `IsStoppedOverride` returns to false:
+   - The AI resumes from its current state
+   - State transitions continue normally
+   - Behaviors reactivate as needed
+
+### Setup
+
+1. Add `SolarState` component to the enemy GameObject
+2. Add `SolarStateNavAgentStopper` component
+3. Configure which solar states should stop the enemy:
+   - Stop on Sun: Enemy stops during Sun state
+   - Stop on Moon: Enemy stops during Moon state
+   - Stop on Eclipse: Enemy stops during Eclipse state
+4. The stopper will automatically find and use the `EnemyAI` component
+
+### Example Configuration
+
+```
+Enemy GameObject
+├── NavMeshAgent
+├── EnemyAI
+├── NavMeshAgentPatrol
+├── NavMeshAgentChase
+├── NavMeshAgentAttack
+├── SolarState
+└── SolarStateNavAgentStopper
+    ├── Stop on Sun: false
+    ├── Stop on Moon: true
+    └── Stop on Eclipse: true
+```
+
+In this configuration, the enemy will patrol/chase/attack normally during Sun state, but will stop during Moon and Eclipse states.
 
 ---
 

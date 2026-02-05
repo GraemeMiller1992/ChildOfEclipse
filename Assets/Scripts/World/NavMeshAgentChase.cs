@@ -87,6 +87,7 @@ namespace World
         private float _loseTargetTimer = 0f;
         private float _originalSpeed;
         private float _originalAngularSpeed;
+        private EnemyAI _enemyAI;
 
         #endregion
 
@@ -137,7 +138,10 @@ namespace World
         private void Awake()
         {
             _navAgent = GetComponent<NavMeshAgent>();
-            
+
+            // Get EnemyAI if present
+            _enemyAI = GetComponent<EnemyAI>();
+
             // Store original speed values
             _originalSpeed = _navAgent.speed;
             _originalAngularSpeed = _navAgent.angularSpeed;
@@ -155,6 +159,12 @@ namespace World
 
         private void Update()
         {
+            // Skip chase updates if EnemyAI has override active
+            if (_enemyAI != null && _enemyAI.IsStoppedOverride)
+            {
+                return;
+            }
+
             if (_target == null)
             {
                 if (_isChasing)
