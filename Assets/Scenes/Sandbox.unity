@@ -3272,7 +3272,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ChildOfEclipse.Health.RespawnableComponent
   respawnLocation: 1
   customSpawnPoint: {fileID: 0}
-  respawnDelay: 0
+  respawnDelay: 0.1
   disableDuringDelay: 0
   restoreFullHealth: 1
   resetVelocity: 1
@@ -5292,6 +5292,18 @@ PrefabInstance:
     - target: {fileID: 5178657094539092169, guid: bdba150965a41034fbd36565a7746ec0, type: 3}
       propertyPath: m_Name
       value: KillZone
+      objectReference: {fileID: 0}
+    - target: {fileID: 6669350938007588489, guid: bdba150965a41034fbd36565a7746ec0, type: 3}
+      propertyPath: targetLayers.m_Bits
+      value: 897
+      objectReference: {fileID: 0}
+    - target: {fileID: 6669350938007588489, guid: bdba150965a41034fbd36565a7746ec0, type: 3}
+      propertyPath: OnObjectEntered.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6669350938007588489, guid: bdba150965a41034fbd36565a7746ec0, type: 3}
+      propertyPath: OnObjectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7501191530126470761, guid: bdba150965a41034fbd36565a7746ec0, type: 3}
       propertyPath: m_LocalPosition.x
