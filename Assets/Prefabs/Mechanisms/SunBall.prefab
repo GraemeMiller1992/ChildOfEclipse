@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 957276118431364837}
   - component: {fileID: 291163034543368315}
   - component: {fileID: 8592875636348907790}
+  - component: {fileID: -1892327583442982547}
   - component: {fileID: 7542313645096451666}
   m_Layer: 0
   m_Name: SunBall
@@ -158,6 +159,22 @@ MonoBehaviour:
   _eclipseLayer: 9
   _targetGameObjects: []
   _includeChildren: 0
+--- !u!114 &-1892327583442982547
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2576283721235827677}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b3c8d9e5f2a4b6c8d1e2f3a4b5c6d7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::World.SolarStateMaterial
+  _sunMaterial: {fileID: 2100000, guid: 109627a8ad09140468642242eb460209, type: 2}
+  _moonMaterial: {fileID: 2100000, guid: c90b9e2c0f4cb454b8aef5d56e430dd7, type: 2}
+  _eclipseMaterial: {fileID: 2100000, guid: 2ba031134926c634e88d1dcc7a50918c, type: 2}
+  _targetRenderers: []
 --- !u!114 &7542313645096451666
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -77,6 +77,8 @@ GameObject:
   - component: {fileID: 1032828951237269206}
   - component: {fileID: 4578245472166012004}
   - component: {fileID: 4540397551532029379}
+  - component: {fileID: 5464124310713957716}
+  - component: {fileID: 5243779891490286542}
   m_Layer: 6
   m_Name: MovingPlatform
   m_TagString: Untagged
@@ -311,6 +313,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5447404586261624416, guid: 0ff04f6f77d1526478d14f04b0cf2844, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4540397551532029379}
+    - targetCorrespondingSourceObject: {fileID: 5447404586261624416, guid: 0ff04f6f77d1526478d14f04b0cf2844, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5464124310713957716}
+    - targetCorrespondingSourceObject: {fileID: 5447404586261624416, guid: 0ff04f6f77d1526478d14f04b0cf2844, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5243779891490286542}
   m_SourcePrefab: {fileID: 100100000, guid: 0ff04f6f77d1526478d14f04b0cf2844, type: 3}
 --- !u!114 &4578245472166012004
 MonoBehaviour:
@@ -342,3 +350,39 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::World.SolarState
   _currentState: 0
+--- !u!114 &5464124310713957716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7137789739647472021}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e05a50f44b44c3b4e8c2a1e2ee27a7b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ChildOfEclipse.SolarStateSwapInteractable
+  highlightRenderer: {fileID: 0}
+  hoverColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  customInteractionDescription: 
+  interactParticles: {fileID: 0}
+  interactSound: {fileID: 0}
+  interactSoundVolume: 1
+  playerTag: Player
+  showDebugMessages: 0
+--- !u!114 &5243779891490286542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7137789739647472021}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b3c8d9e5f2a4b6c8d1e2f3a4b5c6d7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::World.SolarStateMaterial
+  _sunMaterial: {fileID: 2100000, guid: 109627a8ad09140468642242eb460209, type: 2}
+  _moonMaterial: {fileID: 2100000, guid: c90b9e2c0f4cb454b8aef5d56e430dd7, type: 2}
+  _eclipseMaterial: {fileID: 2100000, guid: 2ba031134926c634e88d1dcc7a50918c, type: 2}
+  _targetRenderers: []
