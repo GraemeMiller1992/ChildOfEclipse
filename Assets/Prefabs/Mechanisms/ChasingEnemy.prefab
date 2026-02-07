@@ -524,6 +524,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::World.SolarStateNavAgentStopper
   _navAgent: {fileID: 5263840014024743190}
+  _enemyAI: {fileID: 0}
   _stopOnSun: 0
   _stopOnMoon: 1
   _stopOnEclipse: 0
@@ -593,7 +594,7 @@ MonoBehaviour:
   _target: {fileID: 0}
   _targetTag: Player
   _detectionRange: 15
-  _fieldOfView: 60
+  _fieldOfView: 135
   _obstacleLayers:
     serializedVersion: 2
     m_Bits: 8

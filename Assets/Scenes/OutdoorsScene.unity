@@ -932,108 +932,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &276313003
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 276313009}
-  - component: {fileID: 276313007}
-  - component: {fileID: 276313006}
-  - component: {fileID: 276313005}
-  - component: {fileID: 276313004}
-  m_Layer: 0
-  m_Name: GenericTrigger
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &276313004
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 276313003}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a3581970c1baa44abdf54e30bef9f0d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::World.TriggerReactionGameObjectToggle
-  objectsToEnable: []
-  objectsToDisable: []
-  toggleState: 1
-  objectsToToggle:
-  - {fileID: 767757530}
-  - {fileID: 1290422454}
-  - {fileID: 563333920}
---- !u!114 &276313005
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 276313003}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c83d5b0dac3a5314ba8d2425867fc869, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::World.NavAgentStoppedTriggerOption
-  requireStopped: 1
---- !u!114 &276313006
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 276313003}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 487cee084cded2f46ad2d5aa8d9fc614, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::World.SolarStateTriggerOption
-  requiredState: 1
---- !u!114 &276313007
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 276313003}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6c4cc4d9830a5474883c92ad024e6132, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::World.GenericTrigger
-  overlapBoxSize: {x: 3.13, y: 3, z: 3}
-  overlapBoxCenter: {x: 0, y: 0, z: 0}
-  triggerLayers:
-    serializedVersion: 2
-    m_Bits: 1
-  triggerOncePerEntry: 1
-  triggerCooldown: 0.5
-  resetStateOnExit: 1
-  triggerColor: {r: 1, g: 1, b: 0, a: 0.3}
-  showGizmo: 1
---- !u!4 &276313009
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 276313003}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.098731644, z: -0, w: 0.99511415}
-  m_LocalPosition: {x: -2.85, y: 0.56, z: 6.66}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: -11.332, z: 0}
 --- !u!1 &432432459
 GameObject:
   m_ObjectHideFlags: 0
@@ -4616,6 +4514,75 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1001 &7024527682140001911
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2208739194548027605, guid: 5449589cbe24aa54581554f2488af4a2, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.85
+      objectReference: {fileID: 0}
+    - target: {fileID: 2208739194548027605, guid: 5449589cbe24aa54581554f2488af4a2, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.56
+      objectReference: {fileID: 0}
+    - target: {fileID: 2208739194548027605, guid: 5449589cbe24aa54581554f2488af4a2, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 6.66
+      objectReference: {fileID: 0}
+    - target: {fileID: 2208739194548027605, guid: 5449589cbe24aa54581554f2488af4a2, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.99511415
+      objectReference: {fileID: 0}
+    - target: {fileID: 2208739194548027605, guid: 5449589cbe24aa54581554f2488af4a2, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2208739194548027605, guid: 5449589cbe24aa54581554f2488af4a2, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.098731644
+      objectReference: {fileID: 0}
+    - target: {fileID: 2208739194548027605, guid: 5449589cbe24aa54581554f2488af4a2, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2208739194548027605, guid: 5449589cbe24aa54581554f2488af4a2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2208739194548027605, guid: 5449589cbe24aa54581554f2488af4a2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -11.332
+      objectReference: {fileID: 0}
+    - target: {fileID: 2208739194548027605, guid: 5449589cbe24aa54581554f2488af4a2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4072893114734088296, guid: 5449589cbe24aa54581554f2488af4a2, type: 3}
+      propertyPath: 'objectsToToggle.Array.data[0]'
+      value: 
+      objectReference: {fileID: 767757530}
+    - target: {fileID: 4072893114734088296, guid: 5449589cbe24aa54581554f2488af4a2, type: 3}
+      propertyPath: 'objectsToToggle.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1290422454}
+    - target: {fileID: 4072893114734088296, guid: 5449589cbe24aa54581554f2488af4a2, type: 3}
+      propertyPath: 'objectsToToggle.Array.data[2]'
+      value: 
+      objectReference: {fileID: 563333920}
+    - target: {fileID: 7073238482588464238, guid: 5449589cbe24aa54581554f2488af4a2, type: 3}
+      propertyPath: m_Name
+      value: NavAgentTrigger
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5449589cbe24aa54581554f2488af4a2, type: 3}
 --- !u!114 &7097572459449230396
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4849,7 +4816,7 @@ SceneRoots:
   - {fileID: 1124418898}
   - {fileID: 644470592403506720}
   - {fileID: 1037471028546753360}
-  - {fileID: 276313009}
+  - {fileID: 7024527682140001911}
   - {fileID: 767757534}
   - {fileID: 1290422458}
   - {fileID: 563333924}

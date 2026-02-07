@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &2340843229544666707
+--- !u!1 &7073238482588464238
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,24 +8,25 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 3776901345089257941}
-  - component: {fileID: 8306747820554055380}
-  - component: {fileID: 6894529905166441314}
-  - component: {fileID: 2452775361475626714}
+  - component: {fileID: 2208739194548027605}
+  - component: {fileID: 9187753327986016995}
+  - component: {fileID: 3467850256229788566}
+  - component: {fileID: 3747128796494227376}
+  - component: {fileID: 4072893114734088296}
   m_Layer: 0
-  m_Name: MoonTrigger
+  m_Name: NavAgentTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &3776901345089257941
+--- !u!4 &2208739194548027605
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2340843229544666707}
+  m_GameObject: {fileID: 7073238482588464238}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -34,13 +35,13 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8306747820554055380
+--- !u!114 &9187753327986016995
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2340843229544666707}
+  m_GameObject: {fileID: 7073238482588464238}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6c4cc4d9830a5474883c92ad024e6132, type: 3}
@@ -50,32 +51,45 @@ MonoBehaviour:
   overlapBoxCenter: {x: 0, y: 0, z: 0}
   triggerLayers:
     serializedVersion: 2
-    m_Bits: 129
+    m_Bits: 1
   triggerOncePerEntry: 1
   triggerCooldown: 0.5
   resetStateOnExit: 1
   triggerColor: {r: 1, g: 1, b: 0, a: 0.3}
   showGizmo: 1
---- !u!114 &6894529905166441314
+--- !u!114 &3467850256229788566
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2340843229544666707}
+  m_GameObject: {fileID: 7073238482588464238}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 487cee084cded2f46ad2d5aa8d9fc614, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::World.SolarStateTriggerOption
   requiredState: 1
---- !u!114 &2452775361475626714
+--- !u!114 &3747128796494227376
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2340843229544666707}
+  m_GameObject: {fileID: 7073238482588464238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c83d5b0dac3a5314ba8d2425867fc869, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::World.NavAgentStoppedTriggerOption
+  requireStopped: 1
+--- !u!114 &4072893114734088296
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7073238482588464238}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6a3581970c1baa44abdf54e30bef9f0d, type: 3}
@@ -84,4 +98,7 @@ MonoBehaviour:
   objectsToEnable: []
   objectsToDisable: []
   toggleState: 1
-  objectsToToggle: []
+  objectsToToggle:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}

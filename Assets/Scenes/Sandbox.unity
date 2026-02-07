@@ -2966,7 +2966,6 @@ GameObject:
   - component: {fileID: 1243379078}
   - component: {fileID: 1243379077}
   - component: {fileID: 1243379076}
-  - component: {fileID: 1243379075}
   - component: {fileID: 1243379074}
   m_Layer: 0
   m_Name: GenericTrigger
@@ -2993,19 +2992,6 @@ MonoBehaviour:
   toggleState: 1
   objectsToToggle:
   - {fileID: 1884695304}
---- !u!114 &1243379075
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1243379073}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c83d5b0dac3a5314ba8d2425867fc869, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::World.NavAgentStoppedTriggerOption
-  requireStopped: 1
 --- !u!114 &1243379076
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3035,7 +3021,7 @@ MonoBehaviour:
   overlapBoxCenter: {x: 0, y: 0, z: 0}
   triggerLayers:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 129
   triggerOncePerEntry: 1
   triggerCooldown: 0.5
   resetStateOnExit: 1
