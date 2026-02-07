@@ -3049,7 +3049,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3b0459a0e763314c955c7c0f265b0b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::World.SolarState
-  _currentState: 0
+  _currentState: 2
 --- !u!114 &1050728842
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3678,10 +3678,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2452775361475626714, guid: 21f216c1cad137b4c89cac8bedddd7a4, type: 3}
       propertyPath: objectsToEnable.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2452775361475626714, guid: 21f216c1cad137b4c89cac8bedddd7a4, type: 3}
+      propertyPath: objectsToToggle.Array.size
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2452775361475626714, guid: 21f216c1cad137b4c89cac8bedddd7a4, type: 3}
       propertyPath: 'objectsToEnable.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1414907312}
+    - target: {fileID: 2452775361475626714, guid: 21f216c1cad137b4c89cac8bedddd7a4, type: 3}
+      propertyPath: 'objectsToToggle.Array.data[0]'
       value: 
       objectReference: {fileID: 1414907312}
     - target: {fileID: 3776901345089257941, guid: 21f216c1cad137b4c89cac8bedddd7a4, type: 3}
@@ -5212,6 +5220,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1897940161}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1948438614 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 856547617307722420, guid: fcdd4b1c8c07ad2479f38777ff0058b2, type: 3}
+  m_PrefabInstance: {fileID: 240295424654729577}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1956932544
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5725,9 +5738,17 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 625819080939475561, guid: fcdd4b1c8c07ad2479f38777ff0058b2, type: 3}
+      propertyPath: _sunStateObjects.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 625819080939475561, guid: fcdd4b1c8c07ad2479f38777ff0058b2, type: 3}
       propertyPath: '_sunStateObjects.Array.data[0]'
       value: 
       objectReference: {fileID: 1217473199}
+    - target: {fileID: 625819080939475561, guid: fcdd4b1c8c07ad2479f38777ff0058b2, type: 3}
+      propertyPath: '_sunStateObjects.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1948438614}
     - target: {fileID: 5690467011003910496, guid: fcdd4b1c8c07ad2479f38777ff0058b2, type: 3}
       propertyPath: m_Name
       value: Gate
