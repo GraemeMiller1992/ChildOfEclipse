@@ -1018,6 +1018,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8540433599737375690, guid: 1dc6898787588914caf207eba6f4967b, type: 3}
   m_PrefabInstance: {fileID: 5693445503017199297}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &7825958222718671970 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2564884715267111587, guid: 1dc6898787588914caf207eba6f4967b, type: 3}
+  m_PrefabInstance: {fileID: 5693445503017199297}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3b0459a0e763314c955c7c0f265b0b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::World.SolarState
 --- !u!1001 &8538471426892772311
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1081,13 +1092,64 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8522011601890439010, guid: 1dc6898787588914caf207eba6f4967b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2076626692532600664}
   m_SourcePrefab: {fileID: 100100000, guid: 1dc6898787588914caf207eba6f4967b, type: 3}
+--- !u!1 &16601390150048949 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8522011601890439010, guid: 1dc6898787588914caf207eba6f4967b, type: 3}
+  m_PrefabInstance: {fileID: 8538471426892772311}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2076626692532600664
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 16601390150048949}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8da0daca9565a0c4482820b9f000d55a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Actions.SolarStateActionTrigger
+  _conditions:
+  - _solarState: {fileID: 6189902507663624564}
+    _requiredState: 0
+  - _solarState: {fileID: 7825958222718671970}
+    _requiredState: 1
+  _actionRunner:
+    _actions:
+    - rid: 8645097313743667279
+  _triggerOnce: 1
+  _triggerOnAwake: 0
+  _contextObject: {fileID: 0}
+  _showDebugLogs: 1
+  references:
+    version: 2
+    RefIds:
+    - rid: 8645097313743667279
+      type: {class: SetActiveAction, ns: Actions, asm: Assembly-CSharp}
+      data:
+        target: {fileID: 856547617307722420}
+        setActive: 0
 --- !u!4 &70660777138984989 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8540433599737375690, guid: 1dc6898787588914caf207eba6f4967b, type: 3}
   m_PrefabInstance: {fileID: 8538471426892772311}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &6189902507663624564 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2564884715267111587, guid: 1dc6898787588914caf207eba6f4967b, type: 3}
+  m_PrefabInstance: {fileID: 8538471426892772311}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 16601390150048949}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3b0459a0e763314c955c7c0f265b0b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::World.SolarState
 --- !u!1001 &8628536666914650058
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 2515347266977510190}
   - component: {fileID: 5755727637110116023}
   - component: {fileID: 1272275519871892992}
-  - component: {fileID: 9138337616981860798}
+  - component: {fileID: 162414670243331460}
   m_Layer: 0
   m_Name: InteractibleBoxWithObjectSwapping
   m_TagString: Untagged
@@ -176,6 +176,7 @@ MonoBehaviour:
   interactSound: {fileID: 8300000, guid: 47983a46ac8fc1a4da3becae03169001, type: 3}
   interactSoundVolume: 1
   playerTag: Player
+  maxSwaps: -1
   showDebugMessages: 0
 --- !u!114 &5755727637110116023
 MonoBehaviour:
@@ -212,7 +213,7 @@ MonoBehaviour:
   _targetGameObjects:
   - {fileID: 8522011601890439010}
   _includeChildren: 0
---- !u!114 &9138337616981860798
+--- !u!114 &162414670243331460
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -221,11 +222,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 8522011601890439010}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 88b239a18822c1b4e968903b5afb9ffe, type: 3}
+  m_Script: {fileID: 11500000, guid: 8da0daca9565a0c4482820b9f000d55a, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::World.SolarStateGameObjectSwitcher
-  _sunStateObjects: []
-  _moonStateObjects: []
-  _eclipseStateObjects: []
-  _disableOthers: 1
-  _applyInitialState: 1
+  m_EditorClassIdentifier: Assembly-CSharp::Actions.SolarStateActionTrigger
+  _conditions: []
+  _actionRunner:
+    _actions: []
+  _triggerOnce: 1
+  _triggerOnAwake: 0
+  _contextObject: {fileID: 0}
+  _showDebugLogs: 1
+  references:
+    version: 2
+    RefIds: []
