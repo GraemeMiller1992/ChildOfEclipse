@@ -48,6 +48,7 @@ namespace ChildOfEclipse
         private bool _canTransferState;
         private AudioSource _audioSource;
         private SolarState _playerSolarState;
+        private SolarStateMaterial _solarStateMaterial;
 
         #endregion
 
@@ -106,6 +107,9 @@ namespace ChildOfEclipse
             {
                 highlightRenderer = GetComponent<Renderer>();
             }
+
+            // Get SolarStateMaterial component
+            _solarStateMaterial = GetComponent<SolarStateMaterial>();
 
             // Find player's SolarState
             FindPlayerSolarState();
@@ -213,8 +217,21 @@ namespace ChildOfEclipse
         /// </summary>
         public void OnHoverExit(GameObject interactor)
         {
-            // Let SolarStateMaterial handle the color - don't restore anything
-            // The material will be updated by SolarStateMaterial based on the current state
+            // Trigger SolarStateMaterial to re-apply the correct material for the current state
+            if (_solarStateMaterial != null)
+            {
+                var mySolarState = GetComponent<SolarState>();
+                if (mySolarState != null)
+                {
+                    // Use reflection to call the private ApplyMaterialForState method
+                    var method = typeof(SolarStateMaterial).GetMethod("ApplyMaterialForState",
+                        System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
+                    if (method != null)
+                    {
+                        method.Invoke(_solarStateMaterial, new object[] { mySolarState.CurrentState });
+                    }
+                }
+            }
 
             if (showDebugMessages)
             {

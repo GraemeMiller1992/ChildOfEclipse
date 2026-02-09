@@ -2238,6 +2238,40 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1dc6898787588914caf207eba6f4967b, type: 3}
+--- !u!1 &837954744 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4127385108528056739, guid: fcdd4b1c8c07ad2479f38777ff0058b2, type: 3}
+  m_PrefabInstance: {fileID: 240295424654729577}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &837954755
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 837954744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8da0daca9565a0c4482820b9f000d55a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Actions.SolarStateActionTrigger
+  _conditions:
+  - _solarState: {fileID: 0}
+    _requiredState: 0
+  - _solarState: {fileID: 0}
+    _requiredState: 1
+  _actionRunner:
+    _actions:
+    - rid: -2
+  _triggerOnce: 1
+  _triggerOnAwake: 0
+  _contextObject: {fileID: 0}
+  _showDebugLogs: 1
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
 --- !u!1 &846315587
 GameObject:
   m_ObjectHideFlags: 0
@@ -3403,7 +3437,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 3
 --- !u!4 &1050728846
 Transform:
   m_ObjectHideFlags: 0
@@ -3502,6 +3536,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: InteractibleBox (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 3576731017308288582, guid: 9715994a87aaa4a45af929d8afe3e89b, type: 3}
+      propertyPath: highlightRenderer
+      value: 
+      objectReference: {fileID: 1434278150}
     - target: {fileID: 6709076991119986729, guid: 9715994a87aaa4a45af929d8afe3e89b, type: 3}
       propertyPath: m_LocalPosition.x
       value: -25.23198
@@ -4548,6 +4586,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5ec68d8fe2ad9744892cfb914353e6ae, type: 3}
+--- !u!23 &1434278150 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 1379620466009496212, guid: 9715994a87aaa4a45af929d8afe3e89b, type: 3}
+  m_PrefabInstance: {fileID: 1094773742}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1441885448
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6294,6 +6337,9 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4127385108528056739, guid: fcdd4b1c8c07ad2479f38777ff0058b2, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 837954755}
     - targetCorrespondingSourceObject: {fileID: 6320430649955804981, guid: fcdd4b1c8c07ad2479f38777ff0058b2, type: 3}
       insertIndex: -1
       addedObject: {fileID: 0}

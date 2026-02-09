@@ -37,6 +37,10 @@ namespace ChildOfEclipse
         [Tooltip("Tag to identify the player GameObject.")]
         [SerializeField] private string playerTag = "Player";
 
+        [Header("Swap Limits")]
+        [Tooltip("Maximum number of swaps allowed. Set to -1 for unlimited swaps.")]
+        [SerializeField] private int maxSwaps = -1;
+
         [Header("Debug")]
         [Tooltip("Show debug messages in console.")]
         [SerializeField] private bool showDebugMessages = false;
@@ -48,6 +52,8 @@ namespace ChildOfEclipse
         private bool _canSwapState;
         private AudioSource _audioSource;
         private SolarState _playerSolarState;
+        private SolarStateMaterial _solarStateMaterial;
+        private int _currentSwaps;
 
         #endregion
 
@@ -70,6 +76,12 @@ namespace ChildOfEclipse
                     return customInteractionDescription;
                 }
 
+                // Check if max swaps reached
+                if (maxSwaps >= 0 && _currentSwaps >= maxSwaps)
+                {
+                    return "No swaps remaining";
+                }
+
                 if (!_canSwapState)
                 {
                     if (_playerSolarState != null && GetComponent<SolarState>() != null)
@@ -83,6 +95,11 @@ namespace ChildOfEclipse
                 {
                     var myState = GetComponent<SolarState>().CurrentState;
                     var playerState = _playerSolarState.CurrentState;
+                    if (maxSwaps >= 0)
+                    {
+                        int remainingSwaps = maxSwaps - _currentSwaps;
+                        return $"Swap {playerState} for {myState} ({remainingSwaps} remaining)";
+                    }
                     return $"Swap {playerState} for {myState}";
                 }
                 return "Swap state";
@@ -108,6 +125,9 @@ namespace ChildOfEclipse
             {
                 highlightRenderer = GetComponent<Renderer>();
             }
+
+            // Get SolarStateMaterial component
+            _solarStateMaterial = GetComponent<SolarStateMaterial>();
 
             // Find player's SolarState
             FindPlayerSolarState();
@@ -202,10 +222,16 @@ namespace ChildOfEclipse
             _playerSolarState.CurrentState = myState;
             mySolarState.CurrentState = playerState;
 
+            // Increment swap count
+            _currentSwaps++;
+
             if (showDebugMessages)
             {
-                Debug.Log($"{gameObject.name}: Swapped states - Player now has {myState}, Object now has {playerState}", this);
+                Debug.Log($"{gameObject.name}: Swapped states - Player now has {myState}, Object now has {playerState} ({_currentSwaps}/{(maxSwaps >= 0 ? maxSwaps.ToString() : "∞")} swaps)", this);
             }
+
+            // Update swapable state after incrementing
+            UpdateSwapableState();
 
             // Play effects
             PlayInteractEffects();
@@ -216,8 +242,8 @@ namespace ChildOfEclipse
         /// </summary>
         public void OnHoverEnter(GameObject interactor)
         {
-            // Apply hover color
-            if (highlightRenderer != null)
+            // Only apply hover color if we can swap
+            if (_canSwapState && highlightRenderer != null)
             {
                 highlightRenderer.material.color = hoverColor;
             }
@@ -233,8 +259,21 @@ namespace ChildOfEclipse
         /// </summary>
         public void OnHoverExit(GameObject interactor)
         {
-            // Let SolarStateMaterial handle the color - don't restore anything
-            // The material will be updated by SolarStateMaterial based on the current state
+            // Trigger SolarStateMaterial to re-apply the correct material for the current state
+            if (_solarStateMaterial != null)
+            {
+                var mySolarState = GetComponent<SolarState>();
+                if (mySolarState != null)
+                {
+                    // Use reflection to call the private ApplyMaterialForState method
+                    var method = typeof(SolarStateMaterial).GetMethod("ApplyMaterialForState",
+                        System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
+                    if (method != null)
+                    {
+                        method.Invoke(_solarStateMaterial, new object[] { mySolarState.CurrentState });
+                    }
+                }
+            }
 
             if (showDebugMessages)
             {
@@ -265,6 +304,13 @@ namespace ChildOfEclipse
             SolarState mySolarState = GetComponent<SolarState>();
 
             if (_playerSolarState == null || mySolarState == null)
+            {
+                _canSwapState = false;
+                return;
+            }
+
+            // Check if we've reached max swaps
+            if (maxSwaps >= 0 && _currentSwaps >= maxSwaps)
             {
                 _canSwapState = false;
                 return;
@@ -368,6 +414,40 @@ namespace ChildOfEclipse
             return GetComponent<SolarState>()?.CurrentState;
         }
 
+        /// <summary>
+        /// Gets the number of swaps remaining. Returns -1 if unlimited.
+        /// </summary>
+        public int GetRemainingSwaps()
+        {
+            if (maxSwaps < 0)
+            {
+                return -1; // Unlimited
+            }
+            return Mathf.Max(0, maxSwaps - _currentSwaps);
+        }
+
+        /// <summary>
+        /// Gets the current number of swaps performed.
+        /// </summary>
+        public int GetCurrentSwaps()
+        {
+            return _currentSwaps;
+        }
+
+        /// <summary>
+        /// Resets the swap count to zero.
+        /// </summary>
+        public void ResetSwapCount()
+        {
+            _currentSwaps = 0;
+            UpdateSwapableState();
+
+            if (showDebugMessages)
+            {
+                Debug.Log($"{gameObject.name}: Swap count reset", this);
+            }
+        }
+
         #endregion
 
         #region Debug
@@ -386,10 +466,11 @@ namespace ChildOfEclipse
 
                 string stateText = myState.HasValue ? myState.ToString() : "No State";
                 string playerText = playerState.HasValue ? playerState.ToString() : "No Player";
-                string swapText = _canSwapState ? "Can Swap" : "Same State";
+                string swapText = _canSwapState ? "Can Swap" : "Cannot Swap";
+                string swapsText = maxSwaps >= 0 ? $"({_currentSwaps}/{maxSwaps})" : "(∞)";
 
                 UnityEditor.Handles.Label(transform.position + Vector3.up * 1f,
-                    $"{stateText} Interactable\nPlayer: {playerText}\n{swapText}");
+                    $"{stateText} Interactable\nPlayer: {playerText}\n{swapText} {swapsText}");
             }
         }
 

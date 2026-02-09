@@ -281,17 +281,17 @@ namespace ChildOfEclipse
         private void CheckGrounded()
         {
             _wasGrounded = _isGrounded;
-
+            
             // Perform ground check using sphere cast
             Vector3 checkPosition = transform.position + groundCheckOffset;
             float checkRadius = _capsuleCollider.radius * 0.9f;
-
+            
             if (Physics.SphereCast(checkPosition, checkRadius, Vector3.down, out RaycastHit hit, 
                 groundCheckDistance + checkRadius, groundLayer))
             {
                 _isGrounded = true;
                 _groundNormal = hit.normal;
-
+                
                 // Reset jump state when landing
                 if (!_wasGrounded)
                 {
@@ -303,6 +303,12 @@ namespace ChildOfEclipse
             {
                 _isGrounded = false;
                 _groundNormal = Vector3.up;
+            }
+            
+            // Always reset jump state if grounded (ensures consistency)
+            if (_isGrounded)
+            {
+                _isJumping = false;
             }
         }
 
@@ -449,18 +455,6 @@ namespace ChildOfEclipse
             // Smoothly interpolate height
             float targetHeight = _isCrouching ? crouchHeight : normalHeight;
             _currentHeight = Mathf.Lerp(_currentHeight, targetHeight, crouchSpeed * Time.deltaTime);
-
-            // Check if we can stand up (raycast above)
-            if (!_isCrouching && _currentHeight > crouchHeight)
-            {
-                float checkHeight = normalHeight - crouchHeight;
-                if (Physics.SphereCast(transform.position, _capsuleCollider.radius * 0.9f, 
-                    Vector3.up, out _, checkHeight, groundLayer))
-                {
-                    // Something is above, stay crouched
-                    _isCrouching = true;
-                }
-            }
         }
 
         private void HandleCrouchPhysics()
