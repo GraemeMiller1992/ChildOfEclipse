@@ -359,7 +359,7 @@ namespace ChildOfEclipse
         #endregion
 
         #region Debug
-
+#if UNITY_EDITOR
         private void OnDrawGizmosSelected()
         {
             // Draw a sphere around the interactable to show its interaction radius
@@ -380,7 +380,7 @@ namespace ChildOfEclipse
                     $"{stateText} Interactable\nPlayer: {playerText}\n{transferText}");
             }
         }
-
-        #endregion
+#endif
+#endregion
     }
 }
