@@ -1893,7 +1893,7 @@ Transform:
   m_GameObject: {fileID: 584284217}
   serializedVersion: 2
   m_LocalRotation: {x: 0.35174325, y: 0, z: 0, w: 0.93609655}
-  m_LocalPosition: {x: 2.76, y: 18.31, z: -24.91}
+  m_LocalPosition: {x: 2.76, y: 26.51, z: 64.89}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2906,6 +2906,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6709076991119986729, guid: 9715994a87aaa4a45af929d8afe3e89b, type: 3}
   m_PrefabInstance: {fileID: 65502481}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &913143485 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3462966888861326540, guid: 8a4981e273b83764c8d81544c4b3b082, type: 3}
+  m_PrefabInstance: {fileID: 1514707785}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3b0459a0e763314c955c7c0f265b0b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::World.SolarState
 --- !u!1001 &933808497
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3844,7 +3855,7 @@ Transform:
   m_GameObject: {fileID: 1050728835}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.76, y: 0.8, z: -4.9}
+  m_LocalPosition: {x: 2.76, y: 9, z: 84.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4633,6 +4644,41 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: -8.721, y: 0, z: 0}
+--- !u!1 &1303301149 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7073238482588464238, guid: 5449589cbe24aa54581554f2488af4a2, type: 3}
+  m_PrefabInstance: {fileID: 1353687505}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1303301150
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1303301149}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8da0daca9565a0c4482820b9f000d55a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Actions.SolarStateActionTrigger
+  _conditions:
+  - _solarState: {fileID: 913143485}
+    _requiredState: 1
+  _actionRunner:
+    _actions:
+    - rid: 8645097319706394711
+  _triggerOnce: 1
+  _triggerOnAwake: 0
+  _contextObject: {fileID: 0}
+  _showDebugLogs: 1
+  references:
+    version: 2
+    RefIds:
+    - rid: 8645097319706394711
+      type: {class: SetActiveAction, ns: Actions, asm: Assembly-CSharp}
+      data:
+        target: {fileID: 1381413493}
+        setActive: 1
 --- !u!1001 &1314486654
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4797,7 +4843,7 @@ Transform:
   m_GameObject: {fileID: 1322260568}
   serializedVersion: 2
   m_LocalRotation: {x: 0.35174325, y: 0, z: 0, w: 0.93609655}
-  m_LocalPosition: {x: 2.76, y: 18.31, z: -24.91}
+  m_LocalPosition: {x: 2.76, y: 26.51, z: 64.89}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4863,10 +4909,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: NavAgentTrigger
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4072893114734088296, guid: 5449589cbe24aa54581554f2488af4a2, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7073238482588464238, guid: 5449589cbe24aa54581554f2488af4a2, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1303301150}
   m_SourcePrefab: {fileID: 100100000, guid: 5449589cbe24aa54581554f2488af4a2, type: 3}
 --- !u!1 &1355003880
 GameObject:
