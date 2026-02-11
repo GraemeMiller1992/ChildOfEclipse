@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &8522011601890439010
+--- !u!1 &2738341892896673101
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,80 +8,50 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 8540433599737375690}
-  - component: {fileID: 5231840666120538579}
-  - component: {fileID: 1362544125777519941}
-  - component: {fileID: 6814841459362800739}
-  - component: {fileID: 3892912200762594573}
-  - component: {fileID: 2564884715267111587}
-  - component: {fileID: 2515347266977510190}
-  - component: {fileID: 5755727637110116023}
-  - component: {fileID: 1272275519871892992}
-  - component: {fileID: 162414670243331460}
+  - component: {fileID: 6709076991119986729}
+  - component: {fileID: 616233479114833516}
+  - component: {fileID: 1379620466009496212}
+  - component: {fileID: 8889500176378608790}
+  - component: {fileID: 7737397467831942018}
+  - component: {fileID: 3576731017308288582}
+  - component: {fileID: 204238121062457230}
   m_Layer: 0
-  m_Name: InteractibleBoxWithObjectSwapping
+  m_Name: SunNodeBall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &8540433599737375690
+--- !u!4 &6709076991119986729
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8522011601890439010}
+  m_GameObject: {fileID: 2738341892896673101}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.29, y: 0.66, z: 1.21}
+  m_LocalPosition: {x: 10.08, y: 0.66, z: 8.92}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &5231840666120538579
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8522011601890439010}
-  serializedVersion: 5
-  m_Mass: 1
-  m_LinearDamping: 0
-  m_AngularDamping: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 126
-  m_CollisionDetection: 0
---- !u!33 &1362544125777519941
+--- !u!33 &616233479114833516
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8522011601890439010}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &6814841459362800739
+  m_GameObject: {fileID: 2738341892896673101}
+  m_Mesh: {fileID: 973877516759717424, guid: f3afa5c00a25000429ad4a0feebc56f1, type: 3}
+--- !u!23 &1379620466009496212
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8522011601890439010}
+  m_GameObject: {fileID: 2738341892896673101}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -123,13 +93,13 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &3892912200762594573
+--- !u!65 &8889500176378608790
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8522011601890439010}
+  m_GameObject: {fileID: 2738341892896673101}
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -144,47 +114,47 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &2564884715267111587
+--- !u!114 &7737397467831942018
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8522011601890439010}
+  m_GameObject: {fileID: 2738341892896673101}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c3b0459a0e763314c955c7c0f265b0b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::World.SolarState
-  _currentState: 1
---- !u!114 &2515347266977510190
+  _currentState: 0
+--- !u!114 &3576731017308288582
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8522011601890439010}
+  m_GameObject: {fileID: 2738341892896673101}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e05a50f44b44c3b4e8c2a1e2ee27a7b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ChildOfEclipse.SolarStateSwapInteractable
   highlightRenderer: {fileID: 0}
-  hoverColor: {r: 0.54901963, g: 0.4862745, b: 1, a: 0.78431374}
+  hoverColor: {r: 1, g: 1, b: 1, a: 0}
   customInteractionDescription: 
   interactParticles: {fileID: 0}
-  interactSound: {fileID: 8300000, guid: 47983a46ac8fc1a4da3becae03169001, type: 3}
-  interactSoundVolume: 1
+  interactSound: {fileID: 8300000, guid: 19d9c0f5986ad0044b55cc4152291a7a, type: 3}
+  interactSoundVolume: 0.5
   playerTag: Player
   maxSwaps: -1
   showDebugMessages: 0
---- !u!114 &5755727637110116023
+--- !u!114 &204238121062457230
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8522011601890439010}
+  m_GameObject: {fileID: 2738341892896673101}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7b3c8d9e5f2a4b6c8d1e2f3a4b5c6d7e, type: 3}
@@ -194,44 +164,4 @@ MonoBehaviour:
   _moonMaterial: {fileID: 2100000, guid: c90b9e2c0f4cb454b8aef5d56e430dd7, type: 2}
   _eclipseMaterial: {fileID: 2100000, guid: 2ba031134926c634e88d1dcc7a50918c, type: 2}
   _targetRenderers:
-  - {fileID: 6814841459362800739}
---- !u!114 &1272275519871892992
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8522011601890439010}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::World.SolarStateLayer
-  _sunLayer: 8
-  _moonLayer: 7
-  _eclipseLayer: 9
-  _targetGameObjects:
-  - {fileID: 8522011601890439010}
-  _includeChildren: 0
---- !u!114 &162414670243331460
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8522011601890439010}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8da0daca9565a0c4482820b9f000d55a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Actions.SolarStateActionTrigger
-  _conditions: []
-  _actionRunner:
-    _actions: []
-  _triggerOnce: 1
-  _triggerOnAwake: 0
-  _contextObject: {fileID: 0}
-  _showDebugLogs: 1
-  references:
-    version: 2
-    RefIds: []
+  - {fileID: 1379620466009496212}
