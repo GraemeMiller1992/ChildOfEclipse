@@ -1534,6 +1534,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 291163034543368315, guid: 18d905f7952d9994fa559d8f52036c8d, type: 3}
+      propertyPath: m_Mass
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 291163034543368315, guid: 18d905f7952d9994fa559d8f52036c8d, type: 3}
+      propertyPath: m_ExcludeLayers.m_Bits
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1010578265950817485, guid: 18d905f7952d9994fa559d8f52036c8d, type: 3}
       propertyPath: m_LocalPosition.x
       value: -23.899292
@@ -2202,7 +2210,7 @@ Transform:
   m_GameObject: {fileID: 584284217}
   serializedVersion: 2
   m_LocalRotation: {x: 0.2877572, y: -0.38874128, z: 0.129222, w: 0.8656661}
-  m_LocalPosition: {x: 11.48, y: 18.51, z: -21.380001}
+  m_LocalPosition: {x: -1.8999996, y: 26.8, z: 43.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4214,7 +4222,7 @@ Transform:
   m_GameObject: {fileID: 1050728835}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.52, y: 0.51, z: -5.38}
+  m_LocalPosition: {x: -19.9, y: 8.8, z: 59.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4646,6 +4654,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5231840666120538579, guid: 1dc6898787588914caf207eba6f4967b, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8522011601890439010, guid: 1dc6898787588914caf207eba6f4967b, type: 3}
       propertyPath: m_Name
       value: InteractibleBoxWithObjectSwapping (3)
@@ -5045,7 +5057,13 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2340843229544666707, guid: 21f216c1cad137b4c89cac8bedddd7a4, type: 3}
+      insertIndex: 3
+      addedObject: {fileID: 1504165063}
+    - targetCorrespondingSourceObject: {fileID: 2340843229544666707, guid: 21f216c1cad137b4c89cac8bedddd7a4, type: 3}
+      insertIndex: 4
+      addedObject: {fileID: 1504165062}
   m_SourcePrefab: {fileID: 100100000, guid: 21f216c1cad137b4c89cac8bedddd7a4, type: 3}
 --- !u!1001 &1210667572
 PrefabInstance:
@@ -5670,7 +5688,7 @@ Transform:
   m_GameObject: {fileID: 1322260568}
   serializedVersion: 2
   m_LocalRotation: {x: 0.2877572, y: -0.38874128, z: 0.129222, w: 0.8656661}
-  m_LocalPosition: {x: 11.48, y: 18.51, z: -21.380001}
+  m_LocalPosition: {x: -1.8999996, y: 26.8, z: 43.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6553,6 +6571,68 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 22004bacfe49e924a8a95df29c7d3a88, type: 3}
+--- !u!1 &1504165057 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2340843229544666707, guid: 21f216c1cad137b4c89cac8bedddd7a4, type: 3}
+  m_PrefabInstance: {fileID: 1200441015}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1504165062
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1504165057}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2e5cd5525048f549a6df55a6a657827, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Actions.OnObjectsDestroyedTrigger
+  targetObjects: []
+  triggerWhenAllDestroyed: 1
+  actionRunner:
+    rid: 8645097457448386637
+  autoFindObjects: 0
+  autoFindTag: 
+  debugMode: 0
+  destroyOnTrigger: 0
+  references:
+    version: 2
+    RefIds:
+    - rid: 8645097457448386637
+      type: {class: ActionRunner, ns: Actions, asm: Assembly-CSharp}
+      data:
+        _actions: []
+--- !u!114 &1504165063
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1504165057}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8da0daca9565a0c4482820b9f000d55a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Actions.SolarStateActionTrigger
+  _conditions:
+  - _solarState: {fileID: 0}
+    _requiredState: 0
+  _actionRunner:
+    _actions:
+    - rid: 8645097457448386643
+  _triggerOnce: 1
+  _triggerOnAwake: 0
+  _contextObject: {fileID: 0}
+  _showDebugLogs: 1
+  references:
+    version: 2
+    RefIds:
+    - rid: 8645097457448386643
+      type: {class: SetActiveAction, ns: Actions, asm: Assembly-CSharp}
+      data:
+        target: {fileID: 0}
+        setActive: 1
 --- !u!1001 &1514707785
 PrefabInstance:
   m_ObjectHideFlags: 0
