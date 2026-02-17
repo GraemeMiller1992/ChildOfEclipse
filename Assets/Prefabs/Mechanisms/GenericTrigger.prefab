@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7388722520278924334}
   - component: {fileID: 836134990087392886}
-  - component: {fileID: 6506687592855807119}
+  - component: {fileID: 8500204848258944835}
   m_Layer: 0
   m_Name: GenericTrigger
   m_TagString: Untagged
@@ -49,13 +49,13 @@ MonoBehaviour:
   overlapBoxCenter: {x: 0, y: 0, z: 0}
   triggerLayers:
     serializedVersion: 2
-    m_Bits: 129
+    m_Bits: 4294967295
   triggerOncePerEntry: 1
   triggerCooldown: 0.5
   resetStateOnExit: 1
   triggerColor: {r: 1, g: 1, b: 0, a: 0.3}
   showGizmo: 1
---- !u!114 &6506687592855807119
+--- !u!114 &8500204848258944835
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -64,7 +64,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 8478719212634282323}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 487cee084cded2f46ad2d5aa8d9fc614, type: 3}
+  m_Script: {fileID: 11500000, guid: 8da0daca9565a0c4482820b9f000d55a, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::World.SolarStateTriggerOption
-  requiredState: 1
+  m_EditorClassIdentifier: Assembly-CSharp::Actions.SolarStateActionTrigger
+  _conditions: []
+  _actionRunner:
+    _actions: []
+  _triggerOnce: 1
+  _triggerOnAwake: 0
+  _contextObject: {fileID: 0}
+  _showDebugLogs: 1
+  references:
+    version: 2
+    RefIds: []

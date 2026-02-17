@@ -123,7 +123,7 @@ GameObject:
   - component: {fileID: 9187753327986016995}
   - component: {fileID: 3467850256229788566}
   - component: {fileID: 3747128796494227376}
-  - component: {fileID: 4072893114734088296}
+  - component: {fileID: 5826817700201502367}
   m_Layer: 0
   m_Name: NavAgentTrigger
   m_TagString: Untagged
@@ -195,7 +195,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::World.NavAgentStoppedTriggerOption
   requireStopped: 1
---- !u!114 &4072893114734088296
+--- !u!114 &5826817700201502367
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -204,13 +204,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 7073238482588464238}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a3581970c1baa44abdf54e30bef9f0d, type: 3}
+  m_Script: {fileID: 11500000, guid: 8da0daca9565a0c4482820b9f000d55a, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::World.TriggerReactionGameObjectToggle
-  objectsToEnable: []
-  objectsToDisable: []
-  toggleState: 1
-  objectsToToggle:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  m_EditorClassIdentifier: Assembly-CSharp::Actions.SolarStateActionTrigger
+  _conditions: []
+  _actionRunner:
+    _actions: []
+  _triggerOnce: 1
+  _triggerOnAwake: 0
+  _contextObject: {fileID: 0}
+  _showDebugLogs: 1
+  references:
+    version: 2
+    RefIds: []

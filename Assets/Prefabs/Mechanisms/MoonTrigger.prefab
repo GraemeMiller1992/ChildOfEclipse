@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3776901345089257941}
   - component: {fileID: 8306747820554055380}
   - component: {fileID: 6894529905166441314}
-  - component: {fileID: 2452775361475626714}
+  - component: {fileID: 2704652537907579300}
   m_Layer: 0
   m_Name: MoonTrigger
   m_TagString: Untagged
@@ -69,7 +69,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::World.SolarStateTriggerOption
   requiredState: 1
---- !u!114 &2452775361475626714
+--- !u!114 &2704652537907579300
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -78,10 +78,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 2340843229544666707}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a3581970c1baa44abdf54e30bef9f0d, type: 3}
+  m_Script: {fileID: 11500000, guid: 8da0daca9565a0c4482820b9f000d55a, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::World.TriggerReactionGameObjectToggle
-  objectsToEnable: []
-  objectsToDisable: []
-  toggleState: 1
-  objectsToToggle: []
+  m_EditorClassIdentifier: Assembly-CSharp::Actions.SolarStateActionTrigger
+  _conditions: []
+  _actionRunner:
+    _actions: []
+  _triggerOnce: 1
+  _triggerOnAwake: 0
+  _contextObject: {fileID: 0}
+  _showDebugLogs: 1
+  references:
+    version: 2
+    RefIds: []
