@@ -49,6 +49,7 @@ GameObject:
   - component: {fileID: 1970496503953018942}
   - component: {fileID: 158441178899680887}
   - component: {fileID: 8465138377389038896}
+  - component: {fileID: 4514762614831862553}
   m_Layer: 0
   m_Name: SunCrystal
   m_TagString: Untagged
@@ -241,6 +242,36 @@ MonoBehaviour:
   _conditions:
   - _solarState: {fileID: 7464178591638471989}
     _requiredState: 1
+  _actionRunner:
+    _actions:
+    - rid: 2781529236123156480
+  _triggerOnce: 1
+  _triggerOnAwake: 0
+  _contextObject: {fileID: 0}
+  _showDebugLogs: 1
+  references:
+    version: 2
+    RefIds:
+    - rid: 2781529236123156480
+      type: {class: DestroyAction, ns: Actions, asm: Assembly-CSharp}
+      data:
+        target: {fileID: 5948202494855782832}
+        delay: 0
+--- !u!114 &4514762614831862553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5948202494855782832}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8da0daca9565a0c4482820b9f000d55a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Actions.SolarStateActionTrigger
+  _conditions:
+  - _solarState: {fileID: 7464178591638471989}
+    _requiredState: 2
   _actionRunner:
     _actions:
     - rid: 2781529236123156480
