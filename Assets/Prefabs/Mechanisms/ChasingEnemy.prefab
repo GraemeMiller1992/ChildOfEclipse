@@ -97,7 +97,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 73c176f402d2c2f4d929aa5da7585d17, type: 2}
+  - {fileID: 2100000, guid: 052c4270b35d4694b902b8cf0fdf904a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -318,7 +318,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 73c176f402d2c2f4d929aa5da7585d17, type: 2}
+  - {fileID: 2100000, guid: 052c4270b35d4694b902b8cf0fdf904a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -388,9 +388,6 @@ GameObject:
   - component: {fileID: 4330179461727922869}
   - component: {fileID: 2397825803372338100}
   - component: {fileID: 2902790141275137662}
-  - component: {fileID: 7722213230716317038}
-  - component: {fileID: 2219766589536547394}
-  - component: {fileID: 8109981298898641895}
   m_Layer: 0
   m_Name: NavAgent
   m_TagString: Untagged
@@ -542,97 +539,57 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21486e6da65f9f34eb53d404e9f02852, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::World.EnemyAI
-  _patrolComponent: {fileID: 7722213230716317038}
-  _chaseComponent: {fileID: 2219766589536547394}
-  _attackComponent: {fileID: 8109981298898641895}
-  _initialState: 0
-  _enableOnStart: 1
-  _statePriority: 000000000100000002000000
-  _returnToPatrolOnLoseTarget: 1
-  _returnToPatrolDelay: 3
-  _logStateChanges: 1
-  _showStateInGizmos: 1
---- !u!114 &7722213230716317038
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8680422223301657102}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5c9f3f8b47206f849b3d977f434226d2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::World.NavMeshAgentPatrol
-  _waypoints:
-  - {fileID: 6480182135023474788}
-  - {fileID: 8701319010158331853}
-  - {fileID: 489661475332122303}
-  - {fileID: 2102484653135323939}
+  _enablePatrol: 1
+  _enableChase: 1
+  _enableAttack: 1
+  _target: {fileID: 0}
+  _targetTag: Player
+  _waypoints: []
   _patrolMode: 0
   _shuffleOnStart: 0
-  _startOnAwake: 1
+  _startPatrolOnAwake: 1
   _waitAtWaypoints: 1
   _minWaitTime: 1
   _maxWaitTime: 2
-  _showDebugLines: 1
-  _debugLineColor: {r: 0, g: 1, b: 1, a: 1}
-  _showWaypointSpheres: 1
-  _waypointSphereSize: 0.5
-  _waypointSphereColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
---- !u!114 &2219766589536547394
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8680422223301657102}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a3c2908d6e57ce74f9963323505cbfc0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::World.NavMeshAgentChase
-  _target: {fileID: 0}
-  _targetTag: Player
+  _showPatrolDebugLines: 1
+  _patrolDebugLineColor: {r: 0, g: 1, b: 1, a: 1}
   _detectionRange: 15
-  _fieldOfView: 135
+  _fieldOfView: 90
   _obstacleLayers:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 0
   _requireLineOfSight: 1
   _chaseSpeedMultiplier: 1.5
   _chaseAngularSpeedMultiplier: 2
-  _stopDistance: 2
-  _stopWhenOutOfRange: 1
+  _chaseStopDistance: 2
+  _stopChaseWhenOutOfRange: 1
   _loseTargetDelay: 2
-  _showDebugGizmos: 1
+  _showChaseDebugGizmos: 1
   _detectionRangeColor: {r: 1, g: 0, b: 0, a: 0.2}
   _fieldOfViewColor: {r: 1, g: 1, b: 0, a: 0.3}
   _lineOfSightColor: {r: 0, g: 1, b: 0, a: 1}
---- !u!114 &8109981298898641895
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8680422223301657102}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c195d7b69598d346acc2a5de4467fc0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::World.NavMeshAgentAttack
-  _target: {fileID: 0}
-  _targetTag: Player
-  _triggerMode: 1
   _attackRange: 2
   _damage: 10
   _attackCooldown: 1
   _lookAtTarget: 1
   _rotationSpeed: 10
+  _attackMovementType: 0
+  _attackMovementDuration: 0.3
+  _attackMovementDistance: 2
+  _attackMovementSpeedMultiplier: 3
+  _preparationTime: 0.2
+  _postAttackPause: 0.3
+  _repositionDistance: 1.5
   _attackVisual: {fileID: 0}
   _attackVisualDuration: 0.3
-  _showDebugGizmos: 1
+  _showAttackDebugGizmos: 1
   _attackRangeColor: {r: 1, g: 0, b: 0, a: 0.3}
+  _initialState: 0
+  _enableOnStart: 1
+  _returnToPatrolOnLoseTarget: 1
+  _returnToPatrolDelay: 3
+  _logStateChanges: 1
+  _showStateInGizmos: 1
 --- !u!1 &8998934399732043861
 GameObject:
   m_ObjectHideFlags: 0
@@ -699,7 +656,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 73c176f402d2c2f4d929aa5da7585d17, type: 2}
+  - {fileID: 2100000, guid: 052c4270b35d4694b902b8cf0fdf904a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
