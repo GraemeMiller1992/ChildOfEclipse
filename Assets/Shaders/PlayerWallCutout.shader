@@ -17,8 +17,6 @@ Shader "Custom/PlayerWallCutout"
         _BaseMap("Base Map", 2D) = "white" {}
         _Metallic("Metallic", Range(0.0, 1.0)) = 0.0
         _Smoothness("Smoothness", Range(0.0, 1.0)) = 0.5
-        _NormalMap("Normal Map", 2D) = "bump" {}
-        _NormalScale("Normal Scale", Range(0.0, 8.0)) = 1.0
         
         [HideInInspector] _Cull("__cull", Float) = 2.0
     }
@@ -28,7 +26,7 @@ Shader "Custom/PlayerWallCutout"
         Tags 
         { 
             "RenderType" = "Transparent" 
-            "RenderPipeline" = "HDRenderPipeline"
+            "RenderPipeline" = "UniversalPipeline"
             "Queue" = "Transparent"
         }
 
@@ -36,7 +34,7 @@ Shader "Custom/PlayerWallCutout"
         Pass
         {
             Name "WallCutout"
-            Tags { "LightMode" = "ForwardOnly" }
+            Tags { "LightMode" = "UniversalForward" }
 
             Blend SrcAlpha OneMinusSrcAlpha
             ZWrite On
@@ -48,15 +46,13 @@ Shader "Custom/PlayerWallCutout"
             #pragma fragment frag
             #pragma multi_compile_instancing
             
-            #include "Packages/com.unity.render-pipelines.core/ShaderLibrary/Common.hlsl"
-            #include "Packages/com.unity.render-pipelines.high-definition/Runtime/ShaderLibrary/ShaderVariables.hlsl"
-            #include "Packages/com.unity.render-pipelines.core/ShaderLibrary/SpaceTransforms.hlsl"
+            #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl"
+            #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Lighting.hlsl"
 
             struct Attributes
             {
                 float3 positionOS : POSITION;
                 float3 normalOS : NORMAL;
-                float4 tangentOS : TANGENT;
                 float2 uv : TEXCOORD0;
                 UNITY_VERTEX_INPUT_INSTANCE_ID
             };
@@ -67,15 +63,12 @@ Shader "Custom/PlayerWallCutout"
                 float3 normalWS : TEXCOORD0;
                 float3 positionWS : TEXCOORD1;
                 float2 uv : TEXCOORD2;
-                float4 tangentWS : TEXCOORD3;
                 UNITY_VERTEX_INPUT_INSTANCE_ID
             };
 
             // Material properties
             TEXTURE2D(_BaseMap);
             SAMPLER(sampler_BaseMap);
-            TEXTURE2D(_NormalMap);
-            SAMPLER(sampler_NormalMap);
             
             float _CutoutRadius;
             float _CutoutSoftness;
@@ -86,7 +79,6 @@ Shader "Custom/PlayerWallCutout"
             float4 _BaseColor;
             float _Metallic;
             float _Smoothness;
-            float _NormalScale;
             
             // Global player properties (set by PlayerWallCutoutController)
             uniform float3 _PlayerPosition;
@@ -116,8 +108,8 @@ Shader "Custom/PlayerWallCutout"
                 float4 baseColor = SAMPLE_TEXTURE2D(_BaseMap, sampler_BaseMap, input.uv) * _BaseColor;
                 
                 // Screen space coordinates (0-1)
-                float2 screenUV = input.positionCS.xy / _ScreenSize.xy;
-                float aspect = _ScreenSize.x / _ScreenSize.y;
+                float2 screenUV = input.positionCS.xy / _ScreenParams.xy;
+                float aspect = _ScreenParams.x / _ScreenParams.y;
                 
                 // Corrected screen space distance (perfect circle)
                 float2 diffSS = screenUV - _PlayerScreenPos.xy;
@@ -159,5 +151,5 @@ Shader "Custom/PlayerWallCutout"
         }
     }
 
-    FallBack "Hidden/HDRP/FallbackError"
+    FallBack "Universal Render Pipeline/Lit"
 }
