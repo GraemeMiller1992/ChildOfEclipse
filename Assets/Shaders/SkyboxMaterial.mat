@@ -20,7 +20,7 @@ Material:
   stringTagMap: {}
   disabledShaderPasses:
   - MOTIONVECTORS
-  m_LockedProperties: 
+  m_LockedProperties: _Stars_intensity
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -64,8 +64,12 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_2fc726daab274b49ae3281615f063994_Texture_1_Texture2D:
+        m_Texture: {fileID: 2800000, guid: 5a9d4fe5e68b2e04d9a8547e7db03d1f, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _SampleTexture2D_8d573da4ee214f7f9f1b0976cd29606e_Texture_1_Texture2D:
-        m_Texture: {fileID: 2800000, guid: 29a6017ae285d984d91f59b7641a4112, type: 3}
+        m_Texture: {fileID: 2800000, guid: e2dd2e67c00848042b386e46bd426571, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SpecGlossMap:
@@ -96,7 +100,7 @@ Material:
     - _ClearCoatSmoothness: 0
     - _Cull: 2
     - _Cutoff: 0.5
-    - _DayTime: 0.49
+    - _DayTime: 1
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
@@ -105,8 +109,8 @@ Material:
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
-    - _HorizonContrast: 2
-    - _HorizonOffset: 0
+    - _HorizonContrast: 2.8
+    - _HorizonOffset: 0.3
     - _Metallic: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.005
@@ -118,8 +122,10 @@ Material:
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _SrcBlendAlpha: 1
-    - _StarsTiling: 2
+    - _StarsTiling: 2.81
+    - _StarsUV: 0
     - _Stars_intensity: 2
+    - _SunScale: 2.94
     - _Surface: 0
     - _WorkflowMode: 1
     - _XRMotionVectorsPass: 1
