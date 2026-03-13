@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: SunFire
-  m_Shader: {fileID: 4800000, guid: 1f363ce1a08bf6c45a32be1bb3f8cb47, type: 3}
+  m_Shader: {fileID: 10755, guid: 0000000000000000f000000000000000, type: 0}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -144,6 +144,8 @@ Material:
     - _AlphaSrcBlend: 1
     - _Anisotropy: 0
     - _BlendMode: 0
+    - _CellScaleA: 14
+    - _CellScaleB: 28
     - _CoatMask: 0
     - _CoreSharpness: 0.11
     - _Cull: 2
@@ -160,6 +162,7 @@ Material:
     - _DisplacementLockObjectScale: 1
     - _DisplacementLockTilingScale: 1
     - _DisplacementMode: 0
+    - _DistortStrength: 0.03
     - _DoubleSidedEnable: 0
     - _DoubleSidedGIMode: 0
     - _DoubleSidedNormalMode: 1
@@ -178,6 +181,7 @@ Material:
     - _EnergyConservingSpecularColor: 1
     - _FlickerAmount: 0.1
     - _FlickerSpeed: 10
+    - _FlowSpeed: 0.4
     - _FresnelPower: 3.62
     - _HeightAmplitude: 0.02
     - _HeightCenter: 0.5
@@ -192,6 +196,8 @@ Material:
     - _Ior: 1.5
     - _IridescenceMask: 1
     - _IridescenceThickness: 1
+    - _LineIntensity: 2.5
+    - _LineWidth: 0.05
     - _LinkDetailsWithBase: 1
     - _MaterialID: 1
     - _Metallic: 0
@@ -200,11 +206,13 @@ Material:
     - _NoiseAmount: 0.1
     - _NoiseScale: 10
     - _NoiseSpeed: 0.5
+    - _NoiseStrength: 0.2
     - _NormalEdgeWeight: 0.243
     - _NormalMapSpace: 0
     - _NormalScale: 1
     - _ObjectSpaceUVMapping: 0
     - _ObjectSpaceUVMappingEmissive: 0
+    - _Opacity: 0.6
     - _OpaqueCullMode: 2
     - _PPDLodThreshold: 5
     - _PPDMaxSamples: 15
@@ -212,6 +220,7 @@ Material:
     - _PPDPrimitiveLength: 1
     - _PPDPrimitiveWidth: 1
     - _PerPixelSorting: 0
+    - _PulseAmount: 0.35
     - _PulseMax: 1.64
     - _PulseMin: 0.92
     - _PulseSharpness: 1.43
@@ -261,7 +270,7 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Color: {r: 0.8301887, g: 0.5173272, b: 0.19188325, a: 1}
     - _CoreColor: {r: 0.8490566, g: 0.42954838, b: 0, a: 0.3764706}
     - _DiffusionProfileAsset: {r: 0, g: 0, b: 0, a: 0}
     - _DoubleSidedConstants: {r: 1, g: 1, b: -1, a: 0}
@@ -271,6 +280,7 @@ Material:
     - _EmissiveColorLDR: {r: 0, g: 0, b: 0, a: 1}
     - _InvPrimScale: {r: 1, g: 1, b: 0, a: 0}
     - _IridescenceThicknessRemap: {r: 0, g: 1, b: 0, a: 0}
+    - _LineColor: {r: 0.8, g: 0.95, b: 1.8, a: 1}
     - _SpecularColor: {r: 1, g: 1, b: 1, a: 1}
     - _ThicknessRemap: {r: 0, g: 1, b: 0, a: 0}
     - _TransmittanceColor: {r: 1, g: 1, b: 1, a: 1}

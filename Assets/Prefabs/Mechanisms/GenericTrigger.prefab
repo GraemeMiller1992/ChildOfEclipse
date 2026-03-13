@@ -67,7 +67,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8da0daca9565a0c4482820b9f000d55a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Actions.SolarStateActionTrigger
-  _conditions: []
+  _conditions:
+  - _solarState: {fileID: 0}
+    _requiredState: 0
   _actionRunner:
     _actions: []
   _triggerOnce: 1
