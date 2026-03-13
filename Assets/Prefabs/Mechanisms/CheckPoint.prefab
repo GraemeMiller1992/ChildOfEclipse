@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8576017821347846993}
   - component: {fileID: 630911199000256671}
   - component: {fileID: 6592682678015025370}
+  - component: {fileID: 677199944490923256}
   m_Layer: 0
   m_Name: CheckPoint
   m_TagString: Untagged
@@ -68,7 +69,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: f5930a7c47a06cc4f9cd35c24acc871f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -141,3 +142,24 @@ MonoBehaviour:
   OnCheckpointDeactivated:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &677199944490923256
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 478623291445624620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1b4852e3f117b647ba11c35e49da6d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::World.SolarStateTrigger
+  targetState: 2
+  triggerOnEnter: 1
+  triggerOnExit: 0
+  triggerOnce: 0
+  filterTag: 
+  filterLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  debugMode: 0
