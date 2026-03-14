@@ -230,86 +230,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &25510802 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7073238482588464238, guid: 5449589cbe24aa54581554f2488af4a2, type: 3}
-  m_PrefabInstance: {fileID: 1560287064}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &25510803
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 25510802}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a0c0778f10644f47b96ac8940d603c6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Actions.TriggerAction
-  triggerOnEnter: 1
-  triggerOnExit: 0
-  triggerOnce: 0
-  destroyOnTrigger: 0
-  filterTag: Enemy
-  filterLayer:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  playerOnly: 0
-  actionRunner:
-    rid: 8807524958621401162
-  debugMode: 1
-  references:
-    version: 2
-    RefIds:
-    - rid: 8807524958621401162
-      type: {class: ActionRunner, ns: Actions, asm: Assembly-CSharp}
-      data:
-        _actions:
-        - rid: 8807524958621401164
-    - rid: 8807524958621401164
-      type: {class: SetActiveAction, ns: Actions, asm: Assembly-CSharp}
-      data:
-        target: {fileID: 2066305909}
-        setActive: 1
---- !u!65 &25510804
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 25510802}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 3
-  m_Size: {x: 3, y: 0.40642548, z: 3}
-  m_Center: {x: 0, y: -1.2967873, z: 0}
---- !u!114 &25510806
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 25510802}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a3581970c1baa44abdf54e30bef9f0d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::World.TriggerReactionGameObjectToggle
-  objectsToEnable: []
-  objectsToDisable: []
-  toggleState: 1
-  objectsToToggle:
-  - {fileID: 1467147866}
 --- !u!1 &38792131
 GameObject:
   m_ObjectHideFlags: 0
@@ -2116,86 +2036,6 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_RenderingLayers: 1
   m_ShadowRenderingLayers: 1
---- !u!1 &520722906 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7073238482588464238, guid: 5449589cbe24aa54581554f2488af4a2, type: 3}
-  m_PrefabInstance: {fileID: 1280958689}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &520722907
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 520722906}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a0c0778f10644f47b96ac8940d603c6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Actions.TriggerAction
-  triggerOnEnter: 1
-  triggerOnExit: 0
-  triggerOnce: 0
-  destroyOnTrigger: 0
-  filterTag: Enemy
-  filterLayer:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  playerOnly: 0
-  actionRunner:
-    rid: 8807524958621401162
-  debugMode: 1
-  references:
-    version: 2
-    RefIds:
-    - rid: 8807524958621401162
-      type: {class: ActionRunner, ns: Actions, asm: Assembly-CSharp}
-      data:
-        _actions:
-        - rid: 8807524958621401164
-    - rid: 8807524958621401164
-      type: {class: SetActiveAction, ns: Actions, asm: Assembly-CSharp}
-      data:
-        target: {fileID: 2066305909}
-        setActive: 1
---- !u!65 &520722908
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 520722906}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 3
-  m_Size: {x: 3, y: 0.40642548, z: 3}
-  m_Center: {x: 0, y: -1.2967873, z: 0}
---- !u!114 &520722910
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 520722906}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a3581970c1baa44abdf54e30bef9f0d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::World.TriggerReactionGameObjectToggle
-  objectsToEnable: []
-  objectsToDisable: []
-  toggleState: 1
-  objectsToToggle:
-  - {fileID: 2017869870}
 --- !u!1001 &534543282
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4808,6 +4648,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: NavAgentTrigger (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 8420154597960643305, guid: 5449589cbe24aa54581554f2488af4a2, type: 3}
+      propertyPath: objectsToToggle.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8420154597960643305, guid: 5449589cbe24aa54581554f2488af4a2, type: 3}
+      propertyPath: 'objectsToToggle.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2017869870}
     - target: {fileID: 9187753327986016995, guid: 5449589cbe24aa54581554f2488af4a2, type: 3}
       propertyPath: requiredTag
       value: Enemy
@@ -4819,16 +4667,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 7073238482588464238, guid: 5449589cbe24aa54581554f2488af4a2, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 520722910}
-    - targetCorrespondingSourceObject: {fileID: 7073238482588464238, guid: 5449589cbe24aa54581554f2488af4a2, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 520722908}
-    - targetCorrespondingSourceObject: {fileID: 7073238482588464238, guid: 5449589cbe24aa54581554f2488af4a2, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 520722907}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5449589cbe24aa54581554f2488af4a2, type: 3}
 --- !u!1 &1328896324
 GameObject:
@@ -5049,6 +4888,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: NavAgentTrigger
       objectReference: {fileID: 0}
+    - target: {fileID: 8420154597960643305, guid: 5449589cbe24aa54581554f2488af4a2, type: 3}
+      propertyPath: objectsToToggle.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8420154597960643305, guid: 5449589cbe24aa54581554f2488af4a2, type: 3}
+      propertyPath: 'objectsToToggle.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1479654005}
     - target: {fileID: 9187753327986016995, guid: 5449589cbe24aa54581554f2488af4a2, type: 3}
       propertyPath: requiredTag
       value: Enemy
@@ -5060,97 +4907,8 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 7073238482588464238, guid: 5449589cbe24aa54581554f2488af4a2, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1373956345}
-    - targetCorrespondingSourceObject: {fileID: 7073238482588464238, guid: 5449589cbe24aa54581554f2488af4a2, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1373956337}
-    - targetCorrespondingSourceObject: {fileID: 7073238482588464238, guid: 5449589cbe24aa54581554f2488af4a2, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1373956344}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5449589cbe24aa54581554f2488af4a2, type: 3}
---- !u!1 &1373956335 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7073238482588464238, guid: 5449589cbe24aa54581554f2488af4a2, type: 3}
-  m_PrefabInstance: {fileID: 1373956334}
-  m_PrefabAsset: {fileID: 0}
---- !u!65 &1373956337
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1373956335}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 3
-  m_Size: {x: 3, y: 0.40642548, z: 3}
-  m_Center: {x: 0, y: -1.2967873, z: 0}
---- !u!114 &1373956344
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1373956335}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a0c0778f10644f47b96ac8940d603c6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Actions.TriggerAction
-  triggerOnEnter: 1
-  triggerOnExit: 0
-  triggerOnce: 0
-  destroyOnTrigger: 0
-  filterTag: Enemy
-  filterLayer:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  playerOnly: 0
-  actionRunner:
-    rid: 8807524958621401162
-  debugMode: 1
-  references:
-    version: 2
-    RefIds:
-    - rid: 8807524958621401162
-      type: {class: ActionRunner, ns: Actions, asm: Assembly-CSharp}
-      data:
-        _actions:
-        - rid: 8807524958621401164
-    - rid: 8807524958621401164
-      type: {class: SetActiveAction, ns: Actions, asm: Assembly-CSharp}
-      data:
-        target: {fileID: 2066305909}
-        setActive: 1
---- !u!114 &1373956345
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1373956335}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a3581970c1baa44abdf54e30bef9f0d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::World.TriggerReactionGameObjectToggle
-  objectsToEnable: []
-  objectsToDisable: []
-  toggleState: 1
-  objectsToToggle:
-  - {fileID: 1479654005}
 --- !u!1001 &1406869573
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5727,6 +5485,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: NavAgentTrigger (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8420154597960643305, guid: 5449589cbe24aa54581554f2488af4a2, type: 3}
+      propertyPath: objectsToToggle.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8420154597960643305, guid: 5449589cbe24aa54581554f2488af4a2, type: 3}
+      propertyPath: 'objectsToToggle.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1467147866}
     - target: {fileID: 9187753327986016995, guid: 5449589cbe24aa54581554f2488af4a2, type: 3}
       propertyPath: requiredTag
       value: Enemy
@@ -5738,16 +5504,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 7073238482588464238, guid: 5449589cbe24aa54581554f2488af4a2, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 25510806}
-    - targetCorrespondingSourceObject: {fileID: 7073238482588464238, guid: 5449589cbe24aa54581554f2488af4a2, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 25510804}
-    - targetCorrespondingSourceObject: {fileID: 7073238482588464238, guid: 5449589cbe24aa54581554f2488af4a2, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 25510803}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5449589cbe24aa54581554f2488af4a2, type: 3}
 --- !u!1 &1568110644
 GameObject:
@@ -9686,7 +9443,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -554839644521485386, guid: 90a502a8885ac1a4f9e57a811d9a11ba, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
