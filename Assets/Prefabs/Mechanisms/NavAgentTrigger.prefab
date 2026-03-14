@@ -123,7 +123,8 @@ GameObject:
   - component: {fileID: 9187753327986016995}
   - component: {fileID: 3467850256229788566}
   - component: {fileID: 3747128796494227376}
-  - component: {fileID: 5826817700201502367}
+  - component: {fileID: 3792002129301458695}
+  - component: {fileID: 8420154597960643305}
   m_Layer: 0
   m_Name: NavAgentTrigger
   m_TagString: Untagged
@@ -164,6 +165,7 @@ MonoBehaviour:
   triggerLayers:
     serializedVersion: 2
     m_Bits: 1
+  requiredTag: Enemy
   triggerOncePerEntry: 1
   triggerCooldown: 0.5
   resetStateOnExit: 1
@@ -195,7 +197,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::World.NavAgentStoppedTriggerOption
   requireStopped: 1
---- !u!114 &5826817700201502367
+--- !u!114 &3792002129301458695
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -204,16 +206,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 7073238482588464238}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8da0daca9565a0c4482820b9f000d55a, type: 3}
+  m_Script: {fileID: 11500000, guid: c3b0459a0e763314c955c7c0f265b0b8, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Actions.SolarStateActionTrigger
-  _conditions: []
-  _actionRunner:
-    _actions: []
-  _triggerOnce: 1
-  _triggerOnAwake: 0
-  _contextObject: {fileID: 0}
-  _showDebugLogs: 1
-  references:
-    version: 2
-    RefIds: []
+  m_EditorClassIdentifier: Assembly-CSharp::World.SolarState
+  _currentState: 0
+--- !u!114 &8420154597960643305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7073238482588464238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a3581970c1baa44abdf54e30bef9f0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::World.TriggerReactionGameObjectToggle
+  objectsToEnable: []
+  objectsToDisable: []
+  toggleState: 1
+  objectsToToggle: []
