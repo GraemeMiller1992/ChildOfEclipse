@@ -20,6 +20,9 @@ namespace World
         [Tooltip("The layer mask for objects that can trigger this trigger.")]
         [SerializeField] private LayerMask triggerLayers = -1;
 
+        [Tooltip("Only objects with this tag can activate the trigger. Leave empty to allow any tag.")]
+        [SerializeField] private string requiredTag = "";
+
         [Tooltip("Whether to trigger only once per object entry.")]
         [SerializeField] private bool triggerOncePerEntry = true;
 
@@ -78,6 +81,10 @@ namespace World
             for (int i = 0; i < count; i++)
             {
                 GameObject obj = overlappingColliders[i].gameObject;
+                if (!string.IsNullOrEmpty(requiredTag) && !obj.CompareTag(requiredTag))
+                {
+                    continue;
+                }
                 currentObjectsInside.Add(obj);
 
                 // Skip if object is on cooldown
