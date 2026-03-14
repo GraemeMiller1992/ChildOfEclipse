@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9143938251047398474}
   - component: {fileID: 2495810316342202767}
+  - component: {fileID: -554839644521485386}
   m_Layer: 0
   m_Name: MegaDoor
   m_TagString: Untagged
@@ -55,6 +56,36 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &-554839644521485386
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8987899421818067675}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8da0daca9565a0c4482820b9f000d55a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Actions.SolarStateActionTrigger
+  _conditions: []
+  _actionRunner:
+    _actions:
+    - rid: 7117420559250227287
+  _triggerOnce: 1
+  _triggerOnAwake: 0
+  _contextObject: {fileID: 0}
+  _showDebugLogs: 1
+  references:
+    version: 2
+    RefIds:
+    - rid: 7117420559250227287
+      type: {class: PlayAnimationAction, ns: Actions, asm: Assembly-CSharp}
+      data:
+        animator: {fileID: 2495810316342202767}
+        stateName: MegaDoorOpen
+        layer: 0
+        normalizedTime: 0
 --- !u!1001 &7219303216400775783
 PrefabInstance:
   m_ObjectHideFlags: 0
