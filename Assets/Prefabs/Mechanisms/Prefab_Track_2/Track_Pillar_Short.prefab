@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4273948657266042544}
   - component: {fileID: 936685215338113301}
   - component: {fileID: 3106130744377236959}
-  - component: {fileID: -5834422217791366503}
+  - component: {fileID: 6450762115330202604}
   m_Layer: 0
   m_Name: Track_Pillar_Short
   m_TagString: Untagged
@@ -90,8 +90,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &-5834422217791366503
-MeshCollider:
+--- !u!65 &6450762115330202604
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -108,7 +108,6 @@ MeshCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -2646865865434713466, guid: 0027e82dec3169b47b921034ad301797, type: 3}
+  serializedVersion: 3
+  m_Size: {x: 0.74474543, y: 0.7447456, z: 1.8058134}
+  m_Center: {x: 0, y: 0, z: 0.9029067}
