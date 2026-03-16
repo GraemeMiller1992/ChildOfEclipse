@@ -392,4 +392,111 @@ namespace Actions
     }
 
     #endregion
+
+    #region Detection Zone Conditions
+
+    /// <summary>
+    /// Condition that checks if a DetectionZone is triggered (threshold met).
+    /// </summary>
+    [Serializable]
+    public class DetectionZoneTriggeredCondition : ICondition
+    {
+        [Tooltip("The DetectionZone to check")]
+        public DetectionZone detectionZone;
+
+        [Tooltip("Whether the zone should be triggered (true) or not triggered (false)")]
+        public bool shouldBeTriggered = true;
+
+        public bool IsMet()
+        {
+            if (detectionZone == null)
+            {
+                Debug.LogWarning("DetectionZoneTriggeredCondition: DetectionZone is null");
+                return false;
+            }
+            return detectionZone.IsTriggered == shouldBeTriggered;
+        }
+
+        public string GetDescription()
+        {
+            string zoneName = detectionZone != null ? detectionZone.gameObject.name : "null";
+            return $"DetectionZone '{zoneName}' should be triggered: {shouldBeTriggered}";
+        }
+    }
+
+    /// <summary>
+    /// Condition that checks if a DetectionZone has any detections.
+    /// </summary>
+    [Serializable]
+    public class DetectionZoneDetectedCondition : ICondition
+    {
+        [Tooltip("The DetectionZone to check")]
+        public DetectionZone detectionZone;
+
+        [Tooltip("Whether the zone should have detections (true) or no detections (false)")]
+        public bool shouldHaveDetections = true;
+
+        public bool IsMet()
+        {
+            if (detectionZone == null)
+            {
+                Debug.LogWarning("DetectionZoneDetectedCondition: DetectionZone is null");
+                return false;
+            }
+            return detectionZone.HasDetections == shouldHaveDetections;
+        }
+
+        public string GetDescription()
+        {
+            string zoneName = detectionZone != null ? detectionZone.gameObject.name : "null";
+            return $"DetectionZone '{zoneName}' should have detections: {shouldHaveDetections}";
+        }
+    }
+
+    /// <summary>
+    /// Condition that checks if a DetectionZone has a specific number of detected objects.
+    /// </summary>
+    [Serializable]
+    public class DetectionZoneCountCondition : ICondition
+    {
+        [Tooltip("The DetectionZone to check")]
+        public DetectionZone detectionZone;
+
+        [Tooltip("The minimum number of detected objects")]
+        public int minCount = 0;
+
+        [Tooltip("The maximum number of detected objects (0 = no maximum)")]
+        public int maxCount = 0;
+
+        public bool IsMet()
+        {
+            if (detectionZone == null)
+            {
+                Debug.LogWarning("DetectionZoneCountCondition: DetectionZone is null");
+                return false;
+            }
+            int count = detectionZone.DetectionCount;
+            if (count < minCount)
+            {
+                return false;
+            }
+            if (maxCount > 0 && count > maxCount)
+            {
+                return false;
+            }
+            return true;
+        }
+
+        public string GetDescription()
+        {
+            string zoneName = detectionZone != null ? detectionZone.gameObject.name : "null";
+            if (maxCount > 0)
+            {
+                return $"DetectionZone '{zoneName}' should have between {minCount} and {maxCount} detected objects";
+            }
+            return $"DetectionZone '{zoneName}' should have at least {minCount} detected objects";
+        }
+    }
+
+    #endregion
 }

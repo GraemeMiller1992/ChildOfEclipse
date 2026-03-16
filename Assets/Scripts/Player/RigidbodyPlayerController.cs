@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using ChildOfEclipse.Health;
 
 namespace ChildOfEclipse
 {
@@ -102,6 +103,7 @@ namespace ChildOfEclipse
         // Components
         private Rigidbody _rb;
         private CapsuleCollider _capsuleCollider;
+        private RespawnableComponent _respawnableComponent;
 
         // State
         private Vector2 _moveInput;
@@ -153,6 +155,7 @@ namespace ChildOfEclipse
             // Get required components
             _rb = GetComponent<Rigidbody>();
             _capsuleCollider = GetComponent<CapsuleCollider>();
+            _respawnableComponent = GetComponent<RespawnableComponent>();
 
             // Validate components
             if (_rb == null)
@@ -178,8 +181,6 @@ namespace ChildOfEclipse
             }
 
             // Configure Rigidbody
-            _rb.interpolation = RigidbodyInterpolation.Interpolate;
-            _rb.collisionDetectionMode = CollisionDetectionMode.ContinuousDynamic;
             _rb.linearDamping = 0f;
             _rb.angularDamping = 0.05f;
             _rb.freezeRotation = true;
@@ -219,6 +220,12 @@ namespace ChildOfEclipse
 
         private void FixedUpdate()
         {
+            // Skip physics updates if player is respawning
+            if (_respawnableComponent != null && _respawnableComponent.IsRespawning)
+            {
+                return;
+            }
+
             CheckGrounded();
             HandleCoyoteTime();
             HandleMovement();

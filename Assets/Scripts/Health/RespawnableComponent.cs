@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.Events;
+using System.Collections.Generic;
 using ChildOfEclipse.Health;
 
 namespace ChildOfEclipse.Health
@@ -15,6 +16,25 @@ namespace ChildOfEclipse.Health
         LastCheckpoint,
         /// <summary>Use a custom spawn point specified in the inspector</summary>
         CustomSpawnPoint
+    }
+
+    /// <summary>
+    /// Defines which component types should be disabled during respawn delay.
+    /// Multiple options can be selected.
+    /// </summary>
+    [System.Flags]
+    public enum RespawnDisableComponents
+    {
+        /// <summary>No components will be disabled</summary>
+        None = 0,
+        /// <summary>Disable Renderer components (makes object invisible)</summary>
+        Renderer = 1 << 0,
+        /// <summary>Disable Collider components (3D colliders)</summary>
+        Collider = 1 << 1,
+        /// <summary>Disable Collider2D components (2D colliders)</summary>
+        Collider2D = 1 << 2,
+        /// <summary>Disable all standard components (Renderer, Collider, Collider2D)</summary>
+        All = Renderer | Collider | Collider2D
     }
 
     /// <summary>
@@ -46,6 +66,13 @@ namespace ChildOfEclipse.Health
         [Tooltip("Maximum number of times this entity can respawn (-1 for unlimited)")]
         [SerializeField] private int maxRespawnCount = -1;
 
+        [Tooltip("Should the checkpoint be set to the starting position on Awake?")]
+        [SerializeField] private bool setCheckpointOnStart = false;
+
+        [Header("Component Disabling")]
+        [Tooltip("Which components should be disabled during the respawn delay?")]
+        [SerializeField] private RespawnDisableComponents componentsToDisable = RespawnDisableComponents.All;
+
         [Header("Events")]
         [Space]
         [Tooltip("Invoked just before respawning (passes respawn position)")]
@@ -62,7 +89,19 @@ namespace ChildOfEclipse.Health
         private Quaternion _initialRotation;
         private int _respawnCount = 0;
         private bool _isRespawning = false;
-        private Coroutine _respawnCoroutine;
+        private float _respawnTimer = 0f;
+        
+        // Track which components were disabled so we can re-enable them
+        private List<Renderer> _disabledRenderers = new List<Renderer>();
+        private List<Collider> _disabledColliders = new List<Collider>();
+        private List<Collider2D> _disabledColliders2D = new List<Collider2D>();
+        
+        // Track Rigidbody states for physics freezing
+        private List<Rigidbody> _frozenRigidbodies = new List<Rigidbody>();
+        private List<bool> _rigidbodyWasKinematic = new List<bool>();
+        private List<RigidbodyInterpolation> _rigidbodyInterpolation = new List<RigidbodyInterpolation>();
+        private List<Rigidbody2D> _frozenRigidbodies2D = new List<Rigidbody2D>();
+        private List<bool> _rigidbody2DWasKinematic = new List<bool>();
 
         /// <summary>
         /// Gets the current number of times this entity has respawned
@@ -84,12 +123,25 @@ namespace ChildOfEclipse.Health
         /// </summary>
         public bool HasCheckpoint { get; private set; }
 
+        /// <summary>
+        /// Gets whether this entity is currently in the respawn process (delay or just respawned).
+        /// Other components can check this to pause their physics updates.
+        /// </summary>
+        public bool IsRespawning => _isRespawning || _respawnTimer > 0f;
+
         private void Awake()
         {
             _health = GetComponent<HealthComponent>();
             _initialPosition = transform.position;
             _initialRotation = transform.rotation;
             CheckpointPosition = _initialPosition;
+            
+            if (setCheckpointOnStart)
+            {
+                HasCheckpoint = true;
+                Debug.Log($"{gameObject.name}: Checkpoint set on start at: {CheckpointPosition}");
+            }
+            
             Debug.Log($"{gameObject.name}: RespawnableComponent initialized. Initial position: {_initialPosition}, RespawnLocation: {respawnLocation}");
         }
 
@@ -216,21 +268,31 @@ namespace ChildOfEclipse.Health
 
             OnBeforeRespawn?.Invoke(respawnPosition);
 
-            // Re-enable if disabled
-            if (!gameObject.activeSelf)
+            // Unfreeze physics first
+            UnfreezePhysics();
+
+            // Re-enable components if they were disabled
+            if (disableDuringDelay)
             {
-                Debug.Log($"{gameObject.name}: Re-enabling GameObject");
-                gameObject.SetActive(true);
+                EnableObjectComponents();
             }
 
-            // Set position and rotation
-            transform.position = respawnPosition;
-            transform.rotation = respawnRotation;
+            // Set position and rotation using Rigidbody for proper physics sync
+            Rigidbody rb = GetComponent<Rigidbody>();
+            if (rb != null)
+            {
+                rb.position = respawnPosition;
+                rb.rotation = respawnRotation;
+            }
+            else
+            {
+                transform.position = respawnPosition;
+                transform.rotation = respawnRotation;
+            }
 
             // Reset velocity if configured
             if (resetVelocity)
             {
-                Rigidbody rb = GetComponent<Rigidbody>();
                 if (rb != null)
                 {
                     rb.linearVelocity = Vector3.zero;
@@ -276,20 +338,31 @@ namespace ChildOfEclipse.Health
 
             OnBeforeRespawn?.Invoke(position);
 
-            // Re-enable if disabled
-            if (!gameObject.activeSelf)
+            // Unfreeze physics first
+            UnfreezePhysics();
+
+            // Re-enable components if they were disabled
+            if (disableDuringDelay)
             {
-                gameObject.SetActive(true);
+                EnableObjectComponents();
             }
 
-            // Set position and rotation
-            transform.position = position;
-            transform.rotation = rotation;
+            // Set position and rotation using Rigidbody for proper physics sync
+            Rigidbody rb = GetComponent<Rigidbody>();
+            if (rb != null)
+            {
+                rb.position = position;
+                rb.rotation = rotation;
+            }
+            else
+            {
+                transform.position = position;
+                transform.rotation = rotation;
+            }
 
             // Reset velocity if configured
             if (resetVelocity)
             {
-                Rigidbody rb = GetComponent<Rigidbody>();
                 if (rb != null)
                 {
                     rb.linearVelocity = Vector3.zero;
@@ -333,29 +406,202 @@ namespace ChildOfEclipse.Health
             }
 
             _isRespawning = true;
+            _respawnTimer = 0f;
             Debug.Log($"{gameObject.name}: Death detected. Respawning in {respawnDelay} seconds at {GetRespawnPosition()}");
 
+            // Always freeze physics to prevent continued movement during delay
+            FreezePhysics();
+
+            // Disable components if configured
             if (disableDuringDelay)
             {
-                gameObject.SetActive(false);
+                DisableObjectComponents();
             }
-
-            // Schedule respawn using coroutine (works even when GameObject is disabled)
-            if (_respawnCoroutine != null)
-            {
-                StopCoroutine(_respawnCoroutine);
-            }
-            _respawnCoroutine = StartCoroutine(RespawnCoroutine());
         }
 
-        private System.Collections.IEnumerator RespawnCoroutine()
+        private void Update()
         {
-            Debug.Log($"{gameObject.name}: Respawn timer started. Waiting {respawnDelay} seconds...");
-            yield return new WaitForSeconds(respawnDelay);
-            Debug.Log($"{gameObject.name}: Respawn timer complete. Executing respawn...");
-            _isRespawning = false; // Reset flag before calling Respawn
-            Respawn();
-            _respawnCoroutine = null;
+            // Check if we're waiting to respawn
+            if (_isRespawning)
+            {
+                _respawnTimer += Time.deltaTime;
+                
+                if (_respawnTimer >= respawnDelay)
+                {
+                    Debug.Log($"{gameObject.name}: Respawn timer complete. Executing respawn...");
+                    _isRespawning = false;
+                    _respawnTimer = 0f; // Reset timer after respawn
+                    Respawn();
+                }
+            }
+        }
+
+        /// <summary>
+        /// Disables visual and interactive components while keeping the GameObject active
+        /// so that coroutines can continue running. Only disables components specified in componentsToDisable.
+        /// </summary>
+        /// <summary>
+        /// Freezes all Rigidbodies to prevent continued movement during respawn delay.
+        /// This is called regardless of disableDuringDelay setting.
+        /// </summary>
+        private void FreezePhysics()
+        {
+            // Clear previous tracking lists
+            _frozenRigidbodies.Clear();
+            _rigidbodyWasKinematic.Clear();
+            _rigidbodyInterpolation.Clear();
+            _frozenRigidbodies2D.Clear();
+            _rigidbody2DWasKinematic.Clear();
+
+            // Freeze all Rigidbodies to prevent continued movement during delay
+            Rigidbody[] rigidbodies = GetComponentsInChildren<Rigidbody>();
+            foreach (Rigidbody rb in rigidbodies)
+            {
+                _frozenRigidbodies.Add(rb);
+                _rigidbodyWasKinematic.Add(rb.isKinematic);
+                _rigidbodyInterpolation.Add(rb.interpolation);
+                rb.isKinematic = true;
+                rb.linearVelocity = Vector3.zero;
+                rb.angularVelocity = Vector3.zero;
+            }
+
+            // Freeze all Rigidbody2Ds to prevent continued movement during delay
+            Rigidbody2D[] rigidbodies2D = GetComponentsInChildren<Rigidbody2D>();
+            foreach (Rigidbody2D rb2d in rigidbodies2D)
+            {
+                _frozenRigidbodies2D.Add(rb2d);
+                _rigidbody2DWasKinematic.Add(rb2d.isKinematic);
+                rb2d.isKinematic = true;
+                rb2d.linearVelocity = Vector2.zero;
+                rb2d.angularVelocity = 0f;
+            }
+
+            Debug.Log($"{gameObject.name}: Physics frozen during respawn delay");
+        }
+
+        /// <summary>
+        /// Unfreezes all Rigidbodies after respawn is complete.
+        /// </summary>
+        private void UnfreezePhysics()
+        {
+            // Unfreeze Rigidbodies and restore their original isKinematic and interpolation states
+            for (int i = 0; i < _frozenRigidbodies.Count; i++)
+            {
+                Rigidbody rb = _frozenRigidbodies[i];
+                if (rb != null && i < _rigidbodyWasKinematic.Count && i < _rigidbodyInterpolation.Count)
+                {
+                    rb.isKinematic = _rigidbodyWasKinematic[i];
+                    rb.interpolation = _rigidbodyInterpolation[i];
+                }
+            }
+            _frozenRigidbodies.Clear();
+            _rigidbodyWasKinematic.Clear();
+            _rigidbodyInterpolation.Clear();
+
+            // Unfreeze Rigidbody2Ds and restore their original isKinematic state
+            for (int i = 0; i < _frozenRigidbodies2D.Count; i++)
+            {
+                Rigidbody2D rb2d = _frozenRigidbodies2D[i];
+                if (rb2d != null && i < _rigidbody2DWasKinematic.Count)
+                {
+                    rb2d.isKinematic = _rigidbody2DWasKinematic[i];
+                }
+            }
+            _frozenRigidbodies2D.Clear();
+            _rigidbody2DWasKinematic.Clear();
+
+            Debug.Log($"{gameObject.name}: Physics unfrozen after respawn");
+        }
+
+        private void DisableObjectComponents()
+        {
+            // Clear previous tracking lists
+            _disabledRenderers.Clear();
+            _disabledColliders.Clear();
+            _disabledColliders2D.Clear();
+
+            // Disable renderers if specified
+            if ((componentsToDisable & RespawnDisableComponents.Renderer) != 0)
+            {
+                Renderer[] renderers = GetComponentsInChildren<Renderer>();
+                foreach (Renderer renderer in renderers)
+                {
+                    if (renderer.enabled)
+                    {
+                        renderer.enabled = false;
+                        _disabledRenderers.Add(renderer);
+                    }
+                }
+            }
+
+            // Disable 3D colliders if specified
+            if ((componentsToDisable & RespawnDisableComponents.Collider) != 0)
+            {
+                Collider[] colliders = GetComponentsInChildren<Collider>();
+                foreach (Collider collider in colliders)
+                {
+                    if (collider.enabled)
+                    {
+                        collider.enabled = false;
+                        _disabledColliders.Add(collider);
+                    }
+                }
+            }
+
+            // Disable 2D colliders if specified
+            if ((componentsToDisable & RespawnDisableComponents.Collider2D) != 0)
+            {
+                Collider2D[] colliders2D = GetComponentsInChildren<Collider2D>();
+                foreach (Collider2D collider2D in colliders2D)
+                {
+                    if (collider2D.enabled)
+                    {
+                        collider2D.enabled = false;
+                        _disabledColliders2D.Add(collider2D);
+                    }
+                }
+            }
+
+            Debug.Log($"{gameObject.name}: Components disabled during respawn delay ({componentsToDisable})");
+        }
+
+        /// <summary>
+        /// Re-enables visual and interactive components after respawn.
+        /// Only re-enables components that were actually disabled.
+        /// </summary>
+        private void EnableObjectComponents()
+        {
+            // Re-enable renderers that were disabled
+            foreach (Renderer renderer in _disabledRenderers)
+            {
+                if (renderer != null)
+                {
+                    renderer.enabled = true;
+                }
+            }
+            _disabledRenderers.Clear();
+
+            // Re-enable 3D colliders that were disabled
+            foreach (Collider collider in _disabledColliders)
+            {
+                if (collider != null)
+                {
+                    collider.enabled = true;
+                }
+            }
+            _disabledColliders.Clear();
+
+            // Re-enable 2D colliders that were disabled
+            foreach (Collider2D collider2D in _disabledColliders2D)
+            {
+                if (collider2D != null)
+                {
+                    collider2D.enabled = true;
+                }
+            }
+            _disabledColliders2D.Clear();
+
+            Debug.Log($"{gameObject.name}: Components re-enabled after respawn");
         }
 
 #if UNITY_EDITOR

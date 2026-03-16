@@ -53,7 +53,7 @@ public class Teleporter : MonoBehaviour
     private Collider[] overlappingColliders = new Collider[32];
     private Dictionary<GameObject, float> teleportCooldowns = new Dictionary<GameObject, float>();
     
-    private void Update()
+    private void FixedUpdate()
     {
         // Update cooldowns
         UpdateCooldowns();
