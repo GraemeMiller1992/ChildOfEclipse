@@ -15036,6 +15036,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: StandInActivator
       objectReference: {fileID: 0}
+    - target: {fileID: 2780446970023466579, guid: c907c585a2747d443826df706362c9af, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3305063118589070569, guid: c907c585a2747d443826df706362c9af, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -26363,6 +26367,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4881705777072329550, guid: 13af04b9baaacf44d82ff4fd80c7bee5, type: 3}
   m_PrefabInstance: {fileID: 1367913755}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &414728462 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 2495810316342202767, guid: 90a502a8885ac1a4f9e57a811d9a11ba, type: 3}
+  m_PrefabInstance: {fileID: 2078802156}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &415023287
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -35171,6 +35180,10 @@ PrefabInstance:
     - target: {fileID: 2780446970023466579, guid: c907c585a2747d443826df706362c9af, type: 3}
       propertyPath: m_Name
       value: StandInActivator
+      objectReference: {fileID: 0}
+    - target: {fileID: 2780446970023466579, guid: c907c585a2747d443826df706362c9af, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3305063118589070569, guid: c907c585a2747d443826df706362c9af, type: 3}
       propertyPath: m_LocalPosition.x
@@ -47719,6 +47732,68 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0a93c36e6404528409d05d338d2108b6, type: 3}
+--- !u!1 &889509919
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 889509921}
+  - component: {fileID: 889509920}
+  m_Layer: 0
+  m_Name: HealthActionRunner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &889509920
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 889509919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5828bbc7df40b68419d973c04982831e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ChildOfEclipse.Health.HealthActionRunner
+  _healthComponent: {fileID: 1561000778}
+  _onDamageTakenActions:
+    _actions: []
+  _onHealedActions:
+    _actions: []
+  _onDeathActions:
+    _actions:
+    - rid: 4285165528501977167
+  _onHealthChangedActions:
+    _actions: []
+  references:
+    version: 2
+    RefIds:
+    - rid: 4285165528501977167
+      type: {class: TeleportToWaypointAction, ns: World, asm: Assembly-CSharp}
+      data:
+        _platform: {fileID: 0}
+        _waypointIndex: 0
+--- !u!4 &889509921
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 889509919}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 43.4686, y: -1.82512, z: 71.15688}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &890217907 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5295455238356081898, guid: 16ee2c71e013c6343925dc7946efb978, type: 3}
@@ -80041,6 +80116,74 @@ Mesh:
       - serializedVersion: 1
         m_IndexStart: 0
         m_IndexCount: 0
+--- !u!1 &1418698525
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1418698527}
+  - component: {fileID: 1418698526}
+  m_Layer: 0
+  m_Name: DetectZone01
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1418698526
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1418698525}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ef3f36aabd2ba04db46c63a400a6ade, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::World.DetectionZone
+  boxSize: {x: 3, y: 3, z: 3}
+  boxCenter: {x: 0, y: 0, z: 0}
+  detectionLayers:
+    serializedVersion: 2
+    m_Bits: 256
+  requiredTag: Enemy
+  triggerThreshold: 1
+  triggerOncePerObject: 1
+  maintainTriggeredState: 1
+  normalColor: {r: 0, g: 1, b: 0, a: 0.3}
+  triggeredColor: {r: 1, g: 0, b: 0, a: 0.5}
+  showGizmo: 1
+  OnTriggered:
+    m_PersistentCalls:
+      m_Calls: []
+  OnUntriggered:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDetectionEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDetectionExit:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!4 &1418698527
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1418698525}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -7.21, y: -6.49, z: -11.12}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1419558736
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -80851,6 +80994,10 @@ PrefabInstance:
     - target: {fileID: 7073238482588464238, guid: 5449589cbe24aa54581554f2488af4a2, type: 3}
       propertyPath: m_Name
       value: NavAgentTrigger (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7073238482588464238, guid: 5449589cbe24aa54581554f2488af4a2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8420154597960643305, guid: 5449589cbe24aa54581554f2488af4a2, type: 3}
       propertyPath: objectsToEnable.Array.size
@@ -85649,11 +85796,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ChildOfEclipse.Health.RespawnableComponent
   respawnLocation: 1
   customSpawnPoint: {fileID: 0}
-  respawnDelay: 0
+  respawnDelay: 0.5
   disableDuringDelay: 0
   restoreFullHealth: 1
   resetVelocity: 1
   maxRespawnCount: -1
+  setCheckpointOnStart: 1
+  componentsToDisable: 2
   OnBeforeRespawn:
     m_PersistentCalls:
       m_Calls: []
@@ -85835,7 +85984,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 3
 --- !u!4 &1561000785
 Transform:
   m_ObjectHideFlags: 0
@@ -96951,6 +97100,86 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eda47c1322e67924188931b5f0602b05, type: 3}
+--- !u!1 &1827331388
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1827331390}
+  - component: {fileID: 1827331389}
+  m_Layer: 0
+  m_Name: DoorActions
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1827331389
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1827331388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 147dace71653b6644b9ba53f7be5358e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Actions.ConditionalTriggerActions
+  _conditions:
+  - rid: 4285165528501977164
+  - rid: 4285165528501977165
+  _actionRunner:
+    rid: 4285165528501977088
+  _checkInterval: 0
+  _triggerOnce: 0
+  _triggerOnStart: 0
+  _contextObject: {fileID: 0}
+  _showDebugLogs: 0
+  _showConditionStatus: 1
+  references:
+    version: 2
+    RefIds:
+    - rid: 4285165528501977088
+      type: {class: ActionRunner, ns: Actions, asm: Assembly-CSharp}
+      data:
+        _actions:
+        - rid: 4285165528501977166
+    - rid: 4285165528501977164
+      type: {class: DetectionZoneTriggeredCondition, ns: Actions, asm: Assembly-CSharp}
+      data:
+        detectionZone: {fileID: 1418698526}
+        shouldBeTriggered: 1
+    - rid: 4285165528501977165
+      type: {class: DetectionZoneTriggeredCondition, ns: Actions, asm: Assembly-CSharp}
+      data:
+        detectionZone: {fileID: 2011579820}
+        shouldBeTriggered: 1
+    - rid: 4285165528501977166
+      type: {class: PlayAnimationAction, ns: Actions, asm: Assembly-CSharp}
+      data:
+        animator: {fileID: 414728462}
+        stateName: MegaDoorOpen
+        layer: 0
+        normalizedTime: 0
+--- !u!4 &1827331390
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1827331388}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.86, y: -6.49, z: -10.93856}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1829185095
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -109402,6 +109631,74 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3718619797958120499, guid: b358e7f5aa8d9504aba899567275fadf, type: 3}
   m_PrefabInstance: {fileID: 475772807}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2011579819
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2011579821}
+  - component: {fileID: 2011579820}
+  m_Layer: 0
+  m_Name: DetectZone02
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2011579820
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2011579819}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ef3f36aabd2ba04db46c63a400a6ade, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::World.DetectionZone
+  boxSize: {x: 3, y: 3, z: 3}
+  boxCenter: {x: 0, y: 0, z: 0}
+  detectionLayers:
+    serializedVersion: 2
+    m_Bits: 128
+  requiredTag: Enemy
+  triggerThreshold: 1
+  triggerOncePerObject: 1
+  maintainTriggeredState: 1
+  normalColor: {r: 0, g: 1, b: 0, a: 0.3}
+  triggeredColor: {r: 1, g: 0, b: 0, a: 0.5}
+  showGizmo: 1
+  OnTriggered:
+    m_PersistentCalls:
+      m_Calls: []
+  OnUntriggered:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDetectionEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDetectionExit:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!4 &2011579821
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2011579819}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.99, y: -5.54, z: -11.13}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2012408772
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -118932,6 +119229,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: NavAgentTrigger (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 7073238482588464238, guid: 5449589cbe24aa54581554f2488af4a2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8420154597960643305, guid: 5449589cbe24aa54581554f2488af4a2, type: 3}
       propertyPath: objectsToToggle.Array.size
       value: 2
@@ -121814,3 +122115,7 @@ SceneRoots:
   - {fileID: 1780799573}
   - {fileID: 326631135}
   - {fileID: 253581432}
+  - {fileID: 1827331390}
+  - {fileID: 1418698527}
+  - {fileID: 2011579821}
+  - {fileID: 889509921}
