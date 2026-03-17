@@ -83834,6 +83834,7 @@ GameObject:
   - component: {fileID: 366965496}
   - component: {fileID: 366965499}
   - component: {fileID: 366965498}
+  - component: {fileID: 366965500}
   m_Layer: 0
   m_Name: FIRESTOP2
   m_TagString: Untagged
@@ -83860,7 +83861,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 3, y: 3, z: 3}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &366965497
 Transform:
@@ -83886,13 +83887,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 366965494}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d2fe5546f775c47d2820aa5e8a715f53, type: 3}
+  m_Script: {fileID: 11500000, guid: a1b4852e3f117b647ba11c35e49da6d2, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Unity.VisualScripting.Flow::Unity.VisualScripting.ScriptMachine
-  _data:
-    _json: '{"nest":{"source":"Macro","macro":0,"embed":null}}'
-    _objectReferences:
-    - {fileID: 11400000, guid: 6344a2498b1e9294d91432b86a20b43a, type: 2}
+  m_EditorClassIdentifier: Assembly-CSharp::World.SolarStateTrigger
+  targetState: 0
+  triggerOnEnter: 1
+  triggerOnExit: 0
+  triggerOnce: 1
+  filterTag: Golem
+  filterLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  debugMode: 0
 --- !u!114 &366965499
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -83902,14 +83908,36 @@ MonoBehaviour:
   m_GameObject: {fileID: 366965494}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e741851cba3ad425c91ecf922cc6b379, type: 3}
+  m_Script: {fileID: 11500000, guid: 6c4cc4d9830a5474883c92ad024e6132, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Unity.VisualScripting.Core::Unity.VisualScripting.Variables
-  _data:
-    _json: '{"declarations":{"Kind":"Object","collection":{"$content":[{"name":"FShooter2","value":{"$content":0,"$type":"UnityEngine.Object"},"typeHandle":{"Identification":"UnityEngine.GameObject,
-      UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null","$version":"A"},"$version":"A"}],"$version":"A"},"$version":"A"}}'
-    _objectReferences:
-    - {fileID: 1357048270}
+  m_EditorClassIdentifier: Assembly-CSharp::World.GenericTrigger
+  overlapBoxSize: {x: 3, y: 3, z: 3}
+  overlapBoxCenter: {x: 0, y: 0, z: 0}
+  triggerLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  requiredTag: Golem
+  triggerOncePerEntry: 1
+  triggerCooldown: 0.5
+  resetStateOnExit: 1
+  triggerColor: {r: 1, g: 1, b: 0, a: 0.3}
+  showGizmo: 1
+--- !u!114 &366965500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 366965494}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a3581970c1baa44abdf54e30bef9f0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::World.TriggerReactionGameObjectToggle
+  objectsToEnable: []
+  objectsToDisable: []
+  toggleState: 1
+  objectsToToggle: []
 --- !u!1 &373154382 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8987899421818067675, guid: 90a502a8885ac1a4f9e57a811d9a11ba, type: 3}
@@ -92884,6 +92912,10 @@ PrefabInstance:
     - target: {fileID: 5429999505833736139, guid: c1220de011369f64193bcd7ccb7d77fa, type: 3}
       propertyPath: m_LocalPosition.z
       value: -4.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6323063451101063211, guid: c1220de011369f64193bcd7ccb7d77fa, type: 3}
+      propertyPath: _currentState
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8070051527336472278, guid: c1220de011369f64193bcd7ccb7d77fa, type: 3}
       propertyPath: m_Name
@@ -133159,6 +133191,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -4.7
       objectReference: {fileID: 0}
+    - target: {fileID: 6323063451101063211, guid: c1220de011369f64193bcd7ccb7d77fa, type: 3}
+      propertyPath: _currentState
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8070051527336472278, guid: c1220de011369f64193bcd7ccb7d77fa, type: 3}
       propertyPath: m_Name
       value: GolemGuy (2)
@@ -141702,6 +141738,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Untagged
       objectReference: {fileID: 0}
+    - target: {fileID: 6323063451101063211, guid: c1220de011369f64193bcd7ccb7d77fa, type: 3}
+      propertyPath: _currentState
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8070051527336472278, guid: c1220de011369f64193bcd7ccb7d77fa, type: 3}
       propertyPath: m_Name
       value: PillarGolem
@@ -142628,6 +142668,10 @@ PrefabInstance:
     - target: {fileID: 6169505378570695567, guid: c1220de011369f64193bcd7ccb7d77fa, type: 3}
       propertyPath: m_TagString
       value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 6323063451101063211, guid: c1220de011369f64193bcd7ccb7d77fa, type: 3}
+      propertyPath: _currentState
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8070051527336472278, guid: c1220de011369f64193bcd7ccb7d77fa, type: 3}
       propertyPath: m_Name
@@ -163052,6 +163096,10 @@ PrefabInstance:
     - target: {fileID: 5429999505833736139, guid: ce2b6fbcbb3681844a8772be9b1620e3, type: 3}
       propertyPath: m_LocalPosition.z
       value: -14.95
+      objectReference: {fileID: 0}
+    - target: {fileID: 6323063451101063211, guid: ce2b6fbcbb3681844a8772be9b1620e3, type: 3}
+      propertyPath: _currentState
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8070051527336472278, guid: ce2b6fbcbb3681844a8772be9b1620e3, type: 3}
       propertyPath: m_Name
@@ -210108,6 +210156,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -4.7
       objectReference: {fileID: 0}
+    - target: {fileID: 6323063451101063211, guid: c1220de011369f64193bcd7ccb7d77fa, type: 3}
+      propertyPath: _currentState
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8070051527336472278, guid: c1220de011369f64193bcd7ccb7d77fa, type: 3}
       propertyPath: m_Name
       value: GolemGuy
@@ -210761,6 +210813,10 @@ PrefabInstance:
     - target: {fileID: 6169505378570695567, guid: ce2b6fbcbb3681844a8772be9b1620e3, type: 3}
       propertyPath: m_Layer
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6323063451101063211, guid: ce2b6fbcbb3681844a8772be9b1620e3, type: 3}
+      propertyPath: _currentState
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8070051527336472278, guid: ce2b6fbcbb3681844a8772be9b1620e3, type: 3}
       propertyPath: m_Name
