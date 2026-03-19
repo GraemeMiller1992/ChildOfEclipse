@@ -1,5 +1,125 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2372564956993100
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3444362286191826773}
+  - component: {fileID: 5878030959575211979}
+  m_Layer: 0
+  m_Name: Decal Projector
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3444362286191826773
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2372564956993100}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.000001013279, y: -0.7071065, z: 0.7071072, w: 0.000000923872}
+  m_LocalPosition: {x: 0.4, y: 0.75, z: 0.56}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3502323102152886154}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5878030959575211979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2372564956993100}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0777d029ed3dffa4692f417d4aba19ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Runtime::UnityEngine.Rendering.Universal.DecalProjector
+  m_Material: {fileID: 2100000, guid: 517e0032ff81f5945ae6d2aa1490fd4b, type: 2}
+  m_DrawDistance: 1000
+  m_FadeScale: 0.9
+  m_StartAngleFade: 180
+  m_EndAngleFade: 180
+  m_UVScale: {x: 1, y: 1}
+  m_UVBias: {x: 0, y: 0}
+  m_RenderingLayerMask:
+    serializedVersion: 0
+    m_Bits: 1
+  m_ScaleMode: 0
+  m_Offset: {x: 0.75, y: 0.75, z: 0.07132098}
+  m_Size: {x: 3, y: 3, z: 0.14264196}
+  m_FadeFactor: 1
+  version: 1
+  m_DecalLayerMask: 1
+--- !u!1 &2896221047489991937
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4822543229011540045}
+  - component: {fileID: 3183452266475643617}
+  m_Layer: 0
+  m_Name: Decal Projector (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4822543229011540045
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2896221047489991937}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.7071071, y: 0.00000089406944, z: 0.000001043081, w: 0.7071064}
+  m_LocalPosition: {x: -1.0900006, y: 0.74999976, z: -0.56992674}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6125141638409637333}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3183452266475643617
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2896221047489991937}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0777d029ed3dffa4692f417d4aba19ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Runtime::UnityEngine.Rendering.Universal.DecalProjector
+  m_Material: {fileID: 2100000, guid: f078af155d43a6e45b72c049d0eb1f0a, type: 2}
+  m_DrawDistance: 1000
+  m_FadeScale: 0.9
+  m_StartAngleFade: 180
+  m_EndAngleFade: 180
+  m_UVScale: {x: 1, y: 1}
+  m_UVBias: {x: 0, y: 0}
+  m_RenderingLayerMask:
+    serializedVersion: 0
+    m_Bits: 1
+  m_ScaleMode: 0
+  m_Offset: {x: 0.75, y: 0.75, z: 0.07132098}
+  m_Size: {x: 3, y: 3, z: 0.14264196}
+  m_FadeFactor: 1
+  version: 1
+  m_DecalLayerMask: 1
 --- !u!1 &3145535364717322430
 GameObject:
   m_ObjectHideFlags: 0
@@ -492,7 +612,13 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 1b4d26d4ea195c541a9f15e5e6f81ede, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: -5678825993448753230, guid: 21834b6266c324648b59c25cfaf75b63, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4822543229011540045}
+    - targetCorrespondingSourceObject: {fileID: 6100933049049988589, guid: 21834b6266c324648b59c25cfaf75b63, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3444362286191826773}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: -6948632732658236248, guid: 21834b6266c324648b59c25cfaf75b63, type: 3}
       insertIndex: -1
@@ -501,6 +627,16 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 5087870989863239391}
   m_SourcePrefab: {fileID: 100100000, guid: 21834b6266c324648b59c25cfaf75b63, type: 3}
+--- !u!4 &3502323102152886154 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6100933049049988589, guid: 21834b6266c324648b59c25cfaf75b63, type: 3}
+  m_PrefabInstance: {fileID: 7219303216400775783}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &6125141638409637333 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -5678825993448753230, guid: 21834b6266c324648b59c25cfaf75b63, type: 3}
+  m_PrefabInstance: {fileID: 7219303216400775783}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7186240306002156940 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 21834b6266c324648b59c25cfaf75b63, type: 3}
