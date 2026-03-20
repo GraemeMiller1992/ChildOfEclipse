@@ -18,6 +18,13 @@ public class PlayerWallCutoutController : MonoBehaviour
     [Tooltip("Layer mask for objects that can be cut out")]
     public LayerMask layerMask = -1;
 
+    [Header("Tag Filtering")]
+    [Tooltip("Only objects with these tags will be cut out (leave empty to allow all)")]
+    public List<string> allowedTags = new List<string>();
+
+    [Tooltip("Enable tag filtering")]
+    public bool useTagFilter = false;
+
     [Tooltip("The cutout shader material template. Its properties will be updated from original materials.")]
     public Material cutoutMaterialTemplate;
 
@@ -33,6 +40,7 @@ public class PlayerWallCutoutController : MonoBehaviour
         public Material[] originalMaterials;
         public Material[] cutoutMaterials;
         public float lastSeenTime;
+      
     }
 
     private Dictionary<Renderer, OccludedRenderer> _occludedRenderers = new Dictionary<Renderer, OccludedRenderer>();
@@ -84,6 +92,9 @@ public class PlayerWallCutoutController : MonoBehaviour
             Renderer r = hit.collider.GetComponent<Renderer>();
             if (r == null) continue;
 
+            if (!PassesTagFilter(hit.collider.gameObject))
+                continue;
+
             // Check if player is actually behind the wall
             if (!IsPlayerBehindWall(hit.collider, playerPos, cameraPos))
                 continue;
@@ -113,6 +124,21 @@ public class PlayerWallCutoutController : MonoBehaviour
         {
             SwapBack(r);
         }
+    }
+    private bool PassesTagFilter(GameObject obj)
+    {
+        if (!useTagFilter) return true;
+
+        if (allowedTags == null || allowedTags.Count == 0)
+            return true;
+
+        foreach (var tag in allowedTags)
+        {
+            if (obj.CompareTag(tag))
+                return true;
+        }
+
+        return false;
     }
 
     private void SwapToCutout(Renderer r)
