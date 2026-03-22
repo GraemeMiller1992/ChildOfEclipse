@@ -20,6 +20,8 @@ GameObject:
   - component: {fileID: 6581460362493154458}
   - component: {fileID: 1783718752065944854}
   - component: {fileID: 4550515401010172440}
+  - component: {fileID: 3496546859180909951}
+  - component: {fileID: 7238349710822508461}
   m_Layer: 0
   m_Name: Controller
   m_TagString: Player
@@ -304,9 +306,83 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 4294967295
+  allowedTags: []
+  useTagFilter: 0
   cutoutMaterialTemplate: {fileID: 2100000, guid: 9316c353ba033b545813a43fce973e3a, type: 2}
   detectionRadius: 0.5
   maxOccluders: 10
+--- !u!114 &3496546859180909951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 454626129936325366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8da0daca9565a0c4482820b9f000d55a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Actions.SolarStateActionTrigger
+  _conditions:
+  - _solarState: {fileID: 1650063977106861433}
+    _requiredState: 0
+  _actionRunner:
+    _actions:
+    - rid: 7117420738498789511
+    - rid: 7117420738498789512
+  _triggerOnce: 0
+  _triggerOnAwake: 0
+  _contextObject: {fileID: 0}
+  _showDebugLogs: 1
+  references:
+    version: 2
+    RefIds:
+    - rid: 7117420738498789511
+      type: {class: SetActiveAction, ns: Actions, asm: Assembly-CSharp}
+      data:
+        target: {fileID: 2164148317013136996}
+        setActive: 1
+    - rid: 7117420738498789512
+      type: {class: SetActiveAction, ns: Actions, asm: Assembly-CSharp}
+      data:
+        target: {fileID: 889555002898653500}
+        setActive: 0
+--- !u!114 &7238349710822508461
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 454626129936325366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8da0daca9565a0c4482820b9f000d55a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Actions.SolarStateActionTrigger
+  _conditions:
+  - _solarState: {fileID: 1650063977106861433}
+    _requiredState: 1
+  _actionRunner:
+    _actions:
+    - rid: 7117420738498789511
+    - rid: 7117420738498789512
+  _triggerOnce: 0
+  _triggerOnAwake: 0
+  _contextObject: {fileID: 0}
+  _showDebugLogs: 1
+  references:
+    version: 2
+    RefIds:
+    - rid: 7117420738498789511
+      type: {class: SetActiveAction, ns: Actions, asm: Assembly-CSharp}
+      data:
+        target: {fileID: 2164148317013136996}
+        setActive: 0
+    - rid: 7117420738498789512
+      type: {class: SetActiveAction, ns: Actions, asm: Assembly-CSharp}
+      data:
+        target: {fileID: 889555002898653500}
+        setActive: 1
 --- !u!1 &4282852053946173810
 GameObject:
   m_ObjectHideFlags: 0
@@ -425,6 +501,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 8139851002798056868}
+  - {fileID: 2361756825583673186}
   - {fileID: 8828307884410921473}
   - {fileID: 5114612540491224510}
   m_Father: {fileID: 6515344246131151395}
@@ -518,3 +596,145 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1001 &3037939735483397907
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 16826715957323155}
+    m_Modifications:
+    - target: {fileID: 787649749465229425, guid: bc43a98d587c42c47a0cba9669628b5b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.01642418
+      objectReference: {fileID: 0}
+    - target: {fileID: 787649749465229425, guid: bc43a98d587c42c47a0cba9669628b5b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.5559227
+      objectReference: {fileID: 0}
+    - target: {fileID: 787649749465229425, guid: bc43a98d587c42c47a0cba9669628b5b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.29137802
+      objectReference: {fileID: 0}
+    - target: {fileID: 787649749465229425, guid: bc43a98d587c42c47a0cba9669628b5b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 787649749465229425, guid: bc43a98d587c42c47a0cba9669628b5b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 787649749465229425, guid: bc43a98d587c42c47a0cba9669628b5b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 787649749465229425, guid: bc43a98d587c42c47a0cba9669628b5b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 787649749465229425, guid: bc43a98d587c42c47a0cba9669628b5b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 787649749465229425, guid: bc43a98d587c42c47a0cba9669628b5b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 787649749465229425, guid: bc43a98d587c42c47a0cba9669628b5b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3756133456746897783, guid: bc43a98d587c42c47a0cba9669628b5b, type: 3}
+      propertyPath: m_Name
+      value: Sun Power vfx
+      objectReference: {fileID: 0}
+    - target: {fileID: 3756133456746897783, guid: bc43a98d587c42c47a0cba9669628b5b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: bc43a98d587c42c47a0cba9669628b5b, type: 3}
+--- !u!1 &2164148317013136996 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3756133456746897783, guid: bc43a98d587c42c47a0cba9669628b5b, type: 3}
+  m_PrefabInstance: {fileID: 3037939735483397907}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &2361756825583673186 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 787649749465229425, guid: bc43a98d587c42c47a0cba9669628b5b, type: 3}
+  m_PrefabInstance: {fileID: 3037939735483397907}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &7173165326983593244
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 16826715957323155}
+    m_Modifications:
+    - target: {fileID: 1403641492431689912, guid: 24323ff1899398447933c1349b147be4, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.01642418
+      objectReference: {fileID: 0}
+    - target: {fileID: 1403641492431689912, guid: 24323ff1899398447933c1349b147be4, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.57
+      objectReference: {fileID: 0}
+    - target: {fileID: 1403641492431689912, guid: 24323ff1899398447933c1349b147be4, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1403641492431689912, guid: 24323ff1899398447933c1349b147be4, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 1403641492431689912, guid: 24323ff1899398447933c1349b147be4, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 1403641492431689912, guid: 24323ff1899398447933c1349b147be4, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1403641492431689912, guid: 24323ff1899398447933c1349b147be4, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1403641492431689912, guid: 24323ff1899398447933c1349b147be4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 1403641492431689912, guid: 24323ff1899398447933c1349b147be4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1403641492431689912, guid: 24323ff1899398447933c1349b147be4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8058178144201563168, guid: 24323ff1899398447933c1349b147be4, type: 3}
+      propertyPath: m_Name
+      value: Moon Power vfx
+      objectReference: {fileID: 0}
+    - target: {fileID: 8058178144201563168, guid: 24323ff1899398447933c1349b147be4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 24323ff1899398447933c1349b147be4, type: 3}
+--- !u!1 &889555002898653500 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8058178144201563168, guid: 24323ff1899398447933c1349b147be4, type: 3}
+  m_PrefabInstance: {fileID: 7173165326983593244}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &8139851002798056868 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1403641492431689912, guid: 24323ff1899398447933c1349b147be4, type: 3}
+  m_PrefabInstance: {fileID: 7173165326983593244}
+  m_PrefabAsset: {fileID: 0}

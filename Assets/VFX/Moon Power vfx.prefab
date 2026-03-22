@@ -34323,6 +34323,7 @@ GameObject:
   - component: {fileID: 1403641492431689912}
   - component: {fileID: 7514753617056536556}
   - component: {fileID: 5324561219673654187}
+  - component: {fileID: 4548181496510679709}
   m_Layer: 0
   m_Name: Moon Power vfx
   m_TagString: Untagged
@@ -39223,6 +39224,19 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!114 &4548181496510679709
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8058178144201563168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 547c04de4159f6d4a832b3e0712ae6f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayParticlesOnEnable
+  particles: {fileID: 7514753617056536556}
 --- !u!1 &8943854593414802951
 GameObject:
   m_ObjectHideFlags: 0

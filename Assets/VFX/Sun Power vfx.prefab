@@ -24518,6 +24518,7 @@ GameObject:
   - component: {fileID: 787649749465229425}
   - component: {fileID: 1432373541756328823}
   - component: {fileID: 6251279456788116546}
+  - component: {fileID: 6298487187371855386}
   m_Layer: 0
   m_Name: Sun Power vfx
   m_TagString: Untagged
@@ -29418,6 +29419,19 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!114 &6298487187371855386
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3756133456746897783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 547c04de4159f6d4a832b3e0712ae6f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  particles: {fileID: 1432373541756328823}
 --- !u!1 &4472469753571848291
 GameObject:
   m_ObjectHideFlags: 0
