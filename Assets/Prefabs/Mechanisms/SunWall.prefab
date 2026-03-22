@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1479215391782063285}
   - component: {fileID: 2938096413038097107}
   - component: {fileID: 6593900706530939488}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SunWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32,9 +32,10 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 4.4, y: 5, z: 1}
+  m_LocalScale: {x: 5.2166405, y: 5.9280005, z: 1.1856}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 2587897130139381921}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &7539542081008698101
@@ -52,7 +53,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2438073536089858640}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -70,7 +71,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 052c4270b35d4694b902b8cf0fdf904a, type: 2}
+  - {fileID: 2100000, guid: 109627a8ad09140468642242eb460209, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -160,3 +161,78 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::World.SolarState
   _currentState: 0
+--- !u!1001 &6290006293450261079
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1139728934469651962}
+    m_Modifications:
+    - target: {fileID: 8403886089360044790, guid: b0bdea1435396fb4ca786e022f7c6a1f, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.56812805
+      objectReference: {fileID: 0}
+    - target: {fileID: 8403886089360044790, guid: b0bdea1435396fb4ca786e022f7c6a1f, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.4999529
+      objectReference: {fileID: 0}
+    - target: {fileID: 8403886089360044790, guid: b0bdea1435396fb4ca786e022f7c6a1f, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2.4997592
+      objectReference: {fileID: 0}
+    - target: {fileID: 8403886089360044790, guid: b0bdea1435396fb4ca786e022f7c6a1f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.00054175203
+      objectReference: {fileID: 0}
+    - target: {fileID: 8403886089360044790, guid: b0bdea1435396fb4ca786e022f7c6a1f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.0059999465
+      objectReference: {fileID: 0}
+    - target: {fileID: 8403886089360044790, guid: b0bdea1435396fb4ca786e022f7c6a1f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.04496765
+      objectReference: {fileID: 0}
+    - target: {fileID: 8403886089360044790, guid: b0bdea1435396fb4ca786e022f7c6a1f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.0003456382
+      objectReference: {fileID: 0}
+    - target: {fileID: 8403886089360044790, guid: b0bdea1435396fb4ca786e022f7c6a1f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8403886089360044790, guid: b0bdea1435396fb4ca786e022f7c6a1f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -9.313226e-10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8403886089360044790, guid: b0bdea1435396fb4ca786e022f7c6a1f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.0000023107975
+      objectReference: {fileID: 0}
+    - target: {fileID: 8403886089360044790, guid: b0bdea1435396fb4ca786e022f7c6a1f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 180.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 8403886089360044790, guid: b0bdea1435396fb4ca786e022f7c6a1f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8403886089360044790, guid: b0bdea1435396fb4ca786e022f7c6a1f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9217541824834873420, guid: b0bdea1435396fb4ca786e022f7c6a1f, type: 3}
+      propertyPath: m_Name
+      value: SunWall
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 4368016029506339192, guid: b0bdea1435396fb4ca786e022f7c6a1f, type: 3}
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b0bdea1435396fb4ca786e022f7c6a1f, type: 3}
+--- !u!4 &2587897130139381921 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8403886089360044790, guid: b0bdea1435396fb4ca786e022f7c6a1f, type: 3}
+  m_PrefabInstance: {fileID: 6290006293450261079}
+  m_PrefabAsset: {fileID: 0}
