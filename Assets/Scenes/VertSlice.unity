@@ -4233,6 +4233,8 @@ MonoBehaviour:
   restoreFullHealth: 1
   resetVelocity: 1
   maxRespawnCount: -1
+  setCheckpointOnStart: 0
+  componentsToDisable: 7
   OnBeforeRespawn:
     m_PersistentCalls:
       m_Calls: []
@@ -6068,7 +6070,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: GenericTrigger
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8500204848258944835, guid: e4e2b71705e2f764f8f3fa3fb53ea54b, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
