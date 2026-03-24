@@ -134,6 +134,9 @@ public class PlayerWallCutoutController : MonoBehaviour
 
         foreach (var tag in allowedTags)
         {
+            if (string.IsNullOrWhiteSpace(tag))
+                continue;
+
             if (obj.CompareTag(tag))
                 return true;
         }
