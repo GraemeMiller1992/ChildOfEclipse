@@ -540,6 +540,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Moon Node
       objectReference: {fileID: 0}
+    - target: {fileID: 4444558461230370346, guid: f3afa5c00a25000429ad4a0feebc56f1, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8006958694806783865, guid: f3afa5c00a25000429ad4a0feebc56f1, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -642,6 +646,11 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.3854815, y: 0.39220202, z: 0.7341612}
   m_Center: {x: -0.008670277, y: 0.003966703, z: 0.3692496}
+--- !u!23 &5105083610789515624 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 8006958694806783865, guid: f3afa5c00a25000429ad4a0feebc56f1, type: 3}
+  m_PrefabInstance: {fileID: 3010244023817868817}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5753536575880920416
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -817,13 +826,29 @@ PrefabInstance:
       propertyPath: m_Center.z
       value: -0.008618056
       objectReference: {fileID: 0}
+    - target: {fileID: 5755727637110116023, guid: 1dc6898787588914caf207eba6f4967b, type: 3}
+      propertyPath: _targetRenderers.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5755727637110116023, guid: 1dc6898787588914caf207eba6f4967b, type: 3}
+      propertyPath: '_targetRenderers.Array.data[1]'
+      value: 
+      objectReference: {fileID: 5105083610789515624}
+    - target: {fileID: 6814841459362800739, guid: 1dc6898787588914caf207eba6f4967b, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6814841459362800739, guid: 1dc6898787588914caf207eba6f4967b, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: e115defa0be7aaa4c8e2070cafb0f027, type: 2}
     - target: {fileID: 8522011601890439010, guid: 1dc6898787588914caf207eba6f4967b, type: 3}
       propertyPath: m_Name
       value: MoonNodeBall
       objectReference: {fileID: 0}
     - target: {fileID: 8540433599737375690, guid: 1dc6898787588914caf207eba6f4967b, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.9852508
+      value: 0.9852507
       objectReference: {fileID: 0}
     - target: {fileID: 8540433599737375690, guid: 1dc6898787588914caf207eba6f4967b, type: 3}
       propertyPath: m_LocalScale.y
@@ -831,7 +856,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8540433599737375690, guid: 1dc6898787588914caf207eba6f4967b, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.9852508
+      value: 0.9852507
       objectReference: {fileID: 0}
     - target: {fileID: 8540433599737375690, guid: 1dc6898787588914caf207eba6f4967b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -855,7 +880,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8540433599737375690, guid: 1dc6898787588914caf207eba6f4967b, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.005560308
+      value: 0.0055603096
       objectReference: {fileID: 0}
     - target: {fileID: 8540433599737375690, guid: 1dc6898787588914caf207eba6f4967b, type: 3}
       propertyPath: m_LocalRotation.z
