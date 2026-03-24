@@ -52,12 +52,12 @@ public class PhysicsManipulator : MonoBehaviour
         forceDirection = forceDirection.normalized;
     }
     
-    private void Update()
+    private void FixedUpdate()
     {
-        if (continuousForce || Time.time - lastForceTime >= forceInterval)
+        if (continuousForce || Time.fixedTime - lastForceTime >= forceInterval)
         {
             ApplyForceToOverlappingObjects();
-            lastForceTime = Time.time;
+            lastForceTime = Time.fixedTime;
         }
     }
     

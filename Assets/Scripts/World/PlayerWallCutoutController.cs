@@ -159,20 +159,34 @@ public class PlayerWallCutoutController : MonoBehaviour
         for (int i = 0; i < occluded.originalMaterials.Length; i++)
         {
             Material orig = occluded.originalMaterials[i];
+            if (orig == null) continue;
+
             Material cutout = new Material(cutoutMaterialTemplate);
             cutout.name = orig.name + " (Cutout Instance)";
 
             // Copy properties from original to cutout
+            // Base Color
             if (orig.HasProperty("_BaseColor")) cutout.SetColor("_BaseColor", orig.GetColor("_BaseColor"));
+            else if (orig.HasProperty("_Color")) cutout.SetColor("_BaseColor", orig.GetColor("_Color"));
+
+            // Base Map
             if (orig.HasProperty("_BaseMap")) cutout.SetTexture("_BaseMap", orig.GetTexture("_BaseMap"));
+            else if (orig.HasProperty("_MainTex")) cutout.SetTexture("_BaseMap", orig.GetTexture("_MainTex"));
+
+            // Metallic
             if (orig.HasProperty("_Metallic")) cutout.SetFloat("_Metallic", orig.GetFloat("_Metallic"));
-            if (orig.HasProperty("_Smoothness")) cutout.SetFloat("_Smoothness", orig.GetFloat("_Smoothness"));
-            if (orig.HasProperty("_NormalMap")) cutout.SetTexture("_NormalMap", orig.GetTexture("_NormalMap"));
-            if (orig.HasProperty("_NormalScale")) cutout.SetFloat("_NormalScale", orig.GetFloat("_NormalScale"));
             
-            // Handle some common HDRP names if they differ
-            if (!orig.HasProperty("_BaseColor") && orig.HasProperty("_Color")) cutout.SetColor("_BaseColor", orig.GetColor("_Color"));
-            if (!orig.HasProperty("_BaseMap") && orig.HasProperty("_MainTex")) cutout.SetTexture("_BaseMap", orig.GetTexture("_MainTex"));
+            // Smoothness
+            if (orig.HasProperty("_Smoothness")) cutout.SetFloat("_Smoothness", orig.GetFloat("_Smoothness"));
+            else if (orig.HasProperty("_Glossiness")) cutout.SetFloat("_Smoothness", orig.GetFloat("_Glossiness"));
+
+            // Normal Map
+            if (orig.HasProperty("_BumpMap")) cutout.SetTexture("_BumpMap", orig.GetTexture("_BumpMap"));
+            else if (orig.HasProperty("_NormalMap")) cutout.SetTexture("_BumpMap", orig.GetTexture("_NormalMap"));
+
+            // Normal Scale
+            if (orig.HasProperty("_BumpScale")) cutout.SetFloat("_BumpScale", orig.GetFloat("_BumpScale"));
+            else if (orig.HasProperty("_NormalScale")) cutout.SetFloat("_BumpScale", orig.GetFloat("_NormalScale"));
 
             occluded.cutoutMaterials[i] = cutout;
         }
