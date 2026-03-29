@@ -95,6 +95,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -4795440217265872344, guid: ce52ff47ab0a13a468301107e559fc98, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5719643696974245597}
+    - targetCorrespondingSourceObject: {fileID: -4795440217265872344, guid: ce52ff47ab0a13a468301107e559fc98, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6725040725743341741}
     - targetCorrespondingSourceObject: {fileID: -3133498875991405556, guid: ce52ff47ab0a13a468301107e559fc98, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7875453660071114842}
@@ -174,7 +177,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ChildOfEclipse.SolarStateSwapInteractable
   highlightRenderer: {fileID: 0}
-  hoverColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  hoverColor: {r: 1, g: 1, b: 1, a: 0}
   customInteractionDescription: 
   interactParticles: {fileID: 0}
   interactSound: {fileID: 0}
@@ -254,6 +257,22 @@ MonoBehaviour:
       data:
         target: {fileID: 560834171553441459}
         setActive: 1
+--- !u!114 &6725040725743341741
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1667568399674018090}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b3c8d9e5f2a4b6c8d1e2f3a4b5c6d7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::World.SolarStateMaterial
+  _sunMaterial: {fileID: 2100000, guid: eaa3e635ec35bcd48b8cc62b7aad7f33, type: 2}
+  _moonMaterial: {fileID: 2100000, guid: 6b0ec8af93fc8f14a96f5c96f7c0c17a, type: 2}
+  _eclipseMaterial: {fileID: 2100000, guid: 2ba031134926c634e88d1dcc7a50918c, type: 2}
+  _targetRenderers: []
 --- !u!4 &3305063118589070569 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: ce52ff47ab0a13a468301107e559fc98, type: 3}
