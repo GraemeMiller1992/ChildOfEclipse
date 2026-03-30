@@ -41,6 +41,10 @@ namespace ChildOfEclipse
         [Tooltip("Maximum number of swaps allowed. Set to -1 for unlimited swaps.")]
         [SerializeField] private int maxSwaps = -1;
 
+        [Header("Interaction Lock")]
+        [Tooltip("If true, this object cannot be interacted with.")]
+        [SerializeField] private bool interactionLocked = false;
+
         [Header("Debug")]
         [Tooltip("Show debug messages in console.")]
         [SerializeField] private bool showDebugMessages = false;
@@ -60,9 +64,14 @@ namespace ChildOfEclipse
         #region Properties
 
         /// <summary>
-        /// Returns whether this object can swap state (player has different state).
+        /// Returns whether this object can currently be interacted with.
         /// </summary>
-        public bool CanInteract => _canSwapState;
+        public bool CanInteract => !interactionLocked && _canSwapState;
+
+        /// <summary>
+        /// Returns whether interaction is currently locked.
+        /// </summary>
+        public bool IsInteractionLocked => interactionLocked;
 
         /// <summary>
         /// Returns the description of what will happen when interacted with.
@@ -76,7 +85,11 @@ namespace ChildOfEclipse
                     return customInteractionDescription;
                 }
 
-                // Check if max swaps reached
+                if (interactionLocked)
+                {
+                    return "Interaction disabled";
+                }
+
                 if (maxSwaps >= 0 && _currentSwaps >= maxSwaps)
                 {
                     return "No swaps remaining";
@@ -95,13 +108,16 @@ namespace ChildOfEclipse
                 {
                     var myState = GetComponent<SolarState>().CurrentState;
                     var playerState = _playerSolarState.CurrentState;
+
                     if (maxSwaps >= 0)
                     {
                         int remainingSwaps = maxSwaps - _currentSwaps;
                         return $"Swap {playerState} for {myState} ({remainingSwaps} remaining)";
                     }
+
                     return $"Swap {playerState} for {myState}";
                 }
+
                 return "Swap state";
             }
         }
@@ -112,7 +128,6 @@ namespace ChildOfEclipse
 
         private void Awake()
         {
-            // Get or create audio source
             _audioSource = GetComponent<AudioSource>();
             if (_audioSource == null && interactSound != null)
             {
@@ -120,38 +135,31 @@ namespace ChildOfEclipse
                 _audioSource.playOnAwake = false;
             }
 
-            // Find renderer if not assigned
             if (highlightRenderer == null)
             {
                 highlightRenderer = GetComponent<Renderer>();
             }
 
-            // Get SolarStateMaterial component
             _solarStateMaterial = GetComponent<SolarStateMaterial>();
 
-            // Find player's SolarState
             FindPlayerSolarState();
 
-            // Subscribe to player's state changes to update canSwapState
             if (_playerSolarState != null)
             {
                 _playerSolarState.OnSolarStateChanged += OnPlayerStateChanged;
             }
 
-            // Subscribe to this object's state changes to update canSwapState
             var mySolarState = GetComponent<SolarState>();
             if (mySolarState != null)
             {
                 mySolarState.OnSolarStateChanged += OnMyStateChanged;
             }
 
-            // Update swapable state
             UpdateSwapableState();
         }
 
         private void Update()
         {
-            // Find player if not found yet
             if (_playerSolarState == null)
             {
                 FindPlayerSolarState();
@@ -161,19 +169,16 @@ namespace ChildOfEclipse
                 }
             }
 
-            // Update swapable state
             UpdateSwapableState();
         }
 
         private void OnDestroy()
         {
-            // Unsubscribe from player's state changes
             if (_playerSolarState != null)
             {
                 _playerSolarState.OnSolarStateChanged -= OnPlayerStateChanged;
             }
 
-            // Unsubscribe from this object's state changes
             var mySolarState = GetComponent<SolarState>();
             if (mySolarState != null)
             {
@@ -190,6 +195,15 @@ namespace ChildOfEclipse
         /// </summary>
         public void OnInteract(GameObject interactor, RaycastHit hitInfo)
         {
+            if (interactionLocked)
+            {
+                if (showDebugMessages)
+                {
+                    Debug.Log($"{gameObject.name}: Interaction blocked because it is locked", this);
+                }
+                return;
+            }
+
             if (!_canSwapState)
             {
                 if (showDebugMessages)
@@ -199,14 +213,12 @@ namespace ChildOfEclipse
                 return;
             }
 
-            // Get the player's SolarState
             if (_playerSolarState == null)
             {
                 Debug.LogError($"{gameObject.name}: Player SolarState not found!", this);
                 return;
             }
 
-            // Get this object's SolarState
             SolarState mySolarState = GetComponent<SolarState>();
             if (mySolarState == null)
             {
@@ -214,15 +226,12 @@ namespace ChildOfEclipse
                 return;
             }
 
-            // Store the states before swapping
             SolarStateValue playerState = _playerSolarState.CurrentState;
             SolarStateValue myState = mySolarState.CurrentState;
 
-            // Swap the states
             _playerSolarState.CurrentState = myState;
             mySolarState.CurrentState = playerState;
 
-            // Increment swap count
             _currentSwaps++;
 
             if (showDebugMessages)
@@ -230,10 +239,7 @@ namespace ChildOfEclipse
                 Debug.Log($"{gameObject.name}: Swapped states - Player now has {myState}, Object now has {playerState} ({_currentSwaps}/{(maxSwaps >= 0 ? maxSwaps.ToString() : "∞")} swaps)", this);
             }
 
-            // Update swapable state after incrementing
             UpdateSwapableState();
-
-            // Play effects
             PlayInteractEffects();
         }
 
@@ -242,7 +248,11 @@ namespace ChildOfEclipse
         /// </summary>
         public void OnHoverEnter(GameObject interactor)
         {
-            // Only apply hover color if we can swap
+            if (interactionLocked)
+            {
+                return;
+            }
+
             if (_canSwapState && highlightRenderer != null)
             {
                 highlightRenderer.material.color = hoverColor;
@@ -259,15 +269,16 @@ namespace ChildOfEclipse
         /// </summary>
         public void OnHoverExit(GameObject interactor)
         {
-            // Trigger SolarStateMaterial to re-apply the correct material for the current state
             if (_solarStateMaterial != null)
             {
                 var mySolarState = GetComponent<SolarState>();
                 if (mySolarState != null)
                 {
-                    // Use reflection to call the private ApplyMaterialForState method
-                    var method = typeof(SolarStateMaterial).GetMethod("ApplyMaterialForState",
-                        System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
+                    var method = typeof(SolarStateMaterial).GetMethod(
+                        "ApplyMaterialForState",
+                        System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance
+                    );
+
                     if (method != null)
                     {
                         method.Invoke(_solarStateMaterial, new object[] { mySolarState.CurrentState });
@@ -287,7 +298,6 @@ namespace ChildOfEclipse
 
         private void FindPlayerSolarState()
         {
-            // Try to find player by tag
             GameObject player = GameObject.FindGameObjectWithTag(playerTag);
             if (player != null)
             {
@@ -309,14 +319,12 @@ namespace ChildOfEclipse
                 return;
             }
 
-            // Check if we've reached max swaps
             if (maxSwaps >= 0 && _currentSwaps >= maxSwaps)
             {
                 _canSwapState = false;
                 return;
             }
 
-            // Can swap if states are different
             _canSwapState = _playerSolarState.CurrentState != mySolarState.CurrentState;
         }
 
@@ -326,6 +334,7 @@ namespace ChildOfEclipse
             {
                 Debug.Log($"{gameObject.name}: Player state changed from {oldState} to {newState}", this);
             }
+
             UpdateSwapableState();
         }
 
@@ -335,18 +344,17 @@ namespace ChildOfEclipse
             {
                 Debug.Log($"{gameObject.name}: My state changed from {oldState} to {newState}", this);
             }
+
             UpdateSwapableState();
         }
 
         private void PlayInteractEffects()
         {
-            // Play particles
             if (interactParticles != null)
             {
                 interactParticles.Play();
             }
 
-            // Play sound
             if (_audioSource != null && interactSound != null)
             {
                 _audioSource.volume = interactSoundVolume;
@@ -359,11 +367,49 @@ namespace ChildOfEclipse
         #region Public Methods
 
         /// <summary>
+        /// Disable interaction on this object.
+        /// </summary>
+        public void DisableInteraction()
+        {
+            interactionLocked = true;
+
+            if (showDebugMessages)
+            {
+                Debug.Log($"{gameObject.name}: Interaction disabled", this);
+            }
+        }
+
+        /// <summary>
+        /// Enable interaction on this object.
+        /// </summary>
+        public void EnableInteraction()
+        {
+            interactionLocked = false;
+
+            if (showDebugMessages)
+            {
+                Debug.Log($"{gameObject.name}: Interaction enabled", this);
+            }
+        }
+
+        /// <summary>
+        /// Set whether interaction is locked.
+        /// </summary>
+        public void SetInteractionLocked(bool locked)
+        {
+            interactionLocked = locked;
+
+            if (showDebugMessages)
+            {
+                Debug.Log($"{gameObject.name}: Interaction locked set to {locked}", this);
+            }
+        }
+
+        /// <summary>
         /// Manually sets the player SolarState reference.
         /// </summary>
         public void SetPlayerSolarState(SolarState playerState)
         {
-            // Unsubscribe from old player
             if (_playerSolarState != null)
             {
                 _playerSolarState.OnSolarStateChanged -= OnPlayerStateChanged;
@@ -371,7 +417,6 @@ namespace ChildOfEclipse
 
             _playerSolarState = playerState;
 
-            // Subscribe to new player
             if (_playerSolarState != null)
             {
                 _playerSolarState.OnSolarStateChanged += OnPlayerStateChanged;
@@ -385,12 +430,11 @@ namespace ChildOfEclipse
         /// </summary>
         public void TriggerInteraction()
         {
-            if (!_canSwapState)
+            if (interactionLocked || !_canSwapState)
             {
                 return;
             }
 
-            // Create a fake hit info
             RaycastHit hitInfo = new RaycastHit();
             hitInfo.point = transform.position;
             hitInfo.normal = Vector3.up;
@@ -421,8 +465,9 @@ namespace ChildOfEclipse
         {
             if (maxSwaps < 0)
             {
-                return -1; // Unlimited
+                return -1;
             }
+
             return Mathf.Max(0, maxSwaps - _currentSwaps);
         }
 
@@ -455,11 +500,9 @@ namespace ChildOfEclipse
 #if UNITY_EDITOR
         private void OnDrawGizmosSelected()
         {
-            // Draw a sphere around the interactable to show its interaction radius
-            Gizmos.color = _canSwapState ? Color.green : Color.gray;
+            Gizmos.color = CanInteract ? Color.green : Color.gray;
             Gizmos.DrawWireSphere(transform.position, 0.5f);
 
-            // Draw label
             if (highlightRenderer != null)
             {
                 var myState = GetMyState();
@@ -467,14 +510,17 @@ namespace ChildOfEclipse
 
                 string stateText = myState.HasValue ? myState.ToString() : "No State";
                 string playerText = playerState.HasValue ? playerState.ToString() : "No Player";
-                string swapText = _canSwapState ? "Can Swap" : "Cannot Swap";
+                string swapText = interactionLocked ? "Locked" : (CanInteract ? "Can Swap" : "Cannot Swap");
                 string swapsText = maxSwaps >= 0 ? $"({_currentSwaps}/{maxSwaps})" : "(∞)";
 
-                UnityEditor.Handles.Label(transform.position + Vector3.up * 1f,
-                    $"{stateText} Interactable\nPlayer: {playerText}\n{swapText} {swapsText}");
+                UnityEditor.Handles.Label(
+                    transform.position + Vector3.up * 1f,
+                    $"{stateText} Interactable\nPlayer: {playerText}\n{swapText} {swapsText}"
+                );
             }
         }
 #endif
-#endregion
+
+        #endregion
     }
 }

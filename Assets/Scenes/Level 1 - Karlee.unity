@@ -15339,6 +15339,7 @@ MonoBehaviour:
   interactSoundVolume: 1
   playerTag: Player
   maxSwaps: -1
+  interactionLocked: 0
   showDebugMessages: 0
 --- !u!33 &253092031
 MeshFilter:
@@ -20758,6 +20759,7 @@ MonoBehaviour:
   interactSoundVolume: 1
   playerTag: Player
   maxSwaps: 1
+  interactionLocked: 0
   showDebugMessages: 0
 --- !u!114 &331836436
 MonoBehaviour:
@@ -39242,7 +39244,7 @@ Transform:
   m_GameObject: {fileID: 584284217}
   serializedVersion: 2
   m_LocalRotation: {x: 0.2877572, y: -0.38874128, z: 0.129222, w: 0.8656661}
-  m_LocalPosition: {x: 30.470001, y: 18.45, z: -91.89}
+  m_LocalPosition: {x: 52.7, y: 18.45, z: -31.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -43199,7 +43201,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6515344246131151395, guid: c0203cc563b4dc0438aea55747c12aa7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 12.47
+      value: 34.7
       objectReference: {fileID: 0}
     - target: {fileID: 6515344246131151395, guid: c0203cc563b4dc0438aea55747c12aa7, type: 3}
       propertyPath: m_LocalPosition.y
@@ -43207,7 +43209,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6515344246131151395, guid: c0203cc563b4dc0438aea55747c12aa7, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -75.89
+      value: -15.5
       objectReference: {fileID: 0}
     - target: {fileID: 6515344246131151395, guid: c0203cc563b4dc0438aea55747c12aa7, type: 3}
       propertyPath: m_LocalRotation.w
@@ -47583,6 +47585,7 @@ MonoBehaviour:
   interactSoundVolume: 1
   playerTag: Player
   maxSwaps: 1
+  interactionLocked: 0
   showDebugMessages: 0
 --- !u!114 &687145039
 MonoBehaviour:
@@ -47691,6 +47694,7 @@ MonoBehaviour:
   interactSoundVolume: 1
   playerTag: Player
   maxSwaps: 1
+  interactionLocked: 0
   showDebugMessages: 0
 --- !u!114 &691455191
 MonoBehaviour:
@@ -50544,6 +50548,7 @@ MonoBehaviour:
   interactSoundVolume: 1
   playerTag: Player
   maxSwaps: -1
+  interactionLocked: 0
   showDebugMessages: 0
 --- !u!114 &713728184
 MonoBehaviour:
@@ -54071,6 +54076,7 @@ MonoBehaviour:
   interactSoundVolume: 1
   playerTag: Player
   maxSwaps: 1
+  interactionLocked: 0
   showDebugMessages: 0
 --- !u!114 &796185200
 MonoBehaviour:
@@ -55068,6 +55074,7 @@ MonoBehaviour:
   interactSoundVolume: 1
   playerTag: Player
   maxSwaps: 1
+  interactionLocked: 0
   showDebugMessages: 0
 --- !u!114 &819191458
 MonoBehaviour:
@@ -59256,6 +59263,7 @@ MonoBehaviour:
   interactSoundVolume: 1
   playerTag: Player
   maxSwaps: -1
+  interactionLocked: 0
   showDebugMessages: 0
 --- !u!33 &918646879
 MeshFilter:
@@ -60477,6 +60485,7 @@ MonoBehaviour:
   interactSoundVolume: 1
   playerTag: Player
   maxSwaps: -1
+  interactionLocked: 0
   showDebugMessages: 0
 --- !u!65 &942796621
 BoxCollider:
@@ -60775,6 +60784,7 @@ MonoBehaviour:
   interactSoundVolume: 1
   playerTag: Player
   maxSwaps: 1
+  interactionLocked: 0
   showDebugMessages: 0
 --- !u!114 &948203941
 MonoBehaviour:
@@ -68507,7 +68517,15 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3846443571245195453, guid: f7fd6bad7d891904dba1247e9515d974, type: 3}
+      propertyPath: OnDetectionEnter.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3846443571245195453, guid: f7fd6bad7d891904dba1247e9515d974, type: 3}
       propertyPath: OnTriggered.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3846443571245195453, guid: f7fd6bad7d891904dba1247e9515d974, type: 3}
+      propertyPath: OnTriggered.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3846443571245195453, guid: f7fd6bad7d891904dba1247e9515d974, type: 3}
@@ -68515,7 +68533,15 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1813716532}
     - target: {fileID: 3846443571245195453, guid: f7fd6bad7d891904dba1247e9515d974, type: 3}
+      propertyPath: OnTriggered.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1813716532}
+    - target: {fileID: 3846443571245195453, guid: f7fd6bad7d891904dba1247e9515d974, type: 3}
       propertyPath: OnTriggered.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3846443571245195453, guid: f7fd6bad7d891904dba1247e9515d974, type: 3}
+      propertyPath: OnTriggered.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3846443571245195453, guid: f7fd6bad7d891904dba1247e9515d974, type: 3}
@@ -68523,11 +68549,27 @@ PrefabInstance:
       value: set_enabled
       objectReference: {fileID: 0}
     - target: {fileID: 3846443571245195453, guid: f7fd6bad7d891904dba1247e9515d974, type: 3}
+      propertyPath: OnTriggered.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: set_enabled
+      objectReference: {fileID: 0}
+    - target: {fileID: 3846443571245195453, guid: f7fd6bad7d891904dba1247e9515d974, type: 3}
+      propertyPath: OnDetectionEnter.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3846443571245195453, guid: f7fd6bad7d891904dba1247e9515d974, type: 3}
       propertyPath: OnTriggered.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: ChildOfEclipse.SolarStateSwapInteractable, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 3846443571245195453, guid: f7fd6bad7d891904dba1247e9515d974, type: 3}
+      propertyPath: OnTriggered.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: ChildOfEclipse.SolarStateSwapInteractable, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3846443571245195453, guid: f7fd6bad7d891904dba1247e9515d974, type: 3}
       propertyPath: OnTriggered.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 3846443571245195453, guid: f7fd6bad7d891904dba1247e9515d974, type: 3}
+      propertyPath: OnTriggered.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 8486576527459253600, guid: f7fd6bad7d891904dba1247e9515d974, type: 3}
@@ -70657,6 +70699,7 @@ MonoBehaviour:
   interactSoundVolume: 1
   playerTag: Player
   maxSwaps: -1
+  interactionLocked: 0
   showDebugMessages: 0
 --- !u!43 &1126353759
 Mesh:
@@ -72320,6 +72363,7 @@ MonoBehaviour:
   interactSoundVolume: 1
   playerTag: Player
   maxSwaps: -1
+  interactionLocked: 0
   showDebugMessages: 0
 --- !u!114 &1157987123
 MonoBehaviour:
@@ -72427,6 +72471,7 @@ MonoBehaviour:
   interactSoundVolume: 1
   playerTag: Player
   maxSwaps: -1
+  interactionLocked: 0
   showDebugMessages: 0
 --- !u!65 &1159906951
 BoxCollider:
@@ -78495,6 +78540,7 @@ MonoBehaviour:
   interactSoundVolume: 1
   playerTag: Player
   maxSwaps: -1
+  interactionLocked: 0
   showDebugMessages: 0
 --- !u!114 &1248038922
 MonoBehaviour:
@@ -83570,7 +83616,7 @@ Transform:
   m_GameObject: {fileID: 1322260568}
   serializedVersion: 2
   m_LocalRotation: {x: 0.2877572, y: -0.38874128, z: 0.129222, w: 0.8656661}
-  m_LocalPosition: {x: 30.470001, y: 18.45, z: -91.89}
+  m_LocalPosition: {x: 52.7, y: 18.45, z: -31.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -101974,6 +102020,7 @@ MonoBehaviour:
   interactSoundVolume: 1
   playerTag: Player
   maxSwaps: -1
+  interactionLocked: 0
   showDebugMessages: 0
 --- !u!114 &1471325658
 MonoBehaviour:
@@ -113409,6 +113456,7 @@ MonoBehaviour:
   interactSoundVolume: 1
   playerTag: Player
   maxSwaps: -1
+  interactionLocked: 0
   showDebugMessages: 0
 --- !u!33 &1680878117
 MeshFilter:
@@ -118198,6 +118246,7 @@ MonoBehaviour:
   interactSoundVolume: 1
   playerTag: Player
   maxSwaps: 1
+  interactionLocked: 0
   showDebugMessages: 0
 --- !u!114 &1726539629
 MonoBehaviour:
@@ -122328,6 +122377,7 @@ MonoBehaviour:
   interactSoundVolume: 1
   playerTag: Player
   maxSwaps: -1
+  interactionLocked: 0
   showDebugMessages: 0
 --- !u!114 &1813716533
 MonoBehaviour:
@@ -122723,6 +122773,7 @@ MonoBehaviour:
   interactSoundVolume: 1
   playerTag: Player
   maxSwaps: -1
+  interactionLocked: 0
   showDebugMessages: 0
 --- !u!114 &1831377360
 MonoBehaviour:
@@ -128832,6 +128883,7 @@ MonoBehaviour:
   interactSoundVolume: 1
   playerTag: Player
   maxSwaps: -1
+  interactionLocked: 0
   showDebugMessages: 0
 --- !u!114 &1943404354
 MonoBehaviour:
@@ -129707,6 +129759,7 @@ MonoBehaviour:
   interactSoundVolume: 1
   playerTag: Player
   maxSwaps: -1
+  interactionLocked: 0
   showDebugMessages: 0
 --- !u!65 &1986350679
 BoxCollider:
@@ -131278,6 +131331,7 @@ MonoBehaviour:
   interactSoundVolume: 1
   playerTag: Player
   maxSwaps: 1
+  interactionLocked: 0
   showDebugMessages: 0
 --- !u!114 &2000787508
 MonoBehaviour:

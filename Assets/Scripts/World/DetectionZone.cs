@@ -1,12 +1,15 @@
 using UnityEngine;
 using UnityEngine.Events;
 using System.Collections.Generic;
+using ChildOfEclipse;
 
 namespace World
 {
     /// <summary>
     /// A detection zone that monitors for colliders within an overlap box area.
     /// Triggers when a specified number of colliders from a layermask are detected.
+    /// Can also automatically disable / enable SolarStateSwapInteractable objects
+    /// when they enter or leave the zone.
     /// </summary>
     public class DetectionZone : MonoBehaviour
     {
@@ -32,6 +35,16 @@ namespace World
 
         [Tooltip("Should the zone maintain the triggered state even after objects leave?")]
         [SerializeField] private bool maintainTriggeredState = false;
+
+        [Header("Interaction Locking")]
+        [Tooltip("If enabled, SolarStateSwapInteractable components will be disabled when they enter the zone.")]
+        [SerializeField] private bool disableSwapInteractionOnEnter = true;
+
+        [Tooltip("If enabled, SolarStateSwapInteractable components will be re-enabled when they leave the zone.")]
+        [SerializeField] private bool reEnableSwapInteractionOnExit = true;
+
+        [Tooltip("Show debug messages for enter/exit interaction locking.")]
+        [SerializeField] private bool showDebugMessages = false;
 
         [Header("Visualization")]
         [Tooltip("Color of the detection box gizmo when not triggered.")]
@@ -90,10 +103,8 @@ namespace World
         /// </summary>
         private void CheckForDetections()
         {
-            // Create a new set to track objects currently inside the zone
             HashSet<GameObject> currentObjectsInZone = new HashSet<GameObject>();
 
-            // Use OverlapBox to detect colliders
             int count = Physics.OverlapBoxNonAlloc(
                 transform.position + transform.TransformDirection(boxCenter),
                 boxSize * 0.5f,
@@ -102,12 +113,15 @@ namespace World
                 detectionLayers
             );
 
-            // Process detected colliders
             for (int i = 0; i < count; i++)
             {
+                if (detectedColliders[i] == null)
+                {
+                    continue;
+                }
+
                 GameObject obj = detectedColliders[i].gameObject;
 
-                // Check tag filter
                 if (!string.IsNullOrEmpty(requiredTag) && !obj.CompareTag(requiredTag))
                 {
                     continue;
@@ -115,37 +129,30 @@ namespace World
 
                 currentObjectsInZone.Add(obj);
 
-                // Check if this is a new object entering the zone
                 if (!objectsInZone.Contains(obj))
                 {
-                    OnDetectionEnter?.Invoke(obj);
+                    OnObjectEntered(obj);
                 }
             }
 
-            // Check for objects that left the zone
             foreach (GameObject obj in objectsInZone)
             {
                 if (!currentObjectsInZone.Contains(obj))
                 {
-                    OnDetectionExit?.Invoke(obj);
+                    OnObjectExited(obj);
                     objectsThatTriggered.Remove(obj);
                 }
             }
 
-            // Update the set of objects in the zone
             objectsInZone = currentObjectsInZone;
-
-            // Update detection count
             _currentDetectionCount = objectsInZone.Count;
 
-            // Update has detections state
             bool newHasDetections = _currentDetectionCount > 0;
             if (newHasDetections != _hasDetections)
             {
                 _hasDetections = newHasDetections;
             }
 
-            // Check trigger threshold
             int eligibleTriggerCount = 0;
             foreach (GameObject obj in objectsInZone)
             {
@@ -155,9 +162,8 @@ namespace World
                 }
             }
 
-            // Update triggered state
             bool newIsTriggered = eligibleTriggerCount >= triggerThreshold;
-            
+
             if (newIsTriggered != _isTriggered)
             {
                 _isTriggered = newIsTriggered;
@@ -166,7 +172,6 @@ namespace World
                 {
                     OnTriggered?.Invoke();
 
-                    // Mark objects as having triggered if configured
                     if (triggerOncePerObject)
                     {
                         foreach (GameObject obj in objectsInZone)
@@ -182,13 +187,51 @@ namespace World
             }
         }
 
+        private void OnObjectEntered(GameObject obj)
+        {
+            if (disableSwapInteractionOnEnter)
+            {
+                SolarStateSwapInteractable swapInteractable = obj.GetComponentInParent<SolarStateSwapInteractable>();
+                if (swapInteractable != null)
+                {
+                    swapInteractable.DisableInteraction();
+
+                    if (showDebugMessages)
+                    {
+                        Debug.Log($"{name}: Disabled swap interaction on {swapInteractable.gameObject.name}", this);
+                    }
+                }
+            }
+
+            OnDetectionEnter?.Invoke(obj);
+        }
+
+        private void OnObjectExited(GameObject obj)
+        {
+            if (reEnableSwapInteractionOnExit)
+            {
+                SolarStateSwapInteractable swapInteractable = obj.GetComponentInParent<SolarStateSwapInteractable>();
+                if (swapInteractable != null)
+                {
+                    swapInteractable.EnableInteraction();
+
+                    if (showDebugMessages)
+                    {
+                        Debug.Log($"{name}: Re-enabled swap interaction on {swapInteractable.gameObject.name}", this);
+                    }
+                }
+            }
+
+            OnDetectionExit?.Invoke(obj);
+        }
+
         /// <summary>
         /// Resets the triggered state, allowing objects to trigger the zone again.
         /// </summary>
         public void ResetTriggeredState()
         {
             objectsThatTriggered.Clear();
-            
+
             if (_isTriggered && !maintainTriggeredState)
             {
                 _isTriggered = false;
@@ -197,9 +240,8 @@ namespace World
         }
 
         /// <summary>
-        /// Manually sets the triggered state (useful for testing or external control).
+        /// Manually sets the triggered state.
         /// </summary>
-        /// <param name="triggered">Whether to set as triggered or not.</param>
         public void SetTriggered(bool triggered)
         {
             if (triggered != _isTriggered)
@@ -220,7 +262,6 @@ namespace World
         /// <summary>
         /// Gets the list of GameObjects currently in the detection zone.
         /// </summary>
-        /// <returns>An array of GameObjects in the zone.</returns>
         public GameObject[] GetObjectsInZone()
         {
             GameObject[] objects = new GameObject[objectsInZone.Count];
@@ -228,9 +269,6 @@ namespace World
             return objects;
         }
 
-        /// <summary>
-        /// Draws editor gizmos to visualize the detection box area.
-        /// </summary>
         private void OnDrawGizmos()
         {
             if (!showGizmo)
@@ -238,37 +276,30 @@ namespace World
                 return;
             }
 
-            // Choose color based on state
-            Gizmos.color = _isTriggered ? triggeredColor : normalColor;
             Gizmos.matrix = transform.localToWorldMatrix;
 
-            // Draw wire cube
             Color wireColor = _isTriggered ? triggeredColor : normalColor;
             wireColor.a = 1f;
             Gizmos.color = wireColor;
             Gizmos.DrawWireCube(boxCenter, boxSize);
 
-            // Draw semi-transparent cube
             Color fillColor = _isTriggered ? triggeredColor : normalColor;
             Gizmos.color = fillColor;
             Gizmos.DrawCube(boxCenter, boxSize);
 
             Gizmos.matrix = Matrix4x4.identity;
 
-            // Draw label with detection info
 #if UNITY_EDITOR
-            string label = $"Detection Zone\n" +
-                          $"Objects: {_currentDetectionCount}\n" +
-                          $"Threshold: {triggerThreshold}\n" +
-                          $"Triggered: {_isTriggered}\n" +
-                          $"Detected: {_hasDetections}";
+            string label =
+                $"Detection Zone\n" +
+                $"Objects: {_currentDetectionCount}\n" +
+                $"Threshold: {triggerThreshold}\n" +
+                $"Triggered: {_isTriggered}\n" +
+                $"Detected: {_hasDetections}";
             UnityEditor.Handles.Label(transform.position + Vector3.up * (boxSize.y + 0.5f), label);
 #endif
         }
 
-        /// <summary>
-        /// Resets the component to default values when added via inspector.
-        /// </summary>
         private void Reset()
         {
             boxSize = new Vector3(3f, 3f, 3f);
@@ -278,6 +309,9 @@ namespace World
             triggerThreshold = 1;
             triggerOncePerObject = true;
             maintainTriggeredState = false;
+            disableSwapInteractionOnEnter = true;
+            reEnableSwapInteractionOnExit = true;
+            showDebugMessages = false;
             normalColor = new Color(0f, 1f, 0f, 0.3f);
             triggeredColor = new Color(1f, 0f, 0f, 0.5f);
             showGizmo = true;
