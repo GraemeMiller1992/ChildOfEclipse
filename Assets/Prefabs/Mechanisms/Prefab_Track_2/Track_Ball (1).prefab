@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8786022432836407345}
   - component: {fileID: 5639038138897457044}
   - component: {fileID: 7612512763789454174}
-  - component: {fileID: 5138155372115920620}
+  - component: {fileID: 6282052020612784076}
   m_Layer: 0
   m_Name: Track_Ball (1)
   m_TagString: Untagged
@@ -90,8 +90,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &5138155372115920620
-MeshCollider:
+--- !u!135 &6282052020612784076
+SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -108,7 +108,6 @@ MeshCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -2845505134294023193, guid: 3c73019f615642941802f8a8b1354d62, type: 3}
+  serializedVersion: 3
+  m_Radius: 0.5000001
+  m_Center: {x: 0, y: 0, z: 0}
