@@ -69,7 +69,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c90b9e2c0f4cb454b8aef5d56e430dd7, type: 2}
+  - {fileID: 2100000, guid: 3ff1a0ad5a2a8c248a55d86c392c91f7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -121,6 +121,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8304120443075367984}
     m_Modifications:
+    - target: {fileID: 829888241629192928, guid: 1a1429da05dc1474db4a8f1482cc4bcd, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 3ff1a0ad5a2a8c248a55d86c392c91f7, type: 2}
     - target: {fileID: 3078008945614518411, guid: 1a1429da05dc1474db4a8f1482cc4bcd, type: 3}
       propertyPath: m_Name
       value: MoonFire
@@ -219,6 +223,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8304120443075367984}
     m_Modifications:
+    - target: {fileID: 829888241629192928, guid: 1a1429da05dc1474db4a8f1482cc4bcd, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 3ff1a0ad5a2a8c248a55d86c392c91f7, type: 2}
     - target: {fileID: 2386081119086818090, guid: 1a1429da05dc1474db4a8f1482cc4bcd, type: 3}
       propertyPath: maxDistance
       value: 1.92
