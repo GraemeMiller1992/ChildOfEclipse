@@ -1,11 +1,13 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using World;
 
 namespace ChildOfEclipse
 {
     /// <summary>
     /// Handles pointer-based interaction with 3D objects in the scene.
     /// Uses raycasting from the camera to detect and interact with IInteractable objects.
+    /// Supports separate world UI prefabs for each SolarState.
     /// </summary>
     public class InteractPointer : MonoBehaviour
     {
@@ -43,10 +45,23 @@ namespace ChildOfEclipse
         [Tooltip("Whether to clamp the hit point to the maximum interaction distance instead of invalidating it.")]
         [SerializeField] private bool clampToMaxDistance = false;
 
-        [Header("World UI Settings")]
-        [Tooltip("Prefab to spawn at pointer position (e.g., cursor, interaction prompt).")]
-        [SerializeField] private GameObject worldUIPrefab;
-        
+        [Header("Solar State Reference")]
+        [Tooltip("The SolarState component that determines which world UI prefab to use. If null, will try to find one on this GameObject.")]
+        [SerializeField] private SolarState solarState;
+
+        [Header("World UI Settings (Sun State)")]
+        [Tooltip("Prefab to spawn at pointer position during Sun solar state.")]
+        [SerializeField] private GameObject sunWorldUIPrefab;
+
+        [Header("World UI Settings (Moon State)")]
+        [Tooltip("Prefab to spawn at pointer position during Moon solar state.")]
+        [SerializeField] private GameObject moonWorldUIPrefab;
+
+        [Header("World UI Settings (Eclipse State)")]
+        [Tooltip("Prefab to spawn at pointer position during Eclipse solar state.")]
+        [SerializeField] private GameObject eclipseWorldUIPrefab;
+
+        [Header("World UI Common Settings")]
         [Tooltip("Distance to offset UI above surface along normal to prevent clipping.")]
         [SerializeField] private float surfaceOffset = 0.1f;
         
@@ -66,6 +81,7 @@ namespace ChildOfEclipse
         private IInteractable _previousHoveredInteractable;
         private Vector2 _pointerPosition;
         private GameObject _worldUIInstance;
+        private SolarStateValue _currentSolarUIState;
         private Vector3 _currentHitPoint;
         private Vector3 _currentHitNormal;
         private bool _hasValidHit;
@@ -131,11 +147,31 @@ namespace ChildOfEclipse
             if (_pointAction == null) Debug.LogError("Point action not found!", this);
             if (_clickAction == null) Debug.LogError("Click action not found!", this);
 
-            // Spawn world UI if prefab is assigned
-            if (worldUIPrefab != null)
+            // Resolve SolarState reference
+            if (solarState == null)
             {
-                _worldUIInstance = Instantiate(worldUIPrefab);
-                _worldUIInstance.SetActive(false);
+                solarState = GetComponent<SolarState>();
+            }
+
+            // Subscribe to solar state changes
+            if (solarState != null)
+            {
+                solarState.OnSolarStateChanged += OnSolarStateChanged;
+                // Spawn initial world UI for the current solar state
+                SpawnWorldUIForState(solarState.CurrentState);
+            }
+            else
+            {
+                Debug.LogWarning("InteractPointer: No SolarState found. World UI will not be spawned.", this);
+            }
+        }
+
+        private void OnDestroy()
+        {
+            // Unsubscribe from solar state changes to prevent memory leaks
+            if (solarState != null)
+            {
+                solarState.OnSolarStateChanged -= OnSolarStateChanged;
             }
         }
 
@@ -254,6 +290,60 @@ namespace ChildOfEclipse
         #endregion
 
         #region World UI
+
+        /// <summary>
+        /// Gets the world UI prefab for the specified solar state.
+        /// </summary>
+        /// <param name="state">The solar state to get the prefab for.</param>
+        /// <returns>The prefab for the given state, or null if none assigned.</returns>
+        private GameObject GetWorldUIPrefabForState(SolarStateValue state)
+        {
+            switch (state)
+            {
+                case SolarStateValue.Sun:
+                    return sunWorldUIPrefab;
+                case SolarStateValue.Moon:
+                    return moonWorldUIPrefab;
+                case SolarStateValue.Eclipse:
+                    return eclipseWorldUIPrefab;
+                default:
+                    Debug.LogWarning($"InteractPointer: Unknown solar state '{state}'", this);
+                    return null;
+            }
+        }
+
+        /// <summary>
+        /// Spawns the world UI instance for the given solar state.
+        /// Destroys any existing world UI instance first.
+        /// </summary>
+        /// <param name="state">The solar state to spawn UI for.</param>
+        private void SpawnWorldUIForState(SolarStateValue state)
+        {
+            // Destroy existing instance if any
+            if (_worldUIInstance != null)
+            {
+                Destroy(_worldUIInstance);
+                _worldUIInstance = null;
+            }
+
+            GameObject prefab = GetWorldUIPrefabForState(state);
+            if (prefab != null)
+            {
+                _worldUIInstance = Instantiate(prefab);
+                _worldUIInstance.SetActive(false);
+                _currentSolarUIState = state;
+            }
+        }
+
+        /// <summary>
+        /// Callback when the solar state changes. Swaps the world UI prefab.
+        /// </summary>
+        /// <param name="oldState">The previous solar state.</param>
+        /// <param name="newState">The new solar state.</param>
+        private void OnSolarStateChanged(SolarStateValue oldState, SolarStateValue newState)
+        {
+            SpawnWorldUIForState(newState);
+        }
 
         private void UpdateWorldUI()
         {

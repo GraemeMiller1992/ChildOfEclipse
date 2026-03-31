@@ -4,7 +4,7 @@ using UnityEngine.AI;
 namespace World
 {
     /// <summary>
-    /// Unified enemy AI that combines Patrol, Chase, and Attack behaviors into a single component.
+    /// Unified enemy AI that combines Patrol, Chase, Attack, and Flee behaviors into a single component.
     /// Uses bool flags to enable/disable each feature independently.
     /// </summary>
     [RequireComponent(typeof(NavMeshAgent))]
@@ -23,6 +23,8 @@ namespace World
             Chase,
             /// <summary>Enemy is attacking the target.</summary>
             Attack,
+            /// <summary>Enemy is fleeing from the target.</summary>
+            Flee,
             /// <summary>Enemy is idle (no active behavior).</summary>
             Idle
         }
@@ -86,6 +88,10 @@ namespace World
         [SerializeField]
         [Tooltip("Enables attack behavior.")]
         private bool _enableAttack = true;
+
+        [SerializeField]
+        [Tooltip("Enables flee behavior. The enemy will run away from the target when detected.")]
+        private bool _enableFlee = false;
 
         [Header("Target Settings")]
         [SerializeField]
@@ -255,6 +261,47 @@ namespace World
         [Tooltip("Color for attack range gizmo.")]
         private Color _attackRangeColor = new Color(1f, 0f, 0f, 0.3f);
 
+        [Header("Flee Settings")]
+        [SerializeField]
+        [Tooltip("Maximum distance at which the target is considered a threat and triggers fleeing.")]
+        private float _fleeDetectionRange = 10f;
+
+        [SerializeField]
+        [Tooltip("How far the enemy will try to run from the target when fleeing.")]
+        private float _fleeDistance = 15f;
+
+        [SerializeField]
+        [Tooltip("Distance from the target at which the enemy considers itself safe and stops fleeing.")]
+        private float _fleeSafeDistance = 20f;
+
+        [SerializeField]
+        [Tooltip("Speed multiplier when fleeing. Values > 1.0 make the enemy faster while fleeing.")]
+        private float _fleeSpeedMultiplier = 1.8f;
+
+        [SerializeField]
+        [Tooltip("Angular speed multiplier when fleeing.")]
+        private float _fleeAngularSpeedMultiplier = 2.5f;
+
+        [SerializeField]
+        [Tooltip("Whether to stop fleeing when the target is beyond the safe distance.")]
+        private bool _stopFleeWhenSafe = true;
+
+        [SerializeField]
+        [Tooltip("Time to wait after reaching safety before returning to previous behavior.")]
+        private float _fleeCooldownTime = 2f;
+
+        [SerializeField]
+        [Tooltip("Whether to draw debug visualization for flee behavior.")]
+        private bool _showFleeDebugGizmos = true;
+
+        [SerializeField]
+        [Tooltip("Color for flee detection range gizmo.")]
+        private Color _fleeDetectionRangeColor = new Color(0f, 0f, 1f, 0.2f);
+
+        [SerializeField]
+        [Tooltip("Color for flee safe distance gizmo.")]
+        private Color _fleeSafeDistanceColor = new Color(0f, 1f, 0f, 0.2f);
+
         [Header("AI State Settings")]
         [SerializeField]
         [Tooltip("The initial AI state.")]
@@ -316,6 +363,11 @@ namespace World
         private float _originalSpeed;
         private float _originalAngularSpeed;
 
+        // Flee fields
+        private bool _isFleeing = false;
+        private Vector3 _fleeDestination;
+        private float _fleeCooldownTimer = 0f;
+
         #endregion
 
         #region Events
@@ -365,6 +417,16 @@ namespace World
         /// </summary>
         public event System.Action<AttackState, AttackState> OnAttackStateChanged;
 
+        /// <summary>
+        /// Fired when the enemy starts fleeing.
+        /// </summary>
+        public event System.Action OnFleeStarted;
+
+        /// <summary>
+        /// Fired when the enemy stops fleeing.
+        /// </summary>
+        public event System.Action OnFleeEnded;
+
         #endregion
 
         #region Properties
@@ -394,6 +456,15 @@ namespace World
         {
             get => _enableAttack;
             set => _enableAttack = value;
+        }
+
+        /// <summary>
+        /// Gets or sets whether flee is enabled.
+        /// </summary>
+        public bool EnableFlee
+        {
+            get => _enableFlee;
+            set => _enableFlee = value;
         }
 
         /// <summary>
@@ -434,6 +505,11 @@ namespace World
         /// Gets whether the enemy is in any attack-related state.
         /// </summary>
         public bool IsInAttackSequence => _attackState != AttackState.Idle;
+
+        /// <summary>
+        /// Gets whether the enemy is currently fleeing.
+        /// </summary>
+        public bool IsFleeing => _isFleeing;
 
         /// <summary>
         /// Gets the current attack state.
@@ -567,6 +643,7 @@ namespace World
             // Update behaviors
             UpdatePatrol();
             UpdateChase();
+            UpdateFlee();
             UpdateAttackSequence();
             UpdateAttackVisual();
 
@@ -705,6 +782,32 @@ namespace World
                     Gizmos.DrawLine(transform.position, _target.position);
                 }
             }
+
+            // Draw flee debug
+            if (_enableFlee && _showFleeDebugGizmos)
+            {
+                // Flee detection range
+                Gizmos.color = _fleeDetectionRangeColor;
+                Gizmos.DrawWireSphere(transform.position, _fleeDetectionRange);
+
+                // Flee safe distance
+                Gizmos.color = _fleeSafeDistanceColor;
+                Gizmos.DrawWireSphere(transform.position, _fleeSafeDistance);
+
+                // Draw flee destination and path when fleeing
+                if (_isFleeing && _target != null)
+                {
+                    Gizmos.color = Color.magenta;
+                    Gizmos.DrawLine(transform.position, _fleeDestination);
+                    Gizmos.DrawSphere(_fleeDestination, 0.5f);
+
+                    // Draw direction away from target
+                    Vector3 directionAway = (transform.position - _target.position).normalized;
+                    directionAway.y = 0f;
+                    Gizmos.color = Color.yellow;
+                    Gizmos.DrawRay(transform.position, directionAway * 3f);
+                }
+            }
         }
 
         #endregion
@@ -783,6 +886,12 @@ namespace World
                     if (_enableAttack)
                     {
                         TryAttack();
+                    }
+                    break;
+                case AIState.Flee:
+                    if (_enableFlee)
+                    {
+                        StartFlee();
                     }
                     break;
                 case AIState.Idle:
@@ -954,6 +1063,64 @@ namespace World
             _navAgent.angularSpeed = _originalAngularSpeed;
         }
 
+        /// <summary>
+        /// Starts the flee behavior. The enemy will run away from the target.
+        /// </summary>
+        public void StartFlee()
+        {
+            if (!_enableFlee)
+            {
+                return;
+            }
+
+            if (_target == null)
+            {
+                Debug.LogWarning("EnemyAI: Cannot start flee - no target assigned.", this);
+                return;
+            }
+
+            _isFleeing = true;
+            _fleeCooldownTimer = 0f;
+            _navAgent.enabled = true;
+            _navAgent.isStopped = false;
+
+            // Apply flee speed modifiers
+            _navAgent.speed = _originalSpeed * _fleeSpeedMultiplier;
+            _navAgent.angularSpeed = _originalAngularSpeed * _fleeAngularSpeedMultiplier;
+
+            // Calculate initial flee destination
+            CalculateFleeDestination();
+            _navAgent.SetDestination(_fleeDestination);
+
+            OnFleeStarted?.Invoke();
+        }
+
+        /// <summary>
+        /// Stops the flee behavior.
+        /// </summary>
+        public void StopFlee()
+        {
+            if (!_isFleeing)
+            {
+                return;
+            }
+
+            _isFleeing = false;
+            _fleeCooldownTimer = 0f;
+
+            if (_navAgent != null)
+            {
+                _navAgent.enabled = true;
+                _navAgent.isStopped = true;
+
+                // Restore original speed values
+                _navAgent.speed = _originalSpeed;
+                _navAgent.angularSpeed = _originalAngularSpeed;
+            }
+
+            OnFleeEnded?.Invoke();
+        }
+
         #endregion
 
         #region Private Methods
@@ -1057,6 +1224,101 @@ namespace World
         }
 
         /// <summary>
+        /// Updates the flee behavior. Continuously recalculates the flee destination
+        /// to keep moving away from the target.
+        /// </summary>
+        private void UpdateFlee()
+        {
+            if (!_enableFlee || !_isFleeing || _navAgent == null)
+            {
+                return;
+            }
+
+            if (_target == null)
+            {
+                StopFlee();
+                return;
+            }
+
+            // Don't update flee during attack sequence
+            if (_attackState != AttackState.Idle)
+            {
+                return;
+            }
+
+            // Recalculate flee destination periodically to keep moving away
+            CalculateFleeDestination();
+
+            // Check if we've reached the flee destination
+            if (_navAgent.enabled && !_navAgent.pathPending && _navAgent.remainingDistance <= _navAgent.stoppingDistance)
+            {
+                // We've reached the flee destination, recalculate
+                _navAgent.SetDestination(_fleeDestination);
+            }
+        }
+
+        /// <summary>
+        /// Calculates a destination point away from the target for fleeing.
+        /// Uses NavMesh sampling to find a valid point on the NavMesh.
+        /// </summary>
+        private void CalculateFleeDestination()
+        {
+            if (_target == null)
+            {
+                return;
+            }
+
+            // Direction away from the target
+            Vector3 directionAway = (transform.position - _target.position).normalized;
+            directionAway.y = 0f; // Keep on horizontal plane
+
+            // If directly on top of each other, pick a random direction
+            if (directionAway == Vector3.zero)
+            {
+                directionAway = new Vector3(Random.Range(-1f, 1f), 0f, Random.Range(-1f, 1f)).normalized;
+            }
+
+            // Calculate desired flee position
+            Vector3 desiredFleePosition = transform.position + directionAway * _fleeDistance;
+
+            // Try to find a valid point on the NavMesh
+            NavMeshHit hit;
+            if (NavMesh.SamplePosition(desiredFleePosition, out hit, _fleeDistance, NavMesh.AllAreas))
+            {
+                _fleeDestination = hit.position;
+            }
+            else
+            {
+                // If we can't find a valid point directly away, try random offsets
+                bool foundValidPoint = false;
+                for (int i = 0; i < 5; i++)
+                {
+                    Vector3 randomOffset = new Vector3(Random.Range(-5f, 5f), 0f, Random.Range(-5f, 5f));
+                    Vector3 testPosition = desiredFleePosition + randomOffset;
+
+                    if (NavMesh.SamplePosition(testPosition, out hit, _fleeDistance * 0.5f, NavMesh.AllAreas))
+                    {
+                        _fleeDestination = hit.position;
+                        foundValidPoint = true;
+                        break;
+                    }
+                }
+
+                // If still no valid point found, just move in the opposite direction as much as possible
+                if (!foundValidPoint)
+                {
+                    _fleeDestination = transform.position + directionAway * (_fleeDistance * 0.5f);
+                }
+            }
+
+            // Update the NavMeshAgent destination
+            if (_navAgent != null && _navAgent.enabled && _isFleeing)
+            {
+                _navAgent.SetDestination(_fleeDestination);
+            }
+        }
+
+        /// <summary>
         /// Updates the attack sequence state machine.
         /// </summary>
         private void UpdateAttackSequence()
@@ -1103,8 +1365,58 @@ namespace World
             {
                 return;
             }
+
+            // Check flee conditions first (highest priority)
+            // If flee is enabled and the target is within flee detection range, flee
+            if (_enableFlee && _target != null && !_isFleeing)
+            {
+                float distanceToTarget = DistanceToTarget;
+                if (distanceToTarget <= _fleeDetectionRange)
+                {
+                    if (_currentState != AIState.Flee)
+                    {
+                        ChangeState(AIState.Flee);
+                    }
+                    return;
+                }
+            }
+
+            // If fleeing and reached safe distance, stop fleeing
+            if (_isFleeing && _stopFleeWhenSafe)
+            {
+                float distanceToTarget = DistanceToTarget;
+                if (distanceToTarget >= _fleeSafeDistance)
+                {
+                    _fleeCooldownTimer += Time.deltaTime;
+                    if (_fleeCooldownTimer >= _fleeCooldownTime)
+                    {
+                        StopFlee();
+                        // Return to patrol or idle
+                        if (_enablePatrol)
+                        {
+                            ChangeState(AIState.Patrol);
+                        }
+                        else
+                        {
+                            ChangeState(AIState.Idle);
+                        }
+                        return;
+                    }
+                }
+                else
+                {
+                    // Still too close, reset cooldown timer
+                    _fleeCooldownTimer = 0f;
+                }
+            }
+
+            // If currently fleeing, don't process other states
+            if (_currentState == AIState.Flee)
+            {
+                return;
+            }
             
-            // Check attack conditions first (highest priority)
+            // Check attack conditions (second highest priority)
             // Only transition to Attack state if not already in an attack sequence
             if (_enableAttack && IsTargetInRange() && CanAttack && !isInAttackSequence)
             {
@@ -1157,6 +1469,7 @@ namespace World
         {
             StopPatrol();
             StopChase();
+            StopFlee();
             
             // Re-enable NavMeshAgent if it was disabled during attack sequence
             if (_navAgent != null && !_navAgent.enabled)
