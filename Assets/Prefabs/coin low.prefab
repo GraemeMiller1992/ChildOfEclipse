@@ -71,5 +71,73 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 4e89de2cae90dea4c9bbb484361306d1, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4010049468191375769}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 4e89de2cae90dea4c9bbb484361306d1, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2905019263359361018}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 4e89de2cae90dea4c9bbb484361306d1, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8102838636644670027}
   m_SourcePrefab: {fileID: 100100000, guid: 4e89de2cae90dea4c9bbb484361306d1, type: 3}
+--- !u!1 &634443099466476875 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 4e89de2cae90dea4c9bbb484361306d1, type: 3}
+  m_PrefabInstance: {fileID: 291774595275984922}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4010049468191375769
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 634443099466476875}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e741851cba3ad425c91ecf922cc6b379, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.VisualScripting.Core::Unity.VisualScripting.Variables
+  _data:
+    _json: '{"declarations":{"Kind":"Object","collection":{"$content":[{"name":"coin","value":{"$content":0,"$type":"UnityEngine.Object"},"typeHandle":{"Identification":"UnityEngine.GameObject,
+      UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null","$version":"A"},"$version":"A"}],"$version":"A"},"$version":"A"}}'
+    _objectReferences:
+    - {fileID: 634443099466476875}
+--- !u!114 &2905019263359361018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 634443099466476875}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2fe5546f775c47d2820aa5e8a715f53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.VisualScripting.Flow::Unity.VisualScripting.ScriptMachine
+  _data:
+    _json: '{"nest":{"source":"Macro","macro":0,"embed":null}}'
+    _objectReferences:
+    - {fileID: 11400000, guid: 100fa8708c8abb5408b63805827f914f, type: 2}
+--- !u!65 &8102838636644670027
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 634443099466476875}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 4.8774953, y: 4.9221287, z: 1}
+  m_Center: {x: 0.0020623787, y: 0.0142055135, z: 0}
