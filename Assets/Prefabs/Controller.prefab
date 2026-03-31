@@ -155,7 +155,10 @@ MonoBehaviour:
   requireLineOfSight: 1
   maxInteractionDistance: 10
   clampToMaxDistance: 1
-  worldUIPrefab: {fileID: 596896879636526329, guid: 64f93575bd448ca4ab58e3c3e4b2a123, type: 3}
+  solarState: {fileID: 1650063977106861433}
+  sunWorldUIPrefab: {fileID: 3833956785622574886, guid: 6cbb01735008d304abb4424d0b39b1c4, type: 3}
+  moonWorldUIPrefab: {fileID: 4289009131754260319, guid: aa65b5ebbe6c69641a7e09d02892b09d, type: 3}
+  eclipseWorldUIPrefab: {fileID: 1768264583990691566, guid: 7e4e52c7cfb270f44ad06abbd9da492f, type: 3}
   surfaceOffset: 0.01
   hideUIWhenNoHit: 1
 --- !u!114 &1650063977106861433
@@ -296,7 +299,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 454626129936325366}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4ca80d1f51509e42a3ce9d1e1ffde8f, type: 3}
   m_Name: 
