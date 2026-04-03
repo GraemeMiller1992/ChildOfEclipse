@@ -337,6 +337,7 @@ namespace World
         private AIState _currentState = AIState.Idle;
         private bool _isEnabled = false;
         private bool _isStoppedOverride = false;
+        private Animator animator;
 
         // Patrol fields
         private bool _isPatrolling = false;
@@ -614,8 +615,11 @@ namespace World
             }
         }
 
-        private void Start()
+        public void Start()
         {
+            _navAgent = GetComponent<NavMeshAgent>();
+            animator = GetComponentInChildren<Animator>();
+            
             if (_enableOnStart)
             {
                 EnableAI();
@@ -624,6 +628,8 @@ namespace World
 
         private void Update()
         {
+            animator.SetFloat("Speed", _navAgent.velocity.magnitude);
+
             if (!_isEnabled)
             {
                 return;
