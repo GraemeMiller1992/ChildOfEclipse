@@ -122,16 +122,18 @@ MonoBehaviour:
   jumpForce: 5
   jumpHoldTime: 0.2
   fallGravityMultiplier: 25
+  steepSlopeSlideForce: 15
   coyoteTime: 0.1
   jumpBufferTime: 0.1
   crouchHeight: 1
   normalHeight: 2
   crouchSpeed: 5
-  groundCheckDistance: 0.6
+  groundCheckRadius: 0.49
+  groundCheckDistance: 0.3
   groundLayer:
     serializedVersion: 2
-    m_Bits: 72
-  groundCheckOffset: {x: 0, y: 0.5, z: 0}
+    m_Bits: 4168
+  groundCheckOffset: {x: 0, y: 0.6, z: 0}
   cameraTransform: {fileID: 0}
 --- !u!114 &4409410644903376870
 MonoBehaviour:
