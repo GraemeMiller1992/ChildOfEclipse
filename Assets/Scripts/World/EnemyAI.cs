@@ -337,6 +337,10 @@ namespace World
         private AIState _currentState = AIState.Idle;
         private bool _isEnabled = false;
         private bool _isStoppedOverride = false;
+
+        [Header("Animation")]
+        [SerializeField]
+        [Tooltip("Optional animator for controlling enemy animations.")]
         private Animator animator;
 
         // Patrol fields
@@ -618,7 +622,6 @@ namespace World
         public void Start()
         {
             _navAgent = GetComponent<NavMeshAgent>();
-            animator = GetComponentInChildren<Animator>();
             
             if (_enableOnStart)
             {
@@ -628,7 +631,10 @@ namespace World
 
         private void Update()
         {
-            animator.SetFloat("Speed", _navAgent.velocity.magnitude);
+            if (animator != null)
+            {
+                animator.SetFloat("Speed", _navAgent.velocity.magnitude);
+            }
 
             if (!_isEnabled)
             {

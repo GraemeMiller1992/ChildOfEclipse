@@ -59,6 +59,9 @@ namespace ChildOfEclipse
         
         [Tooltip("Gravity multiplier while falling (for heavier feel).")]
         [SerializeField] private float fallGravityMultiplier = 1.5f;
+
+        [Tooltip("Force applied to slide player down steep slopes.")]
+        [SerializeField] private float steepSlopeSlideForce = 15f;
         
         [Tooltip("Coyote time: how long after leaving ground player can still jump.")]
         [SerializeField] private float coyoteTime = 0.1f;
@@ -77,7 +80,10 @@ namespace ChildOfEclipse
         [SerializeField] private float crouchSpeed = 5f;
 
         [Header("Physics Settings")]
-        [Tooltip("Ground check distance.")]
+        [Tooltip("Radius of the sphere used for ground detection.")]
+        [SerializeField] private float groundCheckRadius = 0.35f;
+        
+        [Tooltip("Ground check distance below the sphere.")]
         [SerializeField] private float groundCheckDistance = 0.1f;
         
         [Tooltip("Layer mask for ground detection.")]
@@ -232,6 +238,7 @@ namespace ChildOfEclipse
             HandleRotation();
             HandleJump();
             ApplyGravity();
+            HandleSteepSlopeSlide();
             HandleCrouchPhysics();
         }
 
@@ -291,10 +298,9 @@ namespace ChildOfEclipse
             
             // Perform ground check using sphere cast
             Vector3 checkPosition = transform.position + groundCheckOffset;
-            float checkRadius = _capsuleCollider.radius * 0.9f;
             
-            if (Physics.SphereCast(checkPosition, checkRadius, Vector3.down, out RaycastHit hit, 
-                groundCheckDistance + checkRadius, groundLayer))
+            if (Physics.SphereCast(checkPosition, groundCheckRadius, Vector3.down, out RaycastHit hit, 
+                groundCheckDistance + groundCheckRadius, groundLayer))
             {
                 _isGrounded = true;
                 _groundNormal = hit.normal;
@@ -351,6 +357,8 @@ namespace ChildOfEclipse
 
             // Calculate movement direction relative to camera
             Vector3 moveDirection = Vector3.zero;
+            bool isOnSteepSlope = false;
+
             if (cameraTransform != null && _moveInput.magnitude > 0.01f)
             {
                 // Get camera forward and right vectors (flattened to XZ plane)
@@ -361,9 +369,27 @@ namespace ChildOfEclipse
                 moveDirection = (cameraForward * _moveInput.y + cameraRight * _moveInput.x).normalized;
 
                 // Adjust for slope
-                if (_isGrounded && Vector3.Angle(_groundNormal, Vector3.up) < maxSlopeAngle)
+                if (_isGrounded)
                 {
-                    moveDirection = Vector3.ProjectOnPlane(moveDirection, _groundNormal).normalized;
+                    float slopeAngle = Vector3.Angle(_groundNormal, Vector3.up);
+
+                    if (slopeAngle < maxSlopeAngle)
+                    {
+                        moveDirection = Vector3.ProjectOnPlane(moveDirection, _groundNormal).normalized;
+                    }
+                    else
+                    {
+                        isOnSteepSlope = true;
+
+                        // Remove the upward component of movement along the slope
+                        Vector3 slopeUpward = Vector3.ProjectOnPlane(Vector3.up, _groundNormal).normalized;
+                        float upComponent = Vector3.Dot(moveDirection, slopeUpward);
+                        if (upComponent > 0f)
+                        {
+                            moveDirection -= slopeUpward * upComponent;
+                        }
+                        moveDirection = Vector3.ProjectOnPlane(moveDirection, _groundNormal).normalized;
+                    }
                 }
             }
             else if (_moveInput.magnitude > 0.01f)
@@ -455,6 +481,21 @@ namespace ChildOfEclipse
 
         #endregion
 
+        #region Slope Slide
+
+        private void HandleSteepSlopeSlide()
+        {
+            if (!_isGrounded) return;
+
+            float slopeAngle = Vector3.Angle(_groundNormal, Vector3.up);
+            if (slopeAngle <= maxSlopeAngle) return;
+
+            Vector3 slideDirection = Vector3.ProjectOnPlane(Vector3.down, _groundNormal).normalized;
+            _rb.AddForce(slideDirection * steepSlopeSlideForce, ForceMode.Acceleration);
+        }
+
+        #endregion
+
         #region Crouch
 
         private void HandleCrouch()
@@ -517,23 +558,15 @@ namespace ChildOfEclipse
 
         #region Debug
 
-        private void OnDrawGizmosSelected()
+        private void OnDrawGizmos()
         {
-            // Draw ground check
-            if (_capsuleCollider != null)
-            {
-                Gizmos.color = _isGrounded ? Color.green : Color.red;
-                Vector3 checkPosition = transform.position + groundCheckOffset;
-                Gizmos.DrawWireSphere(checkPosition, _capsuleCollider.radius * 0.9f);
-                Gizmos.DrawLine(checkPosition, checkPosition + Vector3.down * (groundCheckDistance + _capsuleCollider.radius * 0.9f));
-            }
+            CapsuleCollider collider = GetComponent<CapsuleCollider>();
+            float radius = collider != null ? collider.radius * 0.9f : 0.35f;
 
-            // Draw movement direction
-            if (_currentVelocity.magnitude > 0.1f)
-            {
-                Gizmos.color = Color.blue;
-                Gizmos.DrawLine(transform.position, transform.position + _currentVelocity);
-            }
+            Gizmos.color = Color.cyan;
+            Vector3 checkPosition = transform.position + groundCheckOffset;
+            Gizmos.DrawWireSphere(checkPosition, groundCheckRadius);
+            Gizmos.DrawLine(checkPosition, checkPosition + Vector3.down * (groundCheckDistance + groundCheckRadius));
         }
 
         #endregion
