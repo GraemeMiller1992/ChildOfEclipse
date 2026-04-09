@@ -15,7 +15,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &2521692219025580907
 Transform:
@@ -54,6 +54,9 @@ MonoBehaviour:
   triggerThreshold: 1
   triggerOncePerObject: 1
   maintainTriggeredState: 1
+  disableSwapInteractionOnEnter: 1
+  reEnableSwapInteractionOnExit: 1
+  showDebugMessages: 0
   normalColor: {r: 0, g: 1, b: 0, a: 0.3}
   triggeredColor: {r: 1, g: 0, b: 0, a: 0.5}
   showGizmo: 1
@@ -77,6 +80,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2521692219025580907}
     m_Modifications:
+    - target: {fileID: 906634772424205884, guid: 6318319d39052a14f85c586d4159d890, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 3045852439562971798, guid: 6318319d39052a14f85c586d4159d890, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.007
@@ -117,9 +124,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3815246778283879506, guid: 6318319d39052a14f85c586d4159d890, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 4366730359538797591, guid: 6318319d39052a14f85c586d4159d890, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 6255991547217667902, guid: 6318319d39052a14f85c586d4159d890, type: 3}
       propertyPath: m_Name
       value: FloorPanel
+      objectReference: {fileID: 0}
+    - target: {fileID: 6255991547217667902, guid: 6318319d39052a14f85c586d4159d890, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 6426275171541599444, guid: 6318319d39052a14f85c586d4159d890, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 7831900717696621839, guid: 6318319d39052a14f85c586d4159d890, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
