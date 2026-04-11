@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.AI;
 
-public class GolemController : MonoBehaviour
+public class MummyController : MonoBehaviour
 {
     private Animator animator;
     private NavMeshAgent agent;
