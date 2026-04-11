@@ -14,28 +14,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: Unity.RenderPipelines.Core.Runtime::UnityEngine.Rendering.ProbeVolumesOptions
   active: 1
   normalBias:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 0.05
   viewBias:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 0.1
   scaleBiasWithMinProbeDistance:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 0
   samplingNoise:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 0.1
   animateSamplingNoise:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 1
   leakReductionMode:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 2
   minValidDotProductValue:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 0.1
   occlusionOnlyReflectionNormalization:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 1
   intensityMultiplier:
     m_OverrideState: 0
@@ -61,10 +61,10 @@ MonoBehaviour:
   active: 1
   postExposure:
     m_OverrideState: 1
-    m_Value: 0.63
+    m_Value: 0.3
   contrast:
     m_OverrideState: 1
-    m_Value: 20
+    m_Value: 35
   colorFilter:
     m_OverrideState: 0
     m_Value: {r: 1, g: 1, b: 1, a: 1}
@@ -108,10 +108,10 @@ MonoBehaviour:
     m_Value: 1
   threshold:
     m_OverrideState: 1
-    m_Value: 0.82
+    m_Value: 1
   intensity:
     m_OverrideState: 1
-    m_Value: 2.64
+    m_Value: 1.5
   scatter:
     m_OverrideState: 0
     m_Value: 0.7
