@@ -427,6 +427,7 @@ GameObject:
   - component: {fileID: 747171478897846427}
   - component: {fileID: 2902790141275137662}
   - component: {fileID: 3373513413522094616}
+  - component: {fileID: 3143089379778927248}
   m_Layer: 0
   m_Name: NavAgent
   m_TagString: Enemy
@@ -686,7 +687,7 @@ MonoBehaviour:
   _fieldOfViewColor: {r: 1, g: 1, b: 0, a: 0.3}
   _lineOfSightColor: {r: 0, g: 1, b: 0, a: 1}
   _attackRange: 2
-  _damage: 10
+  _damage: 100
   _attackCooldown: 1
   _lookAtTarget: 1
   _rotationSpeed: 10
@@ -730,6 +731,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10eef2f7a3824674ebe267788335db7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MummyController
+--- !u!114 &3143089379778927248
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8680422223301657102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df6b38fcbeb18a34fa5d3a47aa9ad0a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::World.EnemyResetOnPlayerDeath
+  enemyAI: {fileID: 2902790141275137662}
+  navMeshAgent: {fileID: 5263840014024743190}
+  rb: {fileID: 0}
 --- !u!1001 &241180501749906681
 PrefabInstance:
   m_ObjectHideFlags: 0

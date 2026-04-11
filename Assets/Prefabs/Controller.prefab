@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 7238349710822508461}
   - component: {fileID: 3527042087786221067}
   - component: {fileID: 3770678285096156796}
+  - component: {fileID: 2512947485860392308}
   m_Layer: 0
   m_Name: Controller
   m_TagString: Player
@@ -242,7 +243,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ChildOfEclipse.Health.RespawnableComponent
   respawnLocation: 1
   customSpawnPoint: {fileID: 0}
-  respawnDelay: 0.5
+  respawnDelay: 0
   disableDuringDelay: 0
   restoreFullHealth: 1
   resetVelocity: 1
@@ -436,6 +437,19 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 8
+--- !u!114 &2512947485860392308
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 454626129936325366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34adc3d95a443eb4e91e5caa5b22dbbd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::World.EnemyResetManager
+  playerHealth: {fileID: 1094804625617471291}
 --- !u!1 &5724178942470668315
 GameObject:
   m_ObjectHideFlags: 0
