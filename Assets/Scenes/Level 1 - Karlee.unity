@@ -36114,7 +36114,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 11
   m_Type: 1
-  m_Color: {r: 0.94716984, g: 0.5321179, b: 0, a: 1}
+  m_Color: {r: 0.9339623, g: 0.64068896, b: 0.2863564, a: 1}
   m_Intensity: 1.23
   m_Range: 10
   m_SpotAngle: 30
@@ -52215,6 +52215,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 4dbc04a060f5a2748996e728fc20c6d7, type: 3}
+    - target: {fileID: 623823322824024771, guid: 0518eac895005774495ad8e3b5bba9ce, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1972976318285164519, guid: 0518eac895005774495ad8e3b5bba9ce, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -52335,6 +52339,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DialogueCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 4900050594674511187, guid: 0518eac895005774495ad8e3b5bba9ce, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6195312948196411186, guid: 0518eac895005774495ad8e3b5bba9ce, type: 3}
       propertyPath: m_fontSize
       value: 30
@@ -52371,6 +52379,10 @@ PrefabInstance:
       propertyPath: m_fontColor32.rgba
       value: 4294967295
       objectReference: {fileID: 0}
+    - target: {fileID: 6478460305378349923, guid: 0518eac895005774495ad8e3b5bba9ce, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6500094580498733084, guid: 0518eac895005774495ad8e3b5bba9ce, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -52384,6 +52396,18 @@ PrefabInstance:
       value: 0.9781699
       objectReference: {fileID: 0}
     - target: {fileID: 6500094580498733084, guid: 0518eac895005774495ad8e3b5bba9ce, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6906424039843601719, guid: 0518eac895005774495ad8e3b5bba9ce, type: 3}
+      propertyPath: m_Color.b
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 6906424039843601719, guid: 0518eac895005774495ad8e3b5bba9ce, type: 3}
+      propertyPath: m_Color.g
+      value: 0.89843553
+      objectReference: {fileID: 0}
+    - target: {fileID: 6906424039843601719, guid: 0518eac895005774495ad8e3b5bba9ce, type: 3}
       propertyPath: m_Color.r
       value: 1
       objectReference: {fileID: 0}
@@ -52414,6 +52438,10 @@ PrefabInstance:
     - target: {fileID: 7703955884823110058, guid: 0518eac895005774495ad8e3b5bba9ce, type: 3}
       propertyPath: m_Name
       value: goddess
+      objectReference: {fileID: 0}
+    - target: {fileID: 7703955884823110058, guid: 0518eac895005774495ad8e3b5bba9ce, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -120896,10 +120924,6 @@ PrefabInstance:
     - target: {fileID: 1764233258942150424, guid: 3315ea525014ab44e89f7ef08a74f9be, type: 3}
       propertyPath: m_Name
       value: PauseMenu
-      objectReference: {fileID: 0}
-    - target: {fileID: 2962777399982337202, guid: 3315ea525014ab44e89f7ef08a74f9be, type: 3}
-      propertyPath: m_UiScaleMode
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8283245545535193867, guid: 3315ea525014ab44e89f7ef08a74f9be, type: 3}
       propertyPath: m_LocalPosition.x
