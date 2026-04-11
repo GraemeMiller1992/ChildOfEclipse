@@ -8,12 +8,20 @@ namespace World
     {
         [SerializeField] private HealthComponent playerHealth;
 
-        private static List<EnemyResetOnPlayerDeath> enemies = new();
+        private static readonly List<EnemyDeathReset> enemies = new();
 
         private void Awake()
         {
             if (playerHealth == null)
+            {
                 playerHealth = GetComponent<HealthComponent>();
+
+                if (playerHealth == null)
+                    playerHealth = GetComponentInParent<HealthComponent>();
+
+                if (playerHealth == null)
+                    playerHealth = GetComponentInChildren<HealthComponent>();
+            }
         }
 
         private void OnEnable()
@@ -28,23 +36,29 @@ namespace World
                 playerHealth.OnDeath.RemoveListener(ResetAllEnemies);
         }
 
-        public static void Register(EnemyResetOnPlayerDeath enemy)
+        public static void Register(EnemyDeathReset enemy)
         {
-            if (!enemies.Contains(enemy))
+            if (enemy != null && !enemies.Contains(enemy))
                 enemies.Add(enemy);
         }
 
-        public static void Unregister(EnemyResetOnPlayerDeath enemy)
+        public static void Unregister(EnemyDeathReset enemy)
         {
-            enemies.Remove(enemy);
+            if (enemy != null)
+                enemies.Remove(enemy);
         }
 
         private void ResetAllEnemies()
         {
-            foreach (var enemy in enemies)
+            for (int i = enemies.Count - 1; i >= 0; i--)
             {
-                if (enemy != null)
-                    enemy.ResetEnemy();
+                if (enemies[i] == null)
+                {
+                    enemies.RemoveAt(i);
+                    continue;
+                }
+
+                enemies[i].ResetEnemy();
             }
         }
     }

@@ -75,6 +75,8 @@ namespace World
         [SerializeField] private Color _detectionRangeColor = new Color(1f, 0f, 0f, 0.2f);
         [SerializeField] private Color _fieldOfViewColor = new Color(1f, 1f, 0f, 0.3f);
         [SerializeField] private Color _lineOfSightColor = Color.green;
+        [SerializeField] private float _detectionResetCooldown = 2f;
+        private float _detectionResetTimer = 0f;
 
         [Header("Attack Settings")]
         [SerializeField] private float _attackRange = 2f;
@@ -200,6 +202,11 @@ namespace World
             }
         }
 
+        private bool IsInDetectionResetCooldown()
+        {
+            return _detectionResetTimer > 0f;
+        }
+
         private void Awake()
         {
             _navAgent = GetComponent<NavMeshAgent>();
@@ -254,17 +261,26 @@ namespace World
                 return;
             }
 
+            if (_detectionResetTimer > 0f)
+                _detectionResetTimer -= Time.deltaTime;
+
             UpdatePatrol();
             UpdateChase();
             UpdateFlee();
             UpdateAttackSequence();
             UpdateAttackVisual();
 
-            if (_enableAttack && _target != null && CanAttack && IsTargetInRange())
-                TryAttack();
+            if (!IsInDetectionResetCooldown())
+            {
+                if (_enableAttack && _target != null && CanAttack && IsTargetInRange())
+                    TryAttack();
+            }
 
-            if (_lookAtTarget && _target != null && (_currentState == AIState.Chase || _attackState != AttackState.Idle))
-                LookAtTarget();
+            if (!IsInDetectionResetCooldown())
+            {
+                if (_lookAtTarget && _target != null && (_currentState == AIState.Chase || _attackState != AttackState.Idle))
+                    LookAtTarget();
+            }
 
             if (_enablePatrol && _returnToPatrolOnLoseTarget && _wasChasing && _currentState == AIState.Idle)
             {
@@ -339,9 +355,11 @@ namespace World
 
         public bool IsTargetInRange()
         {
+            if (IsInDetectionResetCooldown())
+                return false;
+
             return _target != null && DistanceToTarget <= _attackRange;
         }
-
         public void ResetCooldown()
         {
             _canAttack = true;
@@ -475,7 +493,23 @@ namespace World
 
         private void UpdateChase()
         {
-            if (!_enableChase) return;
+            if (!_enableChase)
+                return;
+
+            if (IsInDetectionResetCooldown())
+            {
+                _hasTarget = false;
+                _isChasing = false;
+
+                if (_navAgent != null)
+                {
+                    _navAgent.enabled = true;
+                    _navAgent.isStopped = true;
+                    _navAgent.ResetPath();
+                }
+
+                return;
+            }
 
             if (_target == null)
             {
@@ -509,7 +543,9 @@ namespace World
                     {
                         _hasTarget = false;
                         OnTargetLost?.Invoke();
-                        if (_stopChaseWhenOutOfRange) StopChase();
+
+                        if (_stopChaseWhenOutOfRange)
+                            StopChase();
                     }
                 }
             }
@@ -595,6 +631,13 @@ namespace World
 
         private void UpdateState()
         {
+            if (IsInDetectionResetCooldown())
+            {
+                if (_currentState != AIState.Patrol && _enablePatrol)
+                    ChangeState(AIState.Patrol);
+                return;
+            }
+
             bool isInAttackSequence = _attackState != AttackState.Idle;
             if (isInAttackSequence) return;
 
@@ -718,6 +761,40 @@ namespace World
             return currentIndex + 1;
         }
 
+        // Add this inside EnemyAI
+
+        public void ResetDetectionState()
+        {
+            _hasTarget = false;
+            _isChasing = false;
+            _wasChasing = false;
+            _loseTargetTimer = 0f;
+
+            _isFleeing = false;
+            _fleeCooldownTimer = 0f;
+
+            _canAttack = true;
+            _attackStateTimer = 0f;
+            _attackVisualTimer = 0f;
+            _attackState = AttackState.Idle;
+            _hasDealtDamageThisAttack = false;
+
+            _detectionResetTimer = _detectionResetCooldown;
+
+            if (_attackVisual != null)
+                _attackVisual.SetActive(false);
+
+            if (_navAgent != null)
+            {
+                _navAgent.enabled = true;
+                _navAgent.isStopped = true;
+                _navAgent.ResetPath();
+                _navAgent.speed = _originalSpeed;
+                _navAgent.angularSpeed = _originalAngularSpeed;
+            }
+
+            _currentState = AIState.Idle;
+        }
         private void StartWaypointWaiting()
         {
             _isWaitingAtWaypoint = true;
@@ -740,16 +817,22 @@ namespace World
 
         private bool DetectTarget()
         {
-            if (_target == null) return false;
+            if (IsInDetectionResetCooldown())
+                return false;
+
+            if (_target == null)
+                return false;
 
             float distance = DistanceToTarget;
-            if (distance > _detectionRange) return false;
+            if (distance > _detectionRange)
+                return false;
 
             if (_fieldOfView < 360f)
             {
                 Vector3 directionToTarget = (_target.position - transform.position).normalized;
                 float angleToTarget = Vector3.Angle(transform.forward, directionToTarget);
-                if (angleToTarget > _fieldOfView * 0.5f) return false;
+                if (angleToTarget > _fieldOfView * 0.5f)
+                    return false;
             }
 
             if (_requireLineOfSight && !HasLineOfSight())
