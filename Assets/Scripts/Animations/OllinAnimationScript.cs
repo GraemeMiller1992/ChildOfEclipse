@@ -16,8 +16,6 @@ public class PlayerAnimationController : MonoBehaviour
     [SerializeField] private float groundCheckRadius = 0.2f;
     [SerializeField] private LayerMask groundLayer;
 
-    private bool isCasting;
-
     private void Reset()
     {
         animator = GetComponent<Animator>();
@@ -40,17 +38,13 @@ public class PlayerAnimationController : MonoBehaviour
     private void OnEnable()
     {
         if (playerSolarState != null)
-        {
             playerSolarState.OnSolarStateChanged += OnPlayerSolarStateChanged;
-        }
     }
 
     private void OnDisable()
     {
         if (playerSolarState != null)
-        {
             playerSolarState.OnSolarStateChanged -= OnPlayerSolarStateChanged;
-        }
     }
 
     private void Update()
@@ -60,18 +54,9 @@ public class PlayerAnimationController : MonoBehaviour
         bool isGrounded = CheckGrounded();
         bool isMoving = CheckMoving();
 
-        if (!isCasting)
-        {
-            animator.SetFloat("Speed", isMoving ? 1f : 0f);
-            animator.SetBool("IsGrounded", isGrounded);
-            animator.SetBool("IsJumping", !isGrounded);
-        }
-        else
-        {
-            // Still keep ground values updated during cast if you want
-            animator.SetBool("IsGrounded", isGrounded);
-            animator.SetBool("IsJumping", !isGrounded);
-        }
+        animator.SetFloat("Speed", isMoving ? 1f : 0f);
+        animator.SetBool("IsGrounded", isGrounded);
+        animator.SetBool("IsJumping", !isGrounded);
     }
 
     private bool CheckMoving()
@@ -108,19 +93,10 @@ public class PlayerAnimationController : MonoBehaviour
     {
         if (animator == null) return;
 
-        isCasting = true;
-
         animator.ResetTrigger("Cast");
         animator.SetTrigger("Cast");
 
         Debug.Log("Cast animation triggered");
-    }
-
-    // Add this as an Animation Event near the end of the cast animation clip
-    public void EndCastAnimation()
-    {
-        isCasting = false;
-        Debug.Log("Cast animation ended");
     }
 
     private void OnDrawGizmosSelected()
