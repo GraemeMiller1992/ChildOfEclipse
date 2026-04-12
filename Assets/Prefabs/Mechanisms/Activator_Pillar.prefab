@@ -70,7 +70,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -4906791916533899185, guid: ce52ff47ab0a13a468301107e559fc98, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4795440217265872344, guid: ce52ff47ab0a13a468301107e559fc98, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -4101933563896624422, guid: ce52ff47ab0a13a468301107e559fc98, type: 3}
       propertyPath: m_Enabled
@@ -687,8 +691,195 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: -7636963557827597600, guid: e4e2e0ea68ed3084190c2f0bef11afdc, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8220823758941475986}
+    - targetCorrespondingSourceObject: {fileID: -7636963557827597600, guid: e4e2e0ea68ed3084190c2f0bef11afdc, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7218832228715497220}
+    - targetCorrespondingSourceObject: {fileID: -7636963557827597600, guid: e4e2e0ea68ed3084190c2f0bef11afdc, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5628005632762169843}
+    - targetCorrespondingSourceObject: {fileID: -7636963557827597600, guid: e4e2e0ea68ed3084190c2f0bef11afdc, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 229067938488766587}
+    - targetCorrespondingSourceObject: {fileID: -7636963557827597600, guid: e4e2e0ea68ed3084190c2f0bef11afdc, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1206588068851755609}
+    - targetCorrespondingSourceObject: {fileID: -7636963557827597600, guid: e4e2e0ea68ed3084190c2f0bef11afdc, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4952623719241483127}
+    - targetCorrespondingSourceObject: {fileID: -7636963557827597600, guid: e4e2e0ea68ed3084190c2f0bef11afdc, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5592685753464121795}
   m_SourcePrefab: {fileID: 100100000, guid: e4e2e0ea68ed3084190c2f0bef11afdc, type: 3}
+--- !u!1 &7319089539246556735 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -7636963557827597600, guid: e4e2e0ea68ed3084190c2f0bef11afdc, type: 3}
+  m_PrefabInstance: {fileID: 8329037195101121759}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8220823758941475986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7319089539246556735}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3b0459a0e763314c955c7c0f265b0b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::World.SolarState
+  _currentState: 0
+--- !u!114 &7218832228715497220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7319089539246556735}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::World.SolarStateLayer
+  _sunLayer: 8
+  _moonLayer: 7
+  _eclipseLayer: 9
+  _targetGameObjects: []
+  _includeChildren: 0
+--- !u!114 &5628005632762169843
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7319089539246556735}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e05a50f44b44c3b4e8c2a1e2ee27a7b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ChildOfEclipse.SolarStateSwapInteractable
+  highlightRenderer: {fileID: 0}
+  hoverColor: {r: 1, g: 1, b: 1, a: 1}
+  customInteractionDescription: 
+  interactParticles: {fileID: 0}
+  interactSound: {fileID: 0}
+  interactSoundVolume: 1
+  playerTag: Player
+  maxSwaps: -1
+  interactionLocked: 0
+  showDebugMessages: 0
+--- !u!114 &229067938488766587
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7319089539246556735}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8da0daca9565a0c4482820b9f000d55a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Actions.SolarStateActionTrigger
+  _conditions:
+  - _solarState: {fileID: 8220823758941475986}
+    _requiredState: 0
+  _actionRunner:
+    _actions:
+    - rid: 2625972689753604181
+    - rid: 2625972689753604182
+  _triggerOnce: 1
+  _triggerOnAwake: 0
+  _contextObject: {fileID: 0}
+  _showDebugLogs: 1
+  references:
+    version: 2
+    RefIds:
+    - rid: 2625972689753604181
+      type: {class: SetActiveAction, ns: Actions, asm: Assembly-CSharp}
+      data:
+        target: {fileID: 1824884447630856462}
+        setActive: 1
+    - rid: 2625972689753604182
+      type: {class: SetActiveAction, ns: Actions, asm: Assembly-CSharp}
+      data:
+        target: {fileID: 560834171553441459}
+        setActive: 0
+--- !u!114 &1206588068851755609
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7319089539246556735}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8da0daca9565a0c4482820b9f000d55a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Actions.SolarStateActionTrigger
+  _conditions:
+  - _solarState: {fileID: 8220823758941475986}
+    _requiredState: 1
+  _actionRunner:
+    _actions:
+    - rid: 2625972689753604183
+    - rid: 2625972689753604184
+  _triggerOnce: 1
+  _triggerOnAwake: 0
+  _contextObject: {fileID: 0}
+  _showDebugLogs: 1
+  references:
+    version: 2
+    RefIds:
+    - rid: 2625972689753604183
+      type: {class: SetActiveAction, ns: Actions, asm: Assembly-CSharp}
+      data:
+        target: {fileID: 1824884447630856462}
+        setActive: 0
+    - rid: 2625972689753604184
+      type: {class: SetActiveAction, ns: Actions, asm: Assembly-CSharp}
+      data:
+        target: {fileID: 560834171553441459}
+        setActive: 1
+--- !u!114 &4952623719241483127
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7319089539246556735}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b3c8d9e5f2a4b6c8d1e2f3a4b5c6d7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::World.SolarStateMaterial
+  _sunMaterial: {fileID: 2100000, guid: eaa3e635ec35bcd48b8cc62b7aad7f33, type: 2}
+  _moonMaterial: {fileID: 2100000, guid: 6b0ec8af93fc8f14a96f5c96f7c0c17a, type: 2}
+  _eclipseMaterial: {fileID: 2100000, guid: 6acb937ab7d0d8c449783f90376c91ba, type: 2}
+  _targetRenderers: []
+--- !u!135 &5592685753464121795
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7319089539246556735}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 45.728615
+  m_Center: {x: 0, y: 332.58972, z: -0.0000076293945}
 --- !u!4 &8366586733516147508 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: e4e2e0ea68ed3084190c2f0bef11afdc, type: 3}
