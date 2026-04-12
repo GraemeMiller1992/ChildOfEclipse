@@ -192,14 +192,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b3c8d9e5f2a4b6c8d1e2f3a4b5c6d7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::World.SolarStateMaterial
-  _sunMaterial: {fileID: 2100000, guid: eaa3e635ec35bcd48b8cc62b7aad7f33, type: 2}
-  _moonMaterial: {fileID: 2100000, guid: 6b0ec8af93fc8f14a96f5c96f7c0c17a, type: 2}
-  _eclipseMaterial: {fileID: 2100000, guid: 2ba031134926c634e88d1dcc7a50918c, type: 2}
+  _sunMaterial: {fileID: 2100000, guid: a7798ad95d10524488991048b4affe4a, type: 2}
+  _moonMaterial: {fileID: 2100000, guid: 008664b8a72cd2f4fafbca24b6febd41, type: 2}
+  _eclipseMaterial: {fileID: 2100000, guid: 34524545fd09acc489f2ba95a1e6f627, type: 2}
   _targetRenderers:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 77525431705625776}
+  - {fileID: 4926960484990678974}
 --- !u!114 &1094804625617471291
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -773,9 +771,19 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 848d54e7943397d44b95fae04049e05c, type: 3}
+--- !u!137 &77525431705625776 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -6161448157782799470, guid: 848d54e7943397d44b95fae04049e05c, type: 3}
+  m_PrefabInstance: {fileID: 3129244674594729762}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &3235825400537745609 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 848d54e7943397d44b95fae04049e05c, type: 3}
+  m_PrefabInstance: {fileID: 3129244674594729762}
+  m_PrefabAsset: {fileID: 0}
+--- !u!137 &4926960484990678974 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -1221219837137577828, guid: 848d54e7943397d44b95fae04049e05c, type: 3}
   m_PrefabInstance: {fileID: 3129244674594729762}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7173165326983593244
