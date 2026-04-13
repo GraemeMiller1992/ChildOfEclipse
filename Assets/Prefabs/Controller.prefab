@@ -25,6 +25,7 @@ GameObject:
   - component: {fileID: 3527042087786221067}
   - component: {fileID: 3770678285096156796}
   - component: {fileID: 2512947485860392308}
+  - component: {fileID: 8383924724456978664}
   m_Layer: 0
   m_Name: Controller
   m_TagString: Player
@@ -448,6 +449,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::World.EnemyResetManager
   playerHealth: {fileID: 1094804625617471291}
+--- !u!114 &8383924724456978664
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 454626129936325366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2053e95c4495854d9810ede4a3ba6f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ChildOfEclipse.Coin.CoinCollector
+  detectionRadius: 3
+  coinLayer:
+    serializedVersion: 2
+    m_Bits: 8192
+  detectionOffset: {x: 0, y: 0, z: 0}
+  scanInterval: 0.1
+  maxCoinsPerScan: 32
+  showGizmos: 1
+  collectSound: {fileID: 0}
+  collectVolume: 0.7
 --- !u!1 &5724178942470668315
 GameObject:
   m_ObjectHideFlags: 0
