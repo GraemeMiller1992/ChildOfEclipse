@@ -78,7 +78,22 @@ public class PlayerAnimationController : MonoBehaviour
             return true;
         }
 
-        return Physics.CheckSphere(groundCheck.position, groundCheckRadius, groundLayer, QueryTriggerInteraction.Ignore);
+        Collider[] hits = Physics.OverlapSphere(
+            groundCheck.position,
+            groundCheckRadius,
+            groundLayer,
+            QueryTriggerInteraction.Ignore
+        );
+
+        foreach (Collider hit in hits)
+        {
+            if (hit.transform == transform || hit.transform.IsChildOf(transform))
+                continue;
+
+            return true;
+        }
+
+        return false;
     }
 
     private void OnPlayerSolarStateChanged(SolarStateValue oldState, SolarStateValue newState)
