@@ -26,6 +26,7 @@ GameObject:
   - component: {fileID: 3770678285096156796}
   - component: {fileID: 2512947485860392308}
   - component: {fileID: 8383924724456978664}
+  - component: {fileID: 6490492565707685855}
   m_Layer: 0
   m_Name: Controller
   m_TagString: Player
@@ -471,6 +472,14 @@ MonoBehaviour:
   showGizmos: 1
   collectSound: {fileID: 0}
   collectVolume: 0.7
+--- !u!81 &6490492565707685855
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 454626129936325366}
+  m_Enabled: 1
 --- !u!1 &5724178942470668315
 GameObject:
   m_ObjectHideFlags: 0
