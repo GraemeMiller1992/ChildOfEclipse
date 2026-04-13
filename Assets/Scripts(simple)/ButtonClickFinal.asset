@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95e66c6366d904e98bc83428217d4fd7, type: 3}
+  m_Name: ButtonClickFinal
+  m_EditorClassIdentifier: Unity.VisualScripting.Flow::Unity.VisualScripting.ScriptGraphAsset
+  _data:
+    _json: '{"graph":{"variables":{"Kind":"Flow","collection":{"$content":[],"$version":"A"},"$version":"A"},"controlInputDefinitions":[],"controlOutputDefinitions":[],"valueInputDefinitions":[],"valueOutputDefinitions":[],"title":null,"summary":null,"pan":{"x":384.1105,"y":25.69104},"zoom":0.9499999,"elements":[{"coroutine":false,"defaultValues":{"target":null},"position":{"x":-267.0,"y":-110.0},"guid":"c628633b-e83c-413f-bb7c-95d818e618b1","$version":"A","$type":"Unity.VisualScripting.OnButtonClick","$id":"9"},{"chainable":false,"parameterNames":["value"],"member":{"name":"SetActive","parameterTypes":["System.Boolean"],"targetType":"UnityEngine.GameObject","targetTypeName":"UnityEngine.GameObject","$version":"A"},"defaultValues":{"target":null,"%value":{"$content":false,"$type":"System.Boolean"}},"position":{"x":220.0,"y":-124.0},"guid":"c0e48db0-12da-4c09-9e59-c0cc36bd9ab4","$version":"A","$type":"Unity.VisualScripting.InvokeMember","$id":"11"},{"specifyFallback":false,"kind":"Object","defaultValues":{"name":{"$content":"Dialogue1","$type":"System.String"},"object":null},"position":{"x":-8.0,"y":28.0},"guid":"80c6470f-8dd2-45de-97f2-c5629908c45c","$version":"A","$type":"Unity.VisualScripting.GetVariable","$id":"15"},{"defaultValues":{"duration":{"$content":3.0,"$type":"System.Single"},"unscaledTime":{"$content":false,"$type":"System.Boolean"}},"position":{"x":440.0,"y":-125.0},"guid":"370d6f07-f35b-4756-9bfb-d6a7f57e6ec2","$version":"A","$type":"Unity.VisualScripting.Cooldown","$id":"17"},{"chainable":false,"parameterNames":["sceneName"],"member":{"name":"LoadSceneAsync","parameterTypes":["System.String"],"targetType":"UnityEngine.SceneManagement.SceneManager","targetTypeName":"UnityEngine.SceneManagement.SceneManager","$version":"A"},"defaultValues":{"%sceneName":{"$content":"BadEndCinematic","$type":"System.String"}},"position":{"x":749.0,"y":-73.0},"guid":"0c40ea87-78a7-457b-af59-41af6f9a5fdd","$version":"A","$type":"Unity.VisualScripting.InvokeMember","$id":"19"},{"sourceUnit":{"$ref":"11"},"sourceKey":"exit","destinationUnit":{"$ref":"17"},"destinationKey":"enter","guid":"632feb08-29f4-40b1-b73e-2608dc5936f6","$type":"Unity.VisualScripting.ControlConnection"},{"sourceUnit":{"$ref":"17"},"sourceKey":"becameReady","destinationUnit":{"$ref":"19"},"destinationKey":"enter","guid":"9c2e8d94-57cd-454d-a018-0417494df70a","$type":"Unity.VisualScripting.ControlConnection"},{"sourceUnit":{"$ref":"9"},"sourceKey":"trigger","destinationUnit":{"$ref":"11"},"destinationKey":"enter","guid":"e0dc9975-85f3-41fa-ab49-6a2ea0a18a10","$type":"Unity.VisualScripting.ControlConnection"},{"sourceUnit":{"$ref":"15"},"sourceKey":"value","destinationUnit":{"$ref":"11"},"destinationKey":"target","guid":"b77cec79-fb55-471f-a0e6-4795929b9b81","$type":"Unity.VisualScripting.ValueConnection"}],"$version":"A"}}'
+    _objectReferences: []
