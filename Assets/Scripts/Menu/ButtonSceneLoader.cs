@@ -28,8 +28,6 @@ public class ButtonSceneLoader
 
     private void LoadScene()
     {
-        if (string.IsNullOrEmpty(sceneName)) return;
-
         switch (loadMode)
         {
             case LoadMode.Asynchronous:
