@@ -319,7 +319,6 @@ namespace ChildOfEclipse
         /// <param name="state">The solar state to spawn UI for.</param>
         private void SpawnWorldUIForState(SolarStateValue state)
         {
-            // Destroy existing instance if any
             if (_worldUIInstance != null)
             {
                 Destroy(_worldUIInstance);
@@ -327,11 +326,28 @@ namespace ChildOfEclipse
             }
 
             GameObject prefab = GetWorldUIPrefabForState(state);
-            if (prefab != null)
+            if (prefab == null) return;
+
+            _worldUIInstance = Instantiate(prefab);
+            _worldUIInstance.SetActive(false);
+            _currentSolarUIState = state;
+
+            ForceStartParticles(_worldUIInstance);
+        }
+
+        private void ForceStartParticles(GameObject target)
+        {
+            if (target == null) return;
+
+            ParticleSystem[] systems = target.GetComponentsInChildren<ParticleSystem>(true);
+
+            foreach (ParticleSystem ps in systems)
             {
-                _worldUIInstance = Instantiate(prefab);
-                _worldUIInstance.SetActive(false);
-                _currentSolarUIState = state;
+                ps.gameObject.SetActive(true);
+                ps.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
+                ps.Clear(true);
+                ps.Simulate(ps.main.duration, true, true, true); // makes it appear already "running"
+                ps.Play(true);
             }
         }
 
