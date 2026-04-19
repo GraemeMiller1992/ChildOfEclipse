@@ -1131,6 +1131,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8522011601890439010, guid: 1dc6898787588914caf207eba6f4967b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6054945921098199682}
+    - targetCorrespondingSourceObject: {fileID: 8522011601890439010, guid: 1dc6898787588914caf207eba6f4967b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3535199574481315669}
   m_SourcePrefab: {fileID: 100100000, guid: 1dc6898787588914caf207eba6f4967b, type: 3}
 --- !u!1 &2407198431945460251 stripped
 GameObject:
@@ -1156,6 +1159,24 @@ MonoBehaviour:
   sunToMoon: {fileID: 1279521217309772670}
   moonToSun: {fileID: 3298057562784987520}
   moonToEclipse: {fileID: 4605945002232791565}
+--- !u!114 &3535199574481315669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2407198431945460251}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df6b38fcbeb18a34fa5d3a47aa9ad0a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::World.EnemyDeathReset
+  enemyAI: {fileID: 0}
+  navMeshAgent: {fileID: 0}
+  rb: {fileID: 0}
+  solarState: {fileID: 8409380837342076890}
+  stateAfterReset: 0
+  resetRotation: 1
 --- !u!4 &2425721946713575091 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8540433599737375690, guid: 1dc6898787588914caf207eba6f4967b, type: 3}
