@@ -13960,9 +13960,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b3c8d9e5f2a4b6c8d1e2f3a4b5c6d7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::World.SolarStateMaterial
-  _sunMaterial: {fileID: 2100000, guid: 109627a8ad09140468642242eb460209, type: 2}
-  _moonMaterial: {fileID: 2100000, guid: c90b9e2c0f4cb454b8aef5d56e430dd7, type: 2}
-  _eclipseMaterial: {fileID: 2100000, guid: 2ba031134926c634e88d1dcc7a50918c, type: 2}
+  _sunMaterial: {fileID: 2100000, guid: eaa3e635ec35bcd48b8cc62b7aad7f33, type: 2}
+  _moonMaterial: {fileID: 2100000, guid: 6b0ec8af93fc8f14a96f5c96f7c0c17a, type: 2}
+  _eclipseMaterial: {fileID: 2100000, guid: 6acb937ab7d0d8c449783f90376c91ba, type: 2}
   _targetRenderers: []
 --- !u!114 &150667109
 MonoBehaviour:
@@ -19801,6 +19801,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 101d5072515c64e4898f339da786c721, type: 3}
+--- !u!114 &210719571 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8409380837342076890, guid: 0f3ea530e7e68904d87f7e656b6c1535, type: 3}
+  m_PrefabInstance: {fileID: 584352589}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3b0459a0e763314c955c7c0f265b0b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::World.SolarState
 --- !u!1001 &211009223
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20308,6 +20319,18 @@ PrefabInstance:
       propertyPath: _currentState
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8116995696513210782, guid: 18d905f7952d9994fa559d8f52036c8d, type: 3}
+      propertyPath: _sunMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: eaa3e635ec35bcd48b8cc62b7aad7f33, type: 2}
+    - target: {fileID: 8116995696513210782, guid: 18d905f7952d9994fa559d8f52036c8d, type: 3}
+      propertyPath: _moonMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 6b0ec8af93fc8f14a96f5c96f7c0c17a, type: 2}
+    - target: {fileID: 8116995696513210782, guid: 18d905f7952d9994fa559d8f52036c8d, type: 3}
+      propertyPath: _eclipseMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 6acb937ab7d0d8c449783f90376c91ba, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -26786,9 +26809,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b3c8d9e5f2a4b6c8d1e2f3a4b5c6d7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::World.SolarStateMaterial
-  _sunMaterial: {fileID: 2100000, guid: 109627a8ad09140468642242eb460209, type: 2}
-  _moonMaterial: {fileID: 2100000, guid: c90b9e2c0f4cb454b8aef5d56e430dd7, type: 2}
-  _eclipseMaterial: {fileID: 2100000, guid: 2ba031134926c634e88d1dcc7a50918c, type: 2}
+  _sunMaterial: {fileID: 2100000, guid: eaa3e635ec35bcd48b8cc62b7aad7f33, type: 2}
+  _moonMaterial: {fileID: 2100000, guid: 6b0ec8af93fc8f14a96f5c96f7c0c17a, type: 2}
+  _eclipseMaterial: {fileID: 2100000, guid: 6acb937ab7d0d8c449783f90376c91ba, type: 2}
   _targetRenderers: []
 --- !u!114 &250296572
 MonoBehaviour:
@@ -36976,6 +36999,18 @@ PrefabInstance:
       propertyPath: _currentState
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8116995696513210782, guid: 18d905f7952d9994fa559d8f52036c8d, type: 3}
+      propertyPath: _sunMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: eaa3e635ec35bcd48b8cc62b7aad7f33, type: 2}
+    - target: {fileID: 8116995696513210782, guid: 18d905f7952d9994fa559d8f52036c8d, type: 3}
+      propertyPath: _moonMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 6b0ec8af93fc8f14a96f5c96f7c0c17a, type: 2}
+    - target: {fileID: 8116995696513210782, guid: 18d905f7952d9994fa559d8f52036c8d, type: 3}
+      propertyPath: _eclipseMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 6acb937ab7d0d8c449783f90376c91ba, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -37510,9 +37545,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b3c8d9e5f2a4b6c8d1e2f3a4b5c6d7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::World.SolarStateMaterial
-  _sunMaterial: {fileID: 2100000, guid: 2b3e381f3d6db854480d8dc4b5de5e5c, type: 2}
-  _moonMaterial: {fileID: 2100000, guid: c2176d8fa2c7d9f42b9f30dc90c870c1, type: 2}
-  _eclipseMaterial: {fileID: 2100000, guid: 7df3d49d9658a614fb5e35053b8b5884, type: 2}
+  _sunMaterial: {fileID: 2100000, guid: eaa3e635ec35bcd48b8cc62b7aad7f33, type: 2}
+  _moonMaterial: {fileID: 2100000, guid: 6b0ec8af93fc8f14a96f5c96f7c0c17a, type: 2}
+  _eclipseMaterial: {fileID: 2100000, guid: 6acb937ab7d0d8c449783f90376c91ba, type: 2}
   _targetRenderers: []
 --- !u!114 &338315309
 MonoBehaviour:
@@ -45675,9 +45710,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b3c8d9e5f2a4b6c8d1e2f3a4b5c6d7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::World.SolarStateMaterial
-  _sunMaterial: {fileID: 2100000, guid: 2b3e381f3d6db854480d8dc4b5de5e5c, type: 2}
-  _moonMaterial: {fileID: 2100000, guid: c2176d8fa2c7d9f42b9f30dc90c870c1, type: 2}
-  _eclipseMaterial: {fileID: 2100000, guid: 7df3d49d9658a614fb5e35053b8b5884, type: 2}
+  _sunMaterial: {fileID: 2100000, guid: eaa3e635ec35bcd48b8cc62b7aad7f33, type: 2}
+  _moonMaterial: {fileID: 2100000, guid: 6b0ec8af93fc8f14a96f5c96f7c0c17a, type: 2}
+  _eclipseMaterial: {fileID: 2100000, guid: 6acb937ab7d0d8c449783f90376c91ba, type: 2}
   _targetRenderers: []
 --- !u!114 &412528966
 MonoBehaviour:
@@ -68587,9 +68622,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b3c8d9e5f2a4b6c8d1e2f3a4b5c6d7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::World.SolarStateMaterial
-  _sunMaterial: {fileID: 2100000, guid: 2b3e381f3d6db854480d8dc4b5de5e5c, type: 2}
-  _moonMaterial: {fileID: 2100000, guid: c2176d8fa2c7d9f42b9f30dc90c870c1, type: 2}
-  _eclipseMaterial: {fileID: 2100000, guid: 7df3d49d9658a614fb5e35053b8b5884, type: 2}
+  _sunMaterial: {fileID: 2100000, guid: eaa3e635ec35bcd48b8cc62b7aad7f33, type: 2}
+  _moonMaterial: {fileID: 2100000, guid: 6b0ec8af93fc8f14a96f5c96f7c0c17a, type: 2}
+  _eclipseMaterial: {fileID: 2100000, guid: 6acb937ab7d0d8c449783f90376c91ba, type: 2}
   _targetRenderers: []
 --- !u!114 &589054139
 MonoBehaviour:
@@ -75289,6 +75324,17 @@ Mesh:
       - serializedVersion: 1
         m_IndexStart: 0
         m_IndexCount: 0
+--- !u!114 &653309563 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7542983860250979828, guid: cf18970cb1d9ca14fba4e5cfc8b50410, type: 3}
+  m_PrefabInstance: {fileID: 1875311318}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3b0459a0e763314c955c7c0f265b0b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::World.SolarState
 --- !u!1001 &653636350
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -80949,6 +80995,18 @@ PrefabInstance:
       propertyPath: _currentState
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 8116995696513210782, guid: 18d905f7952d9994fa559d8f52036c8d, type: 3}
+      propertyPath: _sunMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: eaa3e635ec35bcd48b8cc62b7aad7f33, type: 2}
+    - target: {fileID: 8116995696513210782, guid: 18d905f7952d9994fa559d8f52036c8d, type: 3}
+      propertyPath: _moonMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 6b0ec8af93fc8f14a96f5c96f7c0c17a, type: 2}
+    - target: {fileID: 8116995696513210782, guid: 18d905f7952d9994fa559d8f52036c8d, type: 3}
+      propertyPath: _eclipseMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 6acb937ab7d0d8c449783f90376c91ba, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -86826,6 +86884,18 @@ PrefabInstance:
       propertyPath: _currentState
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8116995696513210782, guid: 18d905f7952d9994fa559d8f52036c8d, type: 3}
+      propertyPath: _sunMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: eaa3e635ec35bcd48b8cc62b7aad7f33, type: 2}
+    - target: {fileID: 8116995696513210782, guid: 18d905f7952d9994fa559d8f52036c8d, type: 3}
+      propertyPath: _moonMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 6b0ec8af93fc8f14a96f5c96f7c0c17a, type: 2}
+    - target: {fileID: 8116995696513210782, guid: 18d905f7952d9994fa559d8f52036c8d, type: 3}
+      propertyPath: _eclipseMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 6acb937ab7d0d8c449783f90376c91ba, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -97209,6 +97279,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: ba210745e3abb0a44b7f0ad65352d0c0, type: 3}
   m_PrefabInstance: {fileID: 853011473}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &853507424 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7542983860250979828, guid: cf18970cb1d9ca14fba4e5cfc8b50410, type: 3}
+  m_PrefabInstance: {fileID: 1271053196}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3b0459a0e763314c955c7c0f265b0b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::World.SolarState
 --- !u!1001 &855927346
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -112403,9 +112484,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b3c8d9e5f2a4b6c8d1e2f3a4b5c6d7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::World.SolarStateMaterial
-  _sunMaterial: {fileID: 2100000, guid: 109627a8ad09140468642242eb460209, type: 2}
-  _moonMaterial: {fileID: 2100000, guid: c90b9e2c0f4cb454b8aef5d56e430dd7, type: 2}
-  _eclipseMaterial: {fileID: 2100000, guid: 2ba031134926c634e88d1dcc7a50918c, type: 2}
+  _sunMaterial: {fileID: 2100000, guid: eaa3e635ec35bcd48b8cc62b7aad7f33, type: 2}
+  _moonMaterial: {fileID: 2100000, guid: 6b0ec8af93fc8f14a96f5c96f7c0c17a, type: 2}
+  _eclipseMaterial: {fileID: 2100000, guid: 6acb937ab7d0d8c449783f90376c91ba, type: 2}
   _targetRenderers: []
 --- !u!114 &987195431
 MonoBehaviour:
@@ -117008,6 +117089,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 101d5072515c64e4898f339da786c721, type: 3}
+--- !u!114 &1034998796 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7542983860250979828, guid: cf18970cb1d9ca14fba4e5cfc8b50410, type: 3}
+  m_PrefabInstance: {fileID: 1304508105}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3b0459a0e763314c955c7c0f265b0b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::World.SolarState
 --- !u!4 &1035400288 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7289084089099236235, guid: 48961e8ee0e9ee8449ef2fc39ae6a3dc, type: 3}
@@ -122928,6 +123020,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2a6be991d26558f4ca1c5f258c713440, type: 3}
+--- !u!114 &1086258498 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7542983860250979828, guid: cf18970cb1d9ca14fba4e5cfc8b50410, type: 3}
+  m_PrefabInstance: {fileID: 713549581}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3b0459a0e763314c955c7c0f265b0b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::World.SolarState
 --- !u!1001 &1086352487
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -125505,9 +125608,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b3c8d9e5f2a4b6c8d1e2f3a4b5c6d7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::World.SolarStateMaterial
-  _sunMaterial: {fileID: 2100000, guid: 109627a8ad09140468642242eb460209, type: 2}
-  _moonMaterial: {fileID: 2100000, guid: c90b9e2c0f4cb454b8aef5d56e430dd7, type: 2}
-  _eclipseMaterial: {fileID: 2100000, guid: 2ba031134926c634e88d1dcc7a50918c, type: 2}
+  _sunMaterial: {fileID: 2100000, guid: eaa3e635ec35bcd48b8cc62b7aad7f33, type: 2}
+  _moonMaterial: {fileID: 2100000, guid: 6b0ec8af93fc8f14a96f5c96f7c0c17a, type: 2}
+  _eclipseMaterial: {fileID: 2100000, guid: 6acb937ab7d0d8c449783f90376c91ba, type: 2}
   _targetRenderers: []
 --- !u!114 &1106132799
 MonoBehaviour:
@@ -125636,15 +125739,15 @@ PrefabInstance:
     - target: {fileID: 8116995696513210782, guid: 18d905f7952d9994fa559d8f52036c8d, type: 3}
       propertyPath: _sunMaterial
       value: 
-      objectReference: {fileID: 2100000, guid: 2b3e381f3d6db854480d8dc4b5de5e5c, type: 2}
+      objectReference: {fileID: 2100000, guid: eaa3e635ec35bcd48b8cc62b7aad7f33, type: 2}
     - target: {fileID: 8116995696513210782, guid: 18d905f7952d9994fa559d8f52036c8d, type: 3}
       propertyPath: _moonMaterial
       value: 
-      objectReference: {fileID: 2100000, guid: c2176d8fa2c7d9f42b9f30dc90c870c1, type: 2}
+      objectReference: {fileID: 2100000, guid: 6b0ec8af93fc8f14a96f5c96f7c0c17a, type: 2}
     - target: {fileID: 8116995696513210782, guid: 18d905f7952d9994fa559d8f52036c8d, type: 3}
       propertyPath: _eclipseMaterial
       value: 
-      objectReference: {fileID: 2100000, guid: 7df3d49d9658a614fb5e35053b8b5884, type: 2}
+      objectReference: {fileID: 2100000, guid: 6acb937ab7d0d8c449783f90376c91ba, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -126908,6 +127011,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6a9df537c4eb6624da16be987acd7877, type: 3}
+--- !u!114 &1118610307 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8409380837342076890, guid: 0f3ea530e7e68904d87f7e656b6c1535, type: 3}
+  m_PrefabInstance: {fileID: 168964365}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3b0459a0e763314c955c7c0f265b0b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::World.SolarState
 --- !u!1001 &1118712156
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -131040,6 +131154,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1153663001 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7542983860250979828, guid: cf18970cb1d9ca14fba4e5cfc8b50410, type: 3}
+  m_PrefabInstance: {fileID: 2016545658}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3b0459a0e763314c955c7c0f265b0b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::World.SolarState
 --- !u!1001 &1153751169
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -132506,6 +132631,18 @@ PrefabInstance:
       propertyPath: _currentState
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8116995696513210782, guid: 18d905f7952d9994fa559d8f52036c8d, type: 3}
+      propertyPath: _sunMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: eaa3e635ec35bcd48b8cc62b7aad7f33, type: 2}
+    - target: {fileID: 8116995696513210782, guid: 18d905f7952d9994fa559d8f52036c8d, type: 3}
+      propertyPath: _moonMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 6b0ec8af93fc8f14a96f5c96f7c0c17a, type: 2}
+    - target: {fileID: 8116995696513210782, guid: 18d905f7952d9994fa559d8f52036c8d, type: 3}
+      propertyPath: _eclipseMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 6acb937ab7d0d8c449783f90376c91ba, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -133387,6 +133524,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eda47c1322e67924188931b5f0602b05, type: 3}
+--- !u!114 &1175209164 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8409380837342076890, guid: 0f3ea530e7e68904d87f7e656b6c1535, type: 3}
+  m_PrefabInstance: {fileID: 2001132283}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3b0459a0e763314c955c7c0f265b0b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::World.SolarState
 --- !u!1 &1175405071
 GameObject:
   m_ObjectHideFlags: 0
@@ -134436,6 +134584,18 @@ PrefabInstance:
       propertyPath: _currentState
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8116995696513210782, guid: 18d905f7952d9994fa559d8f52036c8d, type: 3}
+      propertyPath: _sunMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: eaa3e635ec35bcd48b8cc62b7aad7f33, type: 2}
+    - target: {fileID: 8116995696513210782, guid: 18d905f7952d9994fa559d8f52036c8d, type: 3}
+      propertyPath: _moonMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 6b0ec8af93fc8f14a96f5c96f7c0c17a, type: 2}
+    - target: {fileID: 8116995696513210782, guid: 18d905f7952d9994fa559d8f52036c8d, type: 3}
+      propertyPath: _eclipseMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 6acb937ab7d0d8c449783f90376c91ba, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -137186,15 +137346,15 @@ PrefabInstance:
     - target: {fileID: 8116995696513210782, guid: 18d905f7952d9994fa559d8f52036c8d, type: 3}
       propertyPath: _sunMaterial
       value: 
-      objectReference: {fileID: 2100000, guid: 2b3e381f3d6db854480d8dc4b5de5e5c, type: 2}
+      objectReference: {fileID: 2100000, guid: eaa3e635ec35bcd48b8cc62b7aad7f33, type: 2}
     - target: {fileID: 8116995696513210782, guid: 18d905f7952d9994fa559d8f52036c8d, type: 3}
       propertyPath: _moonMaterial
       value: 
-      objectReference: {fileID: 2100000, guid: c2176d8fa2c7d9f42b9f30dc90c870c1, type: 2}
+      objectReference: {fileID: 2100000, guid: 6b0ec8af93fc8f14a96f5c96f7c0c17a, type: 2}
     - target: {fileID: 8116995696513210782, guid: 18d905f7952d9994fa559d8f52036c8d, type: 3}
       propertyPath: _eclipseMaterial
       value: 
-      objectReference: {fileID: 2100000, guid: 7df3d49d9658a614fb5e35053b8b5884, type: 2}
+      objectReference: {fileID: 2100000, guid: 6acb937ab7d0d8c449783f90376c91ba, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -141796,9 +141956,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b3c8d9e5f2a4b6c8d1e2f3a4b5c6d7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::World.SolarStateMaterial
-  _sunMaterial: {fileID: 2100000, guid: 109627a8ad09140468642242eb460209, type: 2}
-  _moonMaterial: {fileID: 2100000, guid: c90b9e2c0f4cb454b8aef5d56e430dd7, type: 2}
-  _eclipseMaterial: {fileID: 2100000, guid: 2ba031134926c634e88d1dcc7a50918c, type: 2}
+  _sunMaterial: {fileID: 2100000, guid: eaa3e635ec35bcd48b8cc62b7aad7f33, type: 2}
+  _moonMaterial: {fileID: 2100000, guid: 6b0ec8af93fc8f14a96f5c96f7c0c17a, type: 2}
+  _eclipseMaterial: {fileID: 2100000, guid: 6acb937ab7d0d8c449783f90376c91ba, type: 2}
   _targetRenderers: []
 --- !u!114 &1270204591
 MonoBehaviour:
@@ -149761,9 +149921,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b3c8d9e5f2a4b6c8d1e2f3a4b5c6d7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::World.SolarStateMaterial
-  _sunMaterial: {fileID: 2100000, guid: 109627a8ad09140468642242eb460209, type: 2}
-  _moonMaterial: {fileID: 2100000, guid: c90b9e2c0f4cb454b8aef5d56e430dd7, type: 2}
-  _eclipseMaterial: {fileID: 2100000, guid: 2ba031134926c634e88d1dcc7a50918c, type: 2}
+  _sunMaterial: {fileID: 2100000, guid: eaa3e635ec35bcd48b8cc62b7aad7f33, type: 2}
+  _moonMaterial: {fileID: 2100000, guid: 6b0ec8af93fc8f14a96f5c96f7c0c17a, type: 2}
+  _eclipseMaterial: {fileID: 2100000, guid: 6acb937ab7d0d8c449783f90376c91ba, type: 2}
   _targetRenderers: []
 --- !u!114 &1359221332
 MonoBehaviour:
@@ -151716,9 +151876,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b3c8d9e5f2a4b6c8d1e2f3a4b5c6d7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::World.SolarStateMaterial
-  _sunMaterial: {fileID: 2100000, guid: 109627a8ad09140468642242eb460209, type: 2}
-  _moonMaterial: {fileID: 2100000, guid: c90b9e2c0f4cb454b8aef5d56e430dd7, type: 2}
-  _eclipseMaterial: {fileID: 2100000, guid: 2ba031134926c634e88d1dcc7a50918c, type: 2}
+  _sunMaterial: {fileID: 2100000, guid: eaa3e635ec35bcd48b8cc62b7aad7f33, type: 2}
+  _moonMaterial: {fileID: 2100000, guid: 6b0ec8af93fc8f14a96f5c96f7c0c17a, type: 2}
+  _eclipseMaterial: {fileID: 2100000, guid: 6acb937ab7d0d8c449783f90376c91ba, type: 2}
   _targetRenderers: []
 --- !u!114 &1375420147
 MonoBehaviour:
@@ -154463,9 +154623,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b3c8d9e5f2a4b6c8d1e2f3a4b5c6d7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::World.SolarStateMaterial
-  _sunMaterial: {fileID: 2100000, guid: 109627a8ad09140468642242eb460209, type: 2}
-  _moonMaterial: {fileID: 2100000, guid: c90b9e2c0f4cb454b8aef5d56e430dd7, type: 2}
-  _eclipseMaterial: {fileID: 2100000, guid: 2ba031134926c634e88d1dcc7a50918c, type: 2}
+  _sunMaterial: {fileID: 2100000, guid: eaa3e635ec35bcd48b8cc62b7aad7f33, type: 2}
+  _moonMaterial: {fileID: 2100000, guid: 6b0ec8af93fc8f14a96f5c96f7c0c17a, type: 2}
+  _eclipseMaterial: {fileID: 2100000, guid: 6acb937ab7d0d8c449783f90376c91ba, type: 2}
   _targetRenderers: []
 --- !u!114 &1401996123
 MonoBehaviour:
@@ -157296,6 +157456,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ba210745e3abb0a44b7f0ad65352d0c0, type: 3}
+--- !u!114 &1429227320 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8409380837342076890, guid: 0f3ea530e7e68904d87f7e656b6c1535, type: 3}
+  m_PrefabInstance: {fileID: 1905193324}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3b0459a0e763314c955c7c0f265b0b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::World.SolarState
 --- !u!1001 &1432831952
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -163921,9 +164092,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b3c8d9e5f2a4b6c8d1e2f3a4b5c6d7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::World.SolarStateMaterial
-  _sunMaterial: {fileID: 2100000, guid: 109627a8ad09140468642242eb460209, type: 2}
-  _moonMaterial: {fileID: 2100000, guid: c90b9e2c0f4cb454b8aef5d56e430dd7, type: 2}
-  _eclipseMaterial: {fileID: 2100000, guid: 2ba031134926c634e88d1dcc7a50918c, type: 2}
+  _sunMaterial: {fileID: 2100000, guid: eaa3e635ec35bcd48b8cc62b7aad7f33, type: 2}
+  _moonMaterial: {fileID: 2100000, guid: 6b0ec8af93fc8f14a96f5c96f7c0c17a, type: 2}
+  _eclipseMaterial: {fileID: 2100000, guid: 6acb937ab7d0d8c449783f90376c91ba, type: 2}
   _targetRenderers: []
 --- !u!114 &1499160432
 MonoBehaviour:
@@ -168824,6 +168995,18 @@ PrefabInstance:
       propertyPath: _currentState
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8116995696513210782, guid: 18d905f7952d9994fa559d8f52036c8d, type: 3}
+      propertyPath: _sunMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: eaa3e635ec35bcd48b8cc62b7aad7f33, type: 2}
+    - target: {fileID: 8116995696513210782, guid: 18d905f7952d9994fa559d8f52036c8d, type: 3}
+      propertyPath: _moonMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 6b0ec8af93fc8f14a96f5c96f7c0c17a, type: 2}
+    - target: {fileID: 8116995696513210782, guid: 18d905f7952d9994fa559d8f52036c8d, type: 3}
+      propertyPath: _eclipseMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 6acb937ab7d0d8c449783f90376c91ba, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -173300,10 +173483,66 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7773878920920471249, guid: c0203cc563b4dc0438aea55747c12aa7, type: 3}
       propertyPath: OnAfterRespawn.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 7773878920920471249, guid: c0203cc563b4dc0438aea55747c12aa7, type: 3}
       propertyPath: OnAfterRespawn.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7773878920920471249, guid: c0203cc563b4dc0438aea55747c12aa7, type: 3}
+      propertyPath: OnAfterRespawn.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7773878920920471249, guid: c0203cc563b4dc0438aea55747c12aa7, type: 3}
+      propertyPath: OnAfterRespawn.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7773878920920471249, guid: c0203cc563b4dc0438aea55747c12aa7, type: 3}
+      propertyPath: OnAfterRespawn.m_PersistentCalls.m_Calls.Array.data[3].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7773878920920471249, guid: c0203cc563b4dc0438aea55747c12aa7, type: 3}
+      propertyPath: OnAfterRespawn.m_PersistentCalls.m_Calls.Array.data[4].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7773878920920471249, guid: c0203cc563b4dc0438aea55747c12aa7, type: 3}
+      propertyPath: OnAfterRespawn.m_PersistentCalls.m_Calls.Array.data[5].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7773878920920471249, guid: c0203cc563b4dc0438aea55747c12aa7, type: 3}
+      propertyPath: OnAfterRespawn.m_PersistentCalls.m_Calls.Array.data[6].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7773878920920471249, guid: c0203cc563b4dc0438aea55747c12aa7, type: 3}
+      propertyPath: OnAfterRespawn.m_PersistentCalls.m_Calls.Array.data[7].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7773878920920471249, guid: c0203cc563b4dc0438aea55747c12aa7, type: 3}
+      propertyPath: OnAfterRespawn.m_PersistentCalls.m_Calls.Array.data[8].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7773878920920471249, guid: c0203cc563b4dc0438aea55747c12aa7, type: 3}
+      propertyPath: OnAfterRespawn.m_PersistentCalls.m_Calls.Array.data[9].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7773878920920471249, guid: c0203cc563b4dc0438aea55747c12aa7, type: 3}
+      propertyPath: OnAfterRespawn.m_PersistentCalls.m_Calls.Array.data[10].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7773878920920471249, guid: c0203cc563b4dc0438aea55747c12aa7, type: 3}
+      propertyPath: OnAfterRespawn.m_PersistentCalls.m_Calls.Array.data[11].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7773878920920471249, guid: c0203cc563b4dc0438aea55747c12aa7, type: 3}
+      propertyPath: OnAfterRespawn.m_PersistentCalls.m_Calls.Array.data[12].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7773878920920471249, guid: c0203cc563b4dc0438aea55747c12aa7, type: 3}
+      propertyPath: OnAfterRespawn.m_PersistentCalls.m_Calls.Array.data[13].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7773878920920471249, guid: c0203cc563b4dc0438aea55747c12aa7, type: 3}
+      propertyPath: OnAfterRespawn.m_PersistentCalls.m_Calls.Array.data[14].m_Mode
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7773878920920471249, guid: c0203cc563b4dc0438aea55747c12aa7, type: 3}
@@ -173311,7 +173550,99 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1907918873}
     - target: {fileID: 7773878920920471249, guid: c0203cc563b4dc0438aea55747c12aa7, type: 3}
+      propertyPath: OnAfterRespawn.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1086258498}
+    - target: {fileID: 7773878920920471249, guid: c0203cc563b4dc0438aea55747c12aa7, type: 3}
+      propertyPath: OnAfterRespawn.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 1809411737}
+    - target: {fileID: 7773878920920471249, guid: c0203cc563b4dc0438aea55747c12aa7, type: 3}
+      propertyPath: OnAfterRespawn.m_PersistentCalls.m_Calls.Array.data[3].m_Target
+      value: 
+      objectReference: {fileID: 653309563}
+    - target: {fileID: 7773878920920471249, guid: c0203cc563b4dc0438aea55747c12aa7, type: 3}
+      propertyPath: OnAfterRespawn.m_PersistentCalls.m_Calls.Array.data[4].m_Target
+      value: 
+      objectReference: {fileID: 1763658460}
+    - target: {fileID: 7773878920920471249, guid: c0203cc563b4dc0438aea55747c12aa7, type: 3}
+      propertyPath: OnAfterRespawn.m_PersistentCalls.m_Calls.Array.data[5].m_Target
+      value: 
+      objectReference: {fileID: 1118610307}
+    - target: {fileID: 7773878920920471249, guid: c0203cc563b4dc0438aea55747c12aa7, type: 3}
+      propertyPath: OnAfterRespawn.m_PersistentCalls.m_Calls.Array.data[6].m_Target
+      value: 
+      objectReference: {fileID: 853507424}
+    - target: {fileID: 7773878920920471249, guid: c0203cc563b4dc0438aea55747c12aa7, type: 3}
+      propertyPath: OnAfterRespawn.m_PersistentCalls.m_Calls.Array.data[7].m_Target
+      value: 
+      objectReference: {fileID: 1034998796}
+    - target: {fileID: 7773878920920471249, guid: c0203cc563b4dc0438aea55747c12aa7, type: 3}
+      propertyPath: OnAfterRespawn.m_PersistentCalls.m_Calls.Array.data[8].m_Target
+      value: 
+      objectReference: {fileID: 1175209164}
+    - target: {fileID: 7773878920920471249, guid: c0203cc563b4dc0438aea55747c12aa7, type: 3}
+      propertyPath: OnAfterRespawn.m_PersistentCalls.m_Calls.Array.data[9].m_Target
+      value: 
+      objectReference: {fileID: 1429227320}
+    - target: {fileID: 7773878920920471249, guid: c0203cc563b4dc0438aea55747c12aa7, type: 3}
+      propertyPath: OnAfterRespawn.m_PersistentCalls.m_Calls.Array.data[10].m_Target
+      value: 
+      objectReference: {fileID: 2035582550}
+    - target: {fileID: 7773878920920471249, guid: c0203cc563b4dc0438aea55747c12aa7, type: 3}
+      propertyPath: OnAfterRespawn.m_PersistentCalls.m_Calls.Array.data[11].m_Target
+      value: 
+      objectReference: {fileID: 1153663001}
+    - target: {fileID: 7773878920920471249, guid: c0203cc563b4dc0438aea55747c12aa7, type: 3}
+      propertyPath: OnAfterRespawn.m_PersistentCalls.m_Calls.Array.data[12].m_Target
+      value: 
+      objectReference: {fileID: 2012020172}
+    - target: {fileID: 7773878920920471249, guid: c0203cc563b4dc0438aea55747c12aa7, type: 3}
+      propertyPath: OnAfterRespawn.m_PersistentCalls.m_Calls.Array.data[13].m_Target
+      value: 
+      objectReference: {fileID: 1777516258}
+    - target: {fileID: 7773878920920471249, guid: c0203cc563b4dc0438aea55747c12aa7, type: 3}
+      propertyPath: OnAfterRespawn.m_PersistentCalls.m_Calls.Array.data[14].m_Target
+      value: 
+      objectReference: {fileID: 210719571}
+    - target: {fileID: 7773878920920471249, guid: c0203cc563b4dc0438aea55747c12aa7, type: 3}
       propertyPath: OnAfterRespawn.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7773878920920471249, guid: c0203cc563b4dc0438aea55747c12aa7, type: 3}
+      propertyPath: OnAfterRespawn.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7773878920920471249, guid: c0203cc563b4dc0438aea55747c12aa7, type: 3}
+      propertyPath: OnAfterRespawn.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7773878920920471249, guid: c0203cc563b4dc0438aea55747c12aa7, type: 3}
+      propertyPath: OnAfterRespawn.m_PersistentCalls.m_Calls.Array.data[3].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7773878920920471249, guid: c0203cc563b4dc0438aea55747c12aa7, type: 3}
+      propertyPath: OnAfterRespawn.m_PersistentCalls.m_Calls.Array.data[4].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7773878920920471249, guid: c0203cc563b4dc0438aea55747c12aa7, type: 3}
+      propertyPath: OnAfterRespawn.m_PersistentCalls.m_Calls.Array.data[5].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7773878920920471249, guid: c0203cc563b4dc0438aea55747c12aa7, type: 3}
+      propertyPath: OnAfterRespawn.m_PersistentCalls.m_Calls.Array.data[6].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7773878920920471249, guid: c0203cc563b4dc0438aea55747c12aa7, type: 3}
+      propertyPath: OnAfterRespawn.m_PersistentCalls.m_Calls.Array.data[7].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7773878920920471249, guid: c0203cc563b4dc0438aea55747c12aa7, type: 3}
+      propertyPath: OnAfterRespawn.m_PersistentCalls.m_Calls.Array.data[8].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7773878920920471249, guid: c0203cc563b4dc0438aea55747c12aa7, type: 3}
+      propertyPath: OnAfterRespawn.m_PersistentCalls.m_Calls.Array.data[9].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7773878920920471249, guid: c0203cc563b4dc0438aea55747c12aa7, type: 3}
@@ -173319,11 +173650,199 @@ PrefabInstance:
       value: SetSunState
       objectReference: {fileID: 0}
     - target: {fileID: 7773878920920471249, guid: c0203cc563b4dc0438aea55747c12aa7, type: 3}
+      propertyPath: OnAfterRespawn.m_PersistentCalls.m_Calls.Array.data[10].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7773878920920471249, guid: c0203cc563b4dc0438aea55747c12aa7, type: 3}
+      propertyPath: OnAfterRespawn.m_PersistentCalls.m_Calls.Array.data[11].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7773878920920471249, guid: c0203cc563b4dc0438aea55747c12aa7, type: 3}
+      propertyPath: OnAfterRespawn.m_PersistentCalls.m_Calls.Array.data[12].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7773878920920471249, guid: c0203cc563b4dc0438aea55747c12aa7, type: 3}
+      propertyPath: OnAfterRespawn.m_PersistentCalls.m_Calls.Array.data[13].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7773878920920471249, guid: c0203cc563b4dc0438aea55747c12aa7, type: 3}
+      propertyPath: OnAfterRespawn.m_PersistentCalls.m_Calls.Array.data[14].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7773878920920471249, guid: c0203cc563b4dc0438aea55747c12aa7, type: 3}
+      propertyPath: OnAfterRespawn.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: SetSunState
+      objectReference: {fileID: 0}
+    - target: {fileID: 7773878920920471249, guid: c0203cc563b4dc0438aea55747c12aa7, type: 3}
+      propertyPath: OnAfterRespawn.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: SetSunState
+      objectReference: {fileID: 0}
+    - target: {fileID: 7773878920920471249, guid: c0203cc563b4dc0438aea55747c12aa7, type: 3}
+      propertyPath: OnAfterRespawn.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
+      value: SetSunState
+      objectReference: {fileID: 0}
+    - target: {fileID: 7773878920920471249, guid: c0203cc563b4dc0438aea55747c12aa7, type: 3}
+      propertyPath: OnAfterRespawn.m_PersistentCalls.m_Calls.Array.data[4].m_MethodName
+      value: SetMoonState
+      objectReference: {fileID: 0}
+    - target: {fileID: 7773878920920471249, guid: c0203cc563b4dc0438aea55747c12aa7, type: 3}
+      propertyPath: OnAfterRespawn.m_PersistentCalls.m_Calls.Array.data[5].m_MethodName
+      value: SetMoonState
+      objectReference: {fileID: 0}
+    - target: {fileID: 7773878920920471249, guid: c0203cc563b4dc0438aea55747c12aa7, type: 3}
+      propertyPath: OnAfterRespawn.m_PersistentCalls.m_Calls.Array.data[6].m_MethodName
+      value: SetSunState
+      objectReference: {fileID: 0}
+    - target: {fileID: 7773878920920471249, guid: c0203cc563b4dc0438aea55747c12aa7, type: 3}
+      propertyPath: OnAfterRespawn.m_PersistentCalls.m_Calls.Array.data[7].m_MethodName
+      value: SetSunState
+      objectReference: {fileID: 0}
+    - target: {fileID: 7773878920920471249, guid: c0203cc563b4dc0438aea55747c12aa7, type: 3}
+      propertyPath: OnAfterRespawn.m_PersistentCalls.m_Calls.Array.data[8].m_MethodName
+      value: SetMoonState
+      objectReference: {fileID: 0}
+    - target: {fileID: 7773878920920471249, guid: c0203cc563b4dc0438aea55747c12aa7, type: 3}
+      propertyPath: OnAfterRespawn.m_PersistentCalls.m_Calls.Array.data[9].m_MethodName
+      value: SetMoonState
+      objectReference: {fileID: 0}
+    - target: {fileID: 7773878920920471249, guid: c0203cc563b4dc0438aea55747c12aa7, type: 3}
+      propertyPath: OnAfterRespawn.m_PersistentCalls.m_Calls.Array.data[10].m_MethodName
+      value: SetSunState
+      objectReference: {fileID: 0}
+    - target: {fileID: 7773878920920471249, guid: c0203cc563b4dc0438aea55747c12aa7, type: 3}
+      propertyPath: OnAfterRespawn.m_PersistentCalls.m_Calls.Array.data[11].m_MethodName
+      value: SetSunState
+      objectReference: {fileID: 0}
+    - target: {fileID: 7773878920920471249, guid: c0203cc563b4dc0438aea55747c12aa7, type: 3}
+      propertyPath: OnAfterRespawn.m_PersistentCalls.m_Calls.Array.data[12].m_MethodName
+      value: SetSunState
+      objectReference: {fileID: 0}
+    - target: {fileID: 7773878920920471249, guid: c0203cc563b4dc0438aea55747c12aa7, type: 3}
+      propertyPath: OnAfterRespawn.m_PersistentCalls.m_Calls.Array.data[13].m_MethodName
+      value: SetMoonState
+      objectReference: {fileID: 0}
+    - target: {fileID: 7773878920920471249, guid: c0203cc563b4dc0438aea55747c12aa7, type: 3}
+      propertyPath: OnAfterRespawn.m_PersistentCalls.m_Calls.Array.data[14].m_MethodName
+      value: SetMoonState
+      objectReference: {fileID: 0}
+    - target: {fileID: 7773878920920471249, guid: c0203cc563b4dc0438aea55747c12aa7, type: 3}
       propertyPath: OnAfterRespawn.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: World.SolarState, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 7773878920920471249, guid: c0203cc563b4dc0438aea55747c12aa7, type: 3}
+      propertyPath: OnAfterRespawn.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: World.SolarState, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7773878920920471249, guid: c0203cc563b4dc0438aea55747c12aa7, type: 3}
+      propertyPath: OnAfterRespawn.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: World.SolarState, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7773878920920471249, guid: c0203cc563b4dc0438aea55747c12aa7, type: 3}
+      propertyPath: OnAfterRespawn.m_PersistentCalls.m_Calls.Array.data[3].m_TargetAssemblyTypeName
+      value: World.SolarState, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7773878920920471249, guid: c0203cc563b4dc0438aea55747c12aa7, type: 3}
+      propertyPath: OnAfterRespawn.m_PersistentCalls.m_Calls.Array.data[4].m_TargetAssemblyTypeName
+      value: World.SolarState, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7773878920920471249, guid: c0203cc563b4dc0438aea55747c12aa7, type: 3}
+      propertyPath: OnAfterRespawn.m_PersistentCalls.m_Calls.Array.data[5].m_TargetAssemblyTypeName
+      value: World.SolarState, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7773878920920471249, guid: c0203cc563b4dc0438aea55747c12aa7, type: 3}
+      propertyPath: OnAfterRespawn.m_PersistentCalls.m_Calls.Array.data[6].m_TargetAssemblyTypeName
+      value: World.SolarState, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7773878920920471249, guid: c0203cc563b4dc0438aea55747c12aa7, type: 3}
+      propertyPath: OnAfterRespawn.m_PersistentCalls.m_Calls.Array.data[7].m_TargetAssemblyTypeName
+      value: World.SolarState, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7773878920920471249, guid: c0203cc563b4dc0438aea55747c12aa7, type: 3}
+      propertyPath: OnAfterRespawn.m_PersistentCalls.m_Calls.Array.data[8].m_TargetAssemblyTypeName
+      value: World.SolarState, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7773878920920471249, guid: c0203cc563b4dc0438aea55747c12aa7, type: 3}
+      propertyPath: OnAfterRespawn.m_PersistentCalls.m_Calls.Array.data[9].m_TargetAssemblyTypeName
+      value: World.SolarState, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7773878920920471249, guid: c0203cc563b4dc0438aea55747c12aa7, type: 3}
+      propertyPath: OnAfterRespawn.m_PersistentCalls.m_Calls.Array.data[10].m_TargetAssemblyTypeName
+      value: World.SolarState, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7773878920920471249, guid: c0203cc563b4dc0438aea55747c12aa7, type: 3}
+      propertyPath: OnAfterRespawn.m_PersistentCalls.m_Calls.Array.data[11].m_TargetAssemblyTypeName
+      value: World.SolarState, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7773878920920471249, guid: c0203cc563b4dc0438aea55747c12aa7, type: 3}
+      propertyPath: OnAfterRespawn.m_PersistentCalls.m_Calls.Array.data[12].m_TargetAssemblyTypeName
+      value: World.SolarState, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7773878920920471249, guid: c0203cc563b4dc0438aea55747c12aa7, type: 3}
+      propertyPath: OnAfterRespawn.m_PersistentCalls.m_Calls.Array.data[13].m_TargetAssemblyTypeName
+      value: World.SolarState, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7773878920920471249, guid: c0203cc563b4dc0438aea55747c12aa7, type: 3}
+      propertyPath: OnAfterRespawn.m_PersistentCalls.m_Calls.Array.data[14].m_TargetAssemblyTypeName
+      value: World.SolarState, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7773878920920471249, guid: c0203cc563b4dc0438aea55747c12aa7, type: 3}
       propertyPath: OnAfterRespawn.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7773878920920471249, guid: c0203cc563b4dc0438aea55747c12aa7, type: 3}
+      propertyPath: OnAfterRespawn.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7773878920920471249, guid: c0203cc563b4dc0438aea55747c12aa7, type: 3}
+      propertyPath: OnAfterRespawn.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7773878920920471249, guid: c0203cc563b4dc0438aea55747c12aa7, type: 3}
+      propertyPath: OnAfterRespawn.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7773878920920471249, guid: c0203cc563b4dc0438aea55747c12aa7, type: 3}
+      propertyPath: OnAfterRespawn.m_PersistentCalls.m_Calls.Array.data[4].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7773878920920471249, guid: c0203cc563b4dc0438aea55747c12aa7, type: 3}
+      propertyPath: OnAfterRespawn.m_PersistentCalls.m_Calls.Array.data[5].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7773878920920471249, guid: c0203cc563b4dc0438aea55747c12aa7, type: 3}
+      propertyPath: OnAfterRespawn.m_PersistentCalls.m_Calls.Array.data[6].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7773878920920471249, guid: c0203cc563b4dc0438aea55747c12aa7, type: 3}
+      propertyPath: OnAfterRespawn.m_PersistentCalls.m_Calls.Array.data[7].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7773878920920471249, guid: c0203cc563b4dc0438aea55747c12aa7, type: 3}
+      propertyPath: OnAfterRespawn.m_PersistentCalls.m_Calls.Array.data[8].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7773878920920471249, guid: c0203cc563b4dc0438aea55747c12aa7, type: 3}
+      propertyPath: OnAfterRespawn.m_PersistentCalls.m_Calls.Array.data[9].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7773878920920471249, guid: c0203cc563b4dc0438aea55747c12aa7, type: 3}
+      propertyPath: OnAfterRespawn.m_PersistentCalls.m_Calls.Array.data[10].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7773878920920471249, guid: c0203cc563b4dc0438aea55747c12aa7, type: 3}
+      propertyPath: OnAfterRespawn.m_PersistentCalls.m_Calls.Array.data[11].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7773878920920471249, guid: c0203cc563b4dc0438aea55747c12aa7, type: 3}
+      propertyPath: OnAfterRespawn.m_PersistentCalls.m_Calls.Array.data[12].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7773878920920471249, guid: c0203cc563b4dc0438aea55747c12aa7, type: 3}
+      propertyPath: OnAfterRespawn.m_PersistentCalls.m_Calls.Array.data[13].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7773878920920471249, guid: c0203cc563b4dc0438aea55747c12aa7, type: 3}
+      propertyPath: OnAfterRespawn.m_PersistentCalls.m_Calls.Array.data[14].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -174048,9 +174567,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b3c8d9e5f2a4b6c8d1e2f3a4b5c6d7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::World.SolarStateMaterial
-  _sunMaterial: {fileID: 2100000, guid: 2b3e381f3d6db854480d8dc4b5de5e5c, type: 2}
-  _moonMaterial: {fileID: 2100000, guid: c2176d8fa2c7d9f42b9f30dc90c870c1, type: 2}
-  _eclipseMaterial: {fileID: 2100000, guid: 7df3d49d9658a614fb5e35053b8b5884, type: 2}
+  _sunMaterial: {fileID: 2100000, guid: eaa3e635ec35bcd48b8cc62b7aad7f33, type: 2}
+  _moonMaterial: {fileID: 2100000, guid: 6b0ec8af93fc8f14a96f5c96f7c0c17a, type: 2}
+  _eclipseMaterial: {fileID: 2100000, guid: 6acb937ab7d0d8c449783f90376c91ba, type: 2}
   _targetRenderers: []
 --- !u!114 &1580966266
 MonoBehaviour:
@@ -190923,6 +191442,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6a9df537c4eb6624da16be987acd7877, type: 3}
+--- !u!114 &1763658460 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8409380837342076890, guid: 0f3ea530e7e68904d87f7e656b6c1535, type: 3}
+  m_PrefabInstance: {fileID: 729146895}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3b0459a0e763314c955c7c0f265b0b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::World.SolarState
 --- !u!1001 &1764761709
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -191967,6 +192497,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: -90}
+--- !u!114 &1777516258 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8409380837342076890, guid: 0f3ea530e7e68904d87f7e656b6c1535, type: 3}
+  m_PrefabInstance: {fileID: 1184012499}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3b0459a0e763314c955c7c0f265b0b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::World.SolarState
 --- !u!4 &1777591303 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: ba210745e3abb0a44b7f0ad65352d0c0, type: 3}
@@ -192516,9 +193057,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b3c8d9e5f2a4b6c8d1e2f3a4b5c6d7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::World.SolarStateMaterial
-  _sunMaterial: {fileID: 2100000, guid: 109627a8ad09140468642242eb460209, type: 2}
-  _moonMaterial: {fileID: 2100000, guid: c90b9e2c0f4cb454b8aef5d56e430dd7, type: 2}
-  _eclipseMaterial: {fileID: 2100000, guid: 2ba031134926c634e88d1dcc7a50918c, type: 2}
+  _sunMaterial: {fileID: 2100000, guid: eaa3e635ec35bcd48b8cc62b7aad7f33, type: 2}
+  _moonMaterial: {fileID: 2100000, guid: 6b0ec8af93fc8f14a96f5c96f7c0c17a, type: 2}
+  _eclipseMaterial: {fileID: 2100000, guid: 6acb937ab7d0d8c449783f90376c91ba, type: 2}
   _targetRenderers: []
 --- !u!114 &1779746544
 MonoBehaviour:
@@ -197482,6 +198023,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b358e7f5aa8d9504aba899567275fadf, type: 3}
+--- !u!114 &1809411737 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7542983860250979828, guid: cf18970cb1d9ca14fba4e5cfc8b50410, type: 3}
+  m_PrefabInstance: {fileID: 822489721}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3b0459a0e763314c955c7c0f265b0b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::World.SolarState
 --- !u!1001 &1810897989
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -207792,9 +208344,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b3c8d9e5f2a4b6c8d1e2f3a4b5c6d7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::World.SolarStateMaterial
-  _sunMaterial: {fileID: 2100000, guid: 109627a8ad09140468642242eb460209, type: 2}
-  _moonMaterial: {fileID: 2100000, guid: c90b9e2c0f4cb454b8aef5d56e430dd7, type: 2}
-  _eclipseMaterial: {fileID: 2100000, guid: 2ba031134926c634e88d1dcc7a50918c, type: 2}
+  _sunMaterial: {fileID: 2100000, guid: eaa3e635ec35bcd48b8cc62b7aad7f33, type: 2}
+  _moonMaterial: {fileID: 2100000, guid: 6b0ec8af93fc8f14a96f5c96f7c0c17a, type: 2}
+  _eclipseMaterial: {fileID: 2100000, guid: 6acb937ab7d0d8c449783f90376c91ba, type: 2}
   _targetRenderers: []
 --- !u!114 &1899551994
 MonoBehaviour:
@@ -211588,15 +212140,15 @@ PrefabInstance:
     - target: {fileID: 8116995696513210782, guid: 18d905f7952d9994fa559d8f52036c8d, type: 3}
       propertyPath: _sunMaterial
       value: 
-      objectReference: {fileID: 2100000, guid: 2b3e381f3d6db854480d8dc4b5de5e5c, type: 2}
+      objectReference: {fileID: 2100000, guid: eaa3e635ec35bcd48b8cc62b7aad7f33, type: 2}
     - target: {fileID: 8116995696513210782, guid: 18d905f7952d9994fa559d8f52036c8d, type: 3}
       propertyPath: _moonMaterial
       value: 
-      objectReference: {fileID: 2100000, guid: c2176d8fa2c7d9f42b9f30dc90c870c1, type: 2}
+      objectReference: {fileID: 2100000, guid: 6b0ec8af93fc8f14a96f5c96f7c0c17a, type: 2}
     - target: {fileID: 8116995696513210782, guid: 18d905f7952d9994fa559d8f52036c8d, type: 3}
       propertyPath: _eclipseMaterial
       value: 
-      objectReference: {fileID: 2100000, guid: 7df3d49d9658a614fb5e35053b8b5884, type: 2}
+      objectReference: {fileID: 2100000, guid: 6acb937ab7d0d8c449783f90376c91ba, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -212523,9 +213075,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b3c8d9e5f2a4b6c8d1e2f3a4b5c6d7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::World.SolarStateMaterial
-  _sunMaterial: {fileID: 2100000, guid: 109627a8ad09140468642242eb460209, type: 2}
-  _moonMaterial: {fileID: 2100000, guid: c90b9e2c0f4cb454b8aef5d56e430dd7, type: 2}
-  _eclipseMaterial: {fileID: 2100000, guid: 2ba031134926c634e88d1dcc7a50918c, type: 2}
+  _sunMaterial: {fileID: 2100000, guid: eaa3e635ec35bcd48b8cc62b7aad7f33, type: 2}
+  _moonMaterial: {fileID: 2100000, guid: 6b0ec8af93fc8f14a96f5c96f7c0c17a, type: 2}
+  _eclipseMaterial: {fileID: 2100000, guid: 6acb937ab7d0d8c449783f90376c91ba, type: 2}
   _targetRenderers: []
 --- !u!114 &1931660019
 MonoBehaviour:
@@ -213346,6 +213898,18 @@ PrefabInstance:
       propertyPath: _currentState
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8116995696513210782, guid: 18d905f7952d9994fa559d8f52036c8d, type: 3}
+      propertyPath: _sunMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: eaa3e635ec35bcd48b8cc62b7aad7f33, type: 2}
+    - target: {fileID: 8116995696513210782, guid: 18d905f7952d9994fa559d8f52036c8d, type: 3}
+      propertyPath: _moonMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 6b0ec8af93fc8f14a96f5c96f7c0c17a, type: 2}
+    - target: {fileID: 8116995696513210782, guid: 18d905f7952d9994fa559d8f52036c8d, type: 3}
+      propertyPath: _eclipseMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 6acb937ab7d0d8c449783f90376c91ba, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -221153,6 +221717,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b358e7f5aa8d9504aba899567275fadf, type: 3}
+--- !u!114 &2012020172 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7542983860250979828, guid: cf18970cb1d9ca14fba4e5cfc8b50410, type: 3}
+  m_PrefabInstance: {fileID: 934789200}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3b0459a0e763314c955c7c0f265b0b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::World.SolarState
 --- !u!1001 &2014735947
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -223538,6 +224113,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 13af04b9baaacf44d82ff4fd80c7bee5, type: 3}
+--- !u!114 &2035582550 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7542983860250979828, guid: cf18970cb1d9ca14fba4e5cfc8b50410, type: 3}
+  m_PrefabInstance: {fileID: 624984256}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3b0459a0e763314c955c7c0f265b0b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::World.SolarState
 --- !u!1001 &2036340325
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -225736,9 +226322,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b3c8d9e5f2a4b6c8d1e2f3a4b5c6d7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::World.SolarStateMaterial
-  _sunMaterial: {fileID: 2100000, guid: 109627a8ad09140468642242eb460209, type: 2}
-  _moonMaterial: {fileID: 2100000, guid: c90b9e2c0f4cb454b8aef5d56e430dd7, type: 2}
-  _eclipseMaterial: {fileID: 2100000, guid: 2ba031134926c634e88d1dcc7a50918c, type: 2}
+  _sunMaterial: {fileID: 2100000, guid: eaa3e635ec35bcd48b8cc62b7aad7f33, type: 2}
+  _moonMaterial: {fileID: 2100000, guid: 6b0ec8af93fc8f14a96f5c96f7c0c17a, type: 2}
+  _eclipseMaterial: {fileID: 2100000, guid: 6acb937ab7d0d8c449783f90376c91ba, type: 2}
   _targetRenderers: []
 --- !u!114 &2057074289
 MonoBehaviour:
@@ -230278,9 +230864,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b3c8d9e5f2a4b6c8d1e2f3a4b5c6d7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::World.SolarStateMaterial
-  _sunMaterial: {fileID: 2100000, guid: 109627a8ad09140468642242eb460209, type: 2}
-  _moonMaterial: {fileID: 2100000, guid: c90b9e2c0f4cb454b8aef5d56e430dd7, type: 2}
-  _eclipseMaterial: {fileID: 2100000, guid: 2ba031134926c634e88d1dcc7a50918c, type: 2}
+  _sunMaterial: {fileID: 2100000, guid: eaa3e635ec35bcd48b8cc62b7aad7f33, type: 2}
+  _moonMaterial: {fileID: 2100000, guid: 6b0ec8af93fc8f14a96f5c96f7c0c17a, type: 2}
+  _eclipseMaterial: {fileID: 2100000, guid: 6acb937ab7d0d8c449783f90376c91ba, type: 2}
   _targetRenderers: []
 --- !u!114 &2091031309
 MonoBehaviour:
@@ -231935,9 +232521,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b3c8d9e5f2a4b6c8d1e2f3a4b5c6d7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::World.SolarStateMaterial
-  _sunMaterial: {fileID: 2100000, guid: 109627a8ad09140468642242eb460209, type: 2}
-  _moonMaterial: {fileID: 2100000, guid: c90b9e2c0f4cb454b8aef5d56e430dd7, type: 2}
-  _eclipseMaterial: {fileID: 2100000, guid: 2ba031134926c634e88d1dcc7a50918c, type: 2}
+  _sunMaterial: {fileID: 2100000, guid: eaa3e635ec35bcd48b8cc62b7aad7f33, type: 2}
+  _moonMaterial: {fileID: 2100000, guid: 6b0ec8af93fc8f14a96f5c96f7c0c17a, type: 2}
+  _eclipseMaterial: {fileID: 2100000, guid: 6acb937ab7d0d8c449783f90376c91ba, type: 2}
   _targetRenderers: []
 --- !u!114 &2109322528
 MonoBehaviour:
@@ -235689,15 +236275,15 @@ PrefabInstance:
     - target: {fileID: 8116995696513210782, guid: 18d905f7952d9994fa559d8f52036c8d, type: 3}
       propertyPath: _sunMaterial
       value: 
-      objectReference: {fileID: 2100000, guid: 2b3e381f3d6db854480d8dc4b5de5e5c, type: 2}
+      objectReference: {fileID: 2100000, guid: eaa3e635ec35bcd48b8cc62b7aad7f33, type: 2}
     - target: {fileID: 8116995696513210782, guid: 18d905f7952d9994fa559d8f52036c8d, type: 3}
       propertyPath: _moonMaterial
       value: 
-      objectReference: {fileID: 2100000, guid: c2176d8fa2c7d9f42b9f30dc90c870c1, type: 2}
+      objectReference: {fileID: 2100000, guid: 6b0ec8af93fc8f14a96f5c96f7c0c17a, type: 2}
     - target: {fileID: 8116995696513210782, guid: 18d905f7952d9994fa559d8f52036c8d, type: 3}
       propertyPath: _eclipseMaterial
       value: 
-      objectReference: {fileID: 2100000, guid: 7df3d49d9658a614fb5e35053b8b5884, type: 2}
+      objectReference: {fileID: 2100000, guid: 6acb937ab7d0d8c449783f90376c91ba, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -238501,6 +239087,21 @@ SceneRoots:
   - {fileID: 813586232}
   - {fileID: 540123861}
   - {fileID: 968789853}
+  - {fileID: 784738764}
+  - {fileID: 713549581}
+  - {fileID: 822489721}
+  - {fileID: 1875311318}
+  - {fileID: 729146895}
+  - {fileID: 168964365}
+  - {fileID: 1271053196}
+  - {fileID: 1304508105}
+  - {fileID: 624984256}
+  - {fileID: 2001132283}
+  - {fileID: 1905193324}
+  - {fileID: 2016545658}
+  - {fileID: 1184012499}
+  - {fileID: 584352589}
+  - {fileID: 934789200}
   - {fileID: 425853862}
   - {fileID: 1604772778}
   - {fileID: 1903627937}
@@ -240142,21 +240743,6 @@ SceneRoots:
   - {fileID: 360059142}
   - {fileID: 217132143}
   - {fileID: 1568586865}
-  - {fileID: 784738764}
-  - {fileID: 713549581}
-  - {fileID: 822489721}
-  - {fileID: 1875311318}
-  - {fileID: 729146895}
-  - {fileID: 168964365}
-  - {fileID: 1271053196}
-  - {fileID: 1304508105}
-  - {fileID: 624984256}
-  - {fileID: 2001132283}
-  - {fileID: 1905193324}
-  - {fileID: 2016545658}
-  - {fileID: 1184012499}
-  - {fileID: 584352589}
-  - {fileID: 934789200}
   - {fileID: 556262890}
   - {fileID: 1242543436}
   - {fileID: 204709560}
