@@ -32034,86 +32034,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3571552366264100700, guid: 5459564e5bff3d64b8cc85749ed178b0, type: 3}
   m_PrefabInstance: {fileID: 187486100}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &187624893
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 187624894}
-  - component: {fileID: 187624895}
-  m_Layer: 0
-  m_Name: DoorActions (5)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &187624894
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 187624893}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -7.86, y: 12.7, z: 66.95}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1358834704}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &187624895
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 187624893}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 147dace71653b6644b9ba53f7be5358e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Actions.ConditionalTriggerActions
-  _conditions:
-  - rid: 2728312064910557184
-  - rid: 2728312064910557185
-  _actionRunner:
-    rid: 4285165528501977088
-  _checkInterval: 0
-  _triggerOnce: 1
-  _triggerOnStart: 0
-  _contextObject: {fileID: 0}
-  _showDebugLogs: 0
-  _showConditionStatus: 1
-  references:
-    version: 2
-    RefIds:
-    - rid: 2728312064910557184
-      type: {class: DetectionZoneDetectedCondition, ns: Actions, asm: Assembly-CSharp}
-      data:
-        detectionZone: {fileID: 1353648543}
-        shouldHaveDetections: 1
-    - rid: 2728312064910557185
-      type: {class: DetectionZoneDetectedCondition, ns: Actions, asm: Assembly-CSharp}
-      data:
-        detectionZone: {fileID: 944910908}
-        shouldHaveDetections: 1
-    - rid: 4285165528501977088
-      type: {class: ActionRunner, ns: Actions, asm: Assembly-CSharp}
-      data:
-        _actions:
-        - rid: 4285165528501977166
-    - rid: 4285165528501977166
-      type: {class: PlayAnimationAction, ns: Actions, asm: Assembly-CSharp}
-      data:
-        animator: {fileID: 613980081}
-        stateName: Level 5 stone wall
-        layer: 0
-        normalizedTime: 0
 --- !u!1001 &187659853
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -33286,15 +33206,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2521692219025580907, guid: f7fd6bad7d891904dba1247e9515d974, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.76
+      value: -23.11
       objectReference: {fileID: 0}
     - target: {fileID: 2521692219025580907, guid: f7fd6bad7d891904dba1247e9515d974, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 10.05
+      value: 10.050001
       objectReference: {fileID: 0}
     - target: {fileID: 2521692219025580907, guid: f7fd6bad7d891904dba1247e9515d974, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 64.3
+      value: 65.51
       objectReference: {fileID: 0}
     - target: {fileID: 2521692219025580907, guid: f7fd6bad7d891904dba1247e9515d974, type: 3}
       propertyPath: m_LocalRotation.w
@@ -33306,7 +33226,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2521692219025580907, guid: f7fd6bad7d891904dba1247e9515d974, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0.00000017881393
       objectReference: {fileID: 0}
     - target: {fileID: 2521692219025580907, guid: f7fd6bad7d891904dba1247e9515d974, type: 3}
       propertyPath: m_LocalRotation.z
@@ -39912,86 +39832,6 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
---- !u!1 &232787241
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 232787242}
-  - component: {fileID: 232787243}
-  m_Layer: 0
-  m_Name: DoorActions (4)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &232787242
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 232787241}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.62, y: 12.7, z: 70.76}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1358834704}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &232787243
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 232787241}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 147dace71653b6644b9ba53f7be5358e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Actions.ConditionalTriggerActions
-  _conditions:
-  - rid: 2728312064910557184
-  - rid: 2728312064910557185
-  _actionRunner:
-    rid: 4285165528501977088
-  _checkInterval: 0
-  _triggerOnce: 1
-  _triggerOnStart: 0
-  _contextObject: {fileID: 0}
-  _showDebugLogs: 0
-  _showConditionStatus: 1
-  references:
-    version: 2
-    RefIds:
-    - rid: 2728312064910557184
-      type: {class: DetectionZoneDetectedCondition, ns: Actions, asm: Assembly-CSharp}
-      data:
-        detectionZone: {fileID: 1488124996}
-        shouldHaveDetections: 1
-    - rid: 2728312064910557185
-      type: {class: DetectionZoneDetectedCondition, ns: Actions, asm: Assembly-CSharp}
-      data:
-        detectionZone: {fileID: 1353648543}
-        shouldHaveDetections: 1
-    - rid: 4285165528501977088
-      type: {class: ActionRunner, ns: Actions, asm: Assembly-CSharp}
-      data:
-        _actions:
-        - rid: 4285165528501977166
-    - rid: 4285165528501977166
-      type: {class: PlayAnimationAction, ns: Actions, asm: Assembly-CSharp}
-      data:
-        animator: {fileID: 613980081}
-        stateName: Level 5 stone wall
-        layer: 0
-        normalizedTime: 0
 --- !u!1001 &232866987
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -56828,15 +56668,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6515344246131151395, guid: c0203cc563b4dc0438aea55747c12aa7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.74
+      value: 145.19
       objectReference: {fileID: 0}
     - target: {fileID: 6515344246131151395, guid: c0203cc563b4dc0438aea55747c12aa7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.34
+      value: 20.86
       objectReference: {fileID: 0}
     - target: {fileID: 6515344246131151395, guid: c0203cc563b4dc0438aea55747c12aa7, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -30.4
+      value: -11.93
       objectReference: {fileID: 0}
     - target: {fileID: 6515344246131151395, guid: c0203cc563b4dc0438aea55747c12aa7, type: 3}
       propertyPath: m_LocalRotation.w
@@ -94027,7 +93867,7 @@ Transform:
   m_GameObject: {fileID: 584284217}
   serializedVersion: 2
   m_LocalRotation: {x: 0.3203016, y: 0.40796554, z: -0.15542838, w: 0.8407217}
-  m_LocalPosition: {x: -25.24, y: 29.14, z: -49.699997}
+  m_LocalPosition: {x: 120.69, y: 48.66, z: -31.23}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -98316,113 +98156,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b0bdea1435396fb4ca786e022f7c6a1f, type: 3}
---- !u!1001 &613980078
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 2148276853257962319, guid: 29088ea41fba12e49951ad2a2ef40c8d, type: 3}
-      propertyPath: m_Name
-      value: stone wall (2)
-      objectReference: {fileID: 0}
-    - target: {fileID: 8861906937175146978, guid: 29088ea41fba12e49951ad2a2ef40c8d, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 3.7239883
-      objectReference: {fileID: 0}
-    - target: {fileID: 8861906937175146978, guid: 29088ea41fba12e49951ad2a2ef40c8d, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 4.154753
-      objectReference: {fileID: 0}
-    - target: {fileID: 8861906937175146978, guid: 29088ea41fba12e49951ad2a2ef40c8d, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 7.7423835
-      objectReference: {fileID: 0}
-    - target: {fileID: 8861906937175146978, guid: 29088ea41fba12e49951ad2a2ef40c8d, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 156.22
-      objectReference: {fileID: 0}
-    - target: {fileID: 8861906937175146978, guid: 29088ea41fba12e49951ad2a2ef40c8d, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 17.69
-      objectReference: {fileID: 0}
-    - target: {fileID: 8861906937175146978, guid: 29088ea41fba12e49951ad2a2ef40c8d, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 12.438
-      objectReference: {fileID: 0}
-    - target: {fileID: 8861906937175146978, guid: 29088ea41fba12e49951ad2a2ef40c8d, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8861906937175146978, guid: 29088ea41fba12e49951ad2a2ef40c8d, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8861906937175146978, guid: 29088ea41fba12e49951ad2a2ef40c8d, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8861906937175146978, guid: 29088ea41fba12e49951ad2a2ef40c8d, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8861906937175146978, guid: 29088ea41fba12e49951ad2a2ef40c8d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8861906937175146978, guid: 29088ea41fba12e49951ad2a2ef40c8d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8861906937175146978, guid: 29088ea41fba12e49951ad2a2ef40c8d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 8861906937175146978, guid: 29088ea41fba12e49951ad2a2ef40c8d, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1530375008}
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 2148276853257962319, guid: 29088ea41fba12e49951ad2a2ef40c8d, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 613980081}
-  m_SourcePrefab: {fileID: 100100000, guid: 29088ea41fba12e49951ad2a2ef40c8d, type: 3}
---- !u!1 &613980079 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2148276853257962319, guid: 29088ea41fba12e49951ad2a2ef40c8d, type: 3}
-  m_PrefabInstance: {fileID: 613980078}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &613980080 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8861906937175146978, guid: 29088ea41fba12e49951ad2a2ef40c8d, type: 3}
-  m_PrefabInstance: {fileID: 613980078}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &613980081
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 613980079}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 96e75462ea6996b49b7b7049e369856f, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &614212620
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -116447,86 +116180,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2571927897169462969, guid: c7b3370b127365e47a0b10c193d3712d, type: 3}
   m_PrefabInstance: {fileID: 759428487}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &759800565
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 759800566}
-  - component: {fileID: 759800567}
-  m_Layer: 0
-  m_Name: DoorActions (6)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &759800566
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 759800565}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.62, y: 12.7, z: 66.95}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1358834704}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &759800567
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 759800565}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 147dace71653b6644b9ba53f7be5358e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Actions.ConditionalTriggerActions
-  _conditions:
-  - rid: 2728312064910557184
-  - rid: 2728312064910557185
-  _actionRunner:
-    rid: 4285165528501977088
-  _checkInterval: 0
-  _triggerOnce: 1
-  _triggerOnStart: 0
-  _contextObject: {fileID: 0}
-  _showDebugLogs: 0
-  _showConditionStatus: 1
-  references:
-    version: 2
-    RefIds:
-    - rid: 2728312064910557184
-      type: {class: DetectionZoneDetectedCondition, ns: Actions, asm: Assembly-CSharp}
-      data:
-        detectionZone: {fileID: 195827217}
-        shouldHaveDetections: 1
-    - rid: 2728312064910557185
-      type: {class: DetectionZoneDetectedCondition, ns: Actions, asm: Assembly-CSharp}
-      data:
-        detectionZone: {fileID: 1353648543}
-        shouldHaveDetections: 1
-    - rid: 4285165528501977088
-      type: {class: ActionRunner, ns: Actions, asm: Assembly-CSharp}
-      data:
-        _actions:
-        - rid: 4285165528501977166
-    - rid: 4285165528501977166
-      type: {class: PlayAnimationAction, ns: Actions, asm: Assembly-CSharp}
-      data:
-        animator: {fileID: 613980081}
-        stateName: Level 5 stone wall
-        layer: 0
-        normalizedTime: 0
 --- !u!1001 &760264458
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -182842,7 +182495,7 @@ Transform:
   m_GameObject: {fileID: 1322260568}
   serializedVersion: 2
   m_LocalRotation: {x: 0.3203016, y: 0.4079655, z: -0.15542838, w: 0.8407217}
-  m_LocalPosition: {x: -25.24, y: 29.14, z: -49.699997}
+  m_LocalPosition: {x: 120.69, y: 48.66, z: -31.23}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -186606,7 +186259,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2521692219025580907, guid: f7fd6bad7d891904dba1247e9515d974, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -11.05
+      value: -11.37
       objectReference: {fileID: 0}
     - target: {fileID: 2521692219025580907, guid: f7fd6bad7d891904dba1247e9515d974, type: 3}
       propertyPath: m_LocalPosition.y
@@ -186614,7 +186267,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2521692219025580907, guid: f7fd6bad7d891904dba1247e9515d974, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 63.9
+      value: 65.11
       objectReference: {fileID: 0}
     - target: {fileID: 2521692219025580907, guid: f7fd6bad7d891904dba1247e9515d974, type: 3}
       propertyPath: m_LocalRotation.w
@@ -186626,7 +186279,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2521692219025580907, guid: f7fd6bad7d891904dba1247e9515d974, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0.00000017881393
       objectReference: {fileID: 0}
     - target: {fileID: 2521692219025580907, guid: f7fd6bad7d891904dba1247e9515d974, type: 3}
       propertyPath: m_LocalRotation.z
@@ -187233,11 +186886,6 @@ Transform:
   m_Children:
   - {fileID: 99411318}
   - {fileID: 1712617770}
-  - {fileID: 1796257832}
-  - {fileID: 187624894}
-  - {fileID: 1802183322}
-  - {fileID: 232787242}
-  - {fileID: 759800566}
   - {fileID: 1488124993}
   - {fileID: 1586822577}
   - {fileID: 944910906}
@@ -214923,7 +214571,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2521692219025580907, guid: f7fd6bad7d891904dba1247e9515d974, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.58
+      value: -22.61
       objectReference: {fileID: 0}
     - target: {fileID: 2521692219025580907, guid: f7fd6bad7d891904dba1247e9515d974, type: 3}
       propertyPath: m_LocalPosition.y
@@ -219267,80 +218915,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a5913f4424dc00f4a8097732549d5848, type: 3}
---- !u!1001 &1530375007
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 613980080}
-    m_Modifications:
-    - target: {fileID: 2148276853257962319, guid: 29088ea41fba12e49951ad2a2ef40c8d, type: 3}
-      propertyPath: m_Name
-      value: stone wall (3)
-      objectReference: {fileID: 0}
-    - target: {fileID: 8861906937175146978, guid: 29088ea41fba12e49951ad2a2ef40c8d, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8861906937175146978, guid: 29088ea41fba12e49951ad2a2ef40c8d, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8861906937175146978, guid: 29088ea41fba12e49951ad2a2ef40c8d, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8861906937175146978, guid: 29088ea41fba12e49951ad2a2ef40c8d, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 2.0972176
-      objectReference: {fileID: 0}
-    - target: {fileID: 8861906937175146978, guid: 29088ea41fba12e49951ad2a2ef40c8d, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8861906937175146978, guid: 29088ea41fba12e49951ad2a2ef40c8d, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8861906937175146978, guid: 29088ea41fba12e49951ad2a2ef40c8d, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8861906937175146978, guid: 29088ea41fba12e49951ad2a2ef40c8d, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8861906937175146978, guid: 29088ea41fba12e49951ad2a2ef40c8d, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8861906937175146978, guid: 29088ea41fba12e49951ad2a2ef40c8d, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8861906937175146978, guid: 29088ea41fba12e49951ad2a2ef40c8d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8861906937175146978, guid: 29088ea41fba12e49951ad2a2ef40c8d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8861906937175146978, guid: 29088ea41fba12e49951ad2a2ef40c8d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 29088ea41fba12e49951ad2a2ef40c8d, type: 3}
---- !u!4 &1530375008 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8861906937175146978, guid: 29088ea41fba12e49951ad2a2ef40c8d, type: 3}
-  m_PrefabInstance: {fileID: 1530375007}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1531404750
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -239610,7 +239184,7 @@ MonoBehaviour:
     - rid: 2728312064910557184
       type: {class: DetectionZoneDetectedCondition, ns: Actions, asm: Assembly-CSharp}
       data:
-        detectionZone: {fileID: 1488124996}
+        detectionZone: {fileID: 1353648543}
         shouldHaveDetections: 1
     - rid: 2728312064910557185
       type: {class: DetectionZoneDetectedCondition, ns: Actions, asm: Assembly-CSharp}
@@ -239625,8 +239199,8 @@ MonoBehaviour:
     - rid: 4285165528501977166
       type: {class: PlayAnimationAction, ns: Actions, asm: Assembly-CSharp}
       data:
-        animator: {fileID: 613980081}
-        stateName: Level 5 stone wall
+        animator: {fileID: 0}
+        stateName: Level5stonewall
         layer: 0
         normalizedTime: 0
 --- !u!1001 &1714560882
@@ -254053,86 +253627,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7326f3eafaa60cf46b14967e54d07b67, type: 3}
---- !u!1 &1796257831
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1796257832}
-  - component: {fileID: 1796257833}
-  m_Layer: 0
-  m_Name: DoorActions (3)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1796257832
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1796257831}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -7.86, y: 12.7, z: 70.76}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1358834704}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1796257833
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1796257831}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 147dace71653b6644b9ba53f7be5358e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Actions.ConditionalTriggerActions
-  _conditions:
-  - rid: 2728312064910557184
-  - rid: 2728312064910557185
-  _actionRunner:
-    rid: 4285165528501977088
-  _checkInterval: 0
-  _triggerOnce: 1
-  _triggerOnStart: 0
-  _contextObject: {fileID: 0}
-  _showDebugLogs: 0
-  _showConditionStatus: 1
-  references:
-    version: 2
-    RefIds:
-    - rid: 2728312064910557184
-      type: {class: DetectionZoneDetectedCondition, ns: Actions, asm: Assembly-CSharp}
-      data:
-        detectionZone: {fileID: 195827217}
-        shouldHaveDetections: 1
-    - rid: 2728312064910557185
-      type: {class: DetectionZoneDetectedCondition, ns: Actions, asm: Assembly-CSharp}
-      data:
-        detectionZone: {fileID: 944910908}
-        shouldHaveDetections: 1
-    - rid: 4285165528501977088
-      type: {class: ActionRunner, ns: Actions, asm: Assembly-CSharp}
-      data:
-        _actions:
-        - rid: 4285165528501977166
-    - rid: 4285165528501977166
-      type: {class: PlayAnimationAction, ns: Actions, asm: Assembly-CSharp}
-      data:
-        animator: {fileID: 613980081}
-        stateName: Level 5 stone wall
-        layer: 0
-        normalizedTime: 0
 --- !u!1001 &1796313183
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -259360,86 +258854,6 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
---- !u!1 &1802183321
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1802183322}
-  - component: {fileID: 1802183323}
-  m_Layer: 0
-  m_Name: DoorActions (2)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1802183322
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1802183321}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.62, y: 12.7, z: 68.88}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1358834704}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1802183323
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1802183321}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 147dace71653b6644b9ba53f7be5358e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Actions.ConditionalTriggerActions
-  _conditions:
-  - rid: 2728312064910557184
-  - rid: 2728312064910557185
-  _actionRunner:
-    rid: 4285165528501977088
-  _checkInterval: 0
-  _triggerOnce: 1
-  _triggerOnStart: 0
-  _contextObject: {fileID: 0}
-  _showDebugLogs: 0
-  _showConditionStatus: 1
-  references:
-    version: 2
-    RefIds:
-    - rid: 2728312064910557184
-      type: {class: DetectionZoneDetectedCondition, ns: Actions, asm: Assembly-CSharp}
-      data:
-        detectionZone: {fileID: 1488124996}
-        shouldHaveDetections: 1
-    - rid: 2728312064910557185
-      type: {class: DetectionZoneDetectedCondition, ns: Actions, asm: Assembly-CSharp}
-      data:
-        detectionZone: {fileID: 195827217}
-        shouldHaveDetections: 1
-    - rid: 4285165528501977088
-      type: {class: ActionRunner, ns: Actions, asm: Assembly-CSharp}
-      data:
-        _actions:
-        - rid: 4285165528501977166
-    - rid: 4285165528501977166
-      type: {class: PlayAnimationAction, ns: Actions, asm: Assembly-CSharp}
-      data:
-        animator: {fileID: 613980081}
-        stateName: Level 5 stone wall
-        layer: 0
-        normalizedTime: 0
 --- !u!1001 &1803137229
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -308477,4 +307891,3 @@ SceneRoots:
   - {fileID: 1226953848}
   - {fileID: 1520883468}
   - {fileID: 1968570035}
-  - {fileID: 613980078}
