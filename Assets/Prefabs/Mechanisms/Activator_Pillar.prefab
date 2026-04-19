@@ -853,9 +853,6 @@ PrefabInstance:
       addedObject: {fileID: 5628005632762169843}
     - targetCorrespondingSourceObject: {fileID: -7636963557827597600, guid: e4e2e0ea68ed3084190c2f0bef11afdc, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 229067938488766587}
-    - targetCorrespondingSourceObject: {fileID: -7636963557827597600, guid: e4e2e0ea68ed3084190c2f0bef11afdc, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 1206588068851755609}
     - targetCorrespondingSourceObject: {fileID: -7636963557827597600, guid: e4e2e0ea68ed3084190c2f0bef11afdc, type: 3}
       insertIndex: -1
@@ -881,7 +878,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3b0459a0e763314c955c7c0f265b0b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::World.SolarState
-  _currentState: 0
+  _currentState: 2
 --- !u!114 &7218832228715497220
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -921,42 +918,6 @@ MonoBehaviour:
   maxSwaps: -1
   interactionLocked: 0
   showDebugMessages: 0
---- !u!114 &229067938488766587
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7319089539246556735}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8da0daca9565a0c4482820b9f000d55a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Actions.SolarStateActionTrigger
-  _conditions:
-  - _solarState: {fileID: 8220823758941475986}
-    _requiredState: 0
-  _actionRunner:
-    _actions:
-    - rid: 2625972689753604181
-    - rid: 2625972689753604182
-  _triggerOnce: 1
-  _triggerOnAwake: 0
-  _contextObject: {fileID: 0}
-  _showDebugLogs: 1
-  references:
-    version: 2
-    RefIds:
-    - rid: 2625972689753604181
-      type: {class: SetActiveAction, ns: Actions, asm: Assembly-CSharp}
-      data:
-        target: {fileID: 0}
-        setActive: 1
-    - rid: 2625972689753604182
-      type: {class: SetActiveAction, ns: Actions, asm: Assembly-CSharp}
-      data:
-        target: {fileID: 0}
-        setActive: 0
 --- !u!114 &1206588068851755609
 MonoBehaviour:
   m_ObjectHideFlags: 0
