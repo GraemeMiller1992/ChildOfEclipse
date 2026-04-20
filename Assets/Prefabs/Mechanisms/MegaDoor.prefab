@@ -387,7 +387,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: d8e6189a9fc813f46970ce3bfe4f13b5, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.719
+  m_Volume: 0.109
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -542,7 +542,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8da0daca9565a0c4482820b9f000d55a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Actions.SolarStateActionTrigger
-  _conditions: []
+  _conditions:
+  - _solarState: {fileID: 0}
+    _requiredState: 0
   _actionRunner:
     _actions:
     - rid: 7117420559250227287
