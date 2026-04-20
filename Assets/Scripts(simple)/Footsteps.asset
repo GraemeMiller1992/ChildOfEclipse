@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95e66c6366d904e98bc83428217d4fd7, type: 3}
+  m_Name: Footsteps
+  m_EditorClassIdentifier: Unity.VisualScripting.Flow::Unity.VisualScripting.ScriptGraphAsset
+  _data:
+    _json: '{"graph":{"variables":{"Kind":"Flow","collection":{"$content":[],"$version":"A"},"$version":"A"},"controlInputDefinitions":[],"controlOutputDefinitions":[],"valueInputDefinitions":[],"valueOutputDefinitions":[],"title":null,"summary":null,"pan":{"x":-62.00861,"y":-20.44632},"zoom":1.0,"elements":[{"coroutine":false,"defaultValues":{},"position":{"x":-384.0,"y":-106.0},"guid":"7c024eed-4153-429c-bfc7-9c23c9aad557","$version":"A","$type":"Unity.VisualScripting.Update"},{"specifyFallback":false,"kind":"Object","defaultValues":{"name":{"$content":"Rigidbody","$type":"System.String"},"object":null},"position":{"x":-157.0,"y":-22.0},"guid":"cfbb6c62-60f4-4e64-80cd-d59e8fbf0422","$version":"A","$type":"Unity.VisualScripting.GetVariable","$id":"11"},{"member":{"name":"linearVelocity","parameterTypes":null,"targetType":"UnityEngine.Rigidbody","targetTypeName":"UnityEngine.Rigidbody","$version":"A"},"defaultValues":{"target":null},"position":{"x":74.0,"y":-10.0},"guid":"30d21b6a-b9fc-4516-9164-c3a193eab490","$version":"A","$type":"Unity.VisualScripting.GetMember","$id":"13"},{"sourceUnit":{"$ref":"11"},"sourceKey":"value","destinationUnit":{"$ref":"13"},"destinationKey":"target","guid":"d14b761a-311d-4f7a-8b9b-4ee451ecd611","$type":"Unity.VisualScripting.ValueConnection"}],"$version":"A"}}'
+    _objectReferences: []
