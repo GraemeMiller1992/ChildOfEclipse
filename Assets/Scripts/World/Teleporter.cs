@@ -33,7 +33,9 @@ public class Teleporter : MonoBehaviour
     [Header("Detection Settings")]
     [Tooltip("The layer mask for objects that can be teleported.")]
     [SerializeField] private LayerMask teleportLayers = -1;
-    
+
+    [SerializeField] private List<string> allowedTags = new List<string>();
+
     [Tooltip("The cooldown time in seconds before an object can be teleported again.")]
     [SerializeField] private float teleportCooldown = 0.5f;
     
@@ -82,14 +84,14 @@ public class Teleporter : MonoBehaviour
             teleportCooldowns.Remove(key);
         }
     }
-    
+
     /// <summary>
     /// Checks for objects within the entry box and teleports them if eligible.
     /// </summary>
     private void CheckForTeleportableObjects()
     {
         if (destination == null) return;
-        
+
         int count = Physics.OverlapBoxNonAlloc(
             transform.position + transform.TransformDirection(entryBoxCenter),
             entryBoxSize * 0.5f,
@@ -97,28 +99,35 @@ public class Teleporter : MonoBehaviour
             transform.rotation,
             teleportLayers
         );
-        
+
         for (int i = 0; i < count; i++)
         {
             GameObject obj = overlappingColliders[i].gameObject;
-            
-            // Skip if object is on cooldown
+
+            if (allowedTags.Count > 0)
+            {
+                bool valid = false;
+                for (int t = 0; t < allowedTags.Count; t++)
+                {
+                    if (obj.CompareTag(allowedTags[t]))
+                    {
+                        valid = true;
+                        break;
+                    }
+                }
+                if (!valid) continue;
+            }
+
             if (teleportOncePerEntry && teleportCooldowns.ContainsKey(obj))
-            {
                 continue;
-            }
-            
-            // Teleport the object
+
             TeleportObject(obj);
-            
-            // Add to cooldown if needed
+
             if (teleportOncePerEntry)
-            {
                 teleportCooldowns[obj] = Time.time + teleportCooldown;
-            }
         }
     }
-    
+
     /// <summary>
     /// Teleports an object to the destination.
     /// </summary>
@@ -178,7 +187,7 @@ public class Teleporter : MonoBehaviour
     {
         return layerMask == (layerMask | (1 << layer));
     }
-    
+
     /// <summary>
     /// Draws editor gizmos to visualize the entry box, destination, and connection.
     /// </summary>
