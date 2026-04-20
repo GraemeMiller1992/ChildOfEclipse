@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Galaxy_Sun_Mat
-  m_Shader: {fileID: -6465566751694194690, guid: a9037570a375f164380a8dcb902bd31d, type: 3}
+  m_Name: New Material
+  m_Shader: {fileID: -6465566751694194690, guid: c68099ea2ad06e146aa1066f7647b39f, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -48,10 +48,6 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _Galaxy:
-        m_Texture: {fileID: 8900000, guid: 37eb639124115d642a8818891c255bc5, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
     - _MainTex:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -70,10 +66,6 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _SpecGlossMap:
         m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _Stars:
-        m_Texture: {fileID: 8900000, guid: 0a46bdf516b969b4db90d3d002923679, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
@@ -105,40 +97,47 @@ Material:
     - _DstBlend: 0
     - _DstBlendAlpha: 0
     - _EnvironmentReflections: 1
-    - _Fresnel_Noise_Power: -1.48
-    - _Fresnel_Power: 1.72
-    - _Fresnel_Scale: 35.2
+    - _FoamSet: 0.5
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
     - _Metallic: 0
+    - _NoiseScale: 10.82
     - _OcclusionStrength: 1
     - _Parallax: 0.005
     - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 1
+    - _RippleFalloff: 5
+    - _RippleScale2: 5
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _SrcBlendAlpha: 1
     - _Surface: 0
+    - _Tranpair: 0
     - _WorkflowMode: 1
     - _XRMotionVectorsPass: 1
     - _ZWrite: 1
     m_Colors:
-    - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
+    - _BaseColor: {r: 0.24056602, g: 0.76548916, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _Fresnel_Color: {r: 1, g: 0.37098992, b: 0, a: 1}
-    - _Fresnel_Speed: {r: 0, g: 0.15, b: 0, a: 0}
-    - _Galaxy_Color: {r: 1, g: 0.19215688, b: 0, a: 1}
+    - _FoamColor: {r: 1, g: 1, b: 1, a: 1}
+    - _Glos: {r: 1.3, g: 1.3, b: 0, a: 0}
+    - _Met: {r: 0.1, g: 0.1, b: 0, a: 0}
+    - _NormalSpeed: {r: 0.05, g: -0.01, b: 0, a: 0}
+    - _NormalStrength: {r: 0.75, g: 0.75, b: 0, a: 0}
+    - _RippleColor: {r: 0, g: 0.7300215, b: 1, a: 1}
+    - _RippleScale: {r: 15, g: 15, b: 0, a: 0}
+    - _RippleSpeed: {r: 1, g: 1, b: 0, a: 0}
+    - _RipplesDesolve: {r: 5, g: 5, b: 0, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
-    - _Stars_Color: {r: 1, g: 0.8052615, b: 0, a: 1}
-    - _Stars_Offset: {r: 0.13, g: 0, b: 0, a: 0}
+    - _Transparncy: {r: 1, g: 1, b: 0, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
---- !u!114 &4033670067797799656
+--- !u!114 &2849256098735253903
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
