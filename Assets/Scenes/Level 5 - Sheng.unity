@@ -20030,6 +20030,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90a502a8885ac1a4f9e57a811d9a11ba, type: 3}
+--- !u!1 &81479902 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4665529037646456070, guid: 90a502a8885ac1a4f9e57a811d9a11ba, type: 3}
+  m_PrefabInstance: {fileID: 81479901}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &82461915
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21701,6 +21706,11 @@ MonoBehaviour:
       data:
         detectionZone: {fileID: 1353648543}
         shouldHaveDetections: 1
+    - rid: 1278178337324531794
+      type: {class: SetActiveAction, ns: Actions, asm: Assembly-CSharp}
+      data:
+        target: {fileID: 1426824720}
+        setActive: 1
     - rid: 1398370332752478307
       type: {class: SetActiveAction, ns: Actions, asm: Assembly-CSharp}
       data:
@@ -21758,6 +21768,7 @@ MonoBehaviour:
         - rid: 1398370338548744193
         - rid: 1398370338548744194
         - rid: 1398370338548744195
+        - rid: 1278178337324531794
     - rid: 4285165528501977166
       type: {class: PlayAnimationAction, ns: Actions, asm: Assembly-CSharp}
       data:
@@ -61635,6 +61646,11 @@ PrefabInstance:
 --- !u!95 &350573273 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 2495810316342202767, guid: 90a502a8885ac1a4f9e57a811d9a11ba, type: 3}
+  m_PrefabInstance: {fileID: 350573272}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &350573274 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4665529037646456070, guid: 90a502a8885ac1a4f9e57a811d9a11ba, type: 3}
   m_PrefabInstance: {fileID: 350573272}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &352707083
@@ -180558,6 +180574,11 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
+    - rid: 1278178337324531792
+      type: {class: SetActiveAction, ns: Actions, asm: Assembly-CSharp}
+      data:
+        target: {fileID: 2145394607}
+        setActive: 1
     - rid: 1398370332752478303
       type: {class: SetActiveAction, ns: Actions, asm: Assembly-CSharp}
       data:
@@ -180585,6 +180606,7 @@ MonoBehaviour:
         - rid: 4285165528501977166
         - rid: 1398370332752478303
         - rid: 1398370332752478304
+        - rid: 1278178337324531792
     - rid: 4285165528501977166
       type: {class: PlayAnimationAction, ns: Actions, asm: Assembly-CSharp}
       data:
@@ -217964,6 +217986,11 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
+    - rid: 1278178337324531791
+      type: {class: SetActiveAction, ns: Actions, asm: Assembly-CSharp}
+      data:
+        target: {fileID: 350573274}
+        setActive: 1
     - rid: 2728312064910557184
       type: {class: DetectionZoneDetectedCondition, ns: Actions, asm: Assembly-CSharp}
       data:
@@ -217979,6 +218006,7 @@ MonoBehaviour:
       data:
         _actions:
         - rid: 4285165528501977166
+        - rid: 1278178337324531791
     - rid: 4285165528501977166
       type: {class: PlayAnimationAction, ns: Actions, asm: Assembly-CSharp}
       data:
@@ -225576,6 +225604,11 @@ MonoBehaviour:
       data:
         target: {fileID: 1662977352}
         setActive: 1
+    - rid: 1278178337324531790
+      type: {class: SetActiveAction, ns: Actions, asm: Assembly-CSharp}
+      data:
+        target: {fileID: 81479902}
+        setActive: 1
     - rid: 2728312064910557184
       type: {class: DetectionZoneDetectedCondition, ns: Actions, asm: Assembly-CSharp}
       data:
@@ -225587,6 +225620,7 @@ MonoBehaviour:
         _actions:
         - rid: 4285165528501977166
         - rid: 80488266682073092
+        - rid: 1278178337324531790
     - rid: 4285165528501977166
       type: {class: PlayAnimationAction, ns: Actions, asm: Assembly-CSharp}
       data:
@@ -229911,6 +229945,11 @@ PrefabInstance:
 --- !u!95 &1426824719 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 2495810316342202767, guid: 90a502a8885ac1a4f9e57a811d9a11ba, type: 3}
+  m_PrefabInstance: {fileID: 1426824718}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1426824720 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4665529037646456070, guid: 90a502a8885ac1a4f9e57a811d9a11ba, type: 3}
   m_PrefabInstance: {fileID: 1426824718}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1427094960
@@ -281115,6 +281154,11 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
+    - rid: 1278178337324531793
+      type: {class: SetActiveAction, ns: Actions, asm: Assembly-CSharp}
+      data:
+        target: {fileID: 2141696729}
+        setActive: 1
     - rid: 1398370332752478309
       type: {class: SetActiveAction, ns: Actions, asm: Assembly-CSharp}
       data:
@@ -281148,6 +281192,7 @@ MonoBehaviour:
         - rid: 1398370332752478309
         - rid: 1398370332752478310
         - rid: 1398370332752478312
+        - rid: 1278178337324531793
     - rid: 4285165528501977166
       type: {class: PlayAnimationAction, ns: Actions, asm: Assembly-CSharp}
       data:
@@ -357637,6 +357682,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90a502a8885ac1a4f9e57a811d9a11ba, type: 3}
+--- !u!1 &2141696729 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4665529037646456070, guid: 90a502a8885ac1a4f9e57a811d9a11ba, type: 3}
+  m_PrefabInstance: {fileID: 2141696728}
+  m_PrefabAsset: {fileID: 0}
 --- !u!43 &2143043362
 Mesh:
   m_ObjectHideFlags: 0
@@ -358076,6 +358126,11 @@ PrefabInstance:
 --- !u!95 &2145394606 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 2495810316342202767, guid: 90a502a8885ac1a4f9e57a811d9a11ba, type: 3}
+  m_PrefabInstance: {fileID: 2145394605}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2145394607 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4665529037646456070, guid: 90a502a8885ac1a4f9e57a811d9a11ba, type: 3}
   m_PrefabInstance: {fileID: 2145394605}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2145436638

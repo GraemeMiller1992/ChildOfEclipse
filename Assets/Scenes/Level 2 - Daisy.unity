@@ -89701,11 +89701,17 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
+    - rid: 1278178337324531789
+      type: {class: SetActiveAction, ns: Actions, asm: Assembly-CSharp}
+      data:
+        target: {fileID: 1600958027}
+        setActive: 1
     - rid: 7487806832005087233
       type: {class: ActionRunner, ns: Actions, asm: Assembly-CSharp}
       data:
         _actions:
         - rid: 7487806832005087318
+        - rid: 1278178337324531789
     - rid: 7487806832005087315
       type: {class: DetectionZoneDetectedCondition, ns: Actions, asm: Assembly-CSharp}
       data:
@@ -198659,6 +198665,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90a502a8885ac1a4f9e57a811d9a11ba, type: 3}
+--- !u!1 &1600958027 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4665529037646456070, guid: 90a502a8885ac1a4f9e57a811d9a11ba, type: 3}
+  m_PrefabInstance: {fileID: 1600958026}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1600965836
 GameObject:
   m_ObjectHideFlags: 0
