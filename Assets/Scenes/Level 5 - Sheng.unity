@@ -25048,7 +25048,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c90b9e2c0f4cb454b8aef5d56e430dd7, type: 2}
+  - {fileID: 2100000, guid: 527c95ec99ed30243aadb9effeed2951, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -36757,6 +36757,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1196781824978042810, guid: e700abe236a3350448153842f5336d45, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 13e75c43c0f17e84e83465cfd6ecf3aa, type: 2}
     - target: {fileID: 2536310856527664066, guid: e700abe236a3350448153842f5336d45, type: 3}
       propertyPath: m_Size.x
       value: 100.2
@@ -36773,6 +36777,10 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: e53a4587176d96244876270bdf2b47f0, type: 2}
+    - target: {fileID: 3675194685542574159, guid: e700abe236a3350448153842f5336d45, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 527c95ec99ed30243aadb9effeed2951, type: 2}
     - target: {fileID: 4665675307755913587, guid: e700abe236a3350448153842f5336d45, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -36951,9 +36959,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b3c8d9e5f2a4b6c8d1e2f3a4b5c6d7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::World.SolarStateMaterial
-  _sunMaterial: {fileID: 2100000, guid: 109627a8ad09140468642242eb460209, type: 2}
-  _moonMaterial: {fileID: 2100000, guid: c90b9e2c0f4cb454b8aef5d56e430dd7, type: 2}
-  _eclipseMaterial: {fileID: 2100000, guid: 2ba031134926c634e88d1dcc7a50918c, type: 2}
+  _sunMaterial: {fileID: 2100000, guid: 13e75c43c0f17e84e83465cfd6ecf3aa, type: 2}
+  _moonMaterial: {fileID: 2100000, guid: 527c95ec99ed30243aadb9effeed2951, type: 2}
+  _eclipseMaterial: {fileID: 2100000, guid: 7df3d49d9658a614fb5e35053b8b5884, type: 2}
   _targetRenderers: []
 --- !u!114 &198170516
 MonoBehaviour:
@@ -54524,9 +54532,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b3c8d9e5f2a4b6c8d1e2f3a4b5c6d7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::World.SolarStateMaterial
-  _sunMaterial: {fileID: 2100000, guid: 109627a8ad09140468642242eb460209, type: 2}
-  _moonMaterial: {fileID: 2100000, guid: c90b9e2c0f4cb454b8aef5d56e430dd7, type: 2}
-  _eclipseMaterial: {fileID: 2100000, guid: 2ba031134926c634e88d1dcc7a50918c, type: 2}
+  _sunMaterial: {fileID: 2100000, guid: 13e75c43c0f17e84e83465cfd6ecf3aa, type: 2}
+  _moonMaterial: {fileID: 2100000, guid: 527c95ec99ed30243aadb9effeed2951, type: 2}
+  _eclipseMaterial: {fileID: 2100000, guid: 7df3d49d9658a614fb5e35053b8b5884, type: 2}
   _targetRenderers: []
 --- !u!114 &297119945
 MonoBehaviour:
@@ -58498,9 +58506,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b3c8d9e5f2a4b6c8d1e2f3a4b5c6d7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::World.SolarStateMaterial
-  _sunMaterial: {fileID: 2100000, guid: 109627a8ad09140468642242eb460209, type: 2}
-  _moonMaterial: {fileID: 2100000, guid: c90b9e2c0f4cb454b8aef5d56e430dd7, type: 2}
-  _eclipseMaterial: {fileID: 2100000, guid: 2ba031134926c634e88d1dcc7a50918c, type: 2}
+  _sunMaterial: {fileID: 2100000, guid: 13e75c43c0f17e84e83465cfd6ecf3aa, type: 2}
+  _moonMaterial: {fileID: 2100000, guid: 527c95ec99ed30243aadb9effeed2951, type: 2}
+  _eclipseMaterial: {fileID: 2100000, guid: 7df3d49d9658a614fb5e35053b8b5884, type: 2}
   _targetRenderers: []
 --- !u!114 &336234767
 MonoBehaviour:
@@ -64119,9 +64127,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b3c8d9e5f2a4b6c8d1e2f3a4b5c6d7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::World.SolarStateMaterial
-  _sunMaterial: {fileID: 2100000, guid: 109627a8ad09140468642242eb460209, type: 2}
-  _moonMaterial: {fileID: 2100000, guid: c90b9e2c0f4cb454b8aef5d56e430dd7, type: 2}
-  _eclipseMaterial: {fileID: 2100000, guid: 2ba031134926c634e88d1dcc7a50918c, type: 2}
+  _sunMaterial: {fileID: 2100000, guid: 13e75c43c0f17e84e83465cfd6ecf3aa, type: 2}
+  _moonMaterial: {fileID: 2100000, guid: 527c95ec99ed30243aadb9effeed2951, type: 2}
+  _eclipseMaterial: {fileID: 2100000, guid: 7df3d49d9658a614fb5e35053b8b5884, type: 2}
   _targetRenderers: []
 --- !u!114 &366937830
 MonoBehaviour:
@@ -70843,9 +70851,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b3c8d9e5f2a4b6c8d1e2f3a4b5c6d7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::World.SolarStateMaterial
-  _sunMaterial: {fileID: 2100000, guid: 109627a8ad09140468642242eb460209, type: 2}
-  _moonMaterial: {fileID: 2100000, guid: c90b9e2c0f4cb454b8aef5d56e430dd7, type: 2}
-  _eclipseMaterial: {fileID: 2100000, guid: 2ba031134926c634e88d1dcc7a50918c, type: 2}
+  _sunMaterial: {fileID: 2100000, guid: 13e75c43c0f17e84e83465cfd6ecf3aa, type: 2}
+  _moonMaterial: {fileID: 2100000, guid: 527c95ec99ed30243aadb9effeed2951, type: 2}
+  _eclipseMaterial: {fileID: 2100000, guid: 7df3d49d9658a614fb5e35053b8b5884, type: 2}
   _targetRenderers: []
 --- !u!114 &407411719
 MonoBehaviour:
@@ -73125,9 +73133,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b3c8d9e5f2a4b6c8d1e2f3a4b5c6d7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::World.SolarStateMaterial
-  _sunMaterial: {fileID: 2100000, guid: 109627a8ad09140468642242eb460209, type: 2}
-  _moonMaterial: {fileID: 2100000, guid: c90b9e2c0f4cb454b8aef5d56e430dd7, type: 2}
-  _eclipseMaterial: {fileID: 2100000, guid: 2ba031134926c634e88d1dcc7a50918c, type: 2}
+  _sunMaterial: {fileID: 2100000, guid: 13e75c43c0f17e84e83465cfd6ecf3aa, type: 2}
+  _moonMaterial: {fileID: 2100000, guid: 527c95ec99ed30243aadb9effeed2951, type: 2}
+  _eclipseMaterial: {fileID: 2100000, guid: 7df3d49d9658a614fb5e35053b8b5884, type: 2}
   _targetRenderers: []
 --- !u!114 &434702948
 MonoBehaviour:
@@ -79577,7 +79585,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c90b9e2c0f4cb454b8aef5d56e430dd7, type: 2}
+  - {fileID: 2100000, guid: 527c95ec99ed30243aadb9effeed2951, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -92961,9 +92969,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b3c8d9e5f2a4b6c8d1e2f3a4b5c6d7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::World.SolarStateMaterial
-  _sunMaterial: {fileID: 2100000, guid: 109627a8ad09140468642242eb460209, type: 2}
-  _moonMaterial: {fileID: 2100000, guid: c90b9e2c0f4cb454b8aef5d56e430dd7, type: 2}
-  _eclipseMaterial: {fileID: 2100000, guid: 2ba031134926c634e88d1dcc7a50918c, type: 2}
+  _sunMaterial: {fileID: 2100000, guid: 13e75c43c0f17e84e83465cfd6ecf3aa, type: 2}
+  _moonMaterial: {fileID: 2100000, guid: 527c95ec99ed30243aadb9effeed2951, type: 2}
+  _eclipseMaterial: {fileID: 2100000, guid: 7df3d49d9658a614fb5e35053b8b5884, type: 2}
   _targetRenderers: []
 --- !u!114 &544241445
 MonoBehaviour:
@@ -111649,6 +111657,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 932879620}
     m_Modifications:
+    - target: {fileID: -1892327583442982547, guid: 4c4ff025e55bdf549ad563b367871e1f, type: 3}
+      propertyPath: _sunMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 13e75c43c0f17e84e83465cfd6ecf3aa, type: 2}
+    - target: {fileID: -1892327583442982547, guid: 4c4ff025e55bdf549ad563b367871e1f, type: 3}
+      propertyPath: _moonMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 527c95ec99ed30243aadb9effeed2951, type: 2}
+    - target: {fileID: -1892327583442982547, guid: 4c4ff025e55bdf549ad563b367871e1f, type: 3}
+      propertyPath: _eclipseMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 7df3d49d9658a614fb5e35053b8b5884, type: 2}
     - target: {fileID: 1010578265950817485, guid: 4c4ff025e55bdf549ad563b367871e1f, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.529873
@@ -128312,9 +128332,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b3c8d9e5f2a4b6c8d1e2f3a4b5c6d7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::World.SolarStateMaterial
-  _sunMaterial: {fileID: 2100000, guid: 109627a8ad09140468642242eb460209, type: 2}
-  _moonMaterial: {fileID: 2100000, guid: c90b9e2c0f4cb454b8aef5d56e430dd7, type: 2}
-  _eclipseMaterial: {fileID: 2100000, guid: 2ba031134926c634e88d1dcc7a50918c, type: 2}
+  _sunMaterial: {fileID: 2100000, guid: 2b3e381f3d6db854480d8dc4b5de5e5c, type: 2}
+  _moonMaterial: {fileID: 2100000, guid: c2176d8fa2c7d9f42b9f30dc90c870c1, type: 2}
+  _eclipseMaterial: {fileID: 2100000, guid: 7df3d49d9658a614fb5e35053b8b5884, type: 2}
   _targetRenderers: []
 --- !u!114 &733557458
 MonoBehaviour:
@@ -139603,9 +139623,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b3c8d9e5f2a4b6c8d1e2f3a4b5c6d7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::World.SolarStateMaterial
-  _sunMaterial: {fileID: 2100000, guid: 109627a8ad09140468642242eb460209, type: 2}
-  _moonMaterial: {fileID: 2100000, guid: c90b9e2c0f4cb454b8aef5d56e430dd7, type: 2}
-  _eclipseMaterial: {fileID: 2100000, guid: 2ba031134926c634e88d1dcc7a50918c, type: 2}
+  _sunMaterial: {fileID: 2100000, guid: 2b3e381f3d6db854480d8dc4b5de5e5c, type: 2}
+  _moonMaterial: {fileID: 2100000, guid: c2176d8fa2c7d9f42b9f30dc90c870c1, type: 2}
+  _eclipseMaterial: {fileID: 2100000, guid: 7df3d49d9658a614fb5e35053b8b5884, type: 2}
   _targetRenderers: []
 --- !u!114 &795310250
 MonoBehaviour:
@@ -142842,6 +142862,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1848186566}
     m_Modifications:
+    - target: {fileID: -1892327583442982547, guid: 4c4ff025e55bdf549ad563b367871e1f, type: 3}
+      propertyPath: _sunMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 2b3e381f3d6db854480d8dc4b5de5e5c, type: 2}
+    - target: {fileID: -1892327583442982547, guid: 4c4ff025e55bdf549ad563b367871e1f, type: 3}
+      propertyPath: _moonMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: c2176d8fa2c7d9f42b9f30dc90c870c1, type: 2}
+    - target: {fileID: -1892327583442982547, guid: 4c4ff025e55bdf549ad563b367871e1f, type: 3}
+      propertyPath: _eclipseMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 7df3d49d9658a614fb5e35053b8b5884, type: 2}
     - target: {fileID: 1010578265950817485, guid: 4c4ff025e55bdf549ad563b367871e1f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.811203
@@ -163566,9 +163598,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b3c8d9e5f2a4b6c8d1e2f3a4b5c6d7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::World.SolarStateMaterial
-  _sunMaterial: {fileID: 2100000, guid: 109627a8ad09140468642242eb460209, type: 2}
-  _moonMaterial: {fileID: 2100000, guid: c90b9e2c0f4cb454b8aef5d56e430dd7, type: 2}
-  _eclipseMaterial: {fileID: 2100000, guid: 2ba031134926c634e88d1dcc7a50918c, type: 2}
+  _sunMaterial: {fileID: 2100000, guid: 13e75c43c0f17e84e83465cfd6ecf3aa, type: 2}
+  _moonMaterial: {fileID: 2100000, guid: 527c95ec99ed30243aadb9effeed2951, type: 2}
+  _eclipseMaterial: {fileID: 2100000, guid: 7df3d49d9658a614fb5e35053b8b5884, type: 2}
   _targetRenderers: []
 --- !u!114 &964909467
 MonoBehaviour:
@@ -164578,9 +164610,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b3c8d9e5f2a4b6c8d1e2f3a4b5c6d7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::World.SolarStateMaterial
-  _sunMaterial: {fileID: 2100000, guid: 109627a8ad09140468642242eb460209, type: 2}
-  _moonMaterial: {fileID: 2100000, guid: c90b9e2c0f4cb454b8aef5d56e430dd7, type: 2}
-  _eclipseMaterial: {fileID: 2100000, guid: 2ba031134926c634e88d1dcc7a50918c, type: 2}
+  _sunMaterial: {fileID: 2100000, guid: 13e75c43c0f17e84e83465cfd6ecf3aa, type: 2}
+  _moonMaterial: {fileID: 2100000, guid: 527c95ec99ed30243aadb9effeed2951, type: 2}
+  _eclipseMaterial: {fileID: 2100000, guid: 7df3d49d9658a614fb5e35053b8b5884, type: 2}
   _targetRenderers: []
 --- !u!114 &973692128
 MonoBehaviour:
@@ -172970,9 +173002,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b3c8d9e5f2a4b6c8d1e2f3a4b5c6d7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::World.SolarStateMaterial
-  _sunMaterial: {fileID: 2100000, guid: 109627a8ad09140468642242eb460209, type: 2}
-  _moonMaterial: {fileID: 2100000, guid: c90b9e2c0f4cb454b8aef5d56e430dd7, type: 2}
-  _eclipseMaterial: {fileID: 2100000, guid: 2ba031134926c634e88d1dcc7a50918c, type: 2}
+  _sunMaterial: {fileID: 2100000, guid: 13e75c43c0f17e84e83465cfd6ecf3aa, type: 2}
+  _moonMaterial: {fileID: 2100000, guid: 527c95ec99ed30243aadb9effeed2951, type: 2}
+  _eclipseMaterial: {fileID: 2100000, guid: 7df3d49d9658a614fb5e35053b8b5884, type: 2}
   _targetRenderers: []
 --- !u!114 &1007957759
 MonoBehaviour:
@@ -180888,7 +180920,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 109627a8ad09140468642242eb460209, type: 2}
+  - {fileID: 2100000, guid: 13e75c43c0f17e84e83465cfd6ecf3aa, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -182202,9 +182234,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b3c8d9e5f2a4b6c8d1e2f3a4b5c6d7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::World.SolarStateMaterial
-  _sunMaterial: {fileID: 2100000, guid: 109627a8ad09140468642242eb460209, type: 2}
-  _moonMaterial: {fileID: 2100000, guid: c90b9e2c0f4cb454b8aef5d56e430dd7, type: 2}
-  _eclipseMaterial: {fileID: 2100000, guid: 2ba031134926c634e88d1dcc7a50918c, type: 2}
+  _sunMaterial: {fileID: 2100000, guid: 13e75c43c0f17e84e83465cfd6ecf3aa, type: 2}
+  _moonMaterial: {fileID: 2100000, guid: 527c95ec99ed30243aadb9effeed2951, type: 2}
+  _eclipseMaterial: {fileID: 2100000, guid: 7df3d49d9658a614fb5e35053b8b5884, type: 2}
   _targetRenderers: []
 --- !u!114 &1083889297
 MonoBehaviour:
@@ -193075,9 +193107,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b3c8d9e5f2a4b6c8d1e2f3a4b5c6d7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::World.SolarStateMaterial
-  _sunMaterial: {fileID: 2100000, guid: 109627a8ad09140468642242eb460209, type: 2}
-  _moonMaterial: {fileID: 2100000, guid: c90b9e2c0f4cb454b8aef5d56e430dd7, type: 2}
-  _eclipseMaterial: {fileID: 2100000, guid: 2ba031134926c634e88d1dcc7a50918c, type: 2}
+  _sunMaterial: {fileID: 2100000, guid: 13e75c43c0f17e84e83465cfd6ecf3aa, type: 2}
+  _moonMaterial: {fileID: 2100000, guid: 527c95ec99ed30243aadb9effeed2951, type: 2}
+  _eclipseMaterial: {fileID: 2100000, guid: 7df3d49d9658a614fb5e35053b8b5884, type: 2}
   _targetRenderers: []
 --- !u!114 &1169818813
 MonoBehaviour:
@@ -195672,9 +195704,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b3c8d9e5f2a4b6c8d1e2f3a4b5c6d7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::World.SolarStateMaterial
-  _sunMaterial: {fileID: 2100000, guid: 109627a8ad09140468642242eb460209, type: 2}
-  _moonMaterial: {fileID: 2100000, guid: c90b9e2c0f4cb454b8aef5d56e430dd7, type: 2}
-  _eclipseMaterial: {fileID: 2100000, guid: 2ba031134926c634e88d1dcc7a50918c, type: 2}
+  _sunMaterial: {fileID: 2100000, guid: 13e75c43c0f17e84e83465cfd6ecf3aa, type: 2}
+  _moonMaterial: {fileID: 2100000, guid: 527c95ec99ed30243aadb9effeed2951, type: 2}
+  _eclipseMaterial: {fileID: 2100000, guid: 7df3d49d9658a614fb5e35053b8b5884, type: 2}
   _targetRenderers: []
 --- !u!114 &1196313074
 MonoBehaviour:
@@ -197135,9 +197167,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b3c8d9e5f2a4b6c8d1e2f3a4b5c6d7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::World.SolarStateMaterial
-  _sunMaterial: {fileID: 2100000, guid: 109627a8ad09140468642242eb460209, type: 2}
-  _moonMaterial: {fileID: 2100000, guid: c90b9e2c0f4cb454b8aef5d56e430dd7, type: 2}
-  _eclipseMaterial: {fileID: 2100000, guid: 2ba031134926c634e88d1dcc7a50918c, type: 2}
+  _sunMaterial: {fileID: 2100000, guid: 13e75c43c0f17e84e83465cfd6ecf3aa, type: 2}
+  _moonMaterial: {fileID: 2100000, guid: 527c95ec99ed30243aadb9effeed2951, type: 2}
+  _eclipseMaterial: {fileID: 2100000, guid: 7df3d49d9658a614fb5e35053b8b5884, type: 2}
   _targetRenderers: []
 --- !u!114 &1204942421
 MonoBehaviour:
@@ -223347,9 +223379,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b3c8d9e5f2a4b6c8d1e2f3a4b5c6d7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::World.SolarStateMaterial
-  _sunMaterial: {fileID: 2100000, guid: 109627a8ad09140468642242eb460209, type: 2}
-  _moonMaterial: {fileID: 2100000, guid: c90b9e2c0f4cb454b8aef5d56e430dd7, type: 2}
-  _eclipseMaterial: {fileID: 2100000, guid: 2ba031134926c634e88d1dcc7a50918c, type: 2}
+  _sunMaterial: {fileID: 2100000, guid: 13e75c43c0f17e84e83465cfd6ecf3aa, type: 2}
+  _moonMaterial: {fileID: 2100000, guid: 527c95ec99ed30243aadb9effeed2951, type: 2}
+  _eclipseMaterial: {fileID: 2100000, guid: 7df3d49d9658a614fb5e35053b8b5884, type: 2}
   _targetRenderers: []
 --- !u!114 &1390986406
 MonoBehaviour:
@@ -261520,9 +261552,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b3c8d9e5f2a4b6c8d1e2f3a4b5c6d7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::World.SolarStateMaterial
-  _sunMaterial: {fileID: 2100000, guid: 109627a8ad09140468642242eb460209, type: 2}
-  _moonMaterial: {fileID: 2100000, guid: c90b9e2c0f4cb454b8aef5d56e430dd7, type: 2}
-  _eclipseMaterial: {fileID: 2100000, guid: 2ba031134926c634e88d1dcc7a50918c, type: 2}
+  _sunMaterial: {fileID: 2100000, guid: 13e75c43c0f17e84e83465cfd6ecf3aa, type: 2}
+  _moonMaterial: {fileID: 2100000, guid: 527c95ec99ed30243aadb9effeed2951, type: 2}
+  _eclipseMaterial: {fileID: 2100000, guid: 7df3d49d9658a614fb5e35053b8b5884, type: 2}
   _targetRenderers: []
 --- !u!114 &1566193505
 MonoBehaviour:
@@ -266183,9 +266215,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b3c8d9e5f2a4b6c8d1e2f3a4b5c6d7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::World.SolarStateMaterial
-  _sunMaterial: {fileID: 2100000, guid: 109627a8ad09140468642242eb460209, type: 2}
-  _moonMaterial: {fileID: 2100000, guid: c90b9e2c0f4cb454b8aef5d56e430dd7, type: 2}
-  _eclipseMaterial: {fileID: 2100000, guid: 2ba031134926c634e88d1dcc7a50918c, type: 2}
+  _sunMaterial: {fileID: 2100000, guid: 13e75c43c0f17e84e83465cfd6ecf3aa, type: 2}
+  _moonMaterial: {fileID: 2100000, guid: 527c95ec99ed30243aadb9effeed2951, type: 2}
+  _eclipseMaterial: {fileID: 2100000, guid: 7df3d49d9658a614fb5e35053b8b5884, type: 2}
   _targetRenderers: []
 --- !u!114 &1605577236
 MonoBehaviour:
@@ -269365,9 +269397,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b3c8d9e5f2a4b6c8d1e2f3a4b5c6d7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::World.SolarStateMaterial
-  _sunMaterial: {fileID: 2100000, guid: 109627a8ad09140468642242eb460209, type: 2}
-  _moonMaterial: {fileID: 2100000, guid: c90b9e2c0f4cb454b8aef5d56e430dd7, type: 2}
-  _eclipseMaterial: {fileID: 2100000, guid: 2ba031134926c634e88d1dcc7a50918c, type: 2}
+  _sunMaterial: {fileID: 2100000, guid: 13e75c43c0f17e84e83465cfd6ecf3aa, type: 2}
+  _moonMaterial: {fileID: 2100000, guid: 527c95ec99ed30243aadb9effeed2951, type: 2}
+  _eclipseMaterial: {fileID: 2100000, guid: 7df3d49d9658a614fb5e35053b8b5884, type: 2}
   _targetRenderers: []
 --- !u!114 &1630206364
 MonoBehaviour:
@@ -278583,9 +278615,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b3c8d9e5f2a4b6c8d1e2f3a4b5c6d7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::World.SolarStateMaterial
-  _sunMaterial: {fileID: 2100000, guid: 109627a8ad09140468642242eb460209, type: 2}
-  _moonMaterial: {fileID: 2100000, guid: c90b9e2c0f4cb454b8aef5d56e430dd7, type: 2}
-  _eclipseMaterial: {fileID: 2100000, guid: 2ba031134926c634e88d1dcc7a50918c, type: 2}
+  _sunMaterial: {fileID: 2100000, guid: 13e75c43c0f17e84e83465cfd6ecf3aa, type: 2}
+  _moonMaterial: {fileID: 2100000, guid: 527c95ec99ed30243aadb9effeed2951, type: 2}
+  _eclipseMaterial: {fileID: 2100000, guid: 7df3d49d9658a614fb5e35053b8b5884, type: 2}
   _targetRenderers: []
 --- !u!114 &1692030463
 MonoBehaviour:
@@ -297183,9 +297215,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b3c8d9e5f2a4b6c8d1e2f3a4b5c6d7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::World.SolarStateMaterial
-  _sunMaterial: {fileID: 2100000, guid: 109627a8ad09140468642242eb460209, type: 2}
-  _moonMaterial: {fileID: 2100000, guid: c90b9e2c0f4cb454b8aef5d56e430dd7, type: 2}
-  _eclipseMaterial: {fileID: 2100000, guid: 2ba031134926c634e88d1dcc7a50918c, type: 2}
+  _sunMaterial: {fileID: 2100000, guid: 13e75c43c0f17e84e83465cfd6ecf3aa, type: 2}
+  _moonMaterial: {fileID: 2100000, guid: 527c95ec99ed30243aadb9effeed2951, type: 2}
+  _eclipseMaterial: {fileID: 2100000, guid: 7df3d49d9658a614fb5e35053b8b5884, type: 2}
   _targetRenderers: []
 --- !u!114 &1796938403
 MonoBehaviour:
@@ -325955,7 +325987,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c90b9e2c0f4cb454b8aef5d56e430dd7, type: 2}
+  - {fileID: 2100000, guid: 527c95ec99ed30243aadb9effeed2951, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -339549,9 +339581,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b3c8d9e5f2a4b6c8d1e2f3a4b5c6d7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::World.SolarStateMaterial
-  _sunMaterial: {fileID: 2100000, guid: 109627a8ad09140468642242eb460209, type: 2}
-  _moonMaterial: {fileID: 2100000, guid: c90b9e2c0f4cb454b8aef5d56e430dd7, type: 2}
-  _eclipseMaterial: {fileID: 2100000, guid: 2ba031134926c634e88d1dcc7a50918c, type: 2}
+  _sunMaterial: {fileID: 2100000, guid: 13e75c43c0f17e84e83465cfd6ecf3aa, type: 2}
+  _moonMaterial: {fileID: 2100000, guid: 527c95ec99ed30243aadb9effeed2951, type: 2}
+  _eclipseMaterial: {fileID: 2100000, guid: 7df3d49d9658a614fb5e35053b8b5884, type: 2}
   _targetRenderers: []
 --- !u!114 &2006085015
 MonoBehaviour:
@@ -342537,9 +342569,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b3c8d9e5f2a4b6c8d1e2f3a4b5c6d7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::World.SolarStateMaterial
-  _sunMaterial: {fileID: 2100000, guid: 109627a8ad09140468642242eb460209, type: 2}
-  _moonMaterial: {fileID: 2100000, guid: c90b9e2c0f4cb454b8aef5d56e430dd7, type: 2}
-  _eclipseMaterial: {fileID: 2100000, guid: 2ba031134926c634e88d1dcc7a50918c, type: 2}
+  _sunMaterial: {fileID: 2100000, guid: 13e75c43c0f17e84e83465cfd6ecf3aa, type: 2}
+  _moonMaterial: {fileID: 2100000, guid: 527c95ec99ed30243aadb9effeed2951, type: 2}
+  _eclipseMaterial: {fileID: 2100000, guid: 7df3d49d9658a614fb5e35053b8b5884, type: 2}
   _targetRenderers: []
 --- !u!114 &2029541858
 MonoBehaviour:
@@ -343212,9 +343244,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b3c8d9e5f2a4b6c8d1e2f3a4b5c6d7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::World.SolarStateMaterial
-  _sunMaterial: {fileID: 2100000, guid: 109627a8ad09140468642242eb460209, type: 2}
-  _moonMaterial: {fileID: 2100000, guid: c90b9e2c0f4cb454b8aef5d56e430dd7, type: 2}
-  _eclipseMaterial: {fileID: 2100000, guid: 2ba031134926c634e88d1dcc7a50918c, type: 2}
+  _sunMaterial: {fileID: 2100000, guid: 13e75c43c0f17e84e83465cfd6ecf3aa, type: 2}
+  _moonMaterial: {fileID: 2100000, guid: 527c95ec99ed30243aadb9effeed2951, type: 2}
+  _eclipseMaterial: {fileID: 2100000, guid: 7df3d49d9658a614fb5e35053b8b5884, type: 2}
   _targetRenderers: []
 --- !u!114 &2032369054
 MonoBehaviour:
