@@ -100,7 +100,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: e115defa0be7aaa4c8e2070cafb0f027, type: 2}
+  - {fileID: 2100000, guid: 2b3e381f3d6db854480d8dc4b5de5e5c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -177,6 +177,7 @@ MonoBehaviour:
   interactSoundVolume: 1
   playerTag: Player
   maxSwaps: -1
+  interactionLocked: 0
   showDebugMessages: 0
 --- !u!114 &5755727637110116023
 MonoBehaviour:
@@ -190,9 +191,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b3c8d9e5f2a4b6c8d1e2f3a4b5c6d7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::World.SolarStateMaterial
-  _sunMaterial: {fileID: 2100000, guid: 109627a8ad09140468642242eb460209, type: 2}
-  _moonMaterial: {fileID: 2100000, guid: c90b9e2c0f4cb454b8aef5d56e430dd7, type: 2}
-  _eclipseMaterial: {fileID: 2100000, guid: 2ba031134926c634e88d1dcc7a50918c, type: 2}
+  _sunMaterial: {fileID: 2100000, guid: 2b3e381f3d6db854480d8dc4b5de5e5c, type: 2}
+  _moonMaterial: {fileID: 2100000, guid: c2176d8fa2c7d9f42b9f30dc90c870c1, type: 2}
+  _eclipseMaterial: {fileID: 2100000, guid: 7df3d49d9658a614fb5e35053b8b5884, type: 2}
   _targetRenderers:
   - {fileID: 6814841459362800739}
 --- !u!114 &1272275519871892992
