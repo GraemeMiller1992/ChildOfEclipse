@@ -176,7 +176,7 @@ public class PortalPassThroughController : MonoBehaviour
     {
         return detectionMode switch
         {
-            DetectionMode.Box => Physics.OverlapBox(transform.TransformPoint(detectionBoxOffset), detectionBoxSize, Quaternion.identity, detectionLayerMask),
+            DetectionMode.Box => Physics.OverlapBox(transform.TransformPoint(detectionBoxOffset), detectionBoxSize, transform.rotation, detectionLayerMask),
             _ => Physics.OverlapSphere(transform.position, detectionRadius, detectionLayerMask),
         };
     }
@@ -400,19 +400,28 @@ public class PortalPassThroughController : MonoBehaviour
 
     private void OnDrawGizmosSelected()
     {
+        Gizmos.matrix = transform.localToWorldMatrix;
         Gizmos.color = new Color(1f, 1f, 0f, 0.3f);
 
         switch (detectionMode)
         {
             case DetectionMode.Box:
-                Gizmos.DrawWireCube(transform.TransformPoint(detectionBoxOffset), detectionBoxSize * 2f);
+                Gizmos.DrawWireCube(detectionBoxOffset, detectionBoxSize * 2f);
                 break;
             default:
-                Gizmos.DrawWireSphere(transform.position, detectionRadius);
+                Gizmos.DrawWireSphere(Vector3.zero, detectionRadius);
                 break;
         }
 
         Gizmos.color = Color.cyan;
-        Gizmos.DrawRay(transform.position, GetPortalNormalWorld() * detectionRadius);
+        Vector3 normal = portalAxis switch
+        {
+            PortalAxis.X => Vector3.right,
+            PortalAxis.Y => Vector3.up,
+            PortalAxis.Z => Vector3.forward,
+            _ => Vector3.forward,
+        };
+        Gizmos.DrawRay(Vector3.zero, normal * detectionRadius);
+        Gizmos.matrix = Matrix4x4.identity;
     }
 }
