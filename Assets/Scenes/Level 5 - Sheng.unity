@@ -400,8 +400,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b3c8d9e5f2a4b6c8d1e2f3a4b5c6d7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::World.SolarStateMaterial
-  _sunMaterial: {fileID: 2100000, guid: 109627a8ad09140468642242eb460209, type: 2}
-  _moonMaterial: {fileID: 2100000, guid: c90b9e2c0f4cb454b8aef5d56e430dd7, type: 2}
+  _sunMaterial: {fileID: 2100000, guid: 13e75c43c0f17e84e83465cfd6ecf3aa, type: 2}
+  _moonMaterial: {fileID: 2100000, guid: 527c95ec99ed30243aadb9effeed2951, type: 2}
   _eclipseMaterial: {fileID: 2100000, guid: 2ba031134926c634e88d1dcc7a50918c, type: 2}
   _targetRenderers: []
 --- !u!114 &2778133
@@ -465,6 +465,36 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3345189523042513729, guid: ad4534fb8aed3424e8290162efb84359, type: 3}
   m_PrefabInstance: {fileID: 1221121284}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2778139
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2778130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 206b8fd5ef2eb2d4abd3aba0e4a57805, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PortalPassThroughController
+  portalAxis: 2
+  detectionMode: 1
+  detectionRadius: 2
+  detectionBoxSize: {x: 0.69, y: 0.77, z: 1.91}
+  detectionBoxOffset: {x: 0, y: 0, z: 0}
+  maxContacts: 8
+  detectionLayerMask:
+    serializedVersion: 2
+    m_Bits: 384
+  contactPositionMode: 1
+  forceCutoutShape: 1
+  forcedShape: 0
+  forcedRadius: 1
+  forcedHeight: 2
+  forcedBoxSize: {x: 1, y: 1, z: 1}
+  openSpeed: 4
+  closeSpeed: 2.5
+  closeDelay: 0.15
 --- !u!1001 &4321307
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10142,6 +10172,41 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1161740748629762312, guid: cb13a7f1664152a4e9468995c6bbbf17, type: 3}
   m_PrefabInstance: {fileID: 38917305}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &42046873 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2438073536089858640, guid: 4406f03a381034149959c0972cbdb975, type: 3}
+  m_PrefabInstance: {fileID: 1798974676}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &42046874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 42046873}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 206b8fd5ef2eb2d4abd3aba0e4a57805, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PortalPassThroughController
+  portalAxis: 2
+  detectionMode: 1
+  detectionRadius: 2
+  detectionBoxSize: {x: 0.64, y: 1.13, z: 1}
+  detectionBoxOffset: {x: 0, y: 0, z: 0}
+  maxContacts: 8
+  detectionLayerMask:
+    serializedVersion: 2
+    m_Bits: 384
+  contactPositionMode: 1
+  forceCutoutShape: 0
+  forcedShape: 0
+  forcedRadius: 0.5
+  forcedHeight: 2
+  forcedBoxSize: {x: 1, y: 1, z: 1}
+  openSpeed: 4
+  closeSpeed: 2.5
+  closeDelay: 0.15
 --- !u!1001 &42800521
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18576,6 +18641,41 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6e351b7d29a65bc40ac2e0c0028d7741, type: 3}
+--- !u!1 &67083754 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2438073536089858640, guid: f73bc595ab51a304c9a69bea1f3defe9, type: 3}
+  m_PrefabInstance: {fileID: 758169319}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &67083755
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 67083754}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 206b8fd5ef2eb2d4abd3aba0e4a57805, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PortalPassThroughController
+  portalAxis: 2
+  detectionMode: 1
+  detectionRadius: 2
+  detectionBoxSize: {x: 0.64, y: 1.13, z: 1}
+  detectionBoxOffset: {x: 0, y: 0, z: 0}
+  maxContacts: 8
+  detectionLayerMask:
+    serializedVersion: 2
+    m_Bits: 384
+  contactPositionMode: 1
+  forceCutoutShape: 0
+  forcedShape: 0
+  forcedRadius: 0.5
+  forcedHeight: 2
+  forcedBoxSize: {x: 1, y: 1, z: 1}
+  openSpeed: 4
+  closeSpeed: 2.5
+  closeDelay: 0.15
 --- !u!1001 &67529953
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24339,6 +24439,41 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2571927897169462969, guid: c7b3370b127365e47a0b10c193d3712d, type: 3}
   m_PrefabInstance: {fileID: 129080449}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &129260992 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2438073536089858640, guid: 4406f03a381034149959c0972cbdb975, type: 3}
+  m_PrefabInstance: {fileID: 604512047}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &129260993
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 129260992}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 206b8fd5ef2eb2d4abd3aba0e4a57805, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PortalPassThroughController
+  portalAxis: 2
+  detectionMode: 1
+  detectionRadius: 2
+  detectionBoxSize: {x: 0.64, y: 1.13, z: 1}
+  detectionBoxOffset: {x: 0, y: 0, z: 0}
+  maxContacts: 8
+  detectionLayerMask:
+    serializedVersion: 2
+    m_Bits: 384
+  contactPositionMode: 1
+  forceCutoutShape: 0
+  forcedShape: 0
+  forcedRadius: 0.5
+  forcedHeight: 2
+  forcedBoxSize: {x: 1, y: 1, z: 1}
+  openSpeed: 4
+  closeSpeed: 2.5
+  closeDelay: 0.15
 --- !u!1001 &130185069
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -30269,6 +30404,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2677197054211451387, guid: ad4534fb8aed3424e8290162efb84359, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1605577242}
+    - targetCorrespondingSourceObject: {fileID: 2677197054211451387, guid: ad4534fb8aed3424e8290162efb84359, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1605577245}
   m_SourcePrefab: {fileID: 100100000, guid: ad4534fb8aed3424e8290162efb84359, type: 3}
 --- !u!1001 &139962282
 PrefabInstance:
@@ -32262,6 +32400,41 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1161740748629762312, guid: cb13a7f1664152a4e9468995c6bbbf17, type: 3}
   m_PrefabInstance: {fileID: 160388307}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &160995638 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2438073536089858640, guid: 4406f03a381034149959c0972cbdb975, type: 3}
+  m_PrefabInstance: {fileID: 2112949257}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &160995639
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 160995638}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 206b8fd5ef2eb2d4abd3aba0e4a57805, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PortalPassThroughController
+  portalAxis: 2
+  detectionMode: 1
+  detectionRadius: 2
+  detectionBoxSize: {x: 0.64, y: 1.13, z: 1}
+  detectionBoxOffset: {x: 0, y: 0, z: 0}
+  maxContacts: 8
+  detectionLayerMask:
+    serializedVersion: 2
+    m_Bits: 384
+  contactPositionMode: 1
+  forceCutoutShape: 0
+  forcedShape: 0
+  forcedRadius: 0.5
+  forcedHeight: 2
+  forcedBoxSize: {x: 1, y: 1, z: 1}
+  openSpeed: 4
+  closeSpeed: 2.5
+  closeDelay: 0.15
 --- !u!1001 &161244545
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -40718,6 +40891,41 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2571927897169462969, guid: c7b3370b127365e47a0b10c193d3712d, type: 3}
   m_PrefabInstance: {fileID: 223445619}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &223829678 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2438073536089858640, guid: f73bc595ab51a304c9a69bea1f3defe9, type: 3}
+  m_PrefabInstance: {fileID: 262833215}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &223829679
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 223829678}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 206b8fd5ef2eb2d4abd3aba0e4a57805, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PortalPassThroughController
+  portalAxis: 2
+  detectionMode: 1
+  detectionRadius: 2
+  detectionBoxSize: {x: 0.64, y: 1.13, z: 1}
+  detectionBoxOffset: {x: 0, y: 0, z: 0}
+  maxContacts: 8
+  detectionLayerMask:
+    serializedVersion: 2
+    m_Bits: 384
+  contactPositionMode: 1
+  forceCutoutShape: 0
+  forcedShape: 0
+  forcedRadius: 0.5
+  forcedHeight: 2
+  forcedBoxSize: {x: 1, y: 1, z: 1}
+  openSpeed: 4
+  closeSpeed: 2.5
+  closeDelay: 0.15
 --- !u!1001 &224822250
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -46652,6 +46860,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1479215391782063285, guid: 4406f03a381034149959c0972cbdb975, type: 3}
+      propertyPath: _sunMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 13e75c43c0f17e84e83465cfd6ecf3aa, type: 2}
+    - target: {fileID: 1479215391782063285, guid: 4406f03a381034149959c0972cbdb975, type: 3}
+      propertyPath: _moonMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 527c95ec99ed30243aadb9effeed2951, type: 2}
     - target: {fileID: 2438073536089858640, guid: 4406f03a381034149959c0972cbdb975, type: 3}
       propertyPath: m_Name
       value: MoonWall (2)
@@ -46659,7 +46875,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2438073536089858640, guid: 4406f03a381034149959c0972cbdb975, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1598064013}
   m_SourcePrefab: {fileID: 100100000, guid: 4406f03a381034149959c0972cbdb975, type: 3}
 --- !u!43 &254809910
 Mesh:
@@ -47994,6 +48213,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1479215391782063285, guid: f73bc595ab51a304c9a69bea1f3defe9, type: 3}
+      propertyPath: _sunMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 13e75c43c0f17e84e83465cfd6ecf3aa, type: 2}
+    - target: {fileID: 1479215391782063285, guid: f73bc595ab51a304c9a69bea1f3defe9, type: 3}
+      propertyPath: _moonMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 527c95ec99ed30243aadb9effeed2951, type: 2}
     - target: {fileID: 2438073536089858640, guid: f73bc595ab51a304c9a69bea1f3defe9, type: 3}
       propertyPath: m_Name
       value: SunWall (2)
@@ -48001,7 +48228,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2438073536089858640, guid: f73bc595ab51a304c9a69bea1f3defe9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 223829679}
   m_SourcePrefab: {fileID: 100100000, guid: f73bc595ab51a304c9a69bea1f3defe9, type: 3}
 --- !u!1001 &263120831
 PrefabInstance:
@@ -57800,6 +58030,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1479215391782063285, guid: f73bc595ab51a304c9a69bea1f3defe9, type: 3}
+      propertyPath: _sunMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 13e75c43c0f17e84e83465cfd6ecf3aa, type: 2}
+    - target: {fileID: 1479215391782063285, guid: f73bc595ab51a304c9a69bea1f3defe9, type: 3}
+      propertyPath: _moonMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 527c95ec99ed30243aadb9effeed2951, type: 2}
     - target: {fileID: 2438073536089858640, guid: f73bc595ab51a304c9a69bea1f3defe9, type: 3}
       propertyPath: m_Name
       value: SunWall (6)
@@ -57807,7 +58045,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2438073536089858640, guid: f73bc595ab51a304c9a69bea1f3defe9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1539146416}
   m_SourcePrefab: {fileID: 100100000, guid: f73bc595ab51a304c9a69bea1f3defe9, type: 3}
 --- !u!1001 &335892077
 PrefabInstance:
@@ -58030,6 +58271,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2677197054211451387, guid: ad4534fb8aed3424e8290162efb84359, type: 3}
       insertIndex: -1
       addedObject: {fileID: 336234765}
+    - targetCorrespondingSourceObject: {fileID: 2677197054211451387, guid: ad4534fb8aed3424e8290162efb84359, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 336234773}
   m_SourcePrefab: {fileID: 100100000, guid: ad4534fb8aed3424e8290162efb84359, type: 3}
 --- !u!4 &336234763 stripped
 Transform:
@@ -58130,6 +58374,36 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.4999905, y: 1.4999967, z: 0.4999991}
   m_Center: {x: 0, y: -0.00000047683716, z: 0.00000009685755}
+--- !u!114 &336234773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 336234764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 206b8fd5ef2eb2d4abd3aba0e4a57805, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PortalPassThroughController
+  portalAxis: 2
+  detectionMode: 1
+  detectionRadius: 2
+  detectionBoxSize: {x: 1.25, y: 1.15, z: 0.7}
+  detectionBoxOffset: {x: 0, y: 0, z: 0}
+  maxContacts: 8
+  detectionLayerMask:
+    serializedVersion: 2
+    m_Bits: 384
+  contactPositionMode: 1
+  forceCutoutShape: 0
+  forcedShape: 0
+  forcedRadius: 1
+  forcedHeight: 2
+  forcedBoxSize: {x: 1, y: 1, z: 1}
+  openSpeed: 4
+  closeSpeed: 2.5
+  closeDelay: 0.15
 --- !u!1001 &337678522
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -63756,6 +64030,36 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3345189523042513729, guid: ad4534fb8aed3424e8290162efb84359, type: 3}
   m_PrefabInstance: {fileID: 929797238}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &366937836
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 366937827}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 206b8fd5ef2eb2d4abd3aba0e4a57805, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PortalPassThroughController
+  portalAxis: 2
+  detectionMode: 1
+  detectionRadius: 2
+  detectionBoxSize: {x: 0.7, y: 0.59, z: 1.64}
+  detectionBoxOffset: {x: 0, y: 0, z: 0}
+  maxContacts: 8
+  detectionLayerMask:
+    serializedVersion: 2
+    m_Bits: 384
+  contactPositionMode: 1
+  forceCutoutShape: 0
+  forcedShape: 0
+  forcedRadius: 0.5
+  forcedHeight: 2
+  forcedBoxSize: {x: 1, y: 1, z: 1}
+  openSpeed: 4
+  closeSpeed: 2.5
+  closeDelay: 0.15
 --- !u!43 &367209388
 Mesh:
   m_ObjectHideFlags: 0
@@ -70383,6 +70687,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2677197054211451387, guid: ad4534fb8aed3424e8290162efb84359, type: 3}
       insertIndex: -1
       addedObject: {fileID: 407411717}
+    - targetCorrespondingSourceObject: {fileID: 2677197054211451387, guid: ad4534fb8aed3424e8290162efb84359, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 407411725}
   m_SourcePrefab: {fileID: 100100000, guid: ad4534fb8aed3424e8290162efb84359, type: 3}
 --- !u!4 &407411715 stripped
 Transform:
@@ -70483,6 +70790,36 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.4999905, y: 1.4999967, z: 0.4999991}
   m_Center: {x: 0, y: -0.00000047683716, z: 0.00000009685755}
+--- !u!114 &407411725
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 407411716}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 206b8fd5ef2eb2d4abd3aba0e4a57805, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PortalPassThroughController
+  portalAxis: 2
+  detectionMode: 1
+  detectionRadius: 2
+  detectionBoxSize: {x: 1.25, y: 1.15, z: 0.7}
+  detectionBoxOffset: {x: 0, y: 0, z: 0}
+  maxContacts: 8
+  detectionLayerMask:
+    serializedVersion: 2
+    m_Bits: 384
+  contactPositionMode: 1
+  forceCutoutShape: 0
+  forcedShape: 0
+  forcedRadius: 1
+  forcedHeight: 2
+  forcedBoxSize: {x: 1, y: 1, z: 1}
+  openSpeed: 4
+  closeSpeed: 2.5
+  closeDelay: 0.15
 --- !u!1001 &409035890
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -72665,6 +73002,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2677197054211451387, guid: ad4534fb8aed3424e8290162efb84359, type: 3}
       insertIndex: -1
       addedObject: {fileID: 434702946}
+    - targetCorrespondingSourceObject: {fileID: 2677197054211451387, guid: ad4534fb8aed3424e8290162efb84359, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 434702953}
   m_SourcePrefab: {fileID: 100100000, guid: ad4534fb8aed3424e8290162efb84359, type: 3}
 --- !u!4 &434702944 stripped
 Transform:
@@ -72765,6 +73105,36 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &434702953
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 434702945}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 206b8fd5ef2eb2d4abd3aba0e4a57805, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PortalPassThroughController
+  portalAxis: 2
+  detectionMode: 1
+  detectionRadius: 2
+  detectionBoxSize: {x: 0.77, y: 0.8, z: 1.72}
+  detectionBoxOffset: {x: 0, y: 0, z: 0}
+  maxContacts: 8
+  detectionLayerMask:
+    serializedVersion: 2
+    m_Bits: 384
+  contactPositionMode: 1
+  forceCutoutShape: 0
+  forcedShape: 0
+  forcedRadius: 1
+  forcedHeight: 2
+  forcedBoxSize: {x: 1, y: 1, z: 1}
+  openSpeed: 4
+  closeSpeed: 2.5
+  closeDelay: 0.15
 --- !u!1001 &435521170
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -84702,6 +85072,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2677197054211451387, guid: ad4534fb8aed3424e8290162efb84359, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1083889295}
+    - targetCorrespondingSourceObject: {fileID: 2677197054211451387, guid: ad4534fb8aed3424e8290162efb84359, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1083889303}
   m_SourcePrefab: {fileID: 100100000, guid: ad4534fb8aed3424e8290162efb84359, type: 3}
 --- !u!1001 &514121940
 PrefabInstance:
@@ -92327,6 +92700,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2677197054211451387, guid: ad4534fb8aed3424e8290162efb84359, type: 3}
       insertIndex: -1
       addedObject: {fileID: 544241443}
+    - targetCorrespondingSourceObject: {fileID: 2677197054211451387, guid: ad4534fb8aed3424e8290162efb84359, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 544241451}
   m_SourcePrefab: {fileID: 100100000, guid: ad4534fb8aed3424e8290162efb84359, type: 3}
 --- !u!4 &544241441 stripped
 Transform:
@@ -92427,6 +92803,36 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.4999905, y: 1.4999967, z: 0.4999991}
   m_Center: {x: 0, y: -2.664535e-15, z: -0.000000022351738}
+--- !u!114 &544241451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 544241442}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 206b8fd5ef2eb2d4abd3aba0e4a57805, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PortalPassThroughController
+  portalAxis: 2
+  detectionMode: 1
+  detectionRadius: 2
+  detectionBoxSize: {x: 1.25, y: 1.15, z: 0.7}
+  detectionBoxOffset: {x: 0, y: 0, z: 0}
+  maxContacts: 8
+  detectionLayerMask:
+    serializedVersion: 2
+    m_Bits: 384
+  contactPositionMode: 1
+  forceCutoutShape: 0
+  forcedShape: 0
+  forcedRadius: 1
+  forcedHeight: 2
+  forcedBoxSize: {x: 1, y: 1, z: 1}
+  openSpeed: 4
+  closeSpeed: 2.5
+  closeDelay: 0.15
 --- !u!1001 &544549189
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -105162,8 +105568,6 @@ GameObject:
   m_Component:
   - component: {fileID: 584284222}
   - component: {fileID: 584284221}
-  - component: {fileID: 584284220}
-  - component: {fileID: 584284219}
   - component: {fileID: 584284218}
   - component: {fileID: 584284223}
   m_Layer: 0
@@ -105205,26 +105609,6 @@ MonoBehaviour:
       m_PostInfinity: 2
       m_RotationOrder: 4
   CustomBlends: {fileID: 0}
---- !u!114 &584284219
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 584284217}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 23c1ce4fb46143f46bc5cb5224c934f6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!81 &584284220
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 584284217}
-  m_Enabled: 1
 --- !u!20 &584284221
 Camera:
   m_ObjectHideFlags: 0
@@ -106863,6 +107247,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1479215391782063285, guid: 4406f03a381034149959c0972cbdb975, type: 3}
+      propertyPath: _sunMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 13e75c43c0f17e84e83465cfd6ecf3aa, type: 2}
+    - target: {fileID: 1479215391782063285, guid: 4406f03a381034149959c0972cbdb975, type: 3}
+      propertyPath: _moonMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 527c95ec99ed30243aadb9effeed2951, type: 2}
     - target: {fileID: 2438073536089858640, guid: 4406f03a381034149959c0972cbdb975, type: 3}
       propertyPath: m_Name
       value: MoonWall (6)
@@ -106870,7 +107262,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2438073536089858640, guid: 4406f03a381034149959c0972cbdb975, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 129260993}
   m_SourcePrefab: {fileID: 100100000, guid: 4406f03a381034149959c0972cbdb975, type: 3}
 --- !u!1001 &604680909
 PrefabInstance:
@@ -109942,6 +110337,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1832831563}
     m_Modifications:
+    - target: {fileID: 7272105051252394393, guid: b0bdea1435396fb4ca786e022f7c6a1f, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 13e75c43c0f17e84e83465cfd6ecf3aa, type: 2}
     - target: {fileID: 8403886089360044790, guid: b0bdea1435396fb4ca786e022f7c6a1f, type: 3}
       propertyPath: m_LocalScale.x
       value: 2.1049004
@@ -110005,7 +110404,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 9217541824834873420, guid: b0bdea1435396fb4ca786e022f7c6a1f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1197899724}
   m_SourcePrefab: {fileID: 100100000, guid: b0bdea1435396fb4ca786e022f7c6a1f, type: 3}
 --- !u!1001 &614212620
 PrefabInstance:
@@ -111984,6 +112386,18 @@ PrefabInstance:
     - target: {fileID: 2048822199901028399, guid: 9275973a83d5b3544bcf22381819109f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 8308976315126611513, guid: 9275973a83d5b3544bcf22381819109f, type: 3}
+      propertyPath: detectionBoxSize.x
+      value: 1.52
+      objectReference: {fileID: 0}
+    - target: {fileID: 8308976315126611513, guid: 9275973a83d5b3544bcf22381819109f, type: 3}
+      propertyPath: detectionBoxSize.y
+      value: 1.37
+      objectReference: {fileID: 0}
+    - target: {fileID: 8308976315126611513, guid: 9275973a83d5b3544bcf22381819109f, type: 3}
+      propertyPath: detectionBoxSize.z
+      value: 0.45
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -124366,6 +124780,41 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1832831563}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &701631853 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2438073536089858640, guid: f73bc595ab51a304c9a69bea1f3defe9, type: 3}
+  m_PrefabInstance: {fileID: 1552306369}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &701631854
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 701631853}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 206b8fd5ef2eb2d4abd3aba0e4a57805, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PortalPassThroughController
+  portalAxis: 2
+  detectionMode: 1
+  detectionRadius: 2
+  detectionBoxSize: {x: 0.64, y: 1.13, z: 1}
+  detectionBoxOffset: {x: 0, y: 0, z: 0}
+  maxContacts: 8
+  detectionLayerMask:
+    serializedVersion: 2
+    m_Bits: 384
+  contactPositionMode: 1
+  forceCutoutShape: 0
+  forcedShape: 0
+  forcedRadius: 0.5
+  forcedHeight: 2
+  forcedBoxSize: {x: 1, y: 1, z: 1}
+  openSpeed: 4
+  closeSpeed: 2.5
+  closeDelay: 0.15
 --- !u!1001 &702915524
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -130891,6 +131340,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1479215391782063285, guid: f73bc595ab51a304c9a69bea1f3defe9, type: 3}
+      propertyPath: _sunMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 13e75c43c0f17e84e83465cfd6ecf3aa, type: 2}
+    - target: {fileID: 1479215391782063285, guid: f73bc595ab51a304c9a69bea1f3defe9, type: 3}
+      propertyPath: _moonMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 527c95ec99ed30243aadb9effeed2951, type: 2}
     - target: {fileID: 2438073536089858640, guid: f73bc595ab51a304c9a69bea1f3defe9, type: 3}
       propertyPath: m_Name
       value: SunWall
@@ -130898,7 +131355,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2438073536089858640, guid: f73bc595ab51a304c9a69bea1f3defe9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 67083755}
   m_SourcePrefab: {fileID: 100100000, guid: f73bc595ab51a304c9a69bea1f3defe9, type: 3}
 --- !u!1001 &758726077
 PrefabInstance:
@@ -147816,6 +148276,41 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7289084089099236235, guid: 48961e8ee0e9ee8449ef2fc39ae6a3dc, type: 3}
   m_PrefabInstance: {fileID: 845598102}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &845866317 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2438073536089858640, guid: f73bc595ab51a304c9a69bea1f3defe9, type: 3}
+  m_PrefabInstance: {fileID: 1640288414}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &845866318
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 845866317}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 206b8fd5ef2eb2d4abd3aba0e4a57805, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PortalPassThroughController
+  portalAxis: 2
+  detectionMode: 1
+  detectionRadius: 2
+  detectionBoxSize: {x: 0.64, y: 1.13, z: 1}
+  detectionBoxOffset: {x: 0, y: 0, z: 0}
+  maxContacts: 8
+  detectionLayerMask:
+    serializedVersion: 2
+    m_Bits: 384
+  contactPositionMode: 1
+  forceCutoutShape: 0
+  forcedShape: 0
+  forcedRadius: 0.5
+  forcedHeight: 2
+  forcedBoxSize: {x: 1, y: 1, z: 1}
+  openSpeed: 4
+  closeSpeed: 2.5
+  closeDelay: 0.15
 --- !u!1001 &846675456
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -151660,6 +152155,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1479215391782063285, guid: 4406f03a381034149959c0972cbdb975, type: 3}
+      propertyPath: _sunMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 13e75c43c0f17e84e83465cfd6ecf3aa, type: 2}
+    - target: {fileID: 1479215391782063285, guid: 4406f03a381034149959c0972cbdb975, type: 3}
+      propertyPath: _moonMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 527c95ec99ed30243aadb9effeed2951, type: 2}
     - target: {fileID: 2438073536089858640, guid: 4406f03a381034149959c0972cbdb975, type: 3}
       propertyPath: m_Name
       value: MoonWall (7)
@@ -151667,7 +152170,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2438073536089858640, guid: 4406f03a381034149959c0972cbdb975, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1420082920}
   m_SourcePrefab: {fileID: 100100000, guid: 4406f03a381034149959c0972cbdb975, type: 3}
 --- !u!1001 &876441254
 PrefabInstance:
@@ -155798,6 +156304,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1161740748629762312, guid: cb13a7f1664152a4e9468995c6bbbf17, type: 3}
   m_PrefabInstance: {fileID: 906353779}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &907206139 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9217541824834873420, guid: b0bdea1435396fb4ca786e022f7c6a1f, type: 3}
+  m_PrefabInstance: {fileID: 613589079}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &909031802
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -158032,6 +158543,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2677197054211451387, guid: ad4534fb8aed3424e8290162efb84359, type: 3}
       insertIndex: -1
       addedObject: {fileID: 366937828}
+    - targetCorrespondingSourceObject: {fileID: 2677197054211451387, guid: ad4534fb8aed3424e8290162efb84359, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 366937836}
   m_SourcePrefab: {fileID: 100100000, guid: ad4534fb8aed3424e8290162efb84359, type: 3}
 --- !u!1001 &930843999
 PrefabInstance:
@@ -161277,6 +161791,41 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 52a198fd41ac2a549939a790a9e90d4a, type: 3}
+--- !u!1 &957332203 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2438073536089858640, guid: f73bc595ab51a304c9a69bea1f3defe9, type: 3}
+  m_PrefabInstance: {fileID: 1782039327}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &957332204
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 957332203}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 206b8fd5ef2eb2d4abd3aba0e4a57805, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PortalPassThroughController
+  portalAxis: 2
+  detectionMode: 1
+  detectionRadius: 2
+  detectionBoxSize: {x: 0.64, y: 1.13, z: 1}
+  detectionBoxOffset: {x: 0, y: 0, z: 0}
+  maxContacts: 8
+  detectionLayerMask:
+    serializedVersion: 2
+    m_Bits: 384
+  contactPositionMode: 1
+  forceCutoutShape: 0
+  forcedShape: 0
+  forcedRadius: 0.5
+  forcedHeight: 2
+  forcedBoxSize: {x: 1, y: 1, z: 1}
+  openSpeed: 4
+  closeSpeed: 2.5
+  closeDelay: 0.15
 --- !u!1001 &957347206
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -162960,6 +163509,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2677197054211451387, guid: ad4534fb8aed3424e8290162efb84359, type: 3}
       insertIndex: -1
       addedObject: {fileID: 964909465}
+    - targetCorrespondingSourceObject: {fileID: 2677197054211451387, guid: ad4534fb8aed3424e8290162efb84359, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 964909473}
   m_SourcePrefab: {fileID: 100100000, guid: ad4534fb8aed3424e8290162efb84359, type: 3}
 --- !u!4 &964909463 stripped
 Transform:
@@ -163060,6 +163612,36 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.4999908, y: 1.4999968, z: 0.499999}
   m_Center: {x: 0, y: 0, z: -0.000000022351742}
+--- !u!114 &964909473
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 964909464}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 206b8fd5ef2eb2d4abd3aba0e4a57805, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PortalPassThroughController
+  portalAxis: 2
+  detectionMode: 1
+  detectionRadius: 2
+  detectionBoxSize: {x: 1.25, y: 1.15, z: 0.7}
+  detectionBoxOffset: {x: 0, y: 0, z: 0}
+  maxContacts: 8
+  detectionLayerMask:
+    serializedVersion: 2
+    m_Bits: 384
+  contactPositionMode: 1
+  forceCutoutShape: 0
+  forcedShape: 0
+  forcedRadius: 1
+  forcedHeight: 2
+  forcedBoxSize: {x: 1, y: 1, z: 1}
+  openSpeed: 4
+  closeSpeed: 2.5
+  closeDelay: 0.15
 --- !u!1001 &967608105
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -164077,6 +164659,36 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3345189523042513729, guid: ad4534fb8aed3424e8290162efb84359, type: 3}
   m_PrefabInstance: {fileID: 1268012095}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &973692134
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 973692125}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 206b8fd5ef2eb2d4abd3aba0e4a57805, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PortalPassThroughController
+  portalAxis: 2
+  detectionMode: 1
+  detectionRadius: 2
+  detectionBoxSize: {x: 0.7, y: 0.59, z: 1.64}
+  detectionBoxOffset: {x: 0, y: 0, z: 0}
+  maxContacts: 8
+  detectionLayerMask:
+    serializedVersion: 2
+    m_Bits: 384
+  contactPositionMode: 1
+  forceCutoutShape: 0
+  forcedShape: 0
+  forcedRadius: 0.5
+  forcedHeight: 2
+  forcedBoxSize: {x: 1, y: 1, z: 1}
+  openSpeed: 4
+  closeSpeed: 2.5
+  closeDelay: 0.15
 --- !u!1001 &973732039
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -172364,6 +172976,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2677197054211451387, guid: ad4534fb8aed3424e8290162efb84359, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1007957757}
+    - targetCorrespondingSourceObject: {fileID: 2677197054211451387, guid: ad4534fb8aed3424e8290162efb84359, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1007957765}
   m_SourcePrefab: {fileID: 100100000, guid: ad4534fb8aed3424e8290162efb84359, type: 3}
 --- !u!4 &1007957755 stripped
 Transform:
@@ -172464,6 +173079,36 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.4999905, y: 1.4999967, z: 0.4999991}
   m_Center: {x: 0, y: -2.664535e-15, z: -0.000000022351738}
+--- !u!114 &1007957765
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1007957756}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 206b8fd5ef2eb2d4abd3aba0e4a57805, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PortalPassThroughController
+  portalAxis: 2
+  detectionMode: 1
+  detectionRadius: 2
+  detectionBoxSize: {x: 1.25, y: 1.15, z: 0.7}
+  detectionBoxOffset: {x: 0, y: 0, z: 0}
+  maxContacts: 8
+  detectionLayerMask:
+    serializedVersion: 2
+    m_Bits: 384
+  contactPositionMode: 1
+  forceCutoutShape: 0
+  forcedShape: 0
+  forcedRadius: 1
+  forcedHeight: 2
+  forcedBoxSize: {x: 1, y: 1, z: 1}
+  openSpeed: 4
+  closeSpeed: 2.5
+  closeDelay: 0.15
 --- !u!1001 &1008597004
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -173137,6 +173782,41 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3571552366264100700, guid: 5459564e5bff3d64b8cc85749ed178b0, type: 3}
   m_PrefabInstance: {fileID: 1011820000}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1012181224 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2438073536089858640, guid: f73bc595ab51a304c9a69bea1f3defe9, type: 3}
+  m_PrefabInstance: {fileID: 1717603081}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1012181225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1012181224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 206b8fd5ef2eb2d4abd3aba0e4a57805, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PortalPassThroughController
+  portalAxis: 2
+  detectionMode: 1
+  detectionRadius: 2
+  detectionBoxSize: {x: 0.64, y: 1.13, z: 1}
+  detectionBoxOffset: {x: 0, y: 0, z: 0}
+  maxContacts: 8
+  detectionLayerMask:
+    serializedVersion: 2
+    m_Bits: 384
+  contactPositionMode: 1
+  forceCutoutShape: 0
+  forcedShape: 0
+  forcedRadius: 0.5
+  forcedHeight: 2
+  forcedBoxSize: {x: 1, y: 1, z: 1}
+  openSpeed: 4
+  closeSpeed: 2.5
+  closeDelay: 0.15
 --- !u!1001 &1014577478
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -173197,6 +173877,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1479215391782063285, guid: 4406f03a381034149959c0972cbdb975, type: 3}
+      propertyPath: _sunMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 13e75c43c0f17e84e83465cfd6ecf3aa, type: 2}
+    - target: {fileID: 1479215391782063285, guid: 4406f03a381034149959c0972cbdb975, type: 3}
+      propertyPath: _moonMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 527c95ec99ed30243aadb9effeed2951, type: 2}
     - target: {fileID: 2438073536089858640, guid: 4406f03a381034149959c0972cbdb975, type: 3}
       propertyPath: m_Name
       value: MoonWall (1)
@@ -181705,6 +182393,36 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3345189523042513729, guid: ad4534fb8aed3424e8290162efb84359, type: 3}
   m_PrefabInstance: {fileID: 514102744}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1083889303
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1083889294}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 206b8fd5ef2eb2d4abd3aba0e4a57805, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PortalPassThroughController
+  portalAxis: 2
+  detectionMode: 1
+  detectionRadius: 2
+  detectionBoxSize: {x: 0.7, y: 0.59, z: 1.64}
+  detectionBoxOffset: {x: 0, y: 0, z: 0}
+  maxContacts: 8
+  detectionLayerMask:
+    serializedVersion: 2
+    m_Bits: 384
+  contactPositionMode: 1
+  forceCutoutShape: 0
+  forcedShape: 0
+  forcedRadius: 0.5
+  forcedHeight: 2
+  forcedBoxSize: {x: 1, y: 1, z: 1}
+  openSpeed: 4
+  closeSpeed: 2.5
+  closeDelay: 0.15
 --- !u!1001 &1084046772
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -183318,6 +184036,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1479215391782063285, guid: 4406f03a381034149959c0972cbdb975, type: 3}
+      propertyPath: _sunMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 13e75c43c0f17e84e83465cfd6ecf3aa, type: 2}
+    - target: {fileID: 1479215391782063285, guid: 4406f03a381034149959c0972cbdb975, type: 3}
+      propertyPath: _moonMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 527c95ec99ed30243aadb9effeed2951, type: 2}
     - target: {fileID: 2438073536089858640, guid: 4406f03a381034149959c0972cbdb975, type: 3}
       propertyPath: m_Name
       value: MoonWall (5)
@@ -183325,7 +184051,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2438073536089858640, guid: 4406f03a381034149959c0972cbdb975, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2057046261}
   m_SourcePrefab: {fileID: 100100000, guid: 4406f03a381034149959c0972cbdb975, type: 3}
 --- !u!1001 &1096172439
 PrefabInstance:
@@ -186226,6 +186955,18 @@ PrefabInstance:
     - target: {fileID: 2048822199901028399, guid: 9275973a83d5b3544bcf22381819109f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 8308976315126611513, guid: 9275973a83d5b3544bcf22381819109f, type: 3}
+      propertyPath: detectionBoxSize.x
+      value: 1.52
+      objectReference: {fileID: 0}
+    - target: {fileID: 8308976315126611513, guid: 9275973a83d5b3544bcf22381819109f, type: 3}
+      propertyPath: detectionBoxSize.y
+      value: 1.37
+      objectReference: {fileID: 0}
+    - target: {fileID: 8308976315126611513, guid: 9275973a83d5b3544bcf22381819109f, type: 3}
+      propertyPath: detectionBoxSize.z
+      value: 0.45
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -192473,6 +193214,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2677197054211451387, guid: ad4534fb8aed3424e8290162efb84359, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1169818811}
+    - targetCorrespondingSourceObject: {fileID: 2677197054211451387, guid: ad4534fb8aed3424e8290162efb84359, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1169818819}
   m_SourcePrefab: {fileID: 100100000, guid: ad4534fb8aed3424e8290162efb84359, type: 3}
 --- !u!4 &1169818809 stripped
 Transform:
@@ -192573,6 +193317,36 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.4999905, y: 1.4999967, z: 0.4999991}
   m_Center: {x: 0, y: -0.00000047683716, z: 0.00000009685755}
+--- !u!114 &1169818819
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1169818810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 206b8fd5ef2eb2d4abd3aba0e4a57805, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PortalPassThroughController
+  portalAxis: 2
+  detectionMode: 1
+  detectionRadius: 2
+  detectionBoxSize: {x: 1.25, y: 1.15, z: 0.7}
+  detectionBoxOffset: {x: 0, y: 0, z: 0}
+  maxContacts: 8
+  detectionLayerMask:
+    serializedVersion: 2
+    m_Bits: 384
+  contactPositionMode: 1
+  forceCutoutShape: 0
+  forcedShape: 0
+  forcedRadius: 1
+  forcedHeight: 2
+  forcedBoxSize: {x: 1, y: 1, z: 1}
+  openSpeed: 4
+  closeSpeed: 2.5
+  closeDelay: 0.15
 --- !u!1001 &1170492031
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -195070,6 +195844,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2677197054211451387, guid: ad4534fb8aed3424e8290162efb84359, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1196313072}
+    - targetCorrespondingSourceObject: {fileID: 2677197054211451387, guid: ad4534fb8aed3424e8290162efb84359, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1196313079}
   m_SourcePrefab: {fileID: 100100000, guid: ad4534fb8aed3424e8290162efb84359, type: 3}
 --- !u!4 &1196313070 stripped
 Transform:
@@ -195170,6 +195947,36 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1196313079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1196313071}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 206b8fd5ef2eb2d4abd3aba0e4a57805, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PortalPassThroughController
+  portalAxis: 2
+  detectionMode: 1
+  detectionRadius: 2
+  detectionBoxSize: {x: 0.77, y: 0.8, z: 1.72}
+  detectionBoxOffset: {x: 0, y: 0, z: 0}
+  maxContacts: 8
+  detectionLayerMask:
+    serializedVersion: 2
+    m_Bits: 384
+  contactPositionMode: 1
+  forceCutoutShape: 0
+  forcedShape: 0
+  forcedRadius: 1
+  forcedHeight: 2
+  forcedBoxSize: {x: 1, y: 1, z: 1}
+  openSpeed: 4
+  closeSpeed: 2.5
+  closeDelay: 0.15
 --- !u!1001 &1196996593
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -195377,6 +196184,36 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8403886089360044790, guid: b0bdea1435396fb4ca786e022f7c6a1f, type: 3}
   m_PrefabInstance: {fileID: 613589079}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1197899724
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 907206139}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 206b8fd5ef2eb2d4abd3aba0e4a57805, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PortalPassThroughController
+  portalAxis: 2
+  detectionMode: 1
+  detectionRadius: 2
+  detectionBoxSize: {x: 1.52, y: 1.37, z: 0.45}
+  detectionBoxOffset: {x: 0, y: 0, z: 0}
+  maxContacts: 8
+  detectionLayerMask:
+    serializedVersion: 2
+    m_Bits: 384
+  contactPositionMode: 1
+  forceCutoutShape: 1
+  forcedShape: 0
+  forcedRadius: 1
+  forcedHeight: 2
+  forcedBoxSize: {x: 1, y: 1, z: 1}
+  openSpeed: 4
+  closeSpeed: 2.5
+  closeDelay: 0.15
 --- !u!1001 &1198306445
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -196533,6 +197370,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2677197054211451387, guid: ad4534fb8aed3424e8290162efb84359, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1204942419}
+    - targetCorrespondingSourceObject: {fileID: 2677197054211451387, guid: ad4534fb8aed3424e8290162efb84359, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1204942427}
   m_SourcePrefab: {fileID: 100100000, guid: ad4534fb8aed3424e8290162efb84359, type: 3}
 --- !u!4 &1204942417 stripped
 Transform:
@@ -196633,6 +197473,36 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.4999908, y: 1.4999968, z: 0.499999}
   m_Center: {x: 0, y: 0, z: -0.000000022351742}
+--- !u!114 &1204942427
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1204942418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 206b8fd5ef2eb2d4abd3aba0e4a57805, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PortalPassThroughController
+  portalAxis: 2
+  detectionMode: 1
+  detectionRadius: 2
+  detectionBoxSize: {x: 1.25, y: 1.15, z: 0.7}
+  detectionBoxOffset: {x: 0, y: 0, z: 0}
+  maxContacts: 8
+  detectionLayerMask:
+    serializedVersion: 2
+    m_Bits: 384
+  contactPositionMode: 1
+  forceCutoutShape: 0
+  forcedShape: 0
+  forcedRadius: 1
+  forcedHeight: 2
+  forcedBoxSize: {x: 1, y: 1, z: 1}
+  openSpeed: 4
+  closeSpeed: 2.5
+  closeDelay: 0.15
 --- !u!1001 &1204990090
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -197807,6 +198677,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1832831563}
     m_Modifications:
+    - target: {fileID: 7272105051252394393, guid: b0bdea1435396fb4ca786e022f7c6a1f, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 13e75c43c0f17e84e83465cfd6ecf3aa, type: 2}
     - target: {fileID: 8403886089360044790, guid: b0bdea1435396fb4ca786e022f7c6a1f, type: 3}
       propertyPath: m_LocalScale.x
       value: 2.1049004
@@ -197870,7 +198744,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 9217541824834873420, guid: b0bdea1435396fb4ca786e022f7c6a1f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1490028938}
   m_SourcePrefab: {fileID: 100100000, guid: b0bdea1435396fb4ca786e022f7c6a1f, type: 3}
 --- !u!1001 &1216105795
 PrefabInstance:
@@ -198669,6 +199546,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2677197054211451387, guid: ad4534fb8aed3424e8290162efb84359, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2778131}
+    - targetCorrespondingSourceObject: {fileID: 2677197054211451387, guid: ad4534fb8aed3424e8290162efb84359, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2778139}
   m_SourcePrefab: {fileID: 100100000, guid: ad4534fb8aed3424e8290162efb84359, type: 3}
 --- !u!1001 &1221607771
 PrefabInstance:
@@ -205969,6 +206849,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2677197054211451387, guid: ad4534fb8aed3424e8290162efb84359, type: 3}
       insertIndex: -1
       addedObject: {fileID: 973692126}
+    - targetCorrespondingSourceObject: {fileID: 2677197054211451387, guid: ad4534fb8aed3424e8290162efb84359, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 973692134}
   m_SourcePrefab: {fileID: 100100000, guid: ad4534fb8aed3424e8290162efb84359, type: 3}
 --- !u!1001 &1269457467
 PrefabInstance:
@@ -228816,6 +229699,41 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7326f3eafaa60cf46b14967e54d07b67, type: 3}
+--- !u!1 &1420082919 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2438073536089858640, guid: 4406f03a381034149959c0972cbdb975, type: 3}
+  m_PrefabInstance: {fileID: 875621026}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1420082920
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1420082919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 206b8fd5ef2eb2d4abd3aba0e4a57805, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PortalPassThroughController
+  portalAxis: 2
+  detectionMode: 1
+  detectionRadius: 2
+  detectionBoxSize: {x: 0.64, y: 1.13, z: 1}
+  detectionBoxOffset: {x: 0, y: 0, z: 0}
+  maxContacts: 8
+  detectionLayerMask:
+    serializedVersion: 2
+    m_Bits: 384
+  contactPositionMode: 1
+  forceCutoutShape: 0
+  forcedShape: 0
+  forcedRadius: 0.5
+  forcedHeight: 2
+  forcedBoxSize: {x: 1, y: 1, z: 1}
+  openSpeed: 4
+  closeSpeed: 2.5
+  closeDelay: 0.15
 --- !u!224 &1420106671 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1544427484261129065, guid: e83bb4da1c4e1ae419c868a6680fbea9, type: 3}
@@ -247960,6 +248878,41 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1161740748629762312, guid: cb13a7f1664152a4e9468995c6bbbf17, type: 3}
   m_PrefabInstance: {fileID: 1488850727}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1490028932 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9217541824834873420, guid: b0bdea1435396fb4ca786e022f7c6a1f, type: 3}
+  m_PrefabInstance: {fileID: 1215646844}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1490028938
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1490028932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 206b8fd5ef2eb2d4abd3aba0e4a57805, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PortalPassThroughController
+  portalAxis: 2
+  detectionMode: 1
+  detectionRadius: 2
+  detectionBoxSize: {x: 1.52, y: 1.37, z: 0.45}
+  detectionBoxOffset: {x: 0, y: 0, z: 0}
+  maxContacts: 8
+  detectionLayerMask:
+    serializedVersion: 2
+    m_Bits: 384
+  contactPositionMode: 1
+  forceCutoutShape: 1
+  forcedShape: 0
+  forcedRadius: 1
+  forcedHeight: 2
+  forcedBoxSize: {x: 1, y: 1, z: 1}
+  openSpeed: 4
+  closeSpeed: 2.5
+  closeDelay: 0.15
 --- !u!1001 &1490576130
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -257814,6 +258767,41 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6353179732182081440, guid: 22004bacfe49e924a8a95df29c7d3a88, type: 3}
   m_PrefabInstance: {fileID: 1536777528}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1539146415 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2438073536089858640, guid: f73bc595ab51a304c9a69bea1f3defe9, type: 3}
+  m_PrefabInstance: {fileID: 335702097}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1539146416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1539146415}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 206b8fd5ef2eb2d4abd3aba0e4a57805, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PortalPassThroughController
+  portalAxis: 2
+  detectionMode: 1
+  detectionRadius: 2
+  detectionBoxSize: {x: 0.64, y: 1.13, z: 1}
+  detectionBoxOffset: {x: 0, y: 0, z: 0}
+  maxContacts: 8
+  detectionLayerMask:
+    serializedVersion: 2
+    m_Bits: 384
+  contactPositionMode: 1
+  forceCutoutShape: 0
+  forcedShape: 0
+  forcedRadius: 0.5
+  forcedHeight: 2
+  forcedBoxSize: {x: 1, y: 1, z: 1}
+  openSpeed: 4
+  closeSpeed: 2.5
+  closeDelay: 0.15
 --- !u!1001 &1541010618
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -258868,6 +259856,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1479215391782063285, guid: f73bc595ab51a304c9a69bea1f3defe9, type: 3}
+      propertyPath: _sunMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 13e75c43c0f17e84e83465cfd6ecf3aa, type: 2}
+    - target: {fileID: 1479215391782063285, guid: f73bc595ab51a304c9a69bea1f3defe9, type: 3}
+      propertyPath: _moonMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 527c95ec99ed30243aadb9effeed2951, type: 2}
     - target: {fileID: 2438073536089858640, guid: f73bc595ab51a304c9a69bea1f3defe9, type: 3}
       propertyPath: m_Name
       value: SunWall (8)
@@ -258875,7 +259871,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2438073536089858640, guid: f73bc595ab51a304c9a69bea1f3defe9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 701631854}
   m_SourcePrefab: {fileID: 100100000, guid: f73bc595ab51a304c9a69bea1f3defe9, type: 3}
 --- !u!1001 &1552887798
 PrefabInstance:
@@ -260328,6 +261327,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2677197054211451387, guid: ad4534fb8aed3424e8290162efb84359, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1566193503}
+    - targetCorrespondingSourceObject: {fileID: 2677197054211451387, guid: ad4534fb8aed3424e8290162efb84359, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1566193511}
   m_SourcePrefab: {fileID: 100100000, guid: ad4534fb8aed3424e8290162efb84359, type: 3}
 --- !u!4 &1566193501 stripped
 Transform:
@@ -260428,6 +261430,36 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.4999905, y: 1.4999967, z: 0.4999991}
   m_Center: {x: 0, y: -2.664535e-15, z: -0.000000022351738}
+--- !u!114 &1566193511
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1566193502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 206b8fd5ef2eb2d4abd3aba0e4a57805, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PortalPassThroughController
+  portalAxis: 2
+  detectionMode: 1
+  detectionRadius: 2
+  detectionBoxSize: {x: 1.25, y: 1.15, z: 0.7}
+  detectionBoxOffset: {x: 0, y: 0, z: 0}
+  maxContacts: 8
+  detectionLayerMask:
+    serializedVersion: 2
+    m_Bits: 384
+  contactPositionMode: 1
+  forceCutoutShape: 0
+  forcedShape: 0
+  forcedRadius: 1
+  forcedHeight: 2
+  forcedBoxSize: {x: 1, y: 1, z: 1}
+  openSpeed: 4
+  closeSpeed: 2.5
+  closeDelay: 0.15
 --- !u!1001 &1566652707
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -264736,6 +265768,41 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a5913f4424dc00f4a8097732549d5848, type: 3}
+--- !u!1 &1598064012 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2438073536089858640, guid: 4406f03a381034149959c0972cbdb975, type: 3}
+  m_PrefabInstance: {fileID: 254785531}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1598064013
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1598064012}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 206b8fd5ef2eb2d4abd3aba0e4a57805, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PortalPassThroughController
+  portalAxis: 2
+  detectionMode: 1
+  detectionRadius: 2
+  detectionBoxSize: {x: 0.64, y: 1.13, z: 1}
+  detectionBoxOffset: {x: 0, y: 0, z: 0}
+  maxContacts: 8
+  detectionLayerMask:
+    serializedVersion: 2
+    m_Bits: 384
+  contactPositionMode: 1
+  forceCutoutShape: 0
+  forcedShape: 0
+  forcedRadius: 0.5
+  forcedHeight: 2
+  forcedBoxSize: {x: 1, y: 1, z: 1}
+  openSpeed: 4
+  closeSpeed: 2.5
+  closeDelay: 0.15
 --- !u!1001 &1600075691
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -265250,6 +266317,36 @@ MonoBehaviour:
   m_SkinMeshRef: {fileID: 0}
   m_OriginalMeshObject: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
   m_Mode: 0
+--- !u!114 &1605577245
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1605577233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 206b8fd5ef2eb2d4abd3aba0e4a57805, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PortalPassThroughController
+  portalAxis: 2
+  detectionMode: 1
+  detectionRadius: 2
+  detectionBoxSize: {x: 0.69, y: 0.77, z: 1.91}
+  detectionBoxOffset: {x: 0, y: 0, z: 0}
+  maxContacts: 8
+  detectionLayerMask:
+    serializedVersion: 2
+    m_Bits: 384
+  contactPositionMode: 1
+  forceCutoutShape: 1
+  forcedShape: 0
+  forcedRadius: 1
+  forcedHeight: 2
+  forcedBoxSize: {x: 1, y: 1, z: 1}
+  openSpeed: 4
+  closeSpeed: 2.5
+  closeDelay: 0.15
 --- !u!1001 &1606610443
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -270496,6 +271593,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1479215391782063285, guid: f73bc595ab51a304c9a69bea1f3defe9, type: 3}
+      propertyPath: _sunMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 13e75c43c0f17e84e83465cfd6ecf3aa, type: 2}
+    - target: {fileID: 1479215391782063285, guid: f73bc595ab51a304c9a69bea1f3defe9, type: 3}
+      propertyPath: _moonMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 527c95ec99ed30243aadb9effeed2951, type: 2}
     - target: {fileID: 2438073536089858640, guid: f73bc595ab51a304c9a69bea1f3defe9, type: 3}
       propertyPath: m_Name
       value: SunWall (5)
@@ -270503,7 +271608,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2438073536089858640, guid: f73bc595ab51a304c9a69bea1f3defe9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 845866318}
   m_SourcePrefab: {fileID: 100100000, guid: f73bc595ab51a304c9a69bea1f3defe9, type: 3}
 --- !u!1001 &1641130941
 PrefabInstance:
@@ -280465,6 +281573,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1479215391782063285, guid: f73bc595ab51a304c9a69bea1f3defe9, type: 3}
+      propertyPath: _sunMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 13e75c43c0f17e84e83465cfd6ecf3aa, type: 2}
+    - target: {fileID: 1479215391782063285, guid: f73bc595ab51a304c9a69bea1f3defe9, type: 3}
+      propertyPath: _moonMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 527c95ec99ed30243aadb9effeed2951, type: 2}
     - target: {fileID: 2438073536089858640, guid: f73bc595ab51a304c9a69bea1f3defe9, type: 3}
       propertyPath: m_Name
       value: SunWall (7)
@@ -280472,7 +281588,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2438073536089858640, guid: f73bc595ab51a304c9a69bea1f3defe9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1012181225}
   m_SourcePrefab: {fileID: 100100000, guid: f73bc595ab51a304c9a69bea1f3defe9, type: 3}
 --- !u!1001 &1719056143
 PrefabInstance:
@@ -293958,6 +295077,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1479215391782063285, guid: f73bc595ab51a304c9a69bea1f3defe9, type: 3}
+      propertyPath: _sunMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 13e75c43c0f17e84e83465cfd6ecf3aa, type: 2}
+    - target: {fileID: 1479215391782063285, guid: f73bc595ab51a304c9a69bea1f3defe9, type: 3}
+      propertyPath: _moonMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 527c95ec99ed30243aadb9effeed2951, type: 2}
     - target: {fileID: 2438073536089858640, guid: f73bc595ab51a304c9a69bea1f3defe9, type: 3}
       propertyPath: m_Name
       value: SunWall (1)
@@ -293965,7 +295092,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2438073536089858640, guid: f73bc595ab51a304c9a69bea1f3defe9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 957332204}
   m_SourcePrefab: {fileID: 100100000, guid: f73bc595ab51a304c9a69bea1f3defe9, type: 3}
 --- !u!1001 &1782391036
 PrefabInstance:
@@ -295995,6 +297125,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2677197054211451387, guid: ad4534fb8aed3424e8290162efb84359, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1796938401}
+    - targetCorrespondingSourceObject: {fileID: 2677197054211451387, guid: ad4534fb8aed3424e8290162efb84359, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1796938409}
   m_SourcePrefab: {fileID: 100100000, guid: ad4534fb8aed3424e8290162efb84359, type: 3}
 --- !u!4 &1796938399 stripped
 Transform:
@@ -296095,6 +297228,36 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.4999905, y: 1.4999967, z: 0.4999991}
   m_Center: {x: 0, y: -0.00000047683716, z: 0.00000009685755}
+--- !u!114 &1796938409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1796938400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 206b8fd5ef2eb2d4abd3aba0e4a57805, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PortalPassThroughController
+  portalAxis: 2
+  detectionMode: 1
+  detectionRadius: 2
+  detectionBoxSize: {x: 1.25, y: 1.15, z: 0.7}
+  detectionBoxOffset: {x: 0, y: 0, z: 0}
+  maxContacts: 8
+  detectionLayerMask:
+    serializedVersion: 2
+    m_Bits: 384
+  contactPositionMode: 1
+  forceCutoutShape: 0
+  forcedShape: 0
+  forcedRadius: 1
+  forcedHeight: 2
+  forcedBoxSize: {x: 1, y: 1, z: 1}
+  openSpeed: 4
+  closeSpeed: 2.5
+  closeDelay: 0.15
 --- !u!1001 &1797503558
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -296379,6 +297542,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1479215391782063285, guid: 4406f03a381034149959c0972cbdb975, type: 3}
+      propertyPath: _sunMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 13e75c43c0f17e84e83465cfd6ecf3aa, type: 2}
+    - target: {fileID: 1479215391782063285, guid: 4406f03a381034149959c0972cbdb975, type: 3}
+      propertyPath: _moonMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 527c95ec99ed30243aadb9effeed2951, type: 2}
     - target: {fileID: 2438073536089858640, guid: 4406f03a381034149959c0972cbdb975, type: 3}
       propertyPath: m_Name
       value: MoonWall (4)
@@ -296386,7 +297557,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2438073536089858640, guid: 4406f03a381034149959c0972cbdb975, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 42046874}
   m_SourcePrefab: {fileID: 100100000, guid: 4406f03a381034149959c0972cbdb975, type: 3}
 --- !u!1 &1799380611
 GameObject:
@@ -311549,6 +312723,10 @@ PrefabInstance:
     - target: {fileID: 1139728934469651962, guid: f73bc595ab51a304c9a69bea1f3defe9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1479215391782063285, guid: f73bc595ab51a304c9a69bea1f3defe9, type: 3}
+      propertyPath: '_targetRenderers.Array.data[0]'
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 2438073536089858640, guid: f73bc595ab51a304c9a69bea1f3defe9, type: 3}
       propertyPath: m_Name
@@ -334239,6 +335417,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2677197054211451387, guid: ad4534fb8aed3424e8290162efb84359, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2029541856}
+    - targetCorrespondingSourceObject: {fileID: 2677197054211451387, guid: ad4534fb8aed3424e8290162efb84359, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2029541864}
   m_SourcePrefab: {fileID: 100100000, guid: ad4534fb8aed3424e8290162efb84359, type: 3}
 --- !u!1001 &1976953359
 PrefabInstance:
@@ -341454,6 +342635,36 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3345189523042513729, guid: ad4534fb8aed3424e8290162efb84359, type: 3}
   m_PrefabInstance: {fileID: 1976793926}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2029541864
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2029541855}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 206b8fd5ef2eb2d4abd3aba0e4a57805, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PortalPassThroughController
+  portalAxis: 2
+  detectionMode: 1
+  detectionRadius: 2
+  detectionBoxSize: {x: 0.7, y: 0.59, z: 1.64}
+  detectionBoxOffset: {x: 0, y: 0, z: 0}
+  maxContacts: 8
+  detectionLayerMask:
+    serializedVersion: 2
+    m_Bits: 384
+  contactPositionMode: 1
+  forceCutoutShape: 0
+  forcedShape: 0
+  forcedRadius: 0.5
+  forcedHeight: 2
+  forcedBoxSize: {x: 1, y: 1, z: 1}
+  openSpeed: 4
+  closeSpeed: 2.5
+  closeDelay: 0.15
 --- !u!1001 &2029589392
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -342024,6 +343235,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2677197054211451387, guid: ad4534fb8aed3424e8290162efb84359, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2032369052}
+    - targetCorrespondingSourceObject: {fileID: 2677197054211451387, guid: ad4534fb8aed3424e8290162efb84359, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2032369060}
   m_SourcePrefab: {fileID: 100100000, guid: ad4534fb8aed3424e8290162efb84359, type: 3}
 --- !u!4 &2032369050 stripped
 Transform:
@@ -342124,6 +343338,36 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.4999905, y: 1.4999967, z: 0.4999991}
   m_Center: {x: 0, y: -2.664535e-15, z: -0.000000022351738}
+--- !u!114 &2032369060
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2032369051}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 206b8fd5ef2eb2d4abd3aba0e4a57805, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PortalPassThroughController
+  portalAxis: 2
+  detectionMode: 1
+  detectionRadius: 2
+  detectionBoxSize: {x: 1.25, y: 1.15, z: 0.7}
+  detectionBoxOffset: {x: 0, y: 0, z: 0}
+  maxContacts: 8
+  detectionLayerMask:
+    serializedVersion: 2
+    m_Bits: 384
+  contactPositionMode: 1
+  forceCutoutShape: 0
+  forcedShape: 0
+  forcedRadius: 1
+  forcedHeight: 2
+  forcedBoxSize: {x: 1, y: 1, z: 1}
+  openSpeed: 4
+  closeSpeed: 2.5
+  closeDelay: 0.15
 --- !u!1001 &2032609970
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -344254,6 +345498,41 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6353179732182081440, guid: 22004bacfe49e924a8a95df29c7d3a88, type: 3}
   m_PrefabInstance: {fileID: 2056112092}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2057046260 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2438073536089858640, guid: 4406f03a381034149959c0972cbdb975, type: 3}
+  m_PrefabInstance: {fileID: 1096034665}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2057046261
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2057046260}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 206b8fd5ef2eb2d4abd3aba0e4a57805, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PortalPassThroughController
+  portalAxis: 2
+  detectionMode: 1
+  detectionRadius: 2
+  detectionBoxSize: {x: 0.64, y: 1.13, z: 1}
+  detectionBoxOffset: {x: 0, y: 0, z: 0}
+  maxContacts: 8
+  detectionLayerMask:
+    serializedVersion: 2
+    m_Bits: 384
+  contactPositionMode: 1
+  forceCutoutShape: 0
+  forcedShape: 0
+  forcedRadius: 0.5
+  forcedHeight: 2
+  forcedBoxSize: {x: 1, y: 1, z: 1}
+  openSpeed: 4
+  closeSpeed: 2.5
+  closeDelay: 0.15
 --- !u!1001 &2057164358
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -352570,6 +353849,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1479215391782063285, guid: 4406f03a381034149959c0972cbdb975, type: 3}
+      propertyPath: _sunMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 13e75c43c0f17e84e83465cfd6ecf3aa, type: 2}
+    - target: {fileID: 1479215391782063285, guid: 4406f03a381034149959c0972cbdb975, type: 3}
+      propertyPath: _moonMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 527c95ec99ed30243aadb9effeed2951, type: 2}
     - target: {fileID: 2438073536089858640, guid: 4406f03a381034149959c0972cbdb975, type: 3}
       propertyPath: m_Name
       value: MoonWall (10)
@@ -352577,7 +353864,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2438073536089858640, guid: 4406f03a381034149959c0972cbdb975, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 160995639}
   m_SourcePrefab: {fileID: 100100000, guid: 4406f03a381034149959c0972cbdb975, type: 3}
 --- !u!1001 &2113190713
 PrefabInstance:
@@ -356280,6 +357570,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1479215391782063285, guid: 4406f03a381034149959c0972cbdb975, type: 3}
+      propertyPath: _sunMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 13e75c43c0f17e84e83465cfd6ecf3aa, type: 2}
+    - target: {fileID: 1479215391782063285, guid: 4406f03a381034149959c0972cbdb975, type: 3}
+      propertyPath: _moonMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 527c95ec99ed30243aadb9effeed2951, type: 2}
     - target: {fileID: 2438073536089858640, guid: 4406f03a381034149959c0972cbdb975, type: 3}
       propertyPath: m_Name
       value: MoonWall (8)
@@ -356287,7 +357585,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2438073536089858640, guid: 4406f03a381034149959c0972cbdb975, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2145949558}
   m_SourcePrefab: {fileID: 100100000, guid: 4406f03a381034149959c0972cbdb975, type: 3}
 --- !u!1001 &2140004127
 PrefabInstance:
@@ -357067,6 +358368,41 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3571552366264100700, guid: 5459564e5bff3d64b8cc85749ed178b0, type: 3}
   m_PrefabInstance: {fileID: 2145436638}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2145949557 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2438073536089858640, guid: 4406f03a381034149959c0972cbdb975, type: 3}
+  m_PrefabInstance: {fileID: 2139797982}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2145949558
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2145949557}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 206b8fd5ef2eb2d4abd3aba0e4a57805, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PortalPassThroughController
+  portalAxis: 2
+  detectionMode: 1
+  detectionRadius: 2
+  detectionBoxSize: {x: 0.64, y: 1.13, z: 1}
+  detectionBoxOffset: {x: 0, y: 0, z: 0}
+  maxContacts: 8
+  detectionLayerMask:
+    serializedVersion: 2
+    m_Bits: 384
+  contactPositionMode: 1
+  forceCutoutShape: 0
+  forcedShape: 0
+  forcedRadius: 0.5
+  forcedHeight: 2
+  forcedBoxSize: {x: 1, y: 1, z: 1}
+  openSpeed: 4
+  closeSpeed: 2.5
+  closeDelay: 0.15
 --- !u!1001 &2146077587
 PrefabInstance:
   m_ObjectHideFlags: 0

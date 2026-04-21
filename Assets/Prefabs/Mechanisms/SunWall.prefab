@@ -127,10 +127,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b3c8d9e5f2a4b6c8d1e2f3a4b5c6d7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::World.SolarStateMaterial
-  _sunMaterial: {fileID: 2100000, guid: 109627a8ad09140468642242eb460209, type: 2}
-  _moonMaterial: {fileID: 2100000, guid: c90b9e2c0f4cb454b8aef5d56e430dd7, type: 2}
+  _sunMaterial: {fileID: 2100000, guid: 13e75c43c0f17e84e83465cfd6ecf3aa, type: 2}
+  _moonMaterial: {fileID: 2100000, guid: 527c95ec99ed30243aadb9effeed2951, type: 2}
   _eclipseMaterial: {fileID: 2100000, guid: 2ba031134926c634e88d1dcc7a50918c, type: 2}
-  _targetRenderers: []
+  _targetRenderers:
+  - {fileID: 3720292589357370318}
 --- !u!114 &2938096413038097107
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -231,12 +232,56 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 4368016029506339192, guid: b0bdea1435396fb4ca786e022f7c6a1f, type: 3}
+    - {fileID: 1190976794710091135, guid: b0bdea1435396fb4ca786e022f7c6a1f, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 9217541824834873420, guid: b0bdea1435396fb4ca786e022f7c6a1f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3053451727635629563}
   m_SourcePrefab: {fileID: 100100000, guid: b0bdea1435396fb4ca786e022f7c6a1f, type: 3}
 --- !u!4 &2587897130139381921 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8403886089360044790, guid: b0bdea1435396fb4ca786e022f7c6a1f, type: 3}
+  m_PrefabInstance: {fileID: 6290006293450261079}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2927865419367033371 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9217541824834873420, guid: b0bdea1435396fb4ca786e022f7c6a1f, type: 3}
+  m_PrefabInstance: {fileID: 6290006293450261079}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3053451727635629563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2927865419367033371}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 206b8fd5ef2eb2d4abd3aba0e4a57805, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PortalPassThroughController
+  portalAxis: 2
+  detectionMode: 1
+  detectionRadius: 2
+  detectionBoxSize: {x: 1.23, y: 1.05, z: 0.87}
+  detectionBoxOffset: {x: 0, y: 0, z: 0}
+  maxContacts: 8
+  detectionLayerMask:
+    serializedVersion: 2
+    m_Bits: 384
+  contactPositionMode: 1
+  forceCutoutShape: 0
+  forcedShape: 0
+  forcedRadius: 0.5
+  forcedHeight: 2
+  forcedBoxSize: {x: 1, y: 1, z: 1}
+  openSpeed: 4
+  closeSpeed: 2.5
+  closeDelay: 0.15
+--- !u!23 &3720292589357370318 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 7272105051252394393, guid: b0bdea1435396fb4ca786e022f7c6a1f, type: 3}
   m_PrefabInstance: {fileID: 6290006293450261079}
   m_PrefabAsset: {fileID: 0}
