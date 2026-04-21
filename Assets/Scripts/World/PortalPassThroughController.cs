@@ -63,15 +63,23 @@ public class PortalPassThroughController : MonoBehaviour
     private Vector3[] _positionData;
     private Vector4[] _contactData;
     private List<Vector4> _positionDataV4;
+    private List<Vector4> _contactDataV4;
+
+    private Renderer _portalRenderer;
+    private Material _portalMaterial;
 
     private void Awake()
     {
         _solarState = GetComponent<SolarState>();
 
+        _portalRenderer = GetComponentInChildren<Renderer>();
+        _portalMaterial = _portalRenderer.material;
+
         _contacts = new Contact[maxContacts];
         _positionData = new Vector3[maxContacts];
         _contactData = new Vector4[maxContacts];
         _positionDataV4 = new List<Vector4>(maxContacts);
+        _contactDataV4 = new List<Vector4>(maxContacts);
 
         for (int i = 0; i < maxContacts; i++)
         {
@@ -93,7 +101,6 @@ public class PortalPassThroughController : MonoBehaviour
         int activeCount = 0;
 
         Vector3 portalNormal = GetPortalNormalWorld();
-        Shader.SetGlobalVector("_PortalNormal", portalNormal);
 
         for (int i = 0; i < maxContacts; i++)
         {
@@ -135,9 +142,13 @@ public class PortalPassThroughController : MonoBehaviour
             activeCount = i + 1;
         }
 
-        Shader.SetGlobalVectorArray("_ContactPositions", ToVector4List(_positionData));
-        Shader.SetGlobalVectorArray("_ContactData", _contactData);
-        Shader.SetGlobalInt("_ContactCount", activeCount);
+        if (_portalMaterial != null)
+        {
+            _portalMaterial.SetVectorArray("_ContactPositions", ToVector4List(_positionData));
+            _portalMaterial.SetVectorArray("_ContactData", _contactData);
+            _portalMaterial.SetVector("_PortalNormal", portalNormal);
+            _portalMaterial.SetInt("_ContactCount", activeCount);
+        }
     }
 
     private Collider[] QueryOverlaps()
@@ -205,10 +216,13 @@ public class PortalPassThroughController : MonoBehaviour
             _contactData[i] = Vector4.zero;
         }
 
-        Shader.SetGlobalVectorArray("_ContactPositions", ToVector4List(_positionData));
-        Shader.SetGlobalVectorArray("_ContactData", _contactData);
-        Shader.SetGlobalVector("_PortalNormal", Vector3.zero);
-        Shader.SetGlobalInt("_ContactCount", 0);
+        if (_portalMaterial != null)
+        {
+            _portalMaterial.SetVectorArray("_ContactPositions", ToVector4List(_positionData));
+            _portalMaterial.SetVectorArray("_ContactData", _contactData);
+            _portalMaterial.SetVector("_PortalNormal", Vector3.zero);
+            _portalMaterial.SetInt("_ContactCount", 0);
+        }
     }
 
     private Vector3 GetPortalNormalWorld()
