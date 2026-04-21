@@ -58,4 +58,12 @@ public class SolarStateCursorController : MonoBehaviour
                 break;
         }
     }
+
+    private void OnApplicationFocus(bool hasFocus)
+    {
+        if (!hasFocus) return;
+
+        ApplyCursor(playerSolarState.CurrentState);
+
+    }
 }
