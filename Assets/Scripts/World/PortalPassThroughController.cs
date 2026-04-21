@@ -31,6 +31,9 @@ public class PortalPassThroughController : MonoBehaviour
     [Tooltip("Max number of simultaneous contact points sent to the shader")]
     public int maxContacts = 8;
 
+    [Tooltip("Layer mask for overlap detection")]
+    public LayerMask detectionLayerMask = -1;
+
     [Header("Contact Position")]
     [Tooltip("Where to place the contact point on the entering object.")]
     public ContactPositionMode contactPositionMode = ContactPositionMode.TransformPosition;
@@ -66,14 +69,12 @@ public class PortalPassThroughController : MonoBehaviour
     private List<Vector4> _contactDataV4;
 
     private Renderer _portalRenderer;
-    private Material _portalMaterial;
 
     private void Awake()
     {
         _solarState = GetComponent<SolarState>();
 
         _portalRenderer = GetComponentInChildren<Renderer>();
-        _portalMaterial = _portalRenderer.material;
 
         _contacts = new Contact[maxContacts];
         _positionData = new Vector3[maxContacts];
@@ -142,12 +143,13 @@ public class PortalPassThroughController : MonoBehaviour
             activeCount = i + 1;
         }
 
-        if (_portalMaterial != null)
+        if (_portalRenderer != null)
         {
-            _portalMaterial.SetVectorArray("_ContactPositions", ToVector4List(_positionData));
-            _portalMaterial.SetVectorArray("_ContactData", _contactData);
-            _portalMaterial.SetVector("_PortalNormal", portalNormal);
-            _portalMaterial.SetInt("_ContactCount", activeCount);
+            Material mat = _portalRenderer.material;
+            mat.SetVectorArray("_ContactPositions", ToVector4List(_positionData));
+            mat.SetVectorArray("_ContactData", _contactData);
+            mat.SetVector("_PortalNormal", portalNormal);
+            mat.SetInt("_ContactCount", activeCount);
         }
     }
 
@@ -155,8 +157,8 @@ public class PortalPassThroughController : MonoBehaviour
     {
         return detectionMode switch
         {
-            DetectionMode.Box => Physics.OverlapBox(transform.TransformPoint(detectionBoxOffset), detectionBoxSize),
-            _ => Physics.OverlapSphere(transform.position, detectionRadius),
+            DetectionMode.Box => Physics.OverlapBox(transform.TransformPoint(detectionBoxOffset), detectionBoxSize, Quaternion.identity, detectionLayerMask),
+            _ => Physics.OverlapSphere(transform.position, detectionRadius, detectionLayerMask),
         };
     }
 
@@ -174,6 +176,7 @@ public class PortalPassThroughController : MonoBehaviour
             SolarState otherState = hit.GetComponentInParent<SolarState>();
             if (otherState == null) continue;
             if (otherState.CurrentState == _solarState.CurrentState) continue;
+            if (hit.GetComponentInParent<PortalPassThroughSize>() == null) continue;
 
             int id = hit.transform.root.GetInstanceID();
             Vector3 contactPos = GetContactPosition(hit);
@@ -216,12 +219,13 @@ public class PortalPassThroughController : MonoBehaviour
             _contactData[i] = Vector4.zero;
         }
 
-        if (_portalMaterial != null)
+        if (_portalRenderer != null)
         {
-            _portalMaterial.SetVectorArray("_ContactPositions", ToVector4List(_positionData));
-            _portalMaterial.SetVectorArray("_ContactData", _contactData);
-            _portalMaterial.SetVector("_PortalNormal", Vector3.zero);
-            _portalMaterial.SetInt("_ContactCount", 0);
+            Material mat = _portalRenderer.material;
+            mat.SetVectorArray("_ContactPositions", ToVector4List(_positionData));
+            mat.SetVectorArray("_ContactData", _contactData);
+            mat.SetVector("_PortalNormal", Vector3.zero);
+            mat.SetInt("_ContactCount", 0);
         }
     }
 

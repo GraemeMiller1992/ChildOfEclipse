@@ -28,8 +28,8 @@ Shader "Custom/PortalPassThroughURP"
     {
         Tags
         {
-            "RenderType" = "Transparent"
-            "Queue" = "Transparent"
+            "RenderType" = "TransparentCutout"
+            "Queue" = "AlphaTest"
             "RenderPipeline" = "UniversalPipeline"
         }
 
@@ -38,8 +38,8 @@ Shader "Custom/PortalPassThroughURP"
             Name "PortalLit"
             Tags { "LightMode" = "UniversalForward" }
 
-            Blend SrcAlpha OneMinusSrcAlpha
-            ZWrite Off
+            Blend Off
+            ZWrite On
             Cull Back
 
             HLSLPROGRAM
@@ -271,12 +271,13 @@ Shader "Custom/PortalPassThroughURP"
 
                 surfaceAlpha *= (1.0 - totalCutout);
 
+                clip(surfaceAlpha - 0.01);
+
                 float3 finalColor = surfaceColor + _GlowColor.rgb * totalEdge * _EdgeGlowIntensity;
-                float finalAlpha = saturate(surfaceAlpha + totalEdge * 0.8);
 
                 finalColor = MixFog(finalColor, -input.positionWS);
 
-                return half4(finalColor, finalAlpha);
+                return half4(finalColor, 1.0);
             }
             ENDHLSL
         }
