@@ -38,6 +38,22 @@ public class PortalPassThroughController : MonoBehaviour
     [Tooltip("Where to place the contact point on the entering object.")]
     public ContactPositionMode contactPositionMode = ContactPositionMode.TransformPosition;
 
+    [Header("Force Cutout Shape")]
+    [Tooltip("When enabled, all contacts use the shape/size below instead of PortalPassThroughSize values.")]
+    public bool forceCutoutShape = false;
+
+    [Tooltip("The shape to use when forceCutoutShape is enabled.")]
+    public PortalCutoutShape forcedShape = PortalCutoutShape.Sphere;
+
+    [Tooltip("Radius used when forceCutoutShape is enabled.")]
+    public float forcedRadius = 0.5f;
+
+    [Tooltip("Height used when forceCutoutShape is enabled (Capsule).")]
+    public float forcedHeight = 2.0f;
+
+    [Tooltip("Size used when forceCutoutShape is enabled (Box).")]
+    public Vector3 forcedBoxSize = new Vector3(1f, 1f, 1f);
+
     [Header("Animation")]
     [Tooltip("How fast the cutout opens (units/sec)")]
     public float openSpeed = 4.0f;
@@ -69,12 +85,14 @@ public class PortalPassThroughController : MonoBehaviour
     private List<Vector4> _contactDataV4;
 
     private Renderer _portalRenderer;
+    private MaterialPropertyBlock _propBlock;
 
     private void Awake()
     {
         _solarState = GetComponent<SolarState>();
 
         _portalRenderer = GetComponentInChildren<Renderer>();
+        _propBlock = new MaterialPropertyBlock();
 
         _contacts = new Contact[maxContacts];
         _positionData = new Vector3[maxContacts];
@@ -145,11 +163,12 @@ public class PortalPassThroughController : MonoBehaviour
 
         if (_portalRenderer != null)
         {
-            Material mat = _portalRenderer.material;
-            mat.SetVectorArray("_ContactPositions", ToVector4List(_positionData));
-            mat.SetVectorArray("_ContactData", _contactData);
-            mat.SetVector("_PortalNormal", portalNormal);
-            mat.SetInt("_ContactCount", activeCount);
+            _propBlock.Clear();
+            _propBlock.SetVectorArray("_ContactPositions", ToVector4List(_positionData));
+            _propBlock.SetVectorArray("_ContactData", _contactData);
+            _propBlock.SetVector("_PortalNormal", portalNormal);
+            _propBlock.SetInt("_ContactCount", activeCount);
+            _portalRenderer.SetPropertyBlock(_propBlock);
         }
     }
 
@@ -221,11 +240,12 @@ public class PortalPassThroughController : MonoBehaviour
 
         if (_portalRenderer != null)
         {
-            Material mat = _portalRenderer.material;
-            mat.SetVectorArray("_ContactPositions", ToVector4List(_positionData));
-            mat.SetVectorArray("_ContactData", _contactData);
-            mat.SetVector("_PortalNormal", Vector3.zero);
-            mat.SetInt("_ContactCount", 0);
+            _propBlock.Clear();
+            _propBlock.SetVectorArray("_ContactPositions", ToVector4List(_positionData));
+            _propBlock.SetVectorArray("_ContactData", _contactData);
+            _propBlock.SetVector("_PortalNormal", Vector3.zero);
+            _propBlock.SetInt("_ContactCount", 0);
+            _portalRenderer.SetPropertyBlock(_propBlock);
         }
     }
 
@@ -292,6 +312,15 @@ public class PortalPassThroughController : MonoBehaviour
 
     private void ApplySize(Collider other, ref Contact contact)
     {
+        if (forceCutoutShape)
+        {
+            contact.shape = (int)forcedShape;
+            contact.radius = forcedRadius;
+            contact.height = forcedHeight;
+            contact.boxSize = forcedBoxSize;
+            return;
+        }
+
         PortalPassThroughSize sizeOverride = other.GetComponentInParent<PortalPassThroughSize>();
         if (sizeOverride != null)
         {

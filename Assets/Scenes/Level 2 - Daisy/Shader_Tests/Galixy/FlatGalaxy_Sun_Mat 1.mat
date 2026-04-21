@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: FlatGalaxy_Sun_Mat 1
-  m_Shader: {fileID: -6465566751694194690, guid: a9037570a375f164380a8dcb902bd31d, type: 3}
+  m_Shader: {fileID: 4800000, guid: b110eee568d797542b490e43e9bb63d7, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -100,10 +100,15 @@ Material:
     - _ClearCoatSmoothness: 0
     - _Cull: 2
     - _Cutoff: 0.5
+    - _CutoutSoftness: 0.1
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _DstBlendAlpha: 0
+    - _EdgeGlowIntensity: 6
+    - _EdgeNoiseScale: 3
+    - _EdgeNoiseSpeed: 2
+    - _EdgeWidth: 0.12
     - _EnvironmentReflections: 1
     - _Fresnel_Noise_Power: -3.9
     - _Fresnel_Power: 6.5
@@ -112,8 +117,11 @@ Material:
     - _Glossiness: 0
     - _GlossyReflections: 0
     - _Metallic: 0
+    - _NoiseDistortion: 0.15
     - _OcclusionStrength: 1
     - _Parallax: 0.005
+    - _PulseAmount: 0.3
+    - _PulseSpeed: 2
     - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 1
@@ -130,9 +138,12 @@ Material:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _FresnelOffset: {r: 0, g: 0, b: 0, a: 0}
+    - _FresnelTiling: {r: 1, g: 1, b: 0, a: 0}
     - _Fresnel_Color: {r: 1, g: 0.66279554, b: 0, a: 1}
     - _Fresnel_Speed: {r: 0, g: 0.02, b: 0, a: 0}
     - _Galaxy_Color: {r: 1, g: 1, b: 1, a: 1}
+    - _GlowColor: {r: 0.5, g: 1, b: 2, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
     - _Stars_Color: {r: 1, g: 1, b: 1, a: 1}
     - _Stars_Offset: {r: 0.13, g: 0, b: 0, a: 0}

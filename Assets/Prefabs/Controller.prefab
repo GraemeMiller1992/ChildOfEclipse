@@ -31,6 +31,7 @@ GameObject:
   - component: {fileID: 6989715662158315267}
   - component: {fileID: 4415517904058629784}
   - component: {fileID: 3259042645103876214}
+  - component: {fileID: 926238850773949930}
   m_Layer: 0
   m_Name: Controller
   m_TagString: Player
@@ -506,6 +507,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab09a42d2a2750946ad3d258d2df2c8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerAudio
+  footstepSource: {fileID: 0}
+  jumpSource: {fileID: 0}
   footstepClips:
   - {fileID: 8300000, guid: e27280292c22df24f8ca4e55a56b14dd, type: 3}
   - {fileID: 8300000, guid: 865edff4786a1494bb7d59d3ddebca14, type: 3}
@@ -518,10 +521,12 @@ MonoBehaviour:
   jumpClip: {fileID: 8300000, guid: 445151eef85799b4494377777ae5daaa, type: 3}
   moveThreshold: 0.1
   stepInterval: 0.35
-  volume: 0.7
-  jumpPauseDuration: 1
+  footstepVolume: 1
   minPitch: 0.95
   maxPitch: 1.05
+  jumpVolume: 1
+  jumpPauseDuration: 1
+  jumpCooldown: 1
 --- !u!82 &3259042645103876214
 AudioSource:
   m_ObjectHideFlags: 0
@@ -619,6 +624,22 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &926238850773949930
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 454626129936325366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4fd4e7e736bb4b840990e21cfcc9dab8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::World.PortalPassThroughSize
+  shape: 1
+  radius: 1
+  height: 3.5
+  size: {x: 1, y: 1, z: 1}
 --- !u!1 &863175582271539477
 GameObject:
   m_ObjectHideFlags: 0

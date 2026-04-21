@@ -51,7 +51,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: 6cab0860a713fcb41918a0b7aab38f13, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: d2046671e11b7a247baf2ac7444d1303, type: 2}
+      objectReference: {fileID: 2100000, guid: 13e75c43c0f17e84e83465cfd6ecf3aa, type: 2}
     - target: {fileID: 919132149155446097, guid: 6cab0860a713fcb41918a0b7aab38f13, type: 3}
       propertyPath: m_Name
       value: SunPlat
@@ -63,6 +63,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 6cab0860a713fcb41918a0b7aab38f13, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4884286367336041452}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 6cab0860a713fcb41918a0b7aab38f13, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1483894970967568134}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 6cab0860a713fcb41918a0b7aab38f13, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 892472818744123948}
   m_SourcePrefab: {fileID: 100100000, guid: 6cab0860a713fcb41918a0b7aab38f13, type: 3}
 --- !u!1 &1748916319334728697 stripped
 GameObject:
@@ -90,3 +96,46 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.1677191, y: 2.1677186, z: 0.17290945}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1483894970967568134
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1748916319334728697}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3b0459a0e763314c955c7c0f265b0b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::World.SolarState
+  _currentState: 0
+--- !u!114 &892472818744123948
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1748916319334728697}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 206b8fd5ef2eb2d4abd3aba0e4a57805, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PortalPassThroughController
+  portalAxis: 2
+  detectionMode: 1
+  detectionRadius: 2
+  detectionBoxSize: {x: 2, y: 2, z: 2}
+  detectionBoxOffset: {x: 0, y: 0, z: 0}
+  maxContacts: 8
+  detectionLayerMask:
+    serializedVersion: 2
+    m_Bits: 384
+  contactPositionMode: 1
+  forceCutoutShape: 1
+  forcedShape: 0
+  forcedRadius: 1
+  forcedHeight: 2
+  forcedBoxSize: {x: 1, y: 1, z: 1}
+  openSpeed: 4
+  closeSpeed: 2.5
+  closeDelay: 0.15
