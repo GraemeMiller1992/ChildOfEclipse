@@ -175,12 +175,21 @@ namespace ChildOfEclipse
             }
         }
 
+        private void FixedUpdate()
+        {
+            HandleRaycast();
+            HandleHover();
+        }
+
         private void Update()
         {
             HandlePointerInput();
-            HandleRaycast();
-            HandleHover();
             HandleClick();
+        }
+
+        private void LateUpdate()
+        {
+            UpdateWorldUI();
         }
 
         #endregion
@@ -283,8 +292,6 @@ namespace ChildOfEclipse
                 Debug.DrawRay(ray.origin, ray.direction * maxRayDistance, Color.red);
             }
 
-            // Update world UI position
-            UpdateWorldUI();
         }
 
         #endregion
