@@ -1,10 +1,13 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using World;
 
 public class SolarStateCursorController : MonoBehaviour
 {
-    [Header("Target")]
-    [SerializeField] private SolarState playerSolarState;
+    private static SolarStateCursorController instance;
+
+    [Header("Player Search")]
+    [SerializeField] private string playerTag = "Player";
 
     [Header("Cursor Textures")]
     [SerializeField] private Texture2D sunCursor;
@@ -19,26 +22,108 @@ public class SolarStateCursorController : MonoBehaviour
     [Header("Cursor Mode")]
     [SerializeField] private CursorMode cursorMode = CursorMode.Auto;
 
+    private SolarState playerSolarState;
+    private bool useSolarStateCursor;
+
+    private void Awake()
+    {
+        if (instance != null && instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        instance = this;
+        DontDestroyOnLoad(gameObject);
+    }
+
     private void OnEnable()
     {
-        if (playerSolarState != null)
-        {
-            playerSolarState.OnSolarStateChanged += HandleSolarStateChanged;
-            ApplyCursor(playerSolarState.CurrentState);
-        }
+        SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
     private void OnDisable()
     {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+        UnsubscribeFromSolarState();
+    }
+
+    private void Start()
+    {
+        SetMenuCursor();
+        FindPlayerSolarStateInScene();
+    }
+
+    private void OnApplicationFocus(bool hasFocus)
+    {
+        if (!hasFocus) return;
+        RefreshCursor();
+    }
+
+    private void OnApplicationPause(bool pauseStatus)
+    {
+        if (pauseStatus) return;
+        RefreshCursor();
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        FindPlayerSolarStateInScene();
+    }
+
+    private void FindPlayerSolarStateInScene()
+    {
+        UnsubscribeFromSolarState();
+
+        GameObject player = GameObject.FindGameObjectWithTag(playerTag);
+
+        if (player != null)
+            playerSolarState = player.GetComponent<SolarState>();
+
+        if (playerSolarState != null)
+        {
+            playerSolarState.OnSolarStateChanged += HandleSolarStateChanged;
+            SetGameplayCursor();
+        }
+        else
+        {
+            SetMenuCursor();
+        }
+    }
+
+    private void UnsubscribeFromSolarState()
+    {
         if (playerSolarState != null)
         {
             playerSolarState.OnSolarStateChanged -= HandleSolarStateChanged;
+            playerSolarState = null;
         }
+    }
+
+    public void SetMenuCursor()
+    {
+        useSolarStateCursor = false;
+        ApplyCursor(SolarStateValue.Sun);
+    }
+
+    public void SetGameplayCursor()
+    {
+        useSolarStateCursor = true;
+        RefreshCursor();
     }
 
     private void HandleSolarStateChanged(SolarStateValue oldState, SolarStateValue newState)
     {
+        if (!useSolarStateCursor) return;
         ApplyCursor(newState);
+    }
+
+    private void RefreshCursor()
+    {
+        if (useSolarStateCursor && playerSolarState != null)
+            ApplyCursor(playerSolarState.CurrentState);
+        else
+            ApplyCursor(SolarStateValue.Sun);
     }
 
     private void ApplyCursor(SolarStateValue state)
