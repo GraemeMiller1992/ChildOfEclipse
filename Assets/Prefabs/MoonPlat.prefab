@@ -10,15 +10,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 6cab0860a713fcb41918a0b7aab38f13, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 48.4
+      value: -1.999969
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6cab0860a713fcb41918a0b7aab38f13, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 16.52
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6cab0860a713fcb41918a0b7aab38f13, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -20.93
+      value: -6.000013
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6cab0860a713fcb41918a0b7aab38f13, type: 3}
       propertyPath: m_LocalRotation.w
@@ -51,10 +51,18 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: 6cab0860a713fcb41918a0b7aab38f13, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 527c95ec99ed30243aadb9effeed2951, type: 2}
+      objectReference: {fileID: 2100000, guid: d0b3848559c134945ab28928643968b2, type: 2}
     - target: {fileID: 919132149155446097, guid: 6cab0860a713fcb41918a0b7aab38f13, type: 3}
       propertyPath: m_Name
       value: MoonPlat
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6cab0860a713fcb41918a0b7aab38f13, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6cab0860a713fcb41918a0b7aab38f13, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -68,7 +76,13 @@ PrefabInstance:
       addedObject: {fileID: 4335647210990198857}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 6cab0860a713fcb41918a0b7aab38f13, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 8308976315126611513}
+      addedObject: {fileID: 8776577502969276094}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 6cab0860a713fcb41918a0b7aab38f13, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3271531677197695794}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 6cab0860a713fcb41918a0b7aab38f13, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4524891210473831205}
   m_SourcePrefab: {fileID: 100100000, guid: 6cab0860a713fcb41918a0b7aab38f13, type: 3}
 --- !u!1 &1667792301662493333 stripped
 GameObject:
@@ -108,8 +122,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3b0459a0e763314c955c7c0f265b0b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::World.SolarState
-  _currentState: 0
---- !u!114 &8308976315126611513
+  _currentState: 1
+--- !u!114 &8776577502969276094
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -118,24 +132,40 @@ MonoBehaviour:
   m_GameObject: {fileID: 1667792301662493333}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 206b8fd5ef2eb2d4abd3aba0e4a57805, type: 3}
+  m_Script: {fileID: 11500000, guid: c3b0459a0e763314c955c7c0f265b0b8, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PortalPassThroughController
-  portalAxis: 2
-  detectionMode: 1
-  detectionRadius: 2
-  detectionBoxSize: {x: 2, y: 2, z: 2}
-  detectionBoxOffset: {x: 0, y: 0, z: 0}
-  maxContacts: 8
-  detectionLayerMask:
-    serializedVersion: 2
-    m_Bits: 384
-  contactPositionMode: 1
-  forceCutoutShape: 1
-  forcedShape: 0
-  forcedRadius: 1
-  forcedHeight: 2
-  forcedBoxSize: {x: 1, y: 1, z: 1}
-  openSpeed: 4
-  closeSpeed: 2.5
-  closeDelay: 0.15
+  m_EditorClassIdentifier: Assembly-CSharp::World.SolarState
+  _currentState: 1
+--- !u!114 &3271531677197695794
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1667792301662493333}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::World.SolarStateLayer
+  _sunLayer: 8
+  _moonLayer: 7
+  _eclipseLayer: 9
+  _targetGameObjects: []
+  _includeChildren: 0
+--- !u!114 &4524891210473831205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1667792301662493333}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b3c8d9e5f2a4b6c8d1e2f3a4b5c6d7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::World.SolarStateMaterial
+  _sunMaterial: {fileID: 2100000, guid: d2046671e11b7a247baf2ac7444d1303, type: 2}
+  _moonMaterial: {fileID: 2100000, guid: 8e863f13920b6cf49b2ccdba3b0f2095, type: 2}
+  _eclipseMaterial: {fileID: 0}
+  _targetRenderers: []
